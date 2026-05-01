@@ -239,6 +239,9 @@ Los colores rojo, amarillo, naranja, etc. del sistema semafórico de citas **viv
 ### Clase `.dot` (regla global)
 La clase CSS `.dot` aplica `color: var(--verde)` globalmente. Cualquier mención de "citas.bot" en HTML — wordmark, títulos, body, footer, mockups — debe usar `citas<span class="dot">.</span>bot` para que el punto vaya en verde de marca automáticamente. La regla está definida una sola vez como `.dot { color: var(--verde); }` y no se debe scopear a `.wordmark`.
 
+### Clase `.brand-mention` (menciones inline en body copy)
+Cuando "citas.bot" aparece en texto corrido (subtítulos, párrafos, FAQ, CTAs), se envuelve en `<strong class="brand-mention">citas<span class="dot">.</span>bot</strong>`. La regla aplica `font-weight: 600; font-style: normal` — el mismo peso que el wordmark, sin negritas pesadas. Siempre combina `.brand-mention` con `.dot`: nunca uno sin el otro en body copy.
+
 ### Símbolo reducido `[.]`
 - Solo para favicons, app icons (PWA), avatares en redes, notificaciones
 - Construcción: contenedor 88×88 con radius 6 (casi cuadrado), corchetes con stroke 6 y terminaciones cuadradas, punto cuadrado de 16×16 al centro en verde
@@ -283,13 +286,13 @@ Las landings por vertical se construyen como clones del template principal, camb
 3. **Strip de impacto** — eyebrow "El impacto" + título "Qué cambia cuando citas.bot empieza a trabajar por ti" + 4 outcomes (−70% inasistencias, +1 semana de ingresos, 0 min persiguiendo confirmaciones, 24/7 cobertura)
 4. **Verticales** — marquee horizontal infinito con 12 tipos de negocio (clínicas dentales, estilistas, barberías, spas, consultorios médicos, terapeutas, quiroprácticos, talleres mecánicos, veterinarias, nutriólogos, estudios de yoga, tatuadores)
 5. **El problema** — 3 cards (WhatsApp se pierde, La libreta no avisa, Tu memoria falla) + stat banner del 30%
-6. **Cómo funciona** — sección oscura con 5 pasos. Los pasos automáticos (02, 03, 04) llevan visual ilustrativo (SMS bubble, SMS con pills de acción, call card horizontal); manual/resultado (01, 05) son compactos
-7. **El producto (módulos)** — 5 cards de los módulos. La de Calendario es destacada (full-width, fondo negro)
+6. **Cómo funciona** — sección con fondo verde profundo (`#0A1A0F`) con 5 pasos. Los pasos automáticos (02, 03, 04) llevan visual ilustrativo (SMS bubble, SMS con pills de acción, call card horizontal); manual/resultado (01, 05) son compactos
+7. **El producto (módulos)** — 5 cards de los módulos. La de Calendario es destacada (full-width, fondo verde oscuro `#0C2016`)
 8. **Comparativa** — tabla vs Libreta, WhatsApp, Calendly, citas.bot
 9. **Testimonios** — 3 cards placeholder (Dra. Regina Estrada / Carla Mendoza / Javier Ramírez)
 10. **Precio** — card centrada con $199 MXN/mes y lista de features incluidas
 11. **FAQ** — 7 preguntas con acordeón funcional, primera abierta por default
-12. **CTA final** — sección oscura con título + 2 CTAs
+12. **CTA final** — sección con fondo verde muy oscuro (`#071A10`) con título + 2 CTAs
 13. **Footer** — wordmark + 3 columnas de links + bottom bar
 
 ### CTAs primarios
@@ -338,6 +341,14 @@ Estas decisiones están cerradas y NO deben cambiarse sin discusión:
 19. **Botones globalmente rounded pill** (`border-radius: 999px`). Aplica a `.btn`, `.btn-primary-lg`, `.btn-secondary-lg`, `.pricing-cta`. NO regresar a `--radius-md`.
 
 20. **Easings:** `--ease-out: cubic-bezier(0.22, 1, 0.36, 1)` es la curva canónica para hovers, transiciones, reveals. NO usar `--ease-spring` (con bounce) en botones — quedó descartado por sentirse playful contra una marca sobria. Spring solo para decoraciones puntuales si fuera necesario.
+
+21. **Superficies oscuras de la landing — jerarquía de verde profundo, no negro uniforme:** Las secciones oscuras no usan `--tinta` (`#0A0A0B`) de forma indiscriminada. Cada superficie tiene su propio tono de verde oscuro para crear ritmo sin saturar de negro:
+    - `.stat-banner` → `var(--verde-tenue)` (fondo claro, texto oscuro — la excepción luminosa)
+    - `.how-it-works` → `#0A1A0F` (verde profundo, la sección más importante)
+    - `.module-card.featured` (Calendario) → `#0C2016` (verde oscuro)
+    - `.final-cta` → `#071A10` (verde muy oscuro)
+    - **Botones primarios** → se mantienen en `--tinta` (negro) para anclar la marca sin saturar de verde
+    - NO regresar a `--tinta` en estas secciones. La uniformidad de negro se sentía pesada y sin identidad.
 
 ---
 
