@@ -429,30 +429,44 @@ citas-bot/
 ├── astro.config.mjs
 ├── tsconfig.json
 ├── package.json
+├── public/
+│   └── assets/                        ← imágenes servidas estáticamente (rutas /assets/*)
+│       ├── hero-calendario.png
+│       ├── problema-whatsapp.jpg
+│       ├── problema-libreta.jpg
+│       └── problema-memoria.jpg
 ├── src/
 │   ├── pages/
-│   │   └── index.astro                ← Landing principal (solo imports)
+│   │   ├── index.astro                ← landing principal
+│   │   └── [vertical].astro           ← página dinámica para las 5 verticales
 │   ├── layouts/
 │   │   └── Base.astro                 ← head, header, footer, scripts
 │   ├── components/
-│   │   ├── Hero.astro
+│   │   ├── Hero.astro                 ← acepta props (eyebrow, subtitle)
 │   │   ├── StatementStrip.astro
 │   │   ├── SocialProof.astro
-│   │   ├── Problema.astro
+│   │   ├── Problema.astro             ← acepta props (cards)
 │   │   ├── HowItWorks.astro
 │   │   ├── Modules.astro
 │   │   ├── Comparison.astro
-│   │   ├── Testimonials.astro
+│   │   ├── Testimonials.astro         ← acepta props (heading, items)
 │   │   ├── Pricing.astro
 │   │   ├── FAQ.astro
 │   │   └── FinalCTA.astro
 │   ├── content/
-│   │   └── verticals/                 ← (pendiente Fase 3) copy por vertical
+│   │   └── verticals/
+│   │       ├── types.ts               ← interfaz VerticalContent
+│   │       ├── index.ts               ← export allVerticals
+│   │       ├── dentistas.ts
+│   │       ├── consultorios-medicos.ts
+│   │       ├── psicologos.ts
+│   │       ├── salones-de-belleza.ts
+│   │       └── barberias.ts
 │   └── styles/
 │       └── global.css                 ← todas las variables y estilos
-└── assets/
-    └── citas_bot_brand_guidelines.pdf ← Manual de marca v1.1
 ```
+
+**Brand guidelines:** vive fuera del repo (`~/Desktop/citas-bot_brand-guidelines.pdf`).
 
 ---
 
