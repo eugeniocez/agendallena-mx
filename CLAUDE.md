@@ -270,14 +270,24 @@ Cuando "citas.bot" aparece en texto corrido (subtítulos, párrafos, FAQ, CTAs),
 ### Arquitectura propuesta (híbrida)
 
 ```
-citas.bot/                  ← Landing principal extensa (multi-vertical)
-citas.bot/dentistas         ← Landing específica para Ads/SEO (futuro, Fase 2)
-citas.bot/estilistas        ← Landing específica para Ads/SEO (futuro, Fase 2)
-citas.bot/spas              ← Landing específica para Ads/SEO (futuro, Fase 2)
-citas.bot/clinicas          ← Landing específica para Ads/SEO (futuro, Fase 2)
+citas.bot/                        ← Landing principal extensa (multi-vertical)
+
+— Verticales Fase 2 (lanzamiento) —
+citas.bot/dentistas               ← Dentistas y clínicas dentales
+citas.bot/consultorios-medicos    ← Consultorios médicos generales
+citas.bot/psicologos              ← Consultorios de psicólogos y terapeutas
+citas.bot/salones-de-belleza      ← Salones de belleza y estilistas
+citas.bot/barberias               ← Barberías
+
+— Verticales Fase 3 (pendientes) —
+citas.bot/spas                    ← Spas y centros de bienestar
+citas.bot/salones-de-unas         ← Salones de uñas
+citas.bot/entrenadores-personales ← Entrenadores personales y gimnasios
+citas.bot/despachos-legales       ← Despachos legales y notarías
+citas.bot/terapistas              ← Fisioterapeutas y quiroprácticos
 ```
 
-Las landings por vertical se construyen como clones del template principal, cambiando únicamente el copy, los testimonios y los ejemplos para hablarle directo a esa industria.
+Las landings por vertical se construyen sobre el mismo template base, cambiando únicamente el copy del hero, las cards del problema, los testimonios y el FAQ específico para hablarle directo a esa industria. El copy de cada vertical se define en un archivo de contenido independiente (`src/content/verticals/`) y se genera con sesiones de SEO dedicadas por vertical.
 
 ### Secciones de la landing principal (en orden)
 
@@ -386,30 +396,24 @@ Estas decisiones están cerradas y NO deben cambiarse sin discusión:
 
 ## 11. Stack tecnológico
 
-### Landing actual
-- **HTML5 + CSS3 + JavaScript vanilla** (sin frameworks)
-- **Sin build step** — el archivo es directo, listo para servir
+### Stack actual (mayo 2026)
+- **Astro 6** — framework principal, genera HTML estático sin JS innecesario
 - **Plus Jakarta Sans** vía Google Fonts CDN (single-font, sin mono ni serif)
-- **Responsive** con CSS Grid y Flexbox
-- **Animaciones CSS** (fadeInUp en hero, accordion en FAQ)
-- **JavaScript mínimo** solo para el FAQ accordion
+- **CSS3 vanilla** en `src/styles/global.css` — sin Tailwind, sin CSS Modules
+- **JavaScript vanilla** con `is:inline` para scripts del lado del cliente (FAQ, scroll, animaciones)
+- **Build step:** `npm run build` → genera `dist/` con HTML estático
 
-### Por qué este stack
-- Carga rápida (sin JS bundle)
-- SEO-friendly por default
-- Hosteable gratis en Vercel, Netlify, Cloudflare Pages
-- Fácil de iterar sin re-builds
-- No requiere mantenimiento de dependencias
+### Por qué Astro
+- Cero JS por defecto — misma velocidad que vanilla HTML
+- Componentes reutilizables (`.astro`) para las 11 secciones de la landing
+- Enrutamiento por archivos: `/dentistas` → `src/pages/dentistas.astro`
+- Sistema de contenido (`src/content/`) para gestionar copy por vertical
+- SEO-friendly out of the box
+- Deploy a Vercel con zero config
 
-### Hosting recomendado para producción
-- **Vercel** (preferido) o **Cloudflare Pages**
-- Apuntar el dominio `citas.bot` directamente
-- HTTPS automático
-
-### Para escalar (si se necesita en el futuro)
-- Migrar a **Astro** si se necesitan más páginas estáticas con componentes reutilizables (ideal para landings por vertical)
-- **Next.js** si se requiere autenticación, dashboard en el sitio público, o blog
-- **Tailwind CSS** si el equipo crece y se necesita un sistema más sistematizado
+### Hosting
+- **Vercel** — dominio `citas.bot` apuntado directamente
+- HTTPS automático, preview deployments por branch
 
 ### Producto (la app citas.bot)
 El stack del producto NO está documentado en este archivo porque vive en otro repo. Esto solo aplica al website (citas.bot landing).
@@ -419,33 +423,75 @@ El stack del producto NO está documentado en este archivo porque vive en otro r
 ## 12. Archivos del proyecto
 
 ```
-citas-bot-web/
+citas-bot/
 ├── CLAUDE.md                          ← Este archivo
-├── citas_bot_landing.html             ← Landing principal
+├── index.html                         ← Landing vanilla original (respaldo)
+├── astro.config.mjs
+├── tsconfig.json
+├── package.json
+├── src/
+│   ├── pages/
+│   │   └── index.astro                ← Landing principal (solo imports)
+│   ├── layouts/
+│   │   └── Base.astro                 ← head, header, footer, scripts
+│   ├── components/
+│   │   ├── Hero.astro
+│   │   ├── StatementStrip.astro
+│   │   ├── SocialProof.astro
+│   │   ├── Problema.astro
+│   │   ├── HowItWorks.astro
+│   │   ├── Modules.astro
+│   │   ├── Comparison.astro
+│   │   ├── Testimonials.astro
+│   │   ├── Pricing.astro
+│   │   ├── FAQ.astro
+│   │   └── FinalCTA.astro
+│   ├── content/
+│   │   └── verticals/                 ← (pendiente Fase 3) copy por vertical
+│   └── styles/
+│       └── global.css                 ← todas las variables y estilos
 └── assets/
-    ├── citas_bot_brand_guidelines.pdf ← Manual de marca completo (23 páginas)
-    └── (futuras capturas reales del producto)
+    └── citas_bot_brand_guidelines.pdf ← Manual de marca v1.1
 ```
 
 ---
 
 ## 13. Roadmap del website
 
-### Fase 1 (actual) ✅
-- Landing principal extensa con todas las secciones core
+### Fase 1 ✅ — Landing principal
+- Landing vanilla HTML con todas las secciones core
 - Brand guidelines como PDF
 - Sistema de identidad definido
 
-### Fase 2 (próximo)
-- Reemplazar mockups CSS placeholder por capturas reales del producto
-- Crear landings por vertical: `/dentistas`, `/estilistas`, `/spas`
-- Subir a producción en Vercel apuntando a `citas.bot`
+### Fase 2 ✅ — Migración a Astro (mayo 2026)
+- Migración a Astro 6 sin cambios visuales
+- 11 componentes extraídos (`src/components/`)
+- Layout base con head, header, footer y scripts centralizados
+- CSS global en `src/styles/global.css`
+- Build limpio, listo para páginas múltiples
 
-### Fase 3 (futuro)
+### Fase 3 — Sistema de contenido y páginas verticales (pendiente)
+**Orden de ejecución:**
+1. Generar copy base (hero, problema, testimonios) para las 5 verticales de lanzamiento
+2. Crear `src/content/verticals/` con un archivo `.ts` por vertical
+3. Agregar props a `Hero.astro`, `Problema.astro`, `Testimonials.astro`
+4. Crear `src/pages/[vertical].astro` — una sola página dinámica para todas las verticales
+5. Sesión intensiva de optimización SEO por vertical (copy final, meta tags, schema markup)
+
+**Verticales de lanzamiento (Fase 3):**
+- `/dentistas`
+- `/consultorios-medicos`
+- `/psicologos`
+- `/salones-de-belleza`
+- `/barberias`
+
+**Verticales pendientes (Fase 4):**
+- `/spas`, `/salones-de-unas`, `/entrenadores-personales`, `/despachos-legales`, `/terapistas`
+
+### Fase 4 (futuro)
+- Reemplazar mockups CSS por capturas reales del producto
 - Blog para SEO orgánico
 - Centro de ayuda (`citas.bot/soporte`)
-- Casos de éxito por industria
-- Posible migración a Astro si la cantidad de páginas crece
 
 ---
 
