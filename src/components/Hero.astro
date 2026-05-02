@@ -1,10 +1,23 @@
+---
+interface Props {
+  eyebrow?: string;
+  subtitle?: string;
+}
+
+const {
+  eyebrow,
+  subtitle = 'El sistema que confirma tus citas por ti. Menos inasistencias, más certeza, sin perseguir a nadie por WhatsApp.',
+} = Astro.props;
+---
 <section class="hero">
   <div class="container">
+    {eyebrow && <div class="section-eyebrow hero-eyebrow">{eyebrow}</div>}
     <h1 class="hero-title">Tus citas,<br><span class="accent">confirmadas.</span></h1>
-    <p class="hero-subtitle">El sistema que confirma tus citas por ti. Menos inasistencias, más certeza, sin perseguir a nadie por WhatsApp.</p>
+    <p class="hero-subtitle">{subtitle}</p>
     <div class="hero-ctas">
       <a href="#empezar" class="btn btn-primary-lg">
-        Empezar gratis      </a>
+        Empezar gratis
+      </a>
       <a href="#como-funciona" class="btn btn-secondary-lg">
         <svg style="width:14px;height:14px" viewBox="0 0 14 14" fill="currentColor"><path d="M3 2.5v9l8-4.5z"/></svg>
         Ver demo

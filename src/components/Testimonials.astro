@@ -1,44 +1,57 @@
+---
+import type { Testimonial } from '../content/verticals/types';
+
+interface Props {
+  heading?: string;
+  items?: [Testimonial, Testimonial, Testimonial];
+}
+
+const {
+  heading = 'Negocios reales, dejaron de perder citas.',
+  items = [
+    {
+      quote: 'Pasamos de perder 8 citas por semana a perder 2. Eso es como tener un día más de ingresos sin contratar a nadie.',
+      name: 'Dra. Regina Estrada',
+      role: 'Clínica dental, Monterrey',
+      initials: 'DR',
+      avatarStyle: 'green',
+    },
+    {
+      quote: 'Mi recepcionista dejó de pasar dos horas al día persiguiendo confirmaciones por WhatsApp. Ahora puede atender mejor a los que sí llegan.',
+      name: 'Carla Mendoza',
+      role: 'Spa & estética, CDMX',
+      initials: 'CM',
+      avatarStyle: 'dark',
+    },
+    {
+      quote: 'Antes vivía con la incertidumbre de no saber quién iba a llegar. Ahora abro la app, veo verde y rojo, y planeo mi día con calma.',
+      name: 'Javier Ramírez',
+      role: 'Barbería, Guadalajara',
+      initials: 'JR',
+      avatarStyle: '',
+    },
+  ],
+} = Astro.props;
+---
 <section class="section-tight">
   <div class="container">
     <div class="section-eyebrow">Testimonios</div>
-    <h2 class="section-title">Negocios reales, dejaron de perder citas.</h2>
+    <h2 class="section-title">{heading}</h2>
 
     <div class="testimonials-grid">
-      <div class="testimonial spotlight">
-        <div class="testimonial-quote-mark">"</div>
-        <p class="testimonial-text">Pasamos de perder 8 citas por semana a perder 2. Eso es como tener un día más de ingresos sin contratar a nadie.</p>
-        <div class="testimonial-author">
-          <div class="author-avatar green">DR</div>
-          <div class="author-info">
-            <div class="name">Dra. Regina Estrada</div>
-            <div class="role">Clínica dental, Monterrey</div>
+      {items.map((t) => (
+        <div class="testimonial spotlight">
+          <div class="testimonial-quote-mark">"</div>
+          <p class="testimonial-text">{t.quote}</p>
+          <div class="testimonial-author">
+            <div class={`author-avatar${t.avatarStyle ? ` ${t.avatarStyle}` : ''}`}>{t.initials}</div>
+            <div class="author-info">
+              <div class="name">{t.name}</div>
+              <div class="role">{t.role}</div>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="testimonial spotlight">
-        <div class="testimonial-quote-mark">"</div>
-        <p class="testimonial-text">Mi recepcionista dejó de pasar dos horas al día persiguiendo confirmaciones por WhatsApp. Ahora puede atender mejor a los que sí llegan.</p>
-        <div class="testimonial-author">
-          <div class="author-avatar dark">CM</div>
-          <div class="author-info">
-            <div class="name">Carla Mendoza</div>
-            <div class="role">Spa & estética, CDMX</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial spotlight">
-        <div class="testimonial-quote-mark">"</div>
-        <p class="testimonial-text">Antes vivía con la incertidumbre de no saber quién iba a llegar. Ahora abro la app, veo verde y rojo, y planeo mi día con calma.</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">JR</div>
-          <div class="author-info">
-            <div class="name">Javier Ramírez</div>
-            <div class="role">Barbería, Guadalajara</div>
-          </div>
-        </div>
-      </div>
+      ))}
     </div>
   </div>
 </section>
