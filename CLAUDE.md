@@ -1,4 +1,4 @@
-# CLAUDE.md — tuagenda.mx
+# CLAUDE.md — agendallena.mx
 
 > Contexto completo del proyecto para Claude Code. Lee este archivo al inicio de cada sesión antes de hacer cambios.
 
@@ -6,8 +6,8 @@
 
 ## 1. Producto
 
-**Nombre:** tuagenda.mx
-**Dominio:** tuagenda.mx
+**Nombre:** agendallena.mx
+**Dominio:** agendallena.mx
 **Tipo:** SaaS B2B (multi-vertical)
 **Mercado:** México / LATAM
 **Idioma del producto y marketing:** Español (LATAM)
@@ -17,7 +17,7 @@
 El sistema que confirma tu agenda por ti.
 
 ### Descripción extendida
-tuagenda.mx es un sistema de confirmación automática de citas para negocios B2B que viven de su agenda. No es un calendario más, ni un CRM, ni un bot conversacional: es un sistema que convierte cada cita tentativa en una cita confirmada mediante mensajes automáticos de SMS, WhatsApp y llamadas automatizadas.
+agendallena.mx es un sistema de confirmación automática de citas para negocios B2B que viven de su agenda. No es un calendario más, ni un CRM, ni un bot conversacional: es un sistema que convierte cada cita tentativa en una cita confirmada mediante mensajes automáticos de SMS, WhatsApp y llamadas automatizadas.
 
 ---
 
@@ -124,7 +124,7 @@ Cada cita perdida es dinero que se va. Una semana entera de ingresos al mes simp
 ```
 Cliente pide cita por WhatsApp al negocio
   ↓
-Negocio agenda cita en tuagenda.mx
+Negocio agenda cita en agendallena.mx
   ↓
 INMEDIATO: Cliente recibe SMS de confirmación
   "Hola X, tu cita en X está registrada para el X de abril a las XX:XX. Te esperamos."
@@ -152,7 +152,7 @@ SI PIDE REAGENDAR: Recibe link wa.me con mensaje prellenado al WhatsApp del nego
 ## 6. Identidad de marca
 
 ### Personalidad
-Si tuagenda.mx fuera persona: el asistente silencioso, eficiente y absolutamente confiable que llega 5 minutos antes, tiene todo listo, y nunca te falla. **No es carismático. Es indispensable.**
+Si agendallena.mx fuera persona: el asistente silencioso, eficiente y absolutamente confiable que llega 5 minutos antes, tiene todo listo, y nunca te falla. **No es carismático. Es indispensable.**
 
 ### Valores
 1. **Claridad sobre adorno** — cada elemento debe tener una función
@@ -230,17 +230,17 @@ Los colores rojo, amarillo, naranja, etc. del sistema semafórico de citas **viv
 - **Tabular nums obligatorio** en cualquier elemento que muestre números (precios, stats, timestamps, IDs)
 
 ### Logotipo
-- **Wordmark principal:** `tuagenda.mx` en Plus Jakarta Sans SemiBold (600), tracking -0.03em
-- El "." entre "tuagenda" y "mx" debe ir en color verde de marca (`#0F7B3F`)
+- **Wordmark principal:** `agendallena.mx` en Plus Jakarta Sans SemiBold (600), tracking -0.03em
+- El "." entre "agendallena" y "mx" debe ir en color verde de marca (`#0F7B3F`)
 - Todo en minúsculas, sin espacios
 - Espacio mínimo de protección: altura de la "x" del wordmark
 - Tamaño mínimo digital: 80px de ancho
 
 ### Clase `.dot` (regla global)
-La clase CSS `.dot` aplica `color: var(--verde)` globalmente. Cualquier mención de "tuagenda.mx" en HTML — wordmark, títulos, body, footer, mockups — debe usar `tuagenda<span class="dot">.</span>mx` para que el punto vaya en verde de marca automáticamente. La regla está definida una sola vez como `.dot { color: var(--verde); }` y no se debe scopear a `.wordmark`.
+La clase CSS `.dot` aplica `color: var(--verde)` globalmente. Cualquier mención de "agendallena.mx" en HTML — wordmark, títulos, body, footer, mockups — debe usar `agendallena<span class="dot">.</span>mx` para que el punto vaya en verde de marca automáticamente. La regla está definida una sola vez como `.dot { color: var(--verde); }` y no se debe scopear a `.wordmark`.
 
 ### Clase `.brand-mention` (menciones inline en body copy)
-Cuando "tuagenda.mx" aparece en texto corrido (subtítulos, párrafos, FAQ, CTAs), se envuelve en `<strong class="brand-mention">tuagenda<span class="dot">.</span>mx</strong>`. La regla aplica `font-weight: 600; font-style: normal` — el mismo peso que el wordmark, sin negritas pesadas. Siempre combina `.brand-mention` con `.dot`: nunca uno sin el otro en body copy.
+Cuando "agendallena.mx" aparece en texto corrido (subtítulos, párrafos, FAQ, CTAs), se envuelve en `<strong class="brand-mention">agendallena<span class="dot">.</span>mx</strong>`. La regla aplica `font-weight: 600; font-style: normal` — el mismo peso que el wordmark, sin negritas pesadas. Siempre combina `.brand-mention` con `.dot`: nunca uno sin el otro en body copy.
 
 ### Símbolo reducido `[.]`
 - Solo para favicons, app icons (PWA), avatares en redes, notificaciones
@@ -270,21 +270,21 @@ Cuando "tuagenda.mx" aparece en texto corrido (subtítulos, párrafos, FAQ, CTAs
 ### Arquitectura propuesta (híbrida)
 
 ```
-tuagenda.mx/                        ← Landing principal extensa (multi-vertical)
+agendallena.mx/                        ← Landing principal extensa (multi-vertical)
 
 — Verticales Fase 2 (lanzamiento) —
-tuagenda.mx/dentistas               ← Dentistas y clínicas dentales
-tuagenda.mx/consultorios-medicos    ← Consultorios médicos generales
-tuagenda.mx/psicologos              ← Consultorios de psicólogos y terapeutas
-tuagenda.mx/salones-de-belleza      ← Salones de belleza y estilistas
-tuagenda.mx/barberias               ← Barberías
+agendallena.mx/dentistas               ← Dentistas y clínicas dentales
+agendallena.mx/consultorios-medicos    ← Consultorios médicos generales
+agendallena.mx/psicologos              ← Consultorios de psicólogos y terapeutas
+agendallena.mx/salones-de-belleza      ← Salones de belleza y estilistas
+agendallena.mx/barberias               ← Barberías
 
 — Verticales Fase 3 (pendientes) —
-tuagenda.mx/spas                    ← Spas y centros de bienestar
-tuagenda.mx/salones-de-unas         ← Salones de uñas
-tuagenda.mx/entrenadores-personales ← Entrenadores personales y gimnasios
-tuagenda.mx/despachos-legales       ← Despachos legales y notarías
-tuagenda.mx/terapistas              ← Fisioterapeutas y quiroprácticos
+agendallena.mx/spas                    ← Spas y centros de bienestar
+agendallena.mx/salones-de-unas         ← Salones de uñas
+agendallena.mx/entrenadores-personales ← Entrenadores personales y gimnasios
+agendallena.mx/despachos-legales       ← Despachos legales y notarías
+agendallena.mx/terapistas              ← Fisioterapeutas y quiroprácticos
 ```
 
 Las landings por vertical se construyen sobre el mismo template base, cambiando únicamente el copy del hero, las cards del problema, los testimonios y el FAQ específico para hablarle directo a esa industria. El copy de cada vertical se define en un archivo de contenido independiente (`src/content/verticals/`) y se genera con sesiones de SEO dedicadas por vertical.
@@ -293,12 +293,12 @@ Las landings por vertical se construyen sobre el mismo template base, cambiando 
 
 1. **Header sticky** — wordmark + nav (Producto, Cómo funciona, Precio, FAQ) + CTA "Empezar gratis"
 2. **Hero** — eyebrow + título grande centrado + subtítulo + 2 CTAs + meta de garantías
-3. **Strip de impacto** — eyebrow "El impacto" + título "Qué cambia cuando tuagenda.mx empieza a trabajar por ti" + 4 outcomes (−70% inasistencias, +1 semana de ingresos, 0 min persiguiendo confirmaciones, 24/7 cobertura)
+3. **Strip de impacto** — eyebrow "El impacto" + título "Qué cambia cuando agendallena.mx empieza a trabajar por ti" + 4 outcomes (−70% inasistencias, +1 semana de ingresos, 0 min persiguiendo confirmaciones, 24/7 cobertura)
 4. **Verticales** — marquee horizontal infinito con 12 tipos de negocio (clínicas dentales, estilistas, barberías, spas, consultorios médicos, terapeutas, quiroprácticos, talleres mecánicos, veterinarias, nutriólogos, estudios de yoga, tatuadores)
 5. **El problema** — 3 cards (WhatsApp se pierde, La libreta no avisa, Tu memoria falla) + stat banner del 30%
 6. **Cómo funciona** — sección con fondo verde profundo (`#0A1A0F`) con 5 pasos. Los pasos automáticos (02, 03, 04) llevan visual ilustrativo (SMS bubble, SMS con pills de acción, call card horizontal); manual/resultado (01, 05) son compactos
 7. **El producto (módulos)** — 5 cards de los módulos. La de Calendario es destacada (full-width, fondo verde oscuro `#0C2016`)
-8. **Comparativa** — tabla vs Libreta, WhatsApp, Calendly, tuagenda.mx
+8. **Comparativa** — tabla vs Libreta, WhatsApp, Calendly, agendallena.mx
 9. **Testimonios** — 3 cards placeholder (Dra. Regina Estrada / Carla Mendoza / Javier Ramírez)
 10. **Precio** — card centrada con $199 MXN/mes y lista de features incluidas
 11. **FAQ** — 7 preguntas con acordeón funcional, primera abierta por default
@@ -318,7 +318,7 @@ Las landings por vertical se construyen sobre el mismo template base, cambiando 
 
 Estas decisiones están cerradas y NO deben cambiarse sin discusión:
 
-1. **Identidad principal = wordmark `tuagenda.mx`**, no un símbolo gráfico. El dominio es la marca.
+1. **Identidad principal = wordmark `agendallena.mx`**, no un símbolo gráfico. El dominio es la marca. *(Dominio anterior: tuagenda.mx — migrado mayo 2026)*
 2. **El "." del wordmark va siempre en verde de marca**, en cualquier aplicación.
 3. **El símbolo `[.]`** se usa solo cuando el formato es cuadrado/pequeño (favicons, app icons, avatares).
 4. **Plus Jakarta Sans en peso 600** para el wordmark. Sin variaciones.
@@ -339,14 +339,14 @@ Estas decisiones están cerradas y NO deben cambiarse sin discusión:
 
 15. **Industrias atendidas en marquee horizontal**, no grid estático. Plus Jakarta Sans **600** (no 700 — el bold puro saturaba), color `rgba(10, 10, 11, 0.85)` con hover full tinta gated en `(hover: hover) and (pointer: fine)`, animación 100s desktop / 80s mobile (lento contemplativo).
 
-16. **Comparativa con columna tuagenda.mx dominante:** header en verde sólido + texto hueso peso 700; body con tinte verde 8%, peso 600. NO regresar al tinte tenue 5% original — la columna debe ganar visualmente desde el primer escaneo.
+16. **Comparativa con columna agendallena.mx dominante:** header en verde sólido + texto hueso peso 700; body con tinte verde 8%, peso 600. NO regresar al tinte tenue 5% original — la columna debe ganar visualmente desde el primer escaneo.
 
 17. **"Cómo funciona" con asimetría narrativa:**
     - Pasos manuales o de resultado (01, 05): tratamiento compacto sin visual.
     - Pasos automáticos (02, 03, 04): tratamiento featured con visual ilustrativo (SMS bubble / SMS con actions / call card horizontal). Es el mecanismo que destaca los 3 procesos automáticos como protagonistas.
     - NO emparejar todos los pasos al mismo tratamiento — la asimetría es deliberada.
 
-18. **Strip de stats en hero usa "El impacto"**, no metrics de feature. Título: "Qué cambia cuando tuagenda.mx empieza a trabajar por ti." 4 outcomes: `−70%` inasistencias, `+1 semana` de ingresos, `0 min` persiguiendo confirmaciones, `24/7` cobertura. NO regresar a stats de feature (3/10, 90%, 5min, $199) que repetían info de hero-meta y pricing.
+18. **Strip de stats en hero usa "El impacto"**, no metrics de feature. Título: "Qué cambia cuando agendallena.mx empieza a trabajar por ti." 4 outcomes: `−70%` inasistencias, `+1 semana` de ingresos, `0 min` persiguiendo confirmaciones, `24/7` cobertura. NO regresar a stats de feature (3/10, 90%, 5min, $199) que repetían info de hero-meta y pricing.
 
 19. **Botones globalmente rounded pill** (`border-radius: 999px`). Aplica a `.btn`, `.btn-primary-lg`, `.btn-secondary-lg`, `.pricing-cta`. NO regresar a `--radius-md`.
 
@@ -365,7 +365,7 @@ Estas decisiones están cerradas y NO deben cambiarse sin discusión:
 ## 10. Lo que NO se debe cambiar
 
 ### NO modificar bajo ninguna circunstancia
-- Nombre `tuagenda.mx` (todo en minúsculas, con punto, sin espacios)
+- Nombre `agendallena.mx` (todo en minúsculas, con punto, sin espacios, sin "tuagenda")
 - Tagline "Tu agenda, confirmada."
 - Verde de marca `#0F7B3F` para el "." del wordmark
 - Tipografía Plus Jakarta Sans como **única** familia (single-font)
@@ -412,18 +412,18 @@ Estas decisiones están cerradas y NO deben cambiarse sin discusión:
 - Deploy a Vercel con zero config
 
 ### Hosting
-- **Vercel** — dominio `tuagenda.mx` apuntado directamente
+- **Vercel** — dominio `agendallena.mx` apuntado directamente
 - HTTPS automático, preview deployments por branch
 
-### Producto (la app tuagenda.mx)
-El stack del producto NO está documentado en este archivo porque vive en otro repo. Esto solo aplica al website (tuagenda.mx landing).
+### Producto (la app agendallena.mx)
+El stack del producto NO está documentado en este archivo porque vive en otro repo. Esto solo aplica al website (agendallena.mx landing).
 
 ---
 
 ## 12. Archivos del proyecto
 
 ```
-citas-bot/
+agendallena-mx/
 ├── CLAUDE.md                          ← Este archivo
 ├── index.html                         ← Landing vanilla original (respaldo)
 ├── astro.config.mjs
@@ -466,7 +466,7 @@ citas-bot/
 │       └── global.css                 ← todas las variables y estilos
 ```
 
-**Brand guidelines:** vive fuera del repo (`~/Desktop/citas-bot_brand-guidelines.pdf`).
+**Brand guidelines:** vive fuera del repo (`~/Desktop/agendallena_brand-guidelines.pdf`).
 
 ---
 
@@ -499,16 +499,18 @@ citas-bot/
 **Verticales pendientes (Fase 4):**
 - `/spas`, `/salones-de-unas`, `/entrenadores-personales`, `/despachos-legales`, `/terapistas`
 
-### Fase 4 (futuro)
+### Fase 4 (en curso)
+- `/soporte` ✅ — Centro de ayuda live
 - Reemplazar mockups CSS por capturas reales del producto
 - Blog para SEO orgánico
-- Centro de ayuda (`tuagenda.mx/soporte`)
+- Páginas `/privacidad` y `/terminos`
+- Verticales adicionales: `/spas`, `/salones-de-unas`, `/entrenadores-personales`, `/despachos-legales`, `/terapistas`
 
 ---
 
 ## 14. Cómo trabajar este proyecto
 
-Cuando recibas una tarea relacionada con el website de tuagenda.mx:
+Cuando recibas una tarea relacionada con el website de agendallena.mx:
 
 1. **Lee este archivo primero.** Si la tarea entra en conflicto con algo aquí, pregunta antes de actuar.
 2. **Mantén el sistema visual.** Usa las variables CSS ya definidas, no inventes colores nuevos.
@@ -521,4 +523,4 @@ Cuando recibas una tarea relacionada con el website de tuagenda.mx:
 ---
 
 **Última actualización:** Mayo 2026
-**Versión del documento:** 2.0 — Rebrand a tuagenda.mx
+**Versión del documento:** 3.0 — Rebrand a agendallena.mx (anterior: tuagenda.mx)
