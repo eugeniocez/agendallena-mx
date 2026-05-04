@@ -484,15 +484,12 @@ citas-bot/
 - CSS global en `src/styles/global.css`
 - Build limpio, listo para páginas múltiples
 
-### Fase 3 — Sistema de contenido y páginas verticales (pendiente)
-**Orden de ejecución:**
-1. Generar copy base (hero, problema, testimonios) para las 5 verticales de lanzamiento
-2. Crear `src/content/verticals/` con un archivo `.ts` por vertical
-3. Agregar props a `Hero.astro`, `Problema.astro`, `Testimonials.astro`
-4. Crear `src/pages/[vertical].astro` — una sola página dinámica para todas las verticales
-5. Sesión intensiva de optimización SEO por vertical (copy final, meta tags, schema markup)
+### Fase 3 ✅ — Sistema de contenido y páginas verticales (mayo 2026)
+- `src/content/verticals/` con un archivo `.ts` por vertical
+- Props dinámicos en `Hero.astro`, `Problema.astro`, `Testimonials.astro`
+- `src/pages/[vertical].astro` — página dinámica para todas las verticales
 
-**Verticales de lanzamiento (Fase 3):**
+**Verticales de lanzamiento (live):**
 - `/dentistas`
 - `/consultorios-medicos`
 - `/psicologos`
