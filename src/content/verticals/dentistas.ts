@@ -3,7 +3,7 @@ import type { VerticalContent } from './types';
 export const dentistas: VerticalContent = {
   slug: 'dentistas',
   meta: {
-    title: 'Software para dentistas en México — agenda y confirma citas | citas.bot',
+    title: 'Software para dentistas en México — agenda y confirma citas | tuagenda.mx',
     description: 'Software para dentistas que confirma citas en automático por SMS, WhatsApp y llamada. Menos inasistencias en tu clínica dental. $199 MXN/mes. Prueba gratis.',
   },
   hero: {

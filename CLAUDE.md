@@ -1,4 +1,4 @@
-# CLAUDE.md — citas.bot
+# CLAUDE.md — tuagenda.mx
 
 > Contexto completo del proyecto para Claude Code. Lee este archivo al inicio de cada sesión antes de hacer cambios.
 
@@ -6,18 +6,18 @@
 
 ## 1. Producto
 
-**Nombre:** citas.bot
-**Dominio:** citas.bot
+**Nombre:** tuagenda.mx
+**Dominio:** tuagenda.mx
 **Tipo:** SaaS B2B (multi-vertical)
 **Mercado:** México / LATAM
 **Idioma del producto y marketing:** Español (LATAM)
 **Etapa:** Lanzamiento (abril 2026)
 
 ### Descripción en una línea
-El sistema que confirma tus citas por ti.
+El sistema que confirma tu agenda por ti.
 
 ### Descripción extendida
-citas.bot es un sistema de confirmación automática de citas para negocios B2B que viven de su agenda. No es un calendario más, ni un CRM, ni un bot conversacional: es un sistema que convierte cada cita tentativa en una cita confirmada mediante mensajes automáticos de SMS, WhatsApp y llamadas automatizadas.
+tuagenda.mx es un sistema de confirmación automática de citas para negocios B2B que viven de su agenda. No es un calendario más, ni un CRM, ni un bot conversacional: es un sistema que convierte cada cita tentativa en una cita confirmada mediante mensajes automáticos de SMS, WhatsApp y llamadas automatizadas.
 
 ---
 
@@ -63,7 +63,7 @@ Cada cita perdida es dinero que se va. Una semana entera de ingresos al mes simp
 ## 4. Propuesta de valor
 
 ### Promesa central
-**"Tus citas, confirmadas."**
+**"Tu agenda, confirmada."**
 
 ### Mensajes secundarios
 - Menos inasistencias, más certeza
@@ -124,7 +124,7 @@ Cada cita perdida es dinero que se va. Una semana entera de ingresos al mes simp
 ```
 Cliente pide cita por WhatsApp al negocio
   ↓
-Negocio agenda cita en citas.bot
+Negocio agenda cita en tuagenda.mx
   ↓
 INMEDIATO: Cliente recibe SMS de confirmación
   "Hola X, tu cita en X está registrada para el X de abril a las XX:XX. Te esperamos."
@@ -152,7 +152,7 @@ SI PIDE REAGENDAR: Recibe link wa.me con mensaje prellenado al WhatsApp del nego
 ## 6. Identidad de marca
 
 ### Personalidad
-Si citas.bot fuera persona: el asistente silencioso, eficiente y absolutamente confiable que llega 5 minutos antes, tiene todo listo, y nunca te falla. **No es carismático. Es indispensable.**
+Si tuagenda.mx fuera persona: el asistente silencioso, eficiente y absolutamente confiable que llega 5 minutos antes, tiene todo listo, y nunca te falla. **No es carismático. Es indispensable.**
 
 ### Valores
 1. **Claridad sobre adorno** — cada elemento debe tener una función
@@ -230,17 +230,17 @@ Los colores rojo, amarillo, naranja, etc. del sistema semafórico de citas **viv
 - **Tabular nums obligatorio** en cualquier elemento que muestre números (precios, stats, timestamps, IDs)
 
 ### Logotipo
-- **Wordmark principal:** `citas.bot` en Plus Jakarta Sans SemiBold (600), tracking -0.03em
-- El "." entre "citas" y "bot" debe ir en color verde de marca (`#0F7B3F`)
+- **Wordmark principal:** `tuagenda.mx` en Plus Jakarta Sans SemiBold (600), tracking -0.03em
+- El "." entre "tuagenda" y "mx" debe ir en color verde de marca (`#0F7B3F`)
 - Todo en minúsculas, sin espacios
 - Espacio mínimo de protección: altura de la "x" del wordmark
 - Tamaño mínimo digital: 80px de ancho
 
 ### Clase `.dot` (regla global)
-La clase CSS `.dot` aplica `color: var(--verde)` globalmente. Cualquier mención de "citas.bot" en HTML — wordmark, títulos, body, footer, mockups — debe usar `citas<span class="dot">.</span>bot` para que el punto vaya en verde de marca automáticamente. La regla está definida una sola vez como `.dot { color: var(--verde); }` y no se debe scopear a `.wordmark`.
+La clase CSS `.dot` aplica `color: var(--verde)` globalmente. Cualquier mención de "tuagenda.mx" en HTML — wordmark, títulos, body, footer, mockups — debe usar `tuagenda<span class="dot">.</span>mx` para que el punto vaya en verde de marca automáticamente. La regla está definida una sola vez como `.dot { color: var(--verde); }` y no se debe scopear a `.wordmark`.
 
 ### Clase `.brand-mention` (menciones inline en body copy)
-Cuando "citas.bot" aparece en texto corrido (subtítulos, párrafos, FAQ, CTAs), se envuelve en `<strong class="brand-mention">citas<span class="dot">.</span>bot</strong>`. La regla aplica `font-weight: 600; font-style: normal` — el mismo peso que el wordmark, sin negritas pesadas. Siempre combina `.brand-mention` con `.dot`: nunca uno sin el otro en body copy.
+Cuando "tuagenda.mx" aparece en texto corrido (subtítulos, párrafos, FAQ, CTAs), se envuelve en `<strong class="brand-mention">tuagenda<span class="dot">.</span>mx</strong>`. La regla aplica `font-weight: 600; font-style: normal` — el mismo peso que el wordmark, sin negritas pesadas. Siempre combina `.brand-mention` con `.dot`: nunca uno sin el otro en body copy.
 
 ### Símbolo reducido `[.]`
 - Solo para favicons, app icons (PWA), avatares en redes, notificaciones
@@ -270,21 +270,21 @@ Cuando "citas.bot" aparece en texto corrido (subtítulos, párrafos, FAQ, CTAs),
 ### Arquitectura propuesta (híbrida)
 
 ```
-citas.bot/                        ← Landing principal extensa (multi-vertical)
+tuagenda.mx/                        ← Landing principal extensa (multi-vertical)
 
 — Verticales Fase 2 (lanzamiento) —
-citas.bot/dentistas               ← Dentistas y clínicas dentales
-citas.bot/consultorios-medicos    ← Consultorios médicos generales
-citas.bot/psicologos              ← Consultorios de psicólogos y terapeutas
-citas.bot/salones-de-belleza      ← Salones de belleza y estilistas
-citas.bot/barberias               ← Barberías
+tuagenda.mx/dentistas               ← Dentistas y clínicas dentales
+tuagenda.mx/consultorios-medicos    ← Consultorios médicos generales
+tuagenda.mx/psicologos              ← Consultorios de psicólogos y terapeutas
+tuagenda.mx/salones-de-belleza      ← Salones de belleza y estilistas
+tuagenda.mx/barberias               ← Barberías
 
 — Verticales Fase 3 (pendientes) —
-citas.bot/spas                    ← Spas y centros de bienestar
-citas.bot/salones-de-unas         ← Salones de uñas
-citas.bot/entrenadores-personales ← Entrenadores personales y gimnasios
-citas.bot/despachos-legales       ← Despachos legales y notarías
-citas.bot/terapistas              ← Fisioterapeutas y quiroprácticos
+tuagenda.mx/spas                    ← Spas y centros de bienestar
+tuagenda.mx/salones-de-unas         ← Salones de uñas
+tuagenda.mx/entrenadores-personales ← Entrenadores personales y gimnasios
+tuagenda.mx/despachos-legales       ← Despachos legales y notarías
+tuagenda.mx/terapistas              ← Fisioterapeutas y quiroprácticos
 ```
 
 Las landings por vertical se construyen sobre el mismo template base, cambiando únicamente el copy del hero, las cards del problema, los testimonios y el FAQ específico para hablarle directo a esa industria. El copy de cada vertical se define en un archivo de contenido independiente (`src/content/verticals/`) y se genera con sesiones de SEO dedicadas por vertical.
@@ -293,12 +293,12 @@ Las landings por vertical se construyen sobre el mismo template base, cambiando 
 
 1. **Header sticky** — wordmark + nav (Producto, Cómo funciona, Precio, FAQ) + CTA "Empezar gratis"
 2. **Hero** — eyebrow + título grande centrado + subtítulo + 2 CTAs + meta de garantías
-3. **Strip de impacto** — eyebrow "El impacto" + título "Qué cambia cuando citas.bot empieza a trabajar por ti" + 4 outcomes (−70% inasistencias, +1 semana de ingresos, 0 min persiguiendo confirmaciones, 24/7 cobertura)
+3. **Strip de impacto** — eyebrow "El impacto" + título "Qué cambia cuando tuagenda.mx empieza a trabajar por ti" + 4 outcomes (−70% inasistencias, +1 semana de ingresos, 0 min persiguiendo confirmaciones, 24/7 cobertura)
 4. **Verticales** — marquee horizontal infinito con 12 tipos de negocio (clínicas dentales, estilistas, barberías, spas, consultorios médicos, terapeutas, quiroprácticos, talleres mecánicos, veterinarias, nutriólogos, estudios de yoga, tatuadores)
 5. **El problema** — 3 cards (WhatsApp se pierde, La libreta no avisa, Tu memoria falla) + stat banner del 30%
 6. **Cómo funciona** — sección con fondo verde profundo (`#0A1A0F`) con 5 pasos. Los pasos automáticos (02, 03, 04) llevan visual ilustrativo (SMS bubble, SMS con pills de acción, call card horizontal); manual/resultado (01, 05) son compactos
 7. **El producto (módulos)** — 5 cards de los módulos. La de Calendario es destacada (full-width, fondo verde oscuro `#0C2016`)
-8. **Comparativa** — tabla vs Libreta, WhatsApp, Calendly, citas.bot
+8. **Comparativa** — tabla vs Libreta, WhatsApp, Calendly, tuagenda.mx
 9. **Testimonios** — 3 cards placeholder (Dra. Regina Estrada / Carla Mendoza / Javier Ramírez)
 10. **Precio** — card centrada con $199 MXN/mes y lista de features incluidas
 11. **FAQ** — 7 preguntas con acordeón funcional, primera abierta por default
@@ -318,7 +318,7 @@ Las landings por vertical se construyen sobre el mismo template base, cambiando 
 
 Estas decisiones están cerradas y NO deben cambiarse sin discusión:
 
-1. **Identidad principal = wordmark `citas.bot`**, no un símbolo gráfico. El dominio es la marca.
+1. **Identidad principal = wordmark `tuagenda.mx`**, no un símbolo gráfico. El dominio es la marca.
 2. **El "." del wordmark va siempre en verde de marca**, en cualquier aplicación.
 3. **El símbolo `[.]`** se usa solo cuando el formato es cuadrado/pequeño (favicons, app icons, avatares).
 4. **Plus Jakarta Sans en peso 600** para el wordmark. Sin variaciones.
@@ -329,8 +329,8 @@ Estas decisiones están cerradas y NO deben cambiarse sin discusión:
 8. **Paleta restringida:** la marca NO es multicolor. Solo verde como acento. Los colores del semáforo son del producto, no de la marca.
 9. **Sin emojis decorativos** en producto y comunicación de marca.
 10. **Sentence case en todo.** Nunca Title Case, nunca mayúsculas (excepto eyebrows tipo `JetBrains Mono` con tracking).
-11. **Tagline oficial:** "Tus citas, confirmadas."
-12. **Posicionamiento:** "El sistema que confirma tus citas por ti."
+11. **Tagline oficial:** "Tu agenda, confirmada."
+12. **Posicionamiento:** "El sistema que confirma tu agenda por ti."
 13. **Mockups — distinción crítica:**
     - **Mockups del PRODUCTO** (calendario, dashboard, módulos, vistas internas de la app): NO permitidos en HTML/CSS generados por IA. Esperar capturas reales del PWA, sobre frame de iPhone moderno, fondo limpio.
     - **Ilustraciones del MENSAJE saliente** (SMS al cliente, notificación de llamada, customer-facing communication): SÍ permitidas en HTML/CSS porque ilustran lo que el cliente ve, no la app del negocio. Hoy viven en la sección "Cómo funciona" como SMS bubble (paso 02), SMS con pills de acción (paso 03), y call card horizontal (paso 04). NO sustituirlas por capturas — son ilustraciones, no mockups del producto.
@@ -339,14 +339,14 @@ Estas decisiones están cerradas y NO deben cambiarse sin discusión:
 
 15. **Industrias atendidas en marquee horizontal**, no grid estático. Plus Jakarta Sans **600** (no 700 — el bold puro saturaba), color `rgba(10, 10, 11, 0.85)` con hover full tinta gated en `(hover: hover) and (pointer: fine)`, animación 100s desktop / 80s mobile (lento contemplativo).
 
-16. **Comparativa con columna citas.bot dominante:** header en verde sólido + texto hueso peso 700; body con tinte verde 8%, peso 600. NO regresar al tinte tenue 5% original — la columna debe ganar visualmente desde el primer escaneo.
+16. **Comparativa con columna tuagenda.mx dominante:** header en verde sólido + texto hueso peso 700; body con tinte verde 8%, peso 600. NO regresar al tinte tenue 5% original — la columna debe ganar visualmente desde el primer escaneo.
 
 17. **"Cómo funciona" con asimetría narrativa:**
     - Pasos manuales o de resultado (01, 05): tratamiento compacto sin visual.
     - Pasos automáticos (02, 03, 04): tratamiento featured con visual ilustrativo (SMS bubble / SMS con actions / call card horizontal). Es el mecanismo que destaca los 3 procesos automáticos como protagonistas.
     - NO emparejar todos los pasos al mismo tratamiento — la asimetría es deliberada.
 
-18. **Strip de stats en hero usa "El impacto"**, no metrics de feature. Título: "Qué cambia cuando citas.bot empieza a trabajar por ti." 4 outcomes: `−70%` inasistencias, `+1 semana` de ingresos, `0 min` persiguiendo confirmaciones, `24/7` cobertura. NO regresar a stats de feature (3/10, 90%, 5min, $199) que repetían info de hero-meta y pricing.
+18. **Strip de stats en hero usa "El impacto"**, no metrics de feature. Título: "Qué cambia cuando tuagenda.mx empieza a trabajar por ti." 4 outcomes: `−70%` inasistencias, `+1 semana` de ingresos, `0 min` persiguiendo confirmaciones, `24/7` cobertura. NO regresar a stats de feature (3/10, 90%, 5min, $199) que repetían info de hero-meta y pricing.
 
 19. **Botones globalmente rounded pill** (`border-radius: 999px`). Aplica a `.btn`, `.btn-primary-lg`, `.btn-secondary-lg`, `.pricing-cta`. NO regresar a `--radius-md`.
 
@@ -365,8 +365,8 @@ Estas decisiones están cerradas y NO deben cambiarse sin discusión:
 ## 10. Lo que NO se debe cambiar
 
 ### NO modificar bajo ninguna circunstancia
-- Nombre `citas.bot` (todo en minúsculas, con punto, sin espacios)
-- Tagline "Tus citas, confirmadas."
+- Nombre `tuagenda.mx` (todo en minúsculas, con punto, sin espacios)
+- Tagline "Tu agenda, confirmada."
 - Verde de marca `#0F7B3F` para el "." del wordmark
 - Tipografía Plus Jakarta Sans como **única** familia (single-font)
 - El precio mostrado claramente en la landing ($199 MXN/mes)
@@ -412,11 +412,11 @@ Estas decisiones están cerradas y NO deben cambiarse sin discusión:
 - Deploy a Vercel con zero config
 
 ### Hosting
-- **Vercel** — dominio `citas.bot` apuntado directamente
+- **Vercel** — dominio `tuagenda.mx` apuntado directamente
 - HTTPS automático, preview deployments por branch
 
-### Producto (la app citas.bot)
-El stack del producto NO está documentado en este archivo porque vive en otro repo. Esto solo aplica al website (citas.bot landing).
+### Producto (la app tuagenda.mx)
+El stack del producto NO está documentado en este archivo porque vive en otro repo. Esto solo aplica al website (tuagenda.mx landing).
 
 ---
 
@@ -505,13 +505,13 @@ citas-bot/
 ### Fase 4 (futuro)
 - Reemplazar mockups CSS por capturas reales del producto
 - Blog para SEO orgánico
-- Centro de ayuda (`citas.bot/soporte`)
+- Centro de ayuda (`tuagenda.mx/soporte`)
 
 ---
 
 ## 14. Cómo trabajar este proyecto
 
-Cuando recibas una tarea relacionada con el website de citas.bot:
+Cuando recibas una tarea relacionada con el website de tuagenda.mx:
 
 1. **Lee este archivo primero.** Si la tarea entra en conflicto con algo aquí, pregunta antes de actuar.
 2. **Mantén el sistema visual.** Usa las variables CSS ya definidas, no inventes colores nuevos.
@@ -523,5 +523,5 @@ Cuando recibas una tarea relacionada con el website de citas.bot:
 
 ---
 
-**Última actualización:** Abril 2026
-**Versión del documento:** 1.0
+**Última actualización:** Mayo 2026
+**Versión del documento:** 2.0 — Rebrand a tuagenda.mx

@@ -3,7 +3,7 @@ import type { VerticalContent } from './types';
 export const barberias: VerticalContent = {
   slug: 'barberias',
   meta: {
-    title: 'Software para barberías — confirma turnos en automático | citas.bot',
+    title: 'Software para barberías — confirma turnos en automático | tuagenda.mx',
     description: 'Software para barberías que confirma turnos en automático por SMS, WhatsApp y llamada. Sin huecos sin aviso, sin esperar a alguien que no llega. $199 MXN/mes.',
   },
   hero: {
@@ -31,7 +31,7 @@ export const barberias: VerticalContent = {
     heading: 'Barberías que controlaron su agenda.',
     items: [
       {
-        quote: 'En la barbería el ritmo es rápido. Con citas.bot los clientes confirman solos y yo sé exactamente cuándo van a llegar.',
+        quote: 'En la barbería el ritmo es rápido. Con tuagenda.mx los clientes confirman solos y yo sé exactamente cuándo van a llegar.',
         name: 'Carlos Mendez',
         role: 'Barbería, Monterrey',
         initials: 'CM',

@@ -23,7 +23,7 @@ export const getStaticPaths = (() => {
 }) satisfies GetStaticPaths;
 
 const { content } = Astro.props as { content: VerticalContent };
-const canonical = `https://citas.bot/${content.slug}`;
+const canonical = `https://tuagenda.mx/${content.slug}`;
 
 const audienceLabel = content.hero.eyebrow.replace(/^Para\s+/i, '').toLowerCase();
 
@@ -33,8 +33,8 @@ const serviceSchema = {
   "name": `${content.serviceSchema.serviceType} para ${audienceLabel}`,
   "provider": {
     "@type": "Organization",
-    "name": "citas.bot",
-    "url": "https://citas.bot"
+    "name": "tuagenda.mx",
+    "url": "https://tuagenda.mx"
   },
   "areaServed": { "@type": "Country", "name": "México" },
   "serviceType": content.serviceSchema.serviceType,

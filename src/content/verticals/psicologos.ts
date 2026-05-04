@@ -3,7 +3,7 @@ import type { VerticalContent } from './types';
 export const psicologos: VerticalContent = {
   slug: 'psicologos',
   meta: {
-    title: 'Software para psicólogos — agenda y confirma sesiones | citas.bot',
+    title: 'Software para psicólogos — agenda y confirma sesiones | tuagenda.mx',
     description: 'Software para psicólogos que confirma sesiones en automático por SMS, WhatsApp y llamada. Menos ausencias, sin interrumpir tu consulta. $199 MXN/mes.',
   },
   hero: {

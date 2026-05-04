@@ -1,6 +1,6 @@
-# citas.bot
+# tuagenda.mx
 
-Landing principal de [citas.bot](https://citas.bot) — el sistema que confirma tus citas por ti.
+Landing principal de [tuagenda.mx](https://tuagenda.mx) — el sistema que confirma tu agenda por ti.
 
 ## Stack
 

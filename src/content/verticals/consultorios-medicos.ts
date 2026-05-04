@@ -3,7 +3,7 @@ import type { VerticalContent } from './types';
 export const consultoriosMedicos: VerticalContent = {
   slug: 'consultorios-medicos',
   meta: {
-    title: 'Software para consultorios médicos — agenda y confirma citas | citas.bot',
+    title: 'Software para consultorios médicos — agenda y confirma citas | tuagenda.mx',
     description: 'Software para consultorios médicos que confirma citas automáticamente por SMS, WhatsApp y llamada. Pacientes que llegan, agenda predecible. $199 MXN/mes.',
   },
   hero: {

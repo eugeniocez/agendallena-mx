@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://citas.bot/sitemap-index.xml
+Sitemap: https://tuagenda.mx/sitemap-index.xml

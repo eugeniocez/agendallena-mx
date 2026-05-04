@@ -8,7 +8,7 @@ interface Props {
 const {
   eyebrow,
   h1,
-  subtitle = 'El sistema que confirma tus citas por ti. Menos inasistencias, más certeza, sin perseguir a nadie por WhatsApp.',
+  subtitle = 'El sistema que confirma tu agenda por ti. Menos inasistencias, más certeza, sin perseguir a nadie por WhatsApp.',
 } = Astro.props;
 ---
 <section class="hero">
@@ -17,7 +17,7 @@ const {
     {h1 ? (
       <h1 class="hero-title">{h1}</h1>
     ) : (
-      <h1 class="hero-title">Tus citas,<br><span class="accent">confirmadas.</span></h1>
+      <h1 class="hero-title">Tu agenda,<br><span class="accent">confirmada.</span></h1>
     )}
     <p class="hero-subtitle">{subtitle}</p>
     <div class="hero-ctas">

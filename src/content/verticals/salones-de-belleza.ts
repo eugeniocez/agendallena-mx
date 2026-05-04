@@ -3,7 +3,7 @@ import type { VerticalContent } from './types';
 export const salonesDeBelleza: VerticalContent = {
   slug: 'salones-de-belleza',
   meta: {
-    title: 'Software para salones de belleza — agenda y confirma citas | citas.bot',
+    title: 'Software para salones de belleza — agenda y confirma citas | tuagenda.mx',
     description: 'Software para salones de belleza que confirma citas en automático por SMS, WhatsApp y llamada. Sin huecos sin aviso, sin cancelaciones de último momento. $199 MXN/mes.',
   },
   hero: {
@@ -45,7 +45,7 @@ export const salonesDeBelleza: VerticalContent = {
         avatarStyle: 'dark',
       },
       {
-        quote: 'Llenamos los espacios cancelados mucho más rápido. Las clientas saben que hay lista de espera y citas.bot lo coordina solo.',
+        quote: 'Llenamos los espacios cancelados mucho más rápido. Las clientas saben que hay lista de espera y tuagenda.mx lo coordina solo.',
         name: 'Pamela Lagos',
         role: 'Salón & spa, Guadalajara',
         initials: 'PL',
