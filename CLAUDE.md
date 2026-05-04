@@ -11,7 +11,7 @@
 **Tipo:** SaaS B2B (multi-vertical)
 **Mercado:** México / LATAM
 **Idioma del producto y marketing:** Español (LATAM)
-**Etapa:** Lanzamiento (abril 2026)
+**Etapa:** Lanzamiento (mayo 2026)
 
 ### Descripción en una línea
 El sistema que confirma tu agenda por ti.
