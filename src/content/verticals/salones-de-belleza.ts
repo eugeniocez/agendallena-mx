@@ -58,4 +58,23 @@ export const salonesDeBelleza: VerticalContent = {
     serviceType: 'Software de gestión de citas para salones de belleza',
   },
   smsContext: 'en Ponte Bella',
+  statementStrip: {
+    title: 'Qué cambia en tu <strong class="brand-mention">salón</strong> cuando <strong class="brand-mention">agendallena<span class="dot">.</span>mx</strong> trabaja por ti.',
+  },
+  faq: {
+    extraItems: [
+      {
+        question: '¿Funciona si tengo varios estilistas o sillas?',
+        answer: 'Sí. Puedes agendar citas para cada estilista por separado. El calendario distingue quién atiende cada cita y los recordatorios van al cliente con los datos correctos. Si tienes 3 sillas, controlas las 3 desde la misma cuenta.',
+      },
+      {
+        question: '¿Mis clientas pueden reservar directamente desde su teléfono?',
+        answer: 'Por ahora las citas las creas tú directamente en agendallena.mx — no hay portal público de reservas. Es una decisión deliberada: tú mantienes el control sin depender de que la clienta navegue otra app. Lo que sí cambia es que una vez agendada, la confirmación y el recordatorio son automáticos.',
+      },
+    ],
+  },
+  finalCta: {
+    heading: 'Sin huecos de último momento. Sin correr para rellenar.',
+    body: 'Cada cita confirmada es una hora de tu día que ya puedes contar. agendallena.mx avisa, recuerda y confirma sola — para que llegues al salón sabiendo exactamente cómo va el día.',
+  },
 };

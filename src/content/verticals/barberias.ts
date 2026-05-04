@@ -58,4 +58,23 @@ export const barberias: VerticalContent = {
     serviceType: 'Software de gestión de turnos para barberías',
   },
   smsContext: 'en BarberKing',
+  statementStrip: {
+    title: 'Qué cambia en tu <strong class="brand-mention">barbería</strong> cuando <strong class="brand-mention">agendallena<span class="dot">.</span>mx</strong> trabaja por ti.',
+  },
+  faq: {
+    extraItems: [
+      {
+        question: '¿Funciona si mis clientes agendan solo por WhatsApp?',
+        answer: 'Exactamente para eso está pensado. Sigues recibiendo los turnos como siempre — por WhatsApp, en persona, por mensaje — y los capturas en agendallena.mx en segundos. De ahí en adelante, la confirmación es automática. No necesitas cambiar cómo tus clientes agendan.',
+      },
+      {
+        question: '¿Se puede usar con varios barberos?',
+        answer: 'Sí. Puedes agendar turnos para cada barbero por separado. El cliente recibe el recordatorio con su hora específica y el nombre del local. Desde la app ves el día completo de todos los barberos en una sola vista.',
+      },
+    ],
+  },
+  finalCta: {
+    heading: 'Sin turnos fantasma. Sin esperar a alguien que no llega.',
+    body: 'Un turno vacío entre clientes son $300 pesos y 30 minutos perdidos. Con agendallena.mx, cada turno tiene confirmación antes del día. Si alguien no puede, te enteras a tiempo para no quedarte parado esperando.',
+  },
 };

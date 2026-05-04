@@ -1,65 +1,54 @@
 ---
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+interface Props {
+  extraItems?: FaqItem[];
+}
+const { extraItems = [] } = Astro.props;
+
+const baseItems = [
+  {
+    question: "¿Hay contrato o permanencia?",
+    answer: "No. Es mes a mes. Si decides que no te sirve, cancelas en un clic desde la app y dejas de pagar al siguiente ciclo. Sin llamadas a \"retención\", sin trámites."
+  },
+  {
+    question: "¿Qué pasa con mis datos si dejo de usar el servicio?",
+    answer: "Puedes exportar tu directorio de clientes en formato CSV en cualquier momento, incluso después de cancelar. Tu información es tuya."
+  },
+  {
+    question: "¿Funciona con WhatsApp Business?",
+    answer: "Sí. Los mensajes que enviamos son SMS y los links de respuesta abren WhatsApp directamente — funciona perfecto si usas WhatsApp Business o el regular. No requiere ninguna integración técnica de tu parte."
+  },
+  {
+    question: "¿Cuántos clientes puedo tener?",
+    answer: "Sin límite. Puedes registrar 50 clientes o 5,000 — el precio es el mismo. La única condición es que el uso sea para tu negocio (sin spam masivo)."
+  },
+  {
+    question: "¿Necesito instalar algo en mi teléfono?",
+    answer: "No. agendallena.mx funciona desde el navegador, pero puedes agregarlo a tu pantalla de inicio para que se sienta como una app nativa. Funciona en iPhone, Android, computadora — donde sea."
+  },
+  {
+    question: "¿Y si mis clientes no responden los mensajes?",
+    answer: "Por eso existe la llamada automatizada: 2 horas antes de la cita, si el cliente sigue sin confirmar, recibe una llamada pidiendo confirmación. Combinando los tres canales (texto, WhatsApp, llamada), las tasas de respuesta superan el 90%."
+  },
+  {
+    question: "¿Hay soporte humano si me atoro?",
+    answer: "Sí. Soporte directo por WhatsApp, contestado por personas reales. Sin chatbots que te dan vueltas."
+  }
+];
+
+const allItems = [...baseItems, ...extraItems];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Hay contrato o permanencia?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Es mes a mes. Si decides que no te sirve, cancelas en un clic desde la app y dejas de pagar al siguiente ciclo. Sin llamadas a \"retención\", sin trámites."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué pasa con mis datos si dejo de usar el servicio?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Puedes exportar tu directorio de clientes en formato CSV en cualquier momento, incluso después de cancelar. Tu información es tuya."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Funciona con WhatsApp Business?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí. Los mensajes que enviamos son SMS y los links de respuesta abren WhatsApp directamente — funciona perfecto si usas WhatsApp Business o el regular. No requiere ninguna integración técnica de tu parte."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuántos clientes puedo tener?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sin límite. Puedes registrar 50 clientes o 5,000 — el precio es el mismo. La única condición es que el uso sea para tu negocio (sin spam masivo)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Necesito instalar algo en mi teléfono?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. agendallena.mx funciona desde el navegador, pero puedes agregarlo a tu pantalla de inicio para que se sienta como una app nativa. Funciona en iPhone, Android, computadora — donde sea."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Y si mis clientes no responden los mensajes?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Por eso existe la llamada automatizada: 2 horas antes de la cita, si el cliente sigue sin confirmar, recibe una llamada pidiendo confirmación. Combinando los tres canales (texto, WhatsApp, llamada), las tasas de respuesta superan el 90%."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Hay soporte humano si me atoro?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí. Soporte directo por WhatsApp, contestado por personas reales. Sin chatbots que te dan vueltas."
-      }
-    }
-  ]
+  "mainEntity": allItems.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": { "@type": "Answer", "text": item.answer }
+  }))
 };
 ---
 <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)}></script>
@@ -126,6 +115,16 @@ const faqSchema = {
         </button>
         <div class="faq-answer"><div class="faq-answer-inner">Sí. Soporte directo por WhatsApp, contestado por personas reales. Sin chatbots que te dan vueltas.</div></div>
       </div>
+
+      {extraItems.map(item => (
+        <div class="faq-item">
+          <button class="faq-question">
+            {item.question}
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2v8M2 6h8"/></svg></span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">{item.answer}</div></div>
+        </div>
+      ))}
     </div>
   </div>
 </section>

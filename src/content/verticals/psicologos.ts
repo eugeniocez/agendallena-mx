@@ -58,4 +58,23 @@ export const psicologos: VerticalContent = {
     serviceType: 'Software de gestión de sesiones de psicología',
   },
   smsContext: 'con la psicóloga Soto',
+  statementStrip: {
+    title: 'Qué cambia en tu <strong class="brand-mention">consulta</strong> cuando <strong class="brand-mention">agendallena<span class="dot">.</span>mx</strong> trabaja por ti.',
+  },
+  faq: {
+    extraItems: [
+      {
+        question: '¿El mensaje respeta la privacidad del paciente?',
+        answer: 'Completamente. El SMS solo menciona la fecha, la hora y el nombre del consultorio — sin mencionar el tipo de servicio ni ningún dato sensible. Está diseñado para ser discreto. El paciente confirma sin exponer información personal.',
+      },
+      {
+        question: '¿Puedo usarlo si mis sesiones tienen horario variable?',
+        answer: 'Sí. Cada cita se agenda de forma individual con su propia fecha y hora. Si un paciente tiene sesión cada martes a las 6 PM, simplemente repites el proceso cada semana. No hay horarios fijos que configurar.',
+      },
+    ],
+  },
+  finalCta: {
+    heading: 'Tu agenda, sin el desgaste de perseguir pacientes.',
+    body: 'Una sesión perdida no es solo ingreso que se va — es tiempo de tu jornada que no se recupera. agendallena.mx confirma cada sesión antes de que llegue el día, en silencio, sin interrumpir tu flujo de trabajo.',
+  },
 };

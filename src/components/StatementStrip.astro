@@ -1,8 +1,15 @@
+---
+interface Props {
+  title?: string;
+}
+const { title } = Astro.props;
+const heading = title ?? 'Qué cambia cuando <strong class="brand-mention">agendallena<span class="dot">.</span>mx</strong> empieza a trabajar por ti.';
+---
 <section class="statement-strip">
   <div class="container">
     <div class="statement-header">
       <div class="section-eyebrow">El impacto</div>
-      <h2 class="section-title">Qué cambia cuando <strong class="brand-mention">agendallena<span class="dot">.</span>mx</strong> empieza a trabajar por ti.</h2>
+      <h2 class="section-title" set:html={heading}></h2>
     </div>
 
     <div class="statement-grid">

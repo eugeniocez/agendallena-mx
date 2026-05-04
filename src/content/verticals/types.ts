@@ -11,6 +11,11 @@ export interface Testimonial {
   avatarStyle?: 'green' | 'dark' | '';
 }
 
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
 export interface VerticalContent {
   slug: string;
   meta: {
@@ -34,4 +39,14 @@ export interface VerticalContent {
     serviceType: string;
   };
   smsContext?: string;
+  statementStrip?: {
+    title?: string;
+  };
+  faq?: {
+    extraItems: FaqItem[];
+  };
+  finalCta?: {
+    heading: string;
+    body: string;
+  };
 }

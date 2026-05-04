@@ -58,4 +58,23 @@ export const consultoriosMedicos: VerticalContent = {
     serviceType: 'Software de gestión de citas médicas',
   },
   smsContext: 'en Consultorio Dr. Ríos',
+  statementStrip: {
+    title: 'Qué cambia en tu <strong class="brand-mention">consultorio</strong> cuando <strong class="brand-mention">agendallena<span class="dot">.</span>mx</strong> trabaja por ti.',
+  },
+  faq: {
+    extraItems: [
+      {
+        question: '¿Funciona para consultas de especialidad o solo medicina general?',
+        answer: 'Para ambas. No importa si eres médico general, especialista o si manejas citas de primera vez y seguimientos — el sistema trabaja igual en todos los casos. Tú agendas la cita con el tiempo que necesitas y agendallena.mx hace el seguimiento automático.',
+      },
+      {
+        question: '¿El recordatorio llega a tiempo aunque la consulta sea muy temprano?',
+        answer: 'El recordatorio de 24 horas se envía a las 10 AM del día anterior. Si el paciente no responde al SMS, la llamada automática sale 2 horas antes de la cita. Todo sin que tengas que supervisar nada.',
+      },
+    ],
+  },
+  finalCta: {
+    heading: 'Pacientes que llegan. Agenda que funciona.',
+    body: 'Sin llamadas de seguimiento, sin sorpresas de último momento. agendallena.mx confirma cada consulta para que te enfoques en el paciente que tienes enfrente, no en el que no sabe si va a llegar.',
+  },
 };
