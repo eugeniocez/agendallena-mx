@@ -3,11 +3,12 @@ import type { VerticalContent } from './types';
 export const salonesDeBelleza: VerticalContent = {
   slug: 'salones-de-belleza',
   meta: {
-    title: 'citas.bot para salones de belleza — Sin huecos sin aviso',
-    description: 'El sistema que confirma las citas de tu salón de belleza por ti. Sin cancelaciones de último momento, sin WhatsApp caótico, sin huecos en tu agenda. $199 MXN/mes.',
+    title: 'Software para salones de belleza — agenda y confirma citas | citas.bot',
+    description: 'Software para salones de belleza que confirma citas en automático por SMS, WhatsApp y llamada. Sin huecos sin aviso, sin cancelaciones de último momento. $199 MXN/mes.',
   },
   hero: {
     eyebrow: 'Para salones de belleza',
+    h1: 'Software para salones de belleza en México',
     subtitle: 'El sistema que confirma las citas de tu salón por ti. Sin huecos sin aviso, sin clientas que no llegan, sin correr para rellenar el horario.',
   },
   problema: {
@@ -51,5 +52,9 @@ export const salonesDeBelleza: VerticalContent = {
         avatarStyle: '',
       },
     ],
+  },
+  serviceSchema: {
+    audience: 'Salones de belleza, estilistas y centros de estética',
+    serviceType: 'Software de gestión de citas para salones de belleza',
   },
 };

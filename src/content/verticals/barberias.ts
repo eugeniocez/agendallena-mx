@@ -3,11 +3,12 @@ import type { VerticalContent } from './types';
 export const barberias: VerticalContent = {
   slug: 'barberias',
   meta: {
-    title: 'citas.bot para barberías — Turnos confirmados, sin huecos sin aviso',
-    description: 'El sistema que confirma los turnos de tu barbería por ti. Sin turnos fantasma, sin WhatsApp caótico, sin esperar a alguien que no va a llegar. $199 MXN/mes.',
+    title: 'Software para barberías — confirma turnos en automático | citas.bot',
+    description: 'Software para barberías que confirma turnos en automático por SMS, WhatsApp y llamada. Sin huecos sin aviso, sin esperar a alguien que no llega. $199 MXN/mes.',
   },
   hero: {
     eyebrow: 'Para barberías',
+    h1: 'Software para barberías en México',
     subtitle: 'El sistema que confirma los turnos de tu barbería por ti. Sin huecos sin aviso, sin esperar a alguien que no va a llegar.',
   },
   problema: {
@@ -51,5 +52,9 @@ export const barberias: VerticalContent = {
         avatarStyle: '',
       },
     ],
+  },
+  serviceSchema: {
+    audience: 'Barberías y peluquerías masculinas',
+    serviceType: 'Software de gestión de turnos para barberías',
   },
 };

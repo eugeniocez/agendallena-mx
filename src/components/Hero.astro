@@ -1,18 +1,24 @@
 ---
 interface Props {
   eyebrow?: string;
+  h1?: string;
   subtitle?: string;
 }
 
 const {
   eyebrow,
+  h1,
   subtitle = 'El sistema que confirma tus citas por ti. Menos inasistencias, más certeza, sin perseguir a nadie por WhatsApp.',
 } = Astro.props;
 ---
 <section class="hero">
   <div class="container">
     {eyebrow && <div class="section-eyebrow hero-eyebrow">{eyebrow}</div>}
-    <h1 class="hero-title">Tus citas,<br><span class="accent">confirmadas.</span></h1>
+    {h1 ? (
+      <h1 class="hero-title">{h1}</h1>
+    ) : (
+      <h1 class="hero-title">Tus citas,<br><span class="accent">confirmadas.</span></h1>
+    )}
     <p class="hero-subtitle">{subtitle}</p>
     <div class="hero-ctas">
       <a href="#empezar" class="btn btn-primary-lg">

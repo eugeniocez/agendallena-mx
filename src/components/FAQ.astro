@@ -1,3 +1,68 @@
+---
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Hay contrato o permanencia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Es mes a mes. Si decides que no te sirve, cancelas en un clic desde la app y dejas de pagar al siguiente ciclo. Sin llamadas a \"retención\", sin trámites."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa con mis datos si dejo de usar el servicio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Puedes exportar tu directorio de clientes en formato CSV en cualquier momento, incluso después de cancelar. Tu información es tuya."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Funciona con WhatsApp Business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Los mensajes que enviamos son SMS y los links de respuesta abren WhatsApp directamente — funciona perfecto si usas WhatsApp Business o el regular. No requiere ninguna integración técnica de tu parte."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuántos clientes puedo tener?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sin límite. Puedes registrar 50 clientes o 5,000 — el precio es el mismo. La única condición es que el uso sea para tu negocio (sin spam masivo)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Necesito instalar algo en mi teléfono?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. citas.bot funciona desde el navegador, pero puedes agregarlo a tu pantalla de inicio para que se sienta como una app nativa. Funciona en iPhone, Android, computadora — donde sea."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Y si mis clientes no responden los mensajes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Por eso existe la llamada automatizada: 2 horas antes de la cita, si el cliente sigue sin confirmar, recibe una llamada pidiendo confirmación. Combinando los tres canales (texto, WhatsApp, llamada), las tasas de respuesta superan el 90%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Hay soporte humano si me atoro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Soporte directo por WhatsApp, contestado por personas reales. Sin chatbots que te dan vueltas."
+      }
+    }
+  ]
+};
+---
+<script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)}></script>
 <section class="section" id="faq">
   <div class="container">
     <div style="text-align: center;">

@@ -3,11 +3,12 @@ import type { VerticalContent } from './types';
 export const dentistas: VerticalContent = {
   slug: 'dentistas',
   meta: {
-    title: 'citas.bot para dentistas — Menos ausencias en tu clínica dental',
-    description: 'El sistema que confirma las citas de tu clínica dental por ti. Menos inasistencias, pacientes que llegan, sin perseguir a nadie por WhatsApp. $199 MXN/mes.',
+    title: 'Software para dentistas en México — agenda y confirma citas | citas.bot',
+    description: 'Software para dentistas que confirma citas en automático por SMS, WhatsApp y llamada. Menos inasistencias en tu clínica dental. $199 MXN/mes. Prueba gratis.',
   },
   hero: {
     eyebrow: 'Para dentistas',
+    h1: 'Software de citas para dentistas en México',
     subtitle: 'El sistema que confirma las citas de tu clínica dental por ti. Sin perseguir pacientes por WhatsApp, sin sillones vacíos a última hora.',
   },
   problema: {
@@ -51,5 +52,9 @@ export const dentistas: VerticalContent = {
         avatarStyle: '',
       },
     ],
+  },
+  serviceSchema: {
+    audience: 'Clínicas dentales y consultorios odontológicos',
+    serviceType: 'Software de gestión de citas dentales',
   },
 };

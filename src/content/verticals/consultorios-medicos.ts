@@ -3,11 +3,12 @@ import type { VerticalContent } from './types';
 export const consultoriosMedicos: VerticalContent = {
   slug: 'consultorios-medicos',
   meta: {
-    title: 'citas.bot para consultorios médicos — Pacientes que llegan, agenda predecible',
-    description: 'El sistema que confirma las citas de tu consultorio médico por ti. Menos ausencias, sala de espera predecible, sin llamadas de seguimiento. $199 MXN/mes.',
+    title: 'Software para consultorios médicos — agenda y confirma citas | citas.bot',
+    description: 'Software para consultorios médicos que confirma citas automáticamente por SMS, WhatsApp y llamada. Pacientes que llegan, agenda predecible. $199 MXN/mes.',
   },
   hero: {
     eyebrow: 'Para consultorios médicos',
+    h1: 'Software para consultorios médicos en México',
     subtitle: 'El sistema que confirma las citas de tu consultorio por ti. Pacientes que llegan, agenda predecible, sin llamadas de seguimiento.',
   },
   problema: {
@@ -51,5 +52,9 @@ export const consultoriosMedicos: VerticalContent = {
         avatarStyle: '',
       },
     ],
+  },
+  serviceSchema: {
+    audience: 'Consultorios médicos y clínicas privadas',
+    serviceType: 'Software de gestión de citas médicas',
   },
 };

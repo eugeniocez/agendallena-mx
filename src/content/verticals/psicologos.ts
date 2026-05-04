@@ -3,11 +3,12 @@ import type { VerticalContent } from './types';
 export const psicologos: VerticalContent = {
   slug: 'psicologos',
   meta: {
-    title: 'citas.bot para psicólogos — Menos ausencias, más sesiones confirmadas',
-    description: 'El sistema que confirma las sesiones de tu consultorio de psicología por ti. Menos inasistencias, sin interrumpir tu ritmo de trabajo. $199 MXN/mes.',
+    title: 'Software para psicólogos — agenda y confirma sesiones | citas.bot',
+    description: 'Software para psicólogos que confirma sesiones en automático por SMS, WhatsApp y llamada. Menos ausencias, sin interrumpir tu consulta. $199 MXN/mes.',
   },
   hero: {
     eyebrow: 'Para psicólogos',
+    h1: 'Software de citas para psicólogos en México',
     subtitle: 'El sistema que confirma tus sesiones por ti. Menos ausencias, más certeza, sin interrumpir el ritmo de tu consulta.',
   },
   problema: {
@@ -51,5 +52,9 @@ export const psicologos: VerticalContent = {
         avatarStyle: '',
       },
     ],
+  },
+  serviceSchema: {
+    audience: 'Psicólogos, terapeutas y consultorios de salud mental',
+    serviceType: 'Software de gestión de sesiones de psicología',
   },
 };

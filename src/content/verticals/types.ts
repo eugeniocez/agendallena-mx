@@ -19,6 +19,7 @@ export interface VerticalContent {
   };
   hero: {
     eyebrow: string;
+    h1: string;
     subtitle: string;
   };
   problema: {
@@ -27,5 +28,9 @@ export interface VerticalContent {
   testimonials: {
     heading: string;
     items: [Testimonial, Testimonial, Testimonial];
+  };
+  serviceSchema: {
+    audience: string;
+    serviceType: string;
   };
 }
