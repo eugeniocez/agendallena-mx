@@ -3,19 +3,19 @@ import type { VerticalContent } from './types';
 export const consultoriosMedicos: VerticalContent = {
   slug: 'consultorios-medicos',
   meta: {
-    title: 'Software para consultorios médicos — agenda y confirma citas | tuagenda.mx',
-    description: 'Software para consultorios médicos que confirma citas automáticamente por SMS, WhatsApp y llamada. Pacientes que llegan, agenda predecible. $199 MXN/mes.',
+    title: 'Solución para consultorios médicos — agenda y confirma citas | tuagenda.mx',
+    description: 'Solución que confirma citas de consultorios médicos automáticamente por SMS, WhatsApp y llamada. Pacientes que llegan, agenda predecible. $199 MXN/mes.',
   },
   hero: {
     eyebrow: 'Para consultorios médicos',
-    h1: 'Software para consultorios médicos en México',
-    subtitle: 'El sistema que confirma las citas de tu consultorio por ti. Pacientes que llegan, agenda predecible, sin llamadas de seguimiento.',
+    h1: 'Solución para consultorios médicos en México',
+    subtitle: 'La solución que confirma las citas de tu consultorio por ti. Pacientes que llegan, agenda predecible, sin llamadas de seguimiento.',
   },
   problema: {
     cards: [
       {
         title: 'El paciente no apareció',
-        description: 'Bloqueaste una hora de tu agenda para alguien que nunca llegó. Y nunca avisó. Eso pasa cuando no hay sistema de confirmación.',
+        description: 'Bloqueaste una hora de tu agenda para alguien que nunca llegó. Y nunca avisó. Eso pasa cuando no hay confirmación automática.',
       },
       {
         title: 'La recepción no sabe',

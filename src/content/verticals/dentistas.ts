@@ -3,13 +3,13 @@ import type { VerticalContent } from './types';
 export const dentistas: VerticalContent = {
   slug: 'dentistas',
   meta: {
-    title: 'Software para dentistas en México — agenda y confirma citas | tuagenda.mx',
-    description: 'Software para dentistas que confirma citas en automático por SMS, WhatsApp y llamada. Menos inasistencias en tu clínica dental. $199 MXN/mes. Prueba gratis.',
+    title: 'Solución para dentistas en México — agenda y confirma citas | tuagenda.mx',
+    description: 'Solución que confirma citas de dentistas en automático por SMS, WhatsApp y llamada. Menos inasistencias en tu clínica dental. $199 MXN/mes. Prueba gratis.',
   },
   hero: {
     eyebrow: 'Para dentistas',
-    h1: 'Software de citas para dentistas en México',
-    subtitle: 'El sistema que confirma las citas de tu clínica dental por ti. Sin perseguir pacientes por WhatsApp, sin sillones vacíos a última hora.',
+    h1: 'Solución de citas para dentistas en México',
+    subtitle: 'La solución que confirma las citas de tu clínica dental por ti. Sin perseguir pacientes por WhatsApp, sin sillones vacíos a última hora.',
   },
   problema: {
     cards: [
@@ -31,7 +31,7 @@ export const dentistas: VerticalContent = {
     heading: 'Clínicas dentales que dejaron de perder citas.',
     items: [
       {
-        quote: 'Antes perdía 4 o 5 pacientes a la semana sin aviso. Ahora el sistema los contacta solo y el sillón casi siempre está lleno.',
+        quote: 'Antes perdía 4 o 5 pacientes a la semana sin aviso. Ahora la solución los contacta sola y el sillón casi siempre está lleno.',
         name: 'Dr. Marco Ayala',
         role: 'Clínica dental, Monterrey',
         initials: 'MA',

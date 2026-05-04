@@ -3,13 +3,13 @@ import type { VerticalContent } from './types';
 export const salonesDeBelleza: VerticalContent = {
   slug: 'salones-de-belleza',
   meta: {
-    title: 'Software para salones de belleza — agenda y confirma citas | tuagenda.mx',
-    description: 'Software para salones de belleza que confirma citas en automático por SMS, WhatsApp y llamada. Sin huecos sin aviso, sin cancelaciones de último momento. $199 MXN/mes.',
+    title: 'Solución para salones de belleza — agenda y confirma citas | tuagenda.mx',
+    description: 'Solución que confirma citas de salones de belleza en automático por SMS, WhatsApp y llamada. Sin huecos sin aviso, sin cancelaciones de último momento. $199 MXN/mes.',
   },
   hero: {
     eyebrow: 'Para salones de belleza',
-    h1: 'Software para salones de belleza en México',
-    subtitle: 'El sistema que confirma las citas de tu salón por ti. Sin huecos sin aviso, sin clientas que no llegan, sin correr para rellenar el horario.',
+    h1: 'Solución para salones de belleza en México',
+    subtitle: 'La solución que confirma las citas de tu salón por ti. Sin huecos sin aviso, sin clientas que no llegan, sin correr para rellenar el horario.',
   },
   problema: {
     cards: [
@@ -38,7 +38,7 @@ export const salonesDeBelleza: VerticalContent = {
         avatarStyle: 'green',
       },
       {
-        quote: 'El sistema manda el recordatorio solo. Las clientas confirman, y yo no tengo que estar pegada al teléfono entre clientes.',
+        quote: 'La solución manda el recordatorio sola. Las clientas confirman, y yo no tengo que estar pegada al teléfono entre clientes.',
         name: 'Mónica Reyes',
         role: 'Estilista independiente, Monterrey',
         initials: 'MR',

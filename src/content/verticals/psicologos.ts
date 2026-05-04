@@ -3,13 +3,13 @@ import type { VerticalContent } from './types';
 export const psicologos: VerticalContent = {
   slug: 'psicologos',
   meta: {
-    title: 'Software para psicólogos — agenda y confirma sesiones | tuagenda.mx',
-    description: 'Software para psicólogos que confirma sesiones en automático por SMS, WhatsApp y llamada. Menos ausencias, sin interrumpir tu consulta. $199 MXN/mes.',
+    title: 'Solución para psicólogos — agenda y confirma sesiones | tuagenda.mx',
+    description: 'Solución que confirma sesiones de psicólogos en automático por SMS, WhatsApp y llamada. Menos ausencias, sin interrumpir tu consulta. $199 MXN/mes.',
   },
   hero: {
     eyebrow: 'Para psicólogos',
-    h1: 'Software de citas para psicólogos en México',
-    subtitle: 'El sistema que confirma tus sesiones por ti. Menos ausencias, más certeza, sin interrumpir el ritmo de tu consulta.',
+    h1: 'Solución de citas para psicólogos en México',
+    subtitle: 'La solución que confirma tus sesiones por ti. Menos ausencias, más certeza, sin interrumpir el ritmo de tu consulta.',
   },
   problema: {
     cards: [
@@ -23,7 +23,7 @@ export const psicologos: VerticalContent = {
       },
       {
         title: 'Una sesión son 50 minutos',
-        description: 'Cada hora vacía en tu agenda es una pérdida que no se recupera. Solo con un sistema de confirmación se puede prevenir.',
+        description: 'Cada hora vacía en tu agenda es una pérdida que no se recupera. Solo con confirmación automática se puede prevenir.',
       },
     ],
   },
@@ -38,7 +38,7 @@ export const psicologos: VerticalContent = {
         avatarStyle: 'green',
       },
       {
-        quote: 'Lo que más valoro es que el sistema respeta la discreción de mis pacientes. Reciben un SMS, confirman, y listo. Sin llamadas incómodas.',
+        quote: 'Lo que más valoro es que la solución respeta la discreción de mis pacientes. Reciben un SMS, confirman, y listo. Sin llamadas incómodas.',
         name: 'Dr. Iván Mendoza',
         role: 'Terapia individual, Monterrey',
         initials: 'IM',

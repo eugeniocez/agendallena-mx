@@ -3,13 +3,13 @@ import type { VerticalContent } from './types';
 export const barberias: VerticalContent = {
   slug: 'barberias',
   meta: {
-    title: 'Software para barberías — confirma turnos en automático | tuagenda.mx',
-    description: 'Software para barberías que confirma turnos en automático por SMS, WhatsApp y llamada. Sin huecos sin aviso, sin esperar a alguien que no llega. $199 MXN/mes.',
+    title: 'Solución para barberías — confirma turnos en automático | tuagenda.mx',
+    description: 'Solución que confirma turnos de barberías en automático por SMS, WhatsApp y llamada. Sin huecos sin aviso, sin esperar a alguien que no llega. $199 MXN/mes.',
   },
   hero: {
     eyebrow: 'Para barberías',
-    h1: 'Software para barberías en México',
-    subtitle: 'El sistema que confirma los turnos de tu barbería por ti. Sin huecos sin aviso, sin esperar a alguien que no va a llegar.',
+    h1: 'Solución para barberías en México',
+    subtitle: 'La solución que confirma los turnos de tu barbería por ti. Sin huecos sin aviso, sin esperar a alguien que no va a llegar.',
   },
   problema: {
     cards: [
