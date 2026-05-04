@@ -3,7 +3,7 @@ import type { VerticalContent } from './types';
 export const barberias: VerticalContent = {
   slug: 'barberias',
   meta: {
-    title: 'Solución para barberías — confirma turnos en automático | tuagenda.mx',
+    title: 'Solución para barberías — confirma turnos en automático | agendallena.mx',
     description: 'Solución que confirma turnos de barberías en automático por SMS, WhatsApp y llamada. Sin huecos sin aviso, sin esperar a alguien que no llega. $199 MXN/mes.',
   },
   hero: {
@@ -31,7 +31,7 @@ export const barberias: VerticalContent = {
     heading: 'Barberías que controlaron su agenda.',
     items: [
       {
-        quote: 'En la barbería el ritmo es rápido. Con tuagenda.mx los clientes confirman solos y yo sé exactamente cuándo van a llegar.',
+        quote: 'En la barbería el ritmo es rápido. Con agendallena.mx los clientes confirman solos y yo sé exactamente cuándo van a llegar.',
         name: 'Carlos Mendez',
         role: 'Barbería, Monterrey',
         initials: 'CM',

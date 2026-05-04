@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://tuagenda.mx/sitemap-index.xml
+Sitemap: https://agendallena.mx/sitemap-index.xml

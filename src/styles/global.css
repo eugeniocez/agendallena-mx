@@ -1172,7 +1172,7 @@ p { text-wrap: pretty; }
   letter-spacing: 0.08em;
 }
 
-.comparison thead th.tuagenda-col {
+.comparison thead th.agendallena-col {
   background: var(--verde);
   color: var(--hueso);
   font-weight: 700;
@@ -1188,7 +1188,7 @@ p { text-wrap: pretty; }
 
 .comparison tbody td { color: var(--grafito); }
 
-.comparison tbody .tuagenda-col {
+.comparison tbody .agendallena-col {
   background: rgba(15, 123, 63, 0.08);
   color: var(--tinta);
   font-weight: 600;
@@ -1200,10 +1200,10 @@ p { text-wrap: pretty; }
 .comparison tbody tr {
   transition: background-color 0.25s var(--ease-out);
 }
-.comparison tbody tr:hover td:not(.tuagenda-col) {
+.comparison tbody tr:hover td:not(.agendallena-col) {
   background-color: rgba(10, 10, 11, 0.02);
 }
-.comparison tbody tr:hover td.tuagenda-col {
+.comparison tbody tr:hover td.agendallena-col {
   background-color: rgba(15, 123, 63, 0.13);
 }
 
@@ -1224,7 +1224,7 @@ p { text-wrap: pretty; }
 @media (max-width: 800px) {
   .comparison { font-size: 13px; min-width: 520px; }
   .comparison th, .comparison td { padding: 14px 12px; }
-  .comparison thead th.tuagenda-col { font-size: 14px; padding: 16px 12px; }
+  .comparison thead th.agendallena-col { font-size: 14px; padding: 16px 12px; }
   .check-icon, .x-icon { width: 20px; height: 20px; }
 }
 
