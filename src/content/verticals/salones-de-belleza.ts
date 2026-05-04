@@ -57,4 +57,5 @@ export const salonesDeBelleza: VerticalContent = {
     audience: 'Salones de belleza, estilistas y centros de estética',
     serviceType: 'Software de gestión de citas para salones de belleza',
   },
+  smsContext: 'en Ponte Bella',
 };

@@ -57,4 +57,5 @@ export const consultoriosMedicos: VerticalContent = {
     audience: 'Consultorios médicos y clínicas privadas',
     serviceType: 'Software de gestión de citas médicas',
   },
+  smsContext: 'en Consultorio Dr. Ríos',
 };

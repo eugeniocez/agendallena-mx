@@ -57,4 +57,5 @@ export const psicologos: VerticalContent = {
     audience: 'Psicólogos, terapeutas y consultorios de salud mental',
     serviceType: 'Software de gestión de sesiones de psicología',
   },
+  smsContext: 'con la psicóloga Soto',
 };

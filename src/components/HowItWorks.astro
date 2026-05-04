@@ -1,3 +1,9 @@
+---
+interface Props {
+  smsContext?: string;
+}
+const { smsContext = 'en Studio Norte' } = Astro.props;
+---
 <section class="how-it-works" id="como-funciona">
   <div class="container">
     <div class="section-eyebrow">Cómo funciona</div>
@@ -24,7 +30,7 @@
           <div class="sms-mockup">
             <div class="sms-meta">+52 55 ••• 4329 · ahora</div>
             <div class="sms-bubble">
-              Hola María, tu cita en Estética Bella está confirmada para el <strong>sábado 4 de mayo a las 11:00</strong>. Te esperamos.
+              Hola María, tu cita {smsContext} está confirmada para el <strong>sábado 4 de mayo a las 11:00</strong>. Te esperamos.
             </div>
           </div>
         </div>
@@ -40,7 +46,7 @@
           <div class="sms-mockup">
             <div class="sms-meta">+52 55 ••• 4329 · ayer 18:00</div>
             <div class="sms-bubble">
-              Hola María, te recordamos tu cita en Estética Bella el <strong>sábado 4 de mayo a las 11:00</strong>.
+              Hola María, te recordamos tu cita {smsContext} el <strong>sábado 4 de mayo a las 11:00</strong>.
               <div class="sms-actions">
                 <span class="sms-action sms-action--primary">Confirmar</span>
                 <span class="sms-action">Reagendar</span>

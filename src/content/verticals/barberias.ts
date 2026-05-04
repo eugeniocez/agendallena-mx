@@ -57,4 +57,5 @@ export const barberias: VerticalContent = {
     audience: 'Barberías y peluquerías masculinas',
     serviceType: 'Software de gestión de turnos para barberías',
   },
+  smsContext: 'en BarberKing',
 };

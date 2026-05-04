@@ -33,4 +33,5 @@ export interface VerticalContent {
     audience: string;
     serviceType: string;
   };
+  smsContext?: string;
 }

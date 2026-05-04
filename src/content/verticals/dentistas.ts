@@ -57,4 +57,5 @@ export const dentistas: VerticalContent = {
     audience: 'Clínicas dentales y consultorios odontológicos',
     serviceType: 'Software de gestión de citas dentales',
   },
+  smsContext: 'en Clínica Dental Ayala',
 };
