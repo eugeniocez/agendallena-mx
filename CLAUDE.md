@@ -318,7 +318,7 @@ Las landings por vertical se construyen sobre el mismo template base, cambiando 
 
 Estas decisiones están cerradas y NO deben cambiarse sin discusión:
 
-1. **Identidad principal = wordmark `agendallena.mx`**, no un símbolo gráfico. El dominio es la marca. *(Dominio anterior: tuagenda.mx — migrado mayo 2026)*
+1. **Identidad principal = wordmark `agendallena.mx`**, no un símbolo gráfico. El dominio es la marca.
 2. **El "." del wordmark va siempre en verde de marca**, en cualquier aplicación.
 3. **El símbolo `[.]`** se usa solo cuando el formato es cuadrado/pequeño (favicons, app icons, avatares).
 4. **Plus Jakarta Sans en peso 600** para el wordmark. Sin variaciones.
@@ -365,7 +365,7 @@ Estas decisiones están cerradas y NO deben cambiarse sin discusión:
 ## 10. Lo que NO se debe cambiar
 
 ### NO modificar bajo ninguna circunstancia
-- Nombre `agendallena.mx` (todo en minúsculas, con punto, sin espacios, sin "tuagenda")
+- Nombre `agendallena.mx` (todo en minúsculas, con punto, sin espacios)
 - Tagline "Tu agenda, confirmada."
 - Verde de marca `#0F7B3F` para el "." del wordmark
 - Tipografía Plus Jakarta Sans como **única** familia (single-font)
@@ -523,4 +523,4 @@ Cuando recibas una tarea relacionada con el website de agendallena.mx:
 ---
 
 **Última actualización:** Mayo 2026
-**Versión del documento:** 3.0 — Rebrand a agendallena.mx (anterior: tuagenda.mx)
+**Versión del documento:** 3.0
