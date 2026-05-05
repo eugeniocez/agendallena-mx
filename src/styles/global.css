@@ -1230,15 +1230,11 @@ p { text-wrap: pretty; }
   .comparison thead th.agendallena-col { font-size: 14px; padding: 16px 12px; }
   .check-icon, .x-icon { width: 20px; height: 20px; }
 
-  .comparison-wrap { position: relative; }
-  .comparison-wrap::after {
-    content: '';
-    position: absolute;
-    top: 0; right: 0;
-    width: 48px; height: 100%;
-    background: linear-gradient(to right, transparent, var(--hueso));
-    pointer-events: none;
-    border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
+  .comparison-wrap {
+    background:
+      linear-gradient(to left, var(--hueso) 40%, transparent) right center / 48px 100% no-repeat local,
+      linear-gradient(to left, rgba(10, 10, 11, 0.14), transparent) right center / 56px 100% no-repeat scroll,
+      var(--hueso);
   }
 }
 
