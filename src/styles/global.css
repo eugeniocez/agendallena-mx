@@ -1126,9 +1126,12 @@ p { text-wrap: pretty; }
 .module-card.featured .module-feature::before { background: #4ADE80; }
 
 @media (max-width: 800px) {
+  .module-card.featured .module-title { font-size: 28px; }
+}
+
+@media (max-width: 600px) {
   .modules-grid { grid-template-columns: 1fr; }
   .module-card.featured { grid-column: span 1; }
-  .module-card.featured .module-title { font-size: 28px; }
 }
 
 /* COMPARATIVA */
@@ -1226,6 +1229,17 @@ p { text-wrap: pretty; }
   .comparison th, .comparison td { padding: 14px 12px; }
   .comparison thead th.agendallena-col { font-size: 14px; padding: 16px 12px; }
   .check-icon, .x-icon { width: 20px; height: 20px; }
+
+  .comparison-wrap { position: relative; }
+  .comparison-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 48px; height: 100%;
+    background: linear-gradient(to right, transparent, var(--hueso));
+    pointer-events: none;
+    border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
+  }
 }
 
 /* TESTIMONIOS */
