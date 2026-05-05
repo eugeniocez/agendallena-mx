@@ -59,7 +59,7 @@ export const psicologos: VerticalContent = {
   },
   smsContext: 'con la psicóloga Soto',
   statementStrip: {
-    title: 'Qué cambia en tu <strong class="brand-mention">consulta</strong> cuando <strong class="brand-mention">agendallena<span class="dot">.</span>mx</strong> trabaja por ti.',
+    title: 'Qué cambia en tu <strong class="brand-mention"><span class="dot">consulta</span></strong> cuando <strong class="brand-mention">agendallena<span class="dot">.</span>mx</strong> trabaja por ti.',
   },
   faq: {
     extraItems: [

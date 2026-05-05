@@ -59,7 +59,7 @@ export const salonesDeBelleza: VerticalContent = {
   },
   smsContext: 'en Ponte Bella',
   statementStrip: {
-    title: 'Qué cambia en tu <strong class="brand-mention">salón</strong> cuando <strong class="brand-mention">agendallena<span class="dot">.</span>mx</strong> trabaja por ti.',
+    title: 'Qué cambia en tu <strong class="brand-mention"><span class="dot">salón</span></strong> cuando <strong class="brand-mention">agendallena<span class="dot">.</span>mx</strong> trabaja por ti.',
   },
   faq: {
     extraItems: [

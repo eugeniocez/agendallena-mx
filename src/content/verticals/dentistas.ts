@@ -59,7 +59,7 @@ export const dentistas: VerticalContent = {
   },
   smsContext: 'en Clínica Dental Ayala',
   statementStrip: {
-    title: 'Qué cambia en tu <strong class="brand-mention">clínica dental</strong> cuando <strong class="brand-mention">agendallena<span class="dot">.</span>mx</strong> trabaja por ti.',
+    title: 'Qué cambia en tu <strong class="brand-mention"><span class="dot">clínica dental</span></strong> cuando <strong class="brand-mention">agendallena<span class="dot">.</span>mx</strong> trabaja por ti.',
   },
   faq: {
     extraItems: [

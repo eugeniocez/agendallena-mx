@@ -21,7 +21,7 @@
   - Opción B (preferida): remover sección hasta tener early adopters reales
   - Afecta: `src/content/verticals/*.ts` (5 archivos) + `Testimonials.astro`
 
-- [x] **T05 · D1-04** — Resolver thin content en páginas verticales (72% contenido idéntico)
+- [x] **T04b · D1-04** — Resolver thin content en páginas verticales (72% contenido idéntico)
   - `[vertical].astro` solo pasa props a 3 de 11 secciones; las 8 restantes son byte-for-byte iguales entre verticales
   - Riesgo SEO real: Google puede tratar las 5 verticales como contenido duplicado de la landing principal
   - Ver propuesta de implementación por fases en el backlog
@@ -35,7 +35,7 @@
 
 ## P2 — Mejoras de conversión y SEO
 
-- [ ] **T05 · C3-01** — Invertir orden SocialProof / StatementStrip
+- [x] **T05 · C3-01** — Invertir orden SocialProof / StatementStrip
   - `src/pages/index.astro` + `src/pages/[vertical].astro`
   - Nuevo orden: Hero → **SocialProof** → **StatementStrip** → Problema
 

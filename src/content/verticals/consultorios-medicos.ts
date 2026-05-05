@@ -59,7 +59,7 @@ export const consultoriosMedicos: VerticalContent = {
   },
   smsContext: 'en Consultorio Dr. Ríos',
   statementStrip: {
-    title: 'Qué cambia en tu <strong class="brand-mention">consultorio</strong> cuando <strong class="brand-mention">agendallena<span class="dot">.</span>mx</strong> trabaja por ti.',
+    title: 'Qué cambia en tu <strong class="brand-mention"><span class="dot">consultorio</span></strong> cuando <strong class="brand-mention">agendallena<span class="dot">.</span>mx</strong> trabaja por ti.',
   },
   faq: {
     extraItems: [
