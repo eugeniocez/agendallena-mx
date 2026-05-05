@@ -51,7 +51,7 @@
   - `Modules.astro:9` + `global.css` → separar card .featured como bloque full-width sobre grid de 4
   - `global.css` `.comparison-wrap` → agregar sombra lateral en mobile para indicar scroll horizontal
 
-- [x] **T08 · S4-02** — Reescribir H1s de verticales con keywords de intent real
+- [ ] **T08 · S4-02** — Reescribir H1s de verticales con keywords de intent real
   - 5 archivos: `src/content/verticals/*.ts` — campo `hero.h1` y `meta.title`
   - Cambiar patrón "La solución de citas para X en México"
   - Nuevo patrón: "Confirmación automática de citas para X en México"
