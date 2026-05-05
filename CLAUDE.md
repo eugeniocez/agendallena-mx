@@ -114,6 +114,10 @@ Cada cita perdida es dinero que se va. Una semana entera de ingresos al mes simp
 ### 5. Ajustes
 - Editar perfil (nombre, celular, correo opcional, dirección opcional)
 - Administración de suscripción (días restantes de trial, activar suscripción)
+- Métodos de pago disponibles:
+  - **Tarjeta recurrente** — cobro automático mensual (flujo principal)
+  - **OXXO con ficha** — el sistema genera una ficha de pago, el usuario paga en cualquier OXXO
+  - **Tarjeta único** — pago de un mes sin suscripción recurrente, para quienes quieren probar sin comprometerse
 - FAQ
 - Agregar PWA a homescreen
 - Métodos de contacto a soporte
@@ -146,6 +150,7 @@ SI PIDE REAGENDAR: Recibe link wa.me con mensaje prellenado al WhatsApp del nego
 - 14 días de prueba gratis sin tarjeta
 - Sin contratos, sin permanencia, cancelación en 1 clic
 - Sin límites: citas, clientes, mensajes (mientras no haya abuso)
+- **Métodos de pago:** tarjeta recurrente (cobro automático mensual), OXXO con ficha generada por el sistema, tarjeta pago único (un mes sin recurrencia)
 
 ---
 
