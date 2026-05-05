@@ -31,7 +31,7 @@ export const barberias: VerticalContent = {
     heading: 'Barberías que controlaron su agenda.',
     items: [
       {
-        quote: 'En la barbería el ritmo es rápido. Con agendallena.mx los clientes confirman solos y yo sé exactamente cuándo van a llegar.',
+        quote: 'En la barbería el ritmo es rápido. Con agendallena los clientes confirman solos y yo sé exactamente cuándo van a llegar.',
         name: 'Carlos Mendez',
         role: 'Barbería, Monterrey',
         initials: 'CM',
@@ -59,13 +59,13 @@ export const barberias: VerticalContent = {
   },
   smsContext: 'en BarberKing',
   statementStrip: {
-    title: 'Qué cambia en tu <strong class="brand-mention"><span class="dot">barbería</span></strong> cuando <strong class="brand-mention">agendallena<span class="dot">.</span>mx</strong> trabaja por ti.',
+    title: 'Qué cambia en tu <strong class="brand-mention"><span class="dot">barbería</span></strong> cuando <strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong> trabaja por ti.',
   },
   faq: {
     extraItems: [
       {
         question: '¿Funciona si mis clientes agendan solo por WhatsApp?',
-        answer: 'Exactamente para eso está pensado. Sigues recibiendo los turnos como siempre — por WhatsApp, en persona, por mensaje — y los capturas en agendallena.mx en segundos. De ahí en adelante, la confirmación es automática. No necesitas cambiar cómo tus clientes agendan.',
+        answer: 'Exactamente para eso está pensado. Sigues recibiendo los turnos como siempre — por WhatsApp, en persona, por mensaje — y los capturas en <strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong> en segundos. De ahí en adelante, la confirmación es automática. No necesitas cambiar cómo tus clientes agendan.',
       },
       {
         question: '¿Se puede usar con varios barberos?',
@@ -75,6 +75,6 @@ export const barberias: VerticalContent = {
   },
   finalCta: {
     heading: 'Sin turnos fantasma. Sin esperar a alguien que no llega.',
-    body: 'Un turno vacío entre clientes son $300 pesos y 30 minutos perdidos. Con agendallena.mx, cada turno tiene confirmación antes del día. Si alguien no puede, te enteras a tiempo para no quedarte parado esperando.',
+    body: 'Un turno vacío entre clientes son $300 pesos y 30 minutos perdidos. Con agendallena, cada turno tiene confirmación antes del día. Si alguien no puede, te enteras a tiempo para no quedarte parado esperando.',
   },
 };

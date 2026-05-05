@@ -2,7 +2,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "build:brand-pdf": "node scripts/build-brand-pdf.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",
@@ -11,6 +12,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
+    "marked": "^18.0.3",
     "typescript": "^5.9.3"
   }
 }

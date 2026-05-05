@@ -59,7 +59,7 @@ export const psicologos: VerticalContent = {
   },
   smsContext: 'con la psicóloga Soto',
   statementStrip: {
-    title: 'Qué cambia en tu <strong class="brand-mention"><span class="dot">consulta</span></strong> cuando <strong class="brand-mention">agendallena<span class="dot">.</span>mx</strong> trabaja por ti.',
+    title: 'Qué cambia en tu <strong class="brand-mention"><span class="dot">consulta</span></strong> cuando <strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong> trabaja por ti.',
   },
   faq: {
     extraItems: [
@@ -75,6 +75,6 @@ export const psicologos: VerticalContent = {
   },
   finalCta: {
     heading: 'Tu agenda, sin el desgaste de perseguir pacientes.',
-    body: 'Una sesión perdida no es solo ingreso que se va — es tiempo de tu jornada que no se recupera. agendallena.mx confirma cada sesión antes de que llegue el día, en silencio, sin interrumpir tu flujo de trabajo.',
+    body: 'Una sesión perdida no es solo ingreso que se va — es tiempo de tu jornada que no se recupera. agendallena confirma cada sesión antes de que llegue el día, en silencio, sin interrumpir tu flujo de trabajo.',
   },
 };

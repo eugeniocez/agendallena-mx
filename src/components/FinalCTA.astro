@@ -8,12 +8,12 @@ const { heading, body } = Astro.props;
 <section class="final-cta" id="empezar">
   <div class="final-cta-content">
     {heading
-      ? <h2 set:html={heading.replace('agendallena.mx', '<strong class="brand-mention">agendallena<span class="dot">.</span>mx</strong>')}></h2>
+      ? <h2 set:html={heading.replace('agendallena', '<strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong>')}></h2>
       : <h2>En 5 minutos<br>estás <span class="accent">operando.</span></h2>
     }
     {body
-      ? <p set:html={body.replace('agendallena.mx', '<strong class="brand-mention">agendallena<span class="dot">.</span>mx</strong>')}></p>
-      : <p>Sin instalaciones, sin onboarding largo, sin llamadas con vendedores. Te registras, agendas tu primera cita, y <strong class="brand-mention">agendallena<span class="dot">.</span>mx</strong> empieza a trabajar.</p>
+      ? <p set:html={body.replace('agendallena', '<strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong>')}></p>
+      : <p>Sin instalaciones, sin onboarding largo, sin llamadas con vendedores. Te registras, agendas tu primera cita, y <strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong> empieza a trabajar.</p>
     }
     <div class="final-cta-buttons">
       <a href="#" class="btn btn-primary-lg">

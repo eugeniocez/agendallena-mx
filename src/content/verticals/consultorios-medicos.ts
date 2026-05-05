@@ -59,13 +59,13 @@ export const consultoriosMedicos: VerticalContent = {
   },
   smsContext: 'en Consultorio Dr. Ríos',
   statementStrip: {
-    title: 'Qué cambia en tu <strong class="brand-mention"><span class="dot">consultorio</span></strong> cuando <strong class="brand-mention">agendallena<span class="dot">.</span>mx</strong> trabaja por ti.',
+    title: 'Qué cambia en tu <strong class="brand-mention"><span class="dot">consultorio</span></strong> cuando <strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong> trabaja por ti.',
   },
   faq: {
     extraItems: [
       {
         question: '¿Funciona para consultas de especialidad o solo medicina general?',
-        answer: 'Para ambas. No importa si eres médico general, especialista o si manejas citas de primera vez y seguimientos — el sistema trabaja igual en todos los casos. Tú agendas la cita con el tiempo que necesitas y agendallena.mx hace el seguimiento automático.',
+        answer: 'Para ambas. No importa si eres médico general, especialista o si manejas citas de primera vez y seguimientos — el sistema trabaja igual en todos los casos. Tú agendas la cita con el tiempo que necesitas y <strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong> hace el seguimiento automático.',
       },
       {
         question: '¿El recordatorio llega a tiempo aunque la consulta sea muy temprano?',
@@ -75,6 +75,6 @@ export const consultoriosMedicos: VerticalContent = {
   },
   finalCta: {
     heading: 'Pacientes que llegan. Agenda que funciona.',
-    body: 'Sin llamadas de seguimiento, sin sorpresas de último momento. agendallena.mx confirma cada consulta para que te enfoques en el paciente que tienes enfrente, no en el que no sabe si va a llegar.',
+    body: 'Sin llamadas de seguimiento, sin sorpresas de último momento. agendallena confirma cada consulta para que te enfoques en el paciente que tienes enfrente, no en el que no sabe si va a llegar.',
   },
 };

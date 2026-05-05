@@ -245,7 +245,25 @@ Los colores rojo, amarillo, naranja, etc. del sistema semafórico de citas **viv
 La clase CSS `.dot` aplica `color: var(--verde)` globalmente. Cualquier mención de "agendallena.mx" en HTML — wordmark, títulos, body, footer, mockups — debe usar `agendallena<span class="dot">.</span>mx` para que el punto vaya en verde de marca automáticamente. La regla está definida una sola vez como `.dot { color: var(--verde); }` y no se debe scopear a `.wordmark`.
 
 ### Clase `.brand-mention` (menciones inline en body copy)
-Cuando "agendallena.mx" aparece en texto corrido (subtítulos, párrafos, FAQ, CTAs), se envuelve en `<strong class="brand-mention">agendallena<span class="dot">.</span>mx</strong>`. La regla aplica `font-weight: 600; font-style: normal` — el mismo peso que el wordmark, sin negritas pesadas. Siempre combina `.brand-mention` con `.dot`: nunca uno sin el otro en body copy.
+Cuando la marca aparece en texto corrido (subtítulos, párrafos, FAQ, CTAs), se envuelve en `<strong class="brand-mention">…</strong>`. La regla aplica `font-weight: 600; font-style: normal` — el mismo peso que el wordmark, sin negritas pesadas.
+
+### Clase `.brand-llena` y variante editorial en body copy
+En body copy, la marca se escribe como **`agenda` + `llena`** (sin `.mx`), donde `llena` va pintada en verde de marca. Patrón canónico:
+
+```html
+<strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong>
+```
+
+Con CSS:
+
+```css
+.brand-llena { color: var(--verde); }
+```
+
+**Reglas:**
+- En body copy (subtítulos, headings de secciones, FAQ, CTAs, contenido de verticales) se usa siempre la variante editorial — sin `.mx`, con `llena` en verde.
+- En contextos estructurales/legales (wordmark del header/footer, `<title>`, meta tags, JSON-LD, copyright, páginas legales `/terminos` y `/privacidad`, mockups customer-facing, headers de tablas comparativas, instrucciones operativas tipo "Entra a agendallena.mx") se mantiene `agendallena.mx` íntegro con `<span class="dot">.</span>` verde.
+- En testimonios (citas textuales de clientes) se usa `agendallena` plain — sin `.mx`, sin styling — porque rompe la naturalidad del habla.
 
 ### Símbolo reducido `[.]`
 - Solo para favicons, app icons (PWA), avatares en redes, notificaciones
@@ -357,20 +375,21 @@ Estas decisiones están cerradas y NO deben cambiarse sin discusión:
 
 20. **Easings:** `--ease-out: cubic-bezier(0.22, 1, 0.36, 1)` es la curva canónica para hovers, transiciones, reveals. NO usar `--ease-spring` (con bounce) en botones — quedó descartado por sentirse playful contra una marca sobria. Spring solo para decoraciones puntuales si fuera necesario.
 
-21. **Superficies oscuras de la landing — jerarquía de verde profundo, no negro uniforme:** Las secciones oscuras no usan `--tinta` (`#0A0A0B`) de forma indiscriminada. Cada superficie tiene su propio tono de verde oscuro para crear ritmo sin saturar de negro:
+21. **Superficies oscuras de la landing — token unificado `#1A3F26` (verde forest profundo, ~14% luminosidad):** Las secciones oscuras usan un mismo verde profundo, no `--tinta` (`#0A0A0B`):
     - `.stat-banner` → `var(--verde-tenue)` (fondo claro, texto oscuro — la excepción luminosa)
-    - `.how-it-works` → `#0A1A0F` (verde profundo, la sección más importante)
-    - `.module-card.featured` (Calendario) → `#0C2016` (verde oscuro)
-    - `.final-cta` → `#071A10` (verde muy oscuro)
+    - `.how-it-works` → `#1A3F26`
+    - `.module-card.featured` (Calendario) → `#1A3F26`
+    - `.final-cta` → `#1A3F26`
     - **Botones primarios** → se mantienen en `--tinta` (negro) para anclar la marca sin saturar de verde
-    - NO regresar a `--tinta` en estas secciones. La uniformidad de negro se sentía pesada y sin identidad.
+    - **Historia de la decisión:** la versión anterior usaba 3 hex distintos (`#0A1A0F`, `#0C2016`, `#071A10`) pretendiendo crear jerarquía narrativa entre las superficies. En la práctica la diferencia era de ~1-2 puntos de luminosidad — imperceptible al ojo humano. El sistema se simplificó a un solo token compartido para honrar la regla de "no introducir variación sin propósito perceptible". Si en el futuro se quiere diferenciar superficies oscuras, hacerlo en un eje que sí se vea (textura, gradient, borde, sombra interna), no en luminosidad.
+    - NO regresar a `--tinta` ni a los 3 hex anteriores en estas superficies.
 
 ---
 
 ## 10. Lo que NO se debe cambiar
 
 ### NO modificar bajo ninguna circunstancia
-- Nombre `agendallena.mx` (todo en minúsculas, con punto, sin espacios)
+- Nombre `agendallena.mx` (todo en minúsculas, con punto, sin espacios) en contextos estructurales y legales. En body copy se usa la variante editorial `agenda` + `llena` (sin `.mx`, con `llena` en verde — ver §7 clase `.brand-llena`).
 - Tagline "Tu agenda, confirmada."
 - Verde de marca `#0F7B3F` para el "." del wordmark
 - Tipografía Plus Jakarta Sans como **única** familia (single-font)
@@ -434,6 +453,8 @@ agendallena-mx/
 ├── astro.config.mjs
 ├── tsconfig.json
 ├── package.json
+├── docs/
+│   └── brand-guidelines.md            ← Brand guidelines v2.1 (fuente de verdad)
 ├── public/
 │   └── assets/                        ← imágenes servidas estáticamente (rutas /assets/*)
 │       ├── hero-calendario.png
@@ -471,7 +492,7 @@ agendallena-mx/
 │       └── global.css                 ← todas las variables y estilos
 ```
 
-**Brand guidelines:** vive fuera del repo (`~/Desktop/agendallena_brand-guidelines.pdf`).
+**Brand guidelines:** versionadas en el repo. La fuente de verdad es `docs/brand-guidelines.md` (v2.2). El PDF distribuible se genera con `npm run build:brand-pdf` y se guarda en `docs/brand-guidelines-v2.2.pdf`. El PDF original v2.0 (`~/Desktop/agendallena_brand-guidelines.pdf`) quedó como snapshot histórico.
 
 ---
 

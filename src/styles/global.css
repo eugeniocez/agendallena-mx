@@ -181,6 +181,18 @@ p { text-wrap: pretty; }
 
 .dot { color: var(--verde); }
 .brand-mention { font-weight: 600; font-style: normal; }
+.brand-llena { color: var(--verde); }
+
+.section-subtitle .brand-mention,
+.final-cta .brand-mention {
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.section-title .brand-mention {
+  font-weight: 700;
+  font-style: italic;
+}
 
 .nav {
   display: flex;
@@ -435,6 +447,12 @@ p { text-wrap: pretty; }
   margin-top: 4px;
   max-width: 240px;
   line-height: 1.45;
+}
+
+.statement-label strong {
+  color: var(--tinta);
+  font-weight: 600;
+  font-style: normal;
 }
 
 @media (max-width: 800px) {
@@ -741,7 +759,7 @@ p { text-wrap: pretty; }
 
 /* CÓMO FUNCIONA */
 .how-it-works {
-  background: #0A1A0F;
+  background: #1A3F26;
   color: var(--hueso);
   padding: 120px 0;
   border-radius: var(--radius-xl);
@@ -787,6 +805,18 @@ p { text-wrap: pretty; }
   gap: 0;
   max-width: 1080px;
   margin: 60px auto 0;
+}
+
+.how-it-works-footer {
+  max-width: 1080px;
+  margin: 64px auto 0;
+  padding-top: 40px;
+  border-top: 0.5px solid rgba(250, 250, 247, 0.12);
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(250, 250, 247, 0.85);
+  text-align: center;
+  letter-spacing: -0.01em;
 }
 
 .step {
@@ -1058,7 +1088,7 @@ p { text-wrap: pretty; }
 
 .module-card.featured {
   grid-column: span 2;
-  background: #0C2016;
+  background: #1A3F26;
   color: var(--hueso);
 }
 
@@ -1524,7 +1554,7 @@ p { text-wrap: pretty; }
 .final-cta {
   padding: 140px 0;
   text-align: center;
-  background: #071A10;
+  background: #1A3F26;
   color: var(--hueso);
   border-radius: var(--radius-xl);
   margin: 60px 32px;
