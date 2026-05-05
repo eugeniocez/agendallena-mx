@@ -1232,7 +1232,7 @@ p { text-wrap: pretty; }
 
   .comparison-wrap {
     background:
-      linear-gradient(to left, var(--hueso) 40%, transparent) right center / 48px 100% no-repeat local,
+      linear-gradient(var(--hueso), var(--hueso)) right center / 64px 100% no-repeat local,
       linear-gradient(to left, rgba(10, 10, 11, 0.14), transparent) right center / 56px 100% no-repeat scroll,
       var(--hueso);
   }
