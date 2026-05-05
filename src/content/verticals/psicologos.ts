@@ -3,7 +3,7 @@ import type { VerticalContent } from './types';
 export const psicologos: VerticalContent = {
   slug: 'psicologos',
   meta: {
-    title: 'Solución para psicólogos — agenda y confirma sesiones | agendallena.mx',
+    title: 'Solución para psicólogos — agenda y confirma sesiones | agendallena',
     description: 'Solución que confirma sesiones de psicólogos en automático por SMS, WhatsApp y llamada. Menos ausencias, sin interrumpir tu consulta. $199 MXN/mes.',
   },
   hero: {

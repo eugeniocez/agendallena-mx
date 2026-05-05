@@ -9,6 +9,8 @@
   --gris-borde: #E8E6DE;
   --amarillo: #F59E0B;
   --rojo: #DC2626;
+  --verde-superficie: #245C32;
+  --verde-acento: var(--verde-acento);
 
   --shadow-sm: 0 1px 2px rgba(10, 10, 11, 0.04);
   --shadow-md: 0 4px 24px rgba(10, 10, 11, 0.06);
@@ -759,7 +761,7 @@ p { text-wrap: pretty; }
 
 /* CÓMO FUNCIONA */
 .how-it-works {
-  background: #1A3F26;
+  background: var(--verde-superficie);
   color: var(--hueso);
   padding: 120px 0;
   border-radius: var(--radius-xl);
@@ -795,7 +797,7 @@ p { text-wrap: pretty; }
 
 .how-it-works > .container { position: relative; z-index: 1; }
 
-.how-it-works .section-eyebrow { color: var(--verde); }
+.how-it-works .section-eyebrow { color: rgba(250, 250, 247, 0.55); }
 .how-it-works .section-title { color: var(--hueso); }
 .how-it-works .section-subtitle { color: rgba(250, 250, 247, 0.6); }
 
@@ -908,8 +910,8 @@ p { text-wrap: pretty; }
 
 /* Incoming call mockup */
 .call-mockup {
-  background: rgba(255, 255, 255, 0.04);
-  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.10);
+  border: 0.5px solid rgba(255, 255, 255, 0.18);
   border-radius: 16px;
   padding: 16px 18px;
   width: 100%;
@@ -953,7 +955,7 @@ p { text-wrap: pretty; }
   justify-content: center;
   position: relative;
   z-index: 2;
-  box-shadow: 0 6px 16px rgba(15, 123, 63, 0.4);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
 }
 
 .call-icon-bg svg {
@@ -970,7 +972,7 @@ p { text-wrap: pretty; }
   height: 44px;
   margin: -22px 0 0 -22px;
   border-radius: 50%;
-  border: 1.5px solid var(--verde);
+  border: 1.5px solid rgba(250, 250, 247, 0.45);
   background: transparent;
   opacity: 0;
   animation: call-ring 2.4s cubic-bezier(0.17, 0.67, 0.45, 1) infinite;
@@ -994,7 +996,7 @@ p { text-wrap: pretty; }
   line-height: 1.2;
 }
 
-.call-name .dot { color: #4ADE80; }
+.call-name .dot { color: var(--verde-acento); }
 
 .call-meta {
   font-size: 12px;
@@ -1010,7 +1012,7 @@ p { text-wrap: pretty; }
 .step-num {
   font-size: 14px;
   font-weight: 600;
-  color: var(--verde);
+  color: rgba(250, 250, 247, 0.5);
   letter-spacing: 0.04em;
   padding-top: 6px;
   font-variant-numeric: tabular-nums;
@@ -1035,7 +1037,7 @@ p { text-wrap: pretty; }
 .step-tag {
   display: inline-block;
   background: rgba(15, 123, 63, 0.18);
-  color: #4ADE80;
+  color: var(--verde-acento);
   font-family: inherit;
   font-size: 11px;
   padding: 4px 10px;
@@ -1088,11 +1090,11 @@ p { text-wrap: pretty; }
 
 .module-card.featured {
   grid-column: span 2;
-  background: #1A3F26;
+  background: var(--verde-superficie);
   color: var(--hueso);
 }
 
-.module-card.featured .module-num { color: #4ADE80; }
+.module-card.featured .module-num { color: var(--verde-acento); }
 .module-card.featured .module-title { color: var(--hueso); }
 .module-card.featured .module-desc { color: rgba(250, 250, 247, 0.7); }
 
@@ -1153,7 +1155,7 @@ p { text-wrap: pretty; }
 }
 
 .module-card.featured .module-feature { color: rgba(250, 250, 247, 0.85); }
-.module-card.featured .module-feature::before { background: #4ADE80; }
+.module-card.featured .module-feature::before { background: var(--verde-acento); }
 
 @media (max-width: 800px) {
   .module-card.featured .module-title { font-size: 28px; }
@@ -1557,7 +1559,7 @@ p { text-wrap: pretty; }
 .final-cta {
   padding: 140px 0;
   text-align: center;
-  background: #1A3F26;
+  background: var(--verde-superficie);
   color: var(--hueso);
   border-radius: var(--radius-xl);
   margin: 60px 32px;
@@ -1600,7 +1602,7 @@ p { text-wrap: pretty; }
   margin-right: auto;
 }
 
-.final-cta h2 .accent { color: var(--verde); }
+.final-cta h2 .accent { color: var(--verde-acento); }
 
 .final-cta p {
   font-size: 19px;
@@ -1619,11 +1621,13 @@ p { text-wrap: pretty; }
 }
 
 .final-cta .btn-primary-lg {
-  background: var(--verde);
-  color: var(--hueso);
+  background: var(--hueso);
+  color: var(--tinta);
 }
 
-.final-cta .btn-primary-lg:hover { background: var(--verde-hover); }
+.final-cta .btn-primary-lg:hover { background: rgba(250, 250, 247, 0.88); }
+
+.final-cta .brand-llena { color: var(--verde-acento); }
 
 .final-cta .btn-secondary-lg {
   border-color: rgba(250, 250, 247, 0.2);

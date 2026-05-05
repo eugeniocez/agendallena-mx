@@ -1,4 +1,4 @@
-# agendallena.mx — Brand Guidelines
+# agendallena — Brand Guidelines
 
 > **Versión:** 2.2
 > **Fecha:** mayo 2026
@@ -6,7 +6,7 @@
 
 Tagline: **Tu agenda, confirmada.**
 
-Este manual define cómo se ve, suena y se aplica la marca agendallena.mx. Cualquier persona que diseñe, escriba o construya bajo esta marca debería poder responder sus dudas aquí.
+Este manual define cómo se ve, suena y se aplica la marca agendallena. Cualquier persona que diseñe, escriba o construya bajo esta marca debería poder responder sus dudas aquí.
 
 ---
 
@@ -32,7 +32,7 @@ Antes del logo, antes del color: lo que somos y por qué existimos.
 
 Cada cita perdida es dinero que se va. Una libreta no te avisa cuando alguien no va a llegar. WhatsApp se pierde entre cien conversaciones. La memoria falla cuando atiendes todo el día.
 
-agendallena.mx existe para que dejes de perseguir confirmaciones. Para que tu calendario te diga la verdad antes de que el día empiece. Para que sepas, de un vistazo, qué cita está en pie y cuál no.
+agendallena existe para que dejes de perseguir confirmaciones. Para que tu calendario te diga la verdad antes de que el día empiece. Para que sepas, de un vistazo, qué cita está en pie y cuál no.
 
 No somos un calendario más bonito. Somos la diferencia entre esperar y saber.
 
@@ -40,13 +40,13 @@ No somos un calendario más bonito. Somos la diferencia entre esperar y saber.
 
 ### 01.2 — Posicionamiento · Lo que somos y lo que no
 
-agendallena.mx no es un calendario, ni un CRM, ni un bot conversacional. Es un sistema de confirmación automática diseñado para negocios que viven de citas: clínicas, estilistas, terapeutas, talleres, consultorios.
+agendallena no es un calendario, ni un CRM, ni un bot conversacional. Es un sistema de confirmación automática diseñado para negocios que viven de citas: clínicas, estilistas, terapeutas, talleres, consultorios.
 
 La promesa central no es "agenda mejor". Es **"deja de perder dinero por inasistencias"**.
 
 ### 01.3 — Personalidad · Quién somos
 
-Si agendallena.mx fuera una persona: sería ese asistente silencioso, eficiente y absolutamente confiable que llega 5 minutos antes, tiene todo listo, y nunca te falla.
+Si agendallena fuera una persona: sería ese asistente silencioso, eficiente y absolutamente confiable que llega 5 minutos antes, tiene todo listo, y nunca te falla.
 
 **No es carismático. Es indispensable.**
 
@@ -74,7 +74,7 @@ Wordmark como cara principal. Símbolo reducido cuando el formato lo exige.
 
 ### 02.1 — Logotipo principal · El wordmark
 
-El logotipo principal es **agendallena.mx** escrito en Plus Jakarta Sans SemiBold (600), con el punto en verde de marca. El dominio es la marca. La marca es el dominio.
+El logotipo principal es **agendallena** escrito en Plus Jakarta Sans SemiBold (600). Sin `.mx`, sin punto decorativo. La marca es `agendallena`; el dominio es `agendallena.mx` — son dos cosas distintas (decisión mayo 2026).
 
 | Propiedad | Valor |
 |---|---|
@@ -107,11 +107,11 @@ Cuando el formato es cuadrado o muy pequeño, el wordmark no funciona. Ahí entr
 
 ### 02.3 — Convenciones HTML · Clases globales de marca
 
-Cualquier implementación HTML de agendallena.mx debe incluir estas dos clases. Son globales — no se scopean a componentes.
+Cualquier implementación HTML de la marca agendallena debe incluir estas clases. Son globales — no se scopean a componentes.
 
 #### `.dot`
 
-Aplica `color: var(--verde)` al punto del wordmark. Se define una sola vez como regla global.
+Aplica `color: var(--verde)`. Se usa cuando se escribe el **dominio** `agendallena.mx` en contextos URL-oriented: instrucciones operativas ("Entra a agendallena<span class="dot">.</span>mx"), emails, referencias de dominio.
 
 ```css
 .dot { color: var(--verde); }
@@ -121,7 +121,7 @@ Aplica `color: var(--verde)` al punto del wordmark. Se define una sola vez como 
 agendallena<span class="dot">.</span>mx
 ```
 
-**Regla:** en toda aparición del nombre en HTML, sin excepción. Wordmark, títulos, body, footer, mockups.
+**Nota:** el wordmark del header/footer ya no lleva `.dot` — es `agendallena` plain. `.dot` se reserva para referencias al dominio.
 
 #### `.brand-mention`
 
@@ -147,14 +147,13 @@ En body copy (subtítulos, párrafos, FAQ, CTAs, contenido de verticales), la ma
 
 | Contexto | Forma |
 |---|---|
-| Wordmark del header/footer | `agendallena.mx` (con `.dot`) |
-| `<title>`, meta tags, JSON-LD, canonical | `agendallena.mx` (plain) |
-| Páginas legales (`/terminos`, `/privacidad`) | `agendallena.mx` (con `.dot`) |
-| Mockups customer-facing (call-name, SMS bubble) | `agendallena.mx` (con `.dot`) |
-| Headers de tablas comparativas | `agendallena.mx` (plain) |
-| Instrucciones operativas ("Entra a agendallena.mx") | `agendallena.mx` (plain) |
+| Wordmark del header/footer | `agendallena` (plain, sin `.mx`) |
+| `<title>`, meta tags, JSON-LD `name`, copyright | `agendallena` (plain) |
+| Headers de tablas comparativas | `agendallena` (plain) |
 | Body copy: subtítulos, headings de sección, FAQ, CTAs, verticals | **Editorial: `agenda` + `llena` verde** |
 | Testimonios (citas textuales de clientes) | `agendallena` plain (sin styling) |
+| Instrucciones operativas que refieren el URL | `agendallena.mx` (con `.dot`) |
+| Emails, dominio en JSON-LD `url`, canonical | `agendallena.mx` (siempre con dominio completo) |
 
 **Regla:** siempre combina `.brand-mention` con `.brand-llena` en body copy. Nunca usar `.brand-llena` sola. Nunca usar la variante editorial fuera de body copy.
 
@@ -175,6 +174,7 @@ Tres colores hacen el 98% del trabajo: tinta, hueso y verde de marca. Los grises
 | **Verde** | `#0F7B3F` | Color hero, CTAs, acentos, "confirmado" |
 | **Grafito** | `#6B6B6B` | Texto secundario, captions, jerarquía media |
 | **Verde tenue** | `#E8F5EE` | Fondos suaves, badges, estado de éxito |
+| **Verde acento** | `#4ADE80` | Acentos de color exclusivamente en superficies oscuras (`--verde-superficie`). No usar sobre fondos claros. |
 | **Verde hover** | `#0C6633` | Hover state de botones y elementos en verde |
 | **Gris claro** | `#F1EFE8` | Surfaces secundarios, fondos de cards |
 | **Gris borde** | `#E8E6DE` | Bordes sutiles, separadores, líneas de tabla |
@@ -194,6 +194,7 @@ La marca no es multicolor. Es deliberadamente sobria, con el verde como única c
 | Verde sobre hueso | CTAs, eyebrows, acentos |
 | Hueso sobre verde | Texto en botones CTA |
 | Verde tenue como fondo | Con texto en verde o tinta — badges, callouts |
+| Verde acento sobre verde-superficie | Acentos en secciones oscuras — step numbers, brand-llena, badges, call card dot |
 
 **Combinaciones prohibidas:**
 
@@ -203,23 +204,25 @@ La marca no es multicolor. Es deliberadamente sobria, con el verde como única c
 - ✗ Gradientes saturados o multicolor en cualquier superficie
 
 **Por qué esta restricción importa:**
-Toda la competencia (Calendly, Fresha, Booksy) usa paletas amplias y vibrantes. Al ir en dirección opuesta — sobria, geométrica, con un solo punto de verde — agendallena.mx se diferencia automáticamente y proyecta seriedad operativa. El verde elegido es deliberadamente más profundo y maduro que un verde brillante: comunica confianza B2B, no startup tech.
+Toda la competencia (Calendly, Fresha, Booksy) usa paletas amplias y vibrantes. Al ir en dirección opuesta — sobria, geométrica, con un solo punto de verde — agendallena se diferencia automáticamente y proyecta seriedad operativa. El verde elegido es deliberadamente más profundo y maduro que un verde brillante: comunica confianza B2B, no startup tech.
 
 ### 03.3 — Superficies oscuras del website · Token unificado
 
-Las secciones oscuras de la landing usan un **token unificado de verde forest profundo** (`#1A3F26`, ~14% luminosidad), no negro uniforme.
+Las secciones oscuras de la landing usan un **token unificado `--verde-superficie`** (`#245C32`, ~22% luminosidad), no negro uniforme.
 
-| Sección | HEX | Nota |
+| Sección | Token | Nota |
 |---|---|---|
-| Strip de impacto (stat banner) | `#E8F5EE` | Excepción luminosa — fondo claro |
-| Cómo funciona | `#1A3F26` | Verde forest profundo (~14% L) |
-| Card Calendario (módulo featured) | `#1A3F26` | Verde forest profundo (~14% L) |
-| CTA final | `#1A3F26` | Verde forest profundo (~14% L) |
+| Strip de impacto (stat banner) | `--verde-tenue` (#E8F5EE) | Excepción luminosa — fondo claro |
+| Cómo funciona | `--verde-superficie` (#245C32) | Verde forest (~22% L) |
+| Card Calendario (módulo featured) | `--verde-superficie` (#245C32) | Verde forest (~22% L) |
+| CTA final | `--verde-superficie` (#245C32) | Verde forest (~22% L) |
+
+**Acentos de color en estas superficies:** el verde de marca (`--verde`, #0F7B3F) no tiene contraste suficiente sobre `--verde-superficie` (~1.5:1). Los acentos de color dentro de estas secciones usan `--verde-acento` (#4ADE80) — step numbers, badges "AUTOMÁTICO", números de módulo, brand-llena en CTA, dot del call card.
 
 **Historia de la decisión:**
-Una versión anterior de este sistema (v2.0) usaba 3 hex distintos (`#0A1A0F`, `#0C2016`, `#071A10`) pretendiendo crear jerarquía narrativa entre las superficies. En la práctica la diferencia era de ~1-2 puntos de luminosidad — imperceptible al ojo humano. El sistema se simplificó para honrar el principio de "no introducir variación sin propósito perceptible". Si en el futuro se quiere diferenciar superficies oscuras, hacerlo en un eje que sí se vea (textura, gradient, borde, sombra interna), no en luminosidad.
+Una versión anterior (v2.0) usaba 3 hex distintos (`#0A1A0F`, `#0C2016`, `#071A10`) pretendiendo crear jerarquía narrativa. Se simplificaron a `#1A3F26` (~14% L), y tras revisión visual se elevaron a `#245C32` (~22% L) por sentirse demasiado denso. Si en el futuro se quiere diferenciar superficies oscuras, hacerlo en un eje perceptible (textura, gradient, borde), no en luminosidad.
 
-**Anclaje con tinta:** los botones primarios se mantienen en `--tinta` (`#0A0A0B`) para anclar la marca sin saturar de verde. No usar `--tinta` como fondo de secciones — la uniformidad de negro rompe el ritmo del sistema.
+**Anclaje con tinta:** los botones primarios en secciones oscuras se mantienen en `--tinta` (`#0A0A0B`) o `--hueso` con texto tinta. No usar `--tinta` como fondo de secciones — la uniformidad de negro rompe el ritmo del sistema.
 
 ### 03.4 — Colores operativos del producto · El sistema semafórico
 
@@ -242,7 +245,7 @@ Una sola familia. Sin excepciones.
 
 ### 04.1 — Familia tipográfica · Plus Jakarta Sans
 
-La voz visual de agendallena.mx es **Plus Jakarta Sans**: una sans-serif geométrica con esquinas precisas, presencia premium y excelente legibilidad en pantalla. Open-source, sin restricciones de licencia.
+La voz visual de agendallena es **Plus Jakarta Sans**: una sans-serif geométrica con esquinas precisas, presencia premium y excelente legibilidad en pantalla. Open-source, sin restricciones de licencia.
 
 **Single-font policy:** Plus Jakarta Sans es la única familia. No JetBrains Mono, no serif, no display secundario.
 

@@ -3,7 +3,7 @@ import type { VerticalContent } from './types';
 export const barberias: VerticalContent = {
   slug: 'barberias',
   meta: {
-    title: 'Solución para barberías — confirma turnos en automático | agendallena.mx',
+    title: 'Solución para barberías — confirma turnos en automático | agendallena',
     description: 'Solución que confirma turnos de barberías en automático por SMS, WhatsApp y llamada. Sin huecos sin aviso, sin esperar a alguien que no llega. $199 MXN/mes.',
   },
   hero: {

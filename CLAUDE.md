@@ -1,4 +1,4 @@
-# CLAUDE.md — agendallena.mx
+# CLAUDE.md — agendallena
 
 > Contexto completo del proyecto para Claude Code. Lee este archivo al inicio de cada sesión antes de hacer cambios.
 
@@ -6,7 +6,7 @@
 
 ## 1. Producto
 
-**Nombre:** agendallena.mx
+**Nombre:** agendallena
 **Dominio:** agendallena.mx
 **Tipo:** SaaS B2B (multi-vertical)
 **Mercado:** México / LATAM
@@ -17,7 +17,7 @@
 El sistema que confirma tu agenda por ti.
 
 ### Descripción extendida
-agendallena.mx es un sistema de confirmación automática de citas para negocios B2B que viven de su agenda. No es un calendario más, ni un CRM, ni un bot conversacional: es un sistema que convierte cada cita tentativa en una cita confirmada mediante mensajes automáticos de SMS, WhatsApp y llamadas automatizadas.
+agendallena es un sistema de confirmación automática de citas para negocios B2B que viven de su agenda. No es un calendario más, ni un CRM, ni un bot conversacional: es un sistema que convierte cada cita tentativa en una cita confirmada mediante mensajes automáticos de SMS, WhatsApp y llamadas automatizadas.
 
 ---
 
@@ -157,7 +157,7 @@ SI PIDE REAGENDAR: Recibe link wa.me con mensaje prellenado al WhatsApp del nego
 ## 6. Identidad de marca
 
 ### Personalidad
-Si agendallena.mx fuera persona: el asistente silencioso, eficiente y absolutamente confiable que llega 5 minutos antes, tiene todo listo, y nunca te falla. **No es carismático. Es indispensable.**
+Si agendallena fuera persona: el asistente silencioso, eficiente y absolutamente confiable que llega 5 minutos antes, tiene todo listo, y nunca te falla. **No es carismático. Es indispensable.**
 
 ### Valores
 1. **Claridad sobre adorno** — cada elemento debe tener una función
@@ -200,6 +200,7 @@ Lúdicos · Misteriosos · Aspiracionales · Disruptivos · Casuales · Grandilo
 | `--verde` | `#0F7B3F` | Color hero, CTAs, acentos, "confirmado" |
 | `--verde-hover` | `#0C6633` | Hover state del verde |
 | `--verde-tenue` | `#E8F5EE` | Fondos suaves de éxito, badges |
+| `--verde-acento` | `#4ADE80` | Acentos sobre `--verde-superficie`. No usar en fondos claros. |
 | `--grafito` | `#6B6B6B` | Texto secundario, captions, jerarquía media |
 | `--gris-claro` | `#F1EFE8` | Surfaces secundarios, fondos de cards |
 | `--gris-borde` | `#E8E6DE` | Bordes sutiles |
@@ -235,14 +236,14 @@ Los colores rojo, amarillo, naranja, etc. del sistema semafórico de citas **viv
 - **Tabular nums obligatorio** en cualquier elemento que muestre números (precios, stats, timestamps, IDs)
 
 ### Logotipo
-- **Wordmark principal:** `agendallena.mx` en Plus Jakarta Sans SemiBold (600), tracking -0.03em
-- El "." entre "agendallena" y "mx" debe ir en color verde de marca (`#0F7B3F`)
-- Todo en minúsculas, sin espacios
+- **Wordmark principal:** `agendallena` en Plus Jakarta Sans SemiBold (600), tracking -0.03em
+- Todo en minúsculas, sin espacios, sin `.mx`
 - Espacio mínimo de protección: altura de la "x" del wordmark
 - Tamaño mínimo digital: 80px de ancho
+- **MARCA = `agendallena`** / **DOMINIO = `agendallena.mx`** — distinción oficial desde mayo 2026
 
-### Clase `.dot` (regla global)
-La clase CSS `.dot` aplica `color: var(--verde)` globalmente. Cualquier mención de "agendallena.mx" en HTML — wordmark, títulos, body, footer, mockups — debe usar `agendallena<span class="dot">.</span>mx` para que el punto vaya en verde de marca automáticamente. La regla está definida una sola vez como `.dot { color: var(--verde); }` y no se debe scopear a `.wordmark`.
+### Clase `.dot` (regla global — solo para dominio)
+La clase CSS `.dot` aplica `color: var(--verde)`. Se usa únicamente cuando se escribe el dominio completo (`agendallena.mx`) en contextos URL-oriented: instrucciones operativas ("Entra a agendallena<span class=\"dot\">.</span>mx"), footer en páginas legales, JSON-LD `url`. La regla sigue siendo `.dot { color: var(--verde); }` — no se scopea, no se elimina.
 
 ### Clase `.brand-mention` (menciones inline en body copy)
 Cuando la marca aparece en texto corrido (subtítulos, párrafos, FAQ, CTAs), se envuelve en `<strong class="brand-mention">…</strong>`. La regla aplica `font-weight: 600; font-style: normal` — el mismo peso que el wordmark, sin negritas pesadas.
@@ -261,9 +262,10 @@ Con CSS:
 ```
 
 **Reglas:**
-- En body copy (subtítulos, headings de secciones, FAQ, CTAs, contenido de verticales) se usa siempre la variante editorial — sin `.mx`, con `llena` en verde.
-- En contextos estructurales/legales (wordmark del header/footer, `<title>`, meta tags, JSON-LD, copyright, páginas legales `/terminos` y `/privacidad`, mockups customer-facing, headers de tablas comparativas, instrucciones operativas tipo "Entra a agendallena.mx") se mantiene `agendallena.mx` íntegro con `<span class="dot">.</span>` verde.
-- En testimonios (citas textuales de clientes) se usa `agendallena` plain — sin `.mx`, sin styling — porque rompe la naturalidad del habla.
+- En body copy (subtítulos, headings de secciones, FAQ, CTAs, contenido de verticales) se usa siempre la variante editorial — `agenda` + `llena` con `llena` en verde.
+- En el wordmark del header/footer, `<title>`, meta tags, JSON-LD `name`, copyright, headers de tablas comparativas: se usa `agendallena` sin `.mx` y sin styling especial.
+- En instrucciones operativas que refieren el dominio como URL ("Entra a agendallena.mx", emails `@agendallena.mx`): se mantiene `agendallena.mx` con `.dot` si aplica.
+- En testimonios (citas textuales de clientes) se usa `agendallena` plain — sin styling — porque rompe la naturalidad del habla.
 
 ### Símbolo reducido `[.]`
 - Solo para favicons, app icons (PWA), avatares en redes, notificaciones
@@ -341,8 +343,8 @@ Las landings por vertical se construyen sobre el mismo template base, cambiando 
 
 Estas decisiones están cerradas y NO deben cambiarse sin discusión:
 
-1. **Identidad principal = wordmark `agendallena.mx`**, no un símbolo gráfico. El dominio es la marca.
-2. **El "." del wordmark va siempre en verde de marca**, en cualquier aplicación.
+1. **Identidad principal = wordmark `agendallena`**, no un símbolo gráfico. MARCA = `agendallena` / DOMINIO = `agendallena.mx` (decisión mayo 2026).
+2. **El "." en verde** aplica solo al dominio escrito como URL (`agendallena.mx`). El wordmark del header/footer es `agendallena` sin punto.
 3. **El símbolo `[.]`** se usa solo cuando el formato es cuadrado/pequeño (favicons, app icons, avatares).
 4. **Plus Jakarta Sans en peso 600** para el wordmark. Sin variaciones.
 4.1. **Single-font policy:** Plus Jakarta Sans es la única familia. No JetBrains Mono, no serif, no display secundario. Si necesitas alinear números, usa `tabular-nums`. Si necesitas un eyebrow técnico, usa uppercase + tracking.
@@ -375,21 +377,23 @@ Estas decisiones están cerradas y NO deben cambiarse sin discusión:
 
 20. **Easings:** `--ease-out: cubic-bezier(0.22, 1, 0.36, 1)` es la curva canónica para hovers, transiciones, reveals. NO usar `--ease-spring` (con bounce) en botones — quedó descartado por sentirse playful contra una marca sobria. Spring solo para decoraciones puntuales si fuera necesario.
 
-21. **Superficies oscuras de la landing — token unificado `#1A3F26` (verde forest profundo, ~14% luminosidad):** Las secciones oscuras usan un mismo verde profundo, no `--tinta` (`#0A0A0B`):
+21. **Superficies oscuras de la landing — token unificado `var(--verde-superficie)` = `#245C32` (verde forest, ~22% luminosidad):** Las secciones oscuras usan un mismo verde, no `--tinta` (`#0A0A0B`):
     - `.stat-banner` → `var(--verde-tenue)` (fondo claro, texto oscuro — la excepción luminosa)
-    - `.how-it-works` → `#1A3F26`
-    - `.module-card.featured` (Calendario) → `#1A3F26`
-    - `.final-cta` → `#1A3F26`
-    - **Botones primarios** → se mantienen en `--tinta` (negro) para anclar la marca sin saturar de verde
-    - **Historia de la decisión:** la versión anterior usaba 3 hex distintos (`#0A1A0F`, `#0C2016`, `#071A10`) pretendiendo crear jerarquía narrativa entre las superficies. En la práctica la diferencia era de ~1-2 puntos de luminosidad — imperceptible al ojo humano. El sistema se simplificó a un solo token compartido para honrar la regla de "no introducir variación sin propósito perceptible". Si en el futuro se quiere diferenciar superficies oscuras, hacerlo en un eje que sí se vea (textura, gradient, borde, sombra interna), no en luminosidad.
-    - NO regresar a `--tinta` ni a los 3 hex anteriores en estas superficies.
+    - `.how-it-works` → `var(--verde-superficie)`
+    - `.module-card.featured` (Calendario) → `var(--verde-superficie)`
+    - `.final-cta` → `var(--verde-superficie)`
+    - **Acentos de color dentro de estas superficies** → `var(--verde-acento)` (#4ADE80). El `--verde` de marca (#0F7B3F) no tiene contraste suficiente sobre `--verde-superficie` (~1.5:1). Usos: `.step-num`, `.step-tag`, `.module-num`, `.module-feature::before`, `.final-cta h2 .accent`, `.final-cta .brand-llena`, `.call-name .dot`.
+    - **Botones primarios** → se mantienen en `--tinta` (negro) para anclar la marca sin saturar de verde. Excepción: `.final-cta .btn-primary-lg` usa `--hueso` con texto `--tinta` (botón blanco sobre superficie oscura).
+    - **Historia de la decisión:** la versión anterior usaba 3 hex distintos (`#0A1A0F`, `#0C2016`, `#071A10`) pretendiendo crear jerarquía narrativa. Se simplificó a un token compartido `#1A3F26` (~14% L). Tras revisión visual se elevó a `#245C32` (~22% L) por sentirse demasiado denso/oscuro. El nombre de variable en CSS es `--verde-superficie` definido en `:root`. Si en el futuro se quiere diferenciar superficies oscuras, hacerlo en un eje que sí se vea (textura, gradient, borde, sombra interna), no en luminosidad.
+    - NO regresar a `--tinta`, a los 3 hex anteriores, ni al `#1A3F26` descartado en estas superficies.
 
 ---
 
 ## 10. Lo que NO se debe cambiar
 
 ### NO modificar bajo ninguna circunstancia
-- Nombre `agendallena.mx` (todo en minúsculas, con punto, sin espacios) en contextos estructurales y legales. En body copy se usa la variante editorial `agenda` + `llena` (sin `.mx`, con `llena` en verde — ver §7 clase `.brand-llena`).
+- **Nombre de marca `agendallena`** (todo en minúsculas, sin punto, sin `.mx`) en wordmark, titles, meta tags, JSON-LD name, copyright, comparativas.
+- **Dominio `agendallena.mx`** solo en URLs (`https://agendallena.mx/...`), emails (`@agendallena.mx`) e instrucciones operativas tipo "Entra a agendallena.mx".
 - Tagline "Tu agenda, confirmada."
 - Verde de marca `#0F7B3F` para el "." del wordmark
 - Tipografía Plus Jakarta Sans como **única** familia (single-font)

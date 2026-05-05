@@ -3,7 +3,7 @@ import type { VerticalContent } from './types';
 export const dentistas: VerticalContent = {
   slug: 'dentistas',
   meta: {
-    title: 'Solución para dentistas en México — agenda y confirma citas | agendallena.mx',
+    title: 'Solución para dentistas en México — agenda y confirma citas | agendallena',
     description: 'Solución que confirma citas de dentistas en automático por SMS, WhatsApp y llamada. Menos inasistencias en tu clínica dental. $199 MXN/mes. Prueba gratis.',
   },
   hero: {

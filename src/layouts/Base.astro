@@ -6,7 +6,7 @@ interface Props {
 }
 
 const {
-  title = 'agendallena.mx — Tu agenda, confirmada.',
+  title = 'agendallena — Tu agenda, confirmada.',
   description = 'La solución que confirma tu agenda por ti. Menos inasistencias, más certeza. Para clínicas, estilistas, terapeutas y todo negocio que vive de citas. $199 MXN/mes.',
   canonical = 'https://agendallena.mx/',
 } = Astro.props;
@@ -20,9 +20,16 @@ import '../styles/global.css';
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#FAFAF7">
+<!-- Google Tag Manager -->
+<script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KW72MQ8X');</script>
+<!-- End Google Tag Manager -->
 <title>{title}</title>
 <meta name="description" content={description}>
-<meta name="author" content="agendallena.mx">
+<meta name="author" content="agendallena">
 <link rel="canonical" href={canonical}>
 
 <meta property="og:type" content="website">
@@ -30,11 +37,11 @@ import '../styles/global.css';
 <meta property="og:title" content={title}>
 <meta property="og:description" content={description}>
 <meta property="og:locale" content="es_MX">
-<meta property="og:site_name" content="agendallena.mx">
+<meta property="og:site_name" content="agendallena">
 <meta property="og:image" content="https://agendallena.mx/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="agendallena.mx — Tu agenda, confirmada.">
+<meta property="og:image:alt" content="agendallena — Tu agenda, confirmada.">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content={title}>
@@ -52,7 +59,7 @@ import '../styles/global.css';
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "agendallena.mx",
+  "name": "agendallena",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web",
   "description": "La solución que confirma tu agenda por ti. Confirmaciones automáticas por SMS, WhatsApp y llamada para negocios B2B en LATAM.",
@@ -67,12 +74,16 @@ import '../styles/global.css';
 </script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KW72MQ8X"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <a href="#main" class="skip-link">Saltar al contenido</a>
 
 <header class="header">
   <div class="header-inner">
-    <a href="/" class="wordmark">agendallena<span class="dot">.</span>mx</a>
+    <a href="/" class="wordmark">agendallena</a>
     <nav class="nav">
       <a href="#producto" class="nav-link">Producto</a>
       <a href="#como-funciona" class="nav-link">Cómo funciona</a>
@@ -93,7 +104,7 @@ import '../styles/global.css';
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="wordmark">agendallena<span class="dot">.</span>mx</div>
+        <div class="wordmark">agendallena</div>
         <p>La solución que confirma tu agenda por ti.</p>
       </div>
       <div class="footer-col">
@@ -125,7 +136,7 @@ import '../styles/global.css';
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 agendallena.mx · Hecho en México</span>
+      <span>© 2026 agendallena · Hecho en México</span>
       <div class="legal-links">
         <a href="/privacidad">Privacidad</a>
         <a href="/terminos">Términos</a>
