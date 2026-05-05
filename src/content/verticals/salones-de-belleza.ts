@@ -3,12 +3,12 @@ import type { VerticalContent } from './types';
 export const salonesDeBelleza: VerticalContent = {
   slug: 'salones-de-belleza',
   meta: {
-    title: 'Solución para salones de belleza — agenda y confirma citas | agendallena.mx',
-    description: 'Solución que confirma citas de salones de belleza en automático por SMS, WhatsApp y llamada. Sin huecos sin aviso, sin cancelaciones de último momento. $199 MXN/mes.',
+    title: 'Confirmación automática de citas para salones de belleza en México | agendallena.mx',
+    description: 'Confirma las citas de tu salón de belleza en automático por SMS, WhatsApp y llamada. Sin huecos sin aviso, sin cancelaciones de último momento. $199 MXN/mes.',
   },
   hero: {
     eyebrow: 'Para salones de belleza',
-    h1: 'Solución para salones de belleza en México',
+    h1: 'Confirmación automática de citas para salones de belleza en México',
     subtitle: 'La solución que confirma las citas de tu salón por ti. Sin huecos sin aviso, sin clientas que no llegan, sin correr para rellenar el horario.',
   },
   problema: {

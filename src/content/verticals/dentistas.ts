@@ -3,12 +3,12 @@ import type { VerticalContent } from './types';
 export const dentistas: VerticalContent = {
   slug: 'dentistas',
   meta: {
-    title: 'Solución para dentistas en México — agenda y confirma citas | agendallena.mx',
-    description: 'Solución que confirma citas de dentistas en automático por SMS, WhatsApp y llamada. Menos inasistencias en tu clínica dental. $199 MXN/mes. Prueba gratis.',
+    title: 'Confirmación automática de citas para dentistas en México | agendallena.mx',
+    description: 'Confirma las citas de tu clínica dental en automático por SMS, WhatsApp y llamada. Menos inasistencias, sillones llenos. $199 MXN/mes. Prueba gratis 14 días.',
   },
   hero: {
     eyebrow: 'Para dentistas',
-    h1: 'Solución de citas para dentistas en México',
+    h1: 'Confirmación automática de citas para dentistas en México',
     subtitle: 'La solución que confirma las citas de tu clínica dental por ti. Sin perseguir pacientes por WhatsApp, sin sillones vacíos a última hora.',
   },
   problema: {

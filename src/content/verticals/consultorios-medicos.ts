@@ -3,12 +3,12 @@ import type { VerticalContent } from './types';
 export const consultoriosMedicos: VerticalContent = {
   slug: 'consultorios-medicos',
   meta: {
-    title: 'Solución para consultorios médicos — agenda y confirma citas | agendallena.mx',
-    description: 'Solución que confirma citas de consultorios médicos automáticamente por SMS, WhatsApp y llamada. Pacientes que llegan, agenda predecible. $199 MXN/mes.',
+    title: 'Confirmación automática de citas para consultorios médicos en México | agendallena.mx',
+    description: 'Confirma las citas de tu consultorio médico en automático por SMS, WhatsApp y llamada. Pacientes que llegan, agenda predecible. $199 MXN/mes. Prueba gratis.',
   },
   hero: {
     eyebrow: 'Para consultorios médicos',
-    h1: 'Solución para consultorios médicos en México',
+    h1: 'Confirmación automática de citas para consultorios médicos en México',
     subtitle: 'La solución que confirma las citas de tu consultorio por ti. Pacientes que llegan, agenda predecible, sin llamadas de seguimiento.',
   },
   problema: {
