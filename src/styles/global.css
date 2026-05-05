@@ -485,7 +485,7 @@ p { text-wrap: pretty; }
   display: flex;
   gap: 64px;
   width: max-content;
-  animation: marquee-scroll 100s linear infinite;
+  animation: marquee-scroll 75s linear infinite;
   will-change: transform;
 }
 
@@ -532,7 +532,7 @@ p { text-wrap: pretty; }
 @media (max-width: 700px) {
   .marquee-item { font-size: 18px; }
   .marquee-item svg { width: 20px; height: 20px; }
-  .marquee-track { gap: 44px; animation-duration: 80s; }
+  .marquee-track { gap: 44px; animation-duration: 60s; }
 }
 
 /* SECTIONS */
@@ -1253,6 +1253,9 @@ p { text-wrap: pretty; }
 .x-icon { background: #FEE2E2; color: var(--rojo); }
 
 .check-icon svg, .x-icon svg { width: 12px; height: 12px; }
+
+.comparison thead th:not(:first-child) { text-align: center; }
+.comparison tbody td:not(:first-child) { text-align: center; }
 
 @media (max-width: 800px) {
   .comparison { font-size: 13px; min-width: 520px; }
