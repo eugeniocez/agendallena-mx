@@ -47,9 +47,9 @@
     3. ¿Puedo personalizar el texto de los mensajes?
     4. ¿Funciona con más de un empleado o silla?
 
-- [ ] **T07 · V2-01 + V2-02** — Dos correcciones visuales de alto impacto en mobile
-  - `Modules.astro:9` + `global.css` → separar card .featured como bloque full-width sobre grid de 4
-  - `global.css` `.comparison-wrap` → agregar sombra lateral en mobile para indicar scroll horizontal
+- [x] **T07 · V2-01 + V2-02** — Dos correcciones visuales de alto impacto en mobile
+  - `global.css` → grid de módulos colapsa a 1 col en ≤600px (antes 800px); featured mantiene jerarquía en tablets
+  - `global.css` → scroll shadow en `.comparison-wrap` con background-attachment local/scroll; cover sólido 64px tapa sombra al llegar al límite
 
 - [ ] **T08 · S4-02** — Reescribir H1s de verticales con keywords de intent real
   - 5 archivos: `src/content/verticals/*.ts` — campo `hero.h1` y `meta.title`
