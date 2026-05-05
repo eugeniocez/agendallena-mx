@@ -39,7 +39,7 @@
   - `src/pages/index.astro` + `src/pages/[vertical].astro`
   - Nuevo orden: Hero → **SocialProof** → **StatementStrip** → Problema
 
-- [ ] **T06 · C3-05** — Agregar 4 preguntas de compra al FAQ
+- [x] **T06 · C3-05** — Agregar 4 preguntas de compra al FAQ
   - `FAQ.astro` — accordion + JSON-LD
   - Preguntas a agregar:
     1. ¿Los SMS van incluidos en el precio o se cobran aparte?
