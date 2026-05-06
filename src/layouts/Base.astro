@@ -3,12 +3,16 @@ interface Props {
   title?: string;
   description?: string;
   canonical?: string;
+  noindex?: boolean;
+  canonicalBase?: string;
 }
 
 const {
   title = 'agendallena — Tu agenda, confirmada.',
   description = 'La solución que confirma tu agenda por ti. Menos inasistencias, más certeza. Para clínicas, estilistas, terapeutas y todo negocio que vive de citas. $199 MXN/mes.',
   canonical = 'https://agendallena.mx/',
+  noindex = false,
+  canonicalBase,
 } = Astro.props;
 
 import '../styles/global.css';
@@ -30,7 +34,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <title>{title}</title>
 <meta name="description" content={description}>
 <meta name="author" content="agendallena">
-<link rel="canonical" href={canonical}>
+{noindex && <meta name="robots" content="noindex, nofollow">}
+<link rel="canonical" href={canonicalBase ?? canonical}>
 
 <meta property="og:type" content="website">
 <meta property="og:url" content={canonical}>

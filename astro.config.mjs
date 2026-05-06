@@ -4,5 +4,11 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://agendallena.mx',
   trailingSlash: 'never',
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      filter: (page) =>
+        !page.includes('/landing-b') &&
+        !page.includes('/landing-c'),
+    }),
+  ],
 });

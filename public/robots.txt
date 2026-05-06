@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /landing-b
+Disallow: /landing-c
 
 Sitemap: https://agendallena.mx/sitemap-index.xml

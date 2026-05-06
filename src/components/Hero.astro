@@ -15,7 +15,7 @@ const {
   <div class="container">
     {eyebrow && <div class="section-eyebrow hero-eyebrow">{eyebrow}</div>}
     {h1 ? (
-      <h1 class="hero-title">{h1}</h1>
+      <h1 class="hero-title" set:html={h1}></h1>
     ) : (
       <h1 class="hero-title">Tu agenda,<br><span class="accent">confirmada.</span></h1>
     )}

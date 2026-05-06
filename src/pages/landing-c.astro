@@ -1,0 +1,64 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import StatementStrip from '../components/StatementStrip.astro';
+import SocialProof from '../components/SocialProof.astro';
+import Problema from '../components/Problema.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Modules from '../components/Modules.astro';
+import Comparison from '../components/Comparison.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Pricing from '../components/Pricing.astro';
+import FAQ from '../components/FAQ.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+---
+<style is:global>
+:root {
+  --verde: #D97706;
+  --verde-hover: #B45309;
+  --verde-tenue: #FFFBEB;
+  --verde-superficie: #78350F;
+  --verde-acento: #FCD34D;
+  --tinta: #1C1917;
+  --hueso: #FFFDF7;
+}
+</style>
+<Base
+  title="agendallena — Tu agenda, confirmada."
+  description="La solución que confirma tu agenda por ti. Menos inasistencias, más certeza. Para clínicas, estilistas, terapeutas y todo negocio que vive de citas. $199 MXN/mes."
+  noindex={true}
+  canonicalBase="https://agendallena.mx/"
+>
+  <Hero
+    h1='Deja de perseguir clientes.<br><span class="accent">Empieza a atenderlos.</span>'
+    subtitle="agendallena confirma, recuerda y hace seguimiento por ti — en automático. Tú solo atiende. Nosotros nos encargamos del resto."
+  />
+  <SocialProof />
+  <StatementStrip />
+  <Problema
+    cards={[
+      {
+        title: 'Confirmar agota',
+        description: 'Mandar mensajes, esperar respuesta, recordar quién contestó y quién no. Todo eso mientras atiendes al cliente de enfrente.',
+      },
+      {
+        title: 'La mente no descansa',
+        description: 'Antes de dormir, revisas mentalmente la agenda de mañana. ¿Quién confirmó? ¿Quién no va a llegar? Es una carga que no debería ser tuya.',
+      },
+      {
+        title: 'El día que empieza sin certeza',
+        description: 'Llegas a trabajar sin saber si tu agenda es real. Un cliente confirma, otro no. No puedes planear el día hasta que ya empezó.',
+      },
+    ]}
+  />
+  <HowItWorks />
+  <Modules />
+  <Comparison />
+  <Testimonials />
+  <Pricing />
+  <FAQ />
+  <FinalCTA
+    heading='Tu agenda, bajo control.<br><span class="accent">Sin perseguir a nadie.</span>'
+    body='agendallena trabaja por ti las 24 horas. Confirma, recuerda, hace seguimiento. Tú solo abre el negocio y atiende.'
+  />
+</Base>
