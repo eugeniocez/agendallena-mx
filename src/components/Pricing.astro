@@ -8,13 +8,23 @@
 
     <div class="pricing-card">
       <div class="pricing-badge">Plan único</div>
-      <div class="price-label">Mensual</div>
+
+      <div class="billing-toggle">
+        <button class="billing-opt active" data-plan="monthly">Mensual</button>
+        <button class="billing-opt" data-plan="annual">Anual</button>
+      </div>
+
+      <div class="savings-badge" id="savings-badge" aria-hidden="true">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg>
+        16% de descuento
+      </div>
+
       <div class="price-display">
         <span class="price-currency">$</span>
-        <span class="price-amount">199</span>
-        <span class="price-period">MXN / mes</span>
+        <span class="price-amount" id="price-amount">199</span>
+        <span class="price-period" id="price-period">MXN / mes</span>
       </div>
-      <p class="price-sub">Incluye 14 días de prueba sin tarjeta.</p>
+      <p class="price-sub" id="price-sub">Incluye 14 días de prueba sin tarjeta.</p>
 
       <ul class="pricing-features">
         <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></div>Citas ilimitadas — sin tope mensual</li>
@@ -31,3 +41,34 @@
     </div>
   </div>
 </section>
+
+<script is:inline>
+(function () {
+  var opts = document.querySelectorAll('.billing-opt');
+  var amount = document.getElementById('price-amount');
+  var period = document.getElementById('price-period');
+  var sub = document.getElementById('price-sub');
+  var badge = document.getElementById('savings-badge');
+
+  opts.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      opts.forEach(function (o) { o.classList.remove('active'); });
+      this.classList.add('active');
+
+      if (this.dataset.plan === 'annual') {
+        amount.textContent = '1,999';
+        period.textContent = 'MXN / año';
+        sub.textContent = 'Equivale a $166/mes. 14 días de prueba sin tarjeta.';
+        badge.classList.add('visible');
+        badge.removeAttribute('aria-hidden');
+      } else {
+        amount.textContent = '199';
+        period.textContent = 'MXN / mes';
+        sub.textContent = 'Incluye 14 días de prueba sin tarjeta.';
+        badge.classList.remove('visible');
+        badge.setAttribute('aria-hidden', 'true');
+      }
+    });
+  });
+})();
+</script>

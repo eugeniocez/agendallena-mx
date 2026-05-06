@@ -1382,13 +1382,7 @@ p { text-wrap: pretty; }
 }
 
 .price-label {
-  font-family: inherit;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--grafito);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 16px;
+  display: none;
 }
 
 .price-display {
@@ -1487,6 +1481,57 @@ p { text-wrap: pretty; }
   font-size: 13px;
   color: var(--grafito);
   margin-top: 16px;
+}
+
+.billing-toggle {
+  display: inline-flex;
+  background: var(--gris-claro);
+  border-radius: 999px;
+  padding: 4px;
+  gap: 2px;
+  margin-bottom: 20px;
+}
+
+.billing-opt {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--grafito);
+  background: transparent;
+  border: none;
+  padding: 8px 22px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s var(--ease-out), color 0.2s var(--ease-out);
+  letter-spacing: 0.01em;
+}
+
+.billing-opt.active {
+  background: var(--tinta);
+  color: var(--hueso);
+}
+
+.savings-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--verde-tenue);
+  color: var(--verde);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.22s var(--ease-out), transform 0.22s var(--ease-out);
+  pointer-events: none;
+}
+
+.savings-badge.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 /* FAQ */
