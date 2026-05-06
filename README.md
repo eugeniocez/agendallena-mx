@@ -63,6 +63,8 @@ Abre `http://localhost:4321`.
 | `/salones-de-belleza` | Vertical salones de belleza |
 | `/barberias` | Vertical barberías |
 | `/soporte` | Centro de ayuda |
+| `/terminos` | Términos de servicio (en construcción) |
+| `/privacidad` | Política de privacidad (en construcción) |
 
 ## Deploy
 

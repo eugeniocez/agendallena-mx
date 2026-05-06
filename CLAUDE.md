@@ -295,6 +295,8 @@ agendallena-mx/
 | `/salones-de-belleza` | Vertical salones de belleza |
 | `/barberias` | Vertical barberías |
 | `/soporte` | Centro de ayuda |
+| `/terminos` | Términos de servicio (stub — contenido pendiente) |
+| `/privacidad` | Política de privacidad (stub — contenido pendiente) |
 
 **Rutas pendientes (Fase 4):** `/spas` · `/salones-de-unas` · `/entrenadores-personales` · `/despachos-legales` · `/terapistas`
 
@@ -334,7 +336,7 @@ Las landings de verticales usan el mismo template, cambiando solo el copy del he
 
 - Reemplazar mockups CSS por capturas reales del producto (PWA en iPhone frame moderno)
 - Blog para SEO orgánico
-- Páginas `/privacidad` y `/terminos`
+- Completar contenido de `/privacidad` y `/terminos` (archivos existentes, contenido pendiente)
 - Verticales: `/spas`, `/salones-de-unas`, `/entrenadores-personales`, `/despachos-legales`, `/terapistas`
 
 ---

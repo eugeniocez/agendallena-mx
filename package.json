@@ -12,7 +12,6 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
-    "marked": "^18.0.3",
     "typescript": "^5.9.3"
   }
 }

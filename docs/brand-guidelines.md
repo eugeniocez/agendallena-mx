@@ -1,6 +1,6 @@
 # agendallena — Brand Guidelines
 
-> **Versión:** 2.2
+> **Versión:** 3.0
 > **Fecha:** mayo 2026
 > **Manual de marca · Documento de identidad visual**
 

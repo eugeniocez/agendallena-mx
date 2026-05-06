@@ -1,4 +1,4 @@
-# Plan SEO — tuagenda.mx
+# Plan SEO — agendallena.mx
 
 **Mercado:** México / LATAM (es-MX)
 **Stack:** Astro 6 + Vercel
@@ -9,7 +9,7 @@
 
 ## 1. Resumen ejecutivo
 
-tuagenda.mx juega en un mercado saturado de "agenda mejor" pero **vacante en "confirma citas automáticamente"**. La estrategia SEO se construye sobre esa cuña: capturar tráfico de búsquedas con intención de solucionar **inasistencias**, no de "agendar mejor".
+agendallena.mx juega en un mercado saturado de "agenda mejor" pero **vacante en "confirma citas automáticamente"**. La estrategia SEO se construye sobre esa cuña: capturar tráfico de búsquedas con intención de solucionar **inasistencias**, no de "agendar mejor".
 
 **Posicionamiento SEO central:**
 > "El sistema que confirma tus citas por ti" — no competimos con Calendly en "agenda" ni con Fresha en "salones". Competimos en **automatización de confirmaciones para negocios B2B en LATAM**.
@@ -136,7 +136,7 @@ tuagenda.mx juega en un mercado saturado de "agenda mejor" pero **vacante en "co
 - "sistema de recordatorios consultorio dental"
 
 **Title sugerido:**
-`Software para dentistas — agenda y confirma citas automáticamente | tuagenda.mx`
+`Software para dentistas — agenda y confirma citas automáticamente | agendallena.mx`
 
 **Meta description sugerida:**
 `Agenda, confirma y organiza tus citas dentales en automático. Menos inasistencias, más pacientes que llegan. Para clínicas dentales en México. $199 MXN/mes.`
@@ -166,7 +166,7 @@ tuagenda.mx juega en un mercado saturado de "agenda mejor" pero **vacante en "co
 - "sistema citas para medicos privados"
 
 **Title:**
-`Software para consultorios médicos — agenda con confirmación automática | tuagenda.mx`
+`Software para consultorios médicos — agenda con confirmación automática | agendallena.mx`
 
 **H1:**
 `Software de citas para consultorios médicos`
@@ -193,7 +193,7 @@ tuagenda.mx juega en un mercado saturado de "agenda mejor" pero **vacante en "co
 - "agenda online psicologos mexico"
 
 **Title:**
-`Software para psicólogos — agenda y confirma sesiones automáticamente | tuagenda.mx`
+`Software para psicólogos — agenda y confirma sesiones automáticamente | agendallena.mx`
 
 **H1:**
 `Software de citas para psicólogos en México`
@@ -220,7 +220,7 @@ tuagenda.mx juega en un mercado saturado de "agenda mejor" pero **vacante en "co
 - "alternativa a fresha para salon"
 
 **Title:**
-`Software para salones de belleza — agenda y confirma citas | tuagenda.mx`
+`Software para salones de belleza — agenda y confirma citas | agendallena.mx`
 
 **H1:**
 `Software de citas para salones de belleza en México`
@@ -247,7 +247,7 @@ tuagenda.mx juega en un mercado saturado de "agenda mejor" pero **vacante en "co
 - "evitar cancelaciones barberia"
 
 **Title:**
-`Software para barberías — confirma turnos en automático | tuagenda.mx`
+`Software para barberías — confirma turnos en automático | agendallena.mx`
 
 **H1:**
 `Software de citas y turnos para barberías en México`
@@ -263,7 +263,7 @@ tuagenda.mx juega en un mercado saturado de "agenda mejor" pero **vacante en "co
 - "como reducir inasistencias citas" (~210/mes MX)
 
 **Title home:**
-`tuagenda.mx — Tu agenda, confirmada | Sistema de confirmación automática`
+`agendallena.mx — Tu agenda, confirmada | Sistema de confirmación automática`
 
 ---
 
@@ -316,10 +316,10 @@ tuagenda.mx juega en un mercado saturado de "agenda mejor" pero **vacante en "co
 ```
 
 ### Reglas de URLs
-- Sin trailing slash (`tuagenda.mx/dentistas`, no `/dentistas/`) — configurar en `astro.config.mjs`
+- Sin trailing slash (`agendallena.mx/dentistas`, no `/dentistas/`) — configurar en `astro.config.mjs`
 - Lowercase, guiones para separar palabras
 - Sin parámetros UTM en canonicals
-- Canonical absoluto en cada página: `https://tuagenda.mx/[ruta]`
+- Canonical absoluto en cada página: `https://agendallena.mx/[ruta]`
 
 ---
 
@@ -340,7 +340,7 @@ Implementar **5 páginas comparativas** en Fase 1 inmediata. Estas convierten 4-
 **Estructura de cada página:**
 1. H1 con keyword exacta
 2. Tabla comparativa (precio, features clave, soporte LATAM, idioma)
-3. "Por qué los negocios cambian a tuagenda.mx" (3-5 razones honestas)
+3. "Por qué los negocios cambian a agendallena.mx" (3-5 razones honestas)
 4. 1-2 testimonios de usuarios que cambiaron
 5. FAQ con FAQPage schema
 6. CTA prominente al trial
@@ -375,7 +375,7 @@ Implementar **5 páginas comparativas** en Fase 1 inmediata. Estas convierten 4-
 
 #### Cluster 4: Comparativas y reviews
 - "Calendly en español: ¿vale la pena en 2026?"
-- "Fresha vs Booksy vs tuagenda.mx: comparativa para salones LATAM"
+- "Fresha vs Booksy vs agendallena.mx: comparativa para salones LATAM"
 - "Los mejores softwares de citas para PyMEs en México"
 - "Doctoralia: cuándo te conviene y cuándo no"
 
@@ -413,8 +413,8 @@ Implementar **5 páginas comparativas** en Fase 1 inmediata. Estas convierten 4-
   "name": "Sistema de confirmación de citas para [vertical]",
   "provider": {
     "@type": "Organization",
-    "name": "tuagenda.mx",
-    "url": "https://tuagenda.mx"
+    "name": "agendallena.mx",
+    "url": "https://agendallena.mx"
   },
   "areaServed": {
     "@type": "Country",

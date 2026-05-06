@@ -10,7 +10,7 @@
   --amarillo: #F59E0B;
   --rojo: #DC2626;
   --verde-superficie: #245C32;
-  --verde-acento: var(--verde-acento);
+  --verde-acento: #4ADE80;
 
   --shadow-sm: 0 1px 2px rgba(10, 10, 11, 0.04);
   --shadow-md: 0 4px 24px rgba(10, 10, 11, 0.06);
@@ -1095,8 +1095,8 @@ p { text-wrap: pretty; }
 }
 
 .module-card.featured .module-num { color: var(--verde-acento); }
-.module-card.featured .module-title { color: var(--hueso); }
-.module-card.featured .module-desc { color: rgba(250, 250, 247, 0.7); }
+.module-card.featured .module-title { color: var(--hueso); font-size: 36px; }
+.module-card.featured .module-desc { color: rgba(250, 250, 247, 0.7); font-size: 18px; max-width: 580px; }
 
 .module-num {
   font-family: inherit;
@@ -1116,7 +1116,6 @@ p { text-wrap: pretty; }
   margin-bottom: 14px;
 }
 
-.module-card.featured .module-title { font-size: 36px; }
 
 .module-desc {
   font-size: 16px;
@@ -1125,7 +1124,6 @@ p { text-wrap: pretty; }
   margin-bottom: 28px;
 }
 
-.module-card.featured .module-desc { font-size: 18px; max-width: 580px; }
 
 .module-features {
   display: flex;
