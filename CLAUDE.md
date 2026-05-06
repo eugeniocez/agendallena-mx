@@ -496,7 +496,7 @@ agendallena-mx/
 │       └── global.css                 ← todas las variables y estilos
 ```
 
-**Brand guidelines:** versionadas en el repo. La fuente de verdad es `docs/brand-guidelines.md` (v2.2). El PDF distribuible se genera con `npm run build:brand-pdf` y se guarda en `docs/brand-guidelines-v2.2.pdf`. El PDF original v2.0 (`~/Desktop/agendallena_brand-guidelines.pdf`) quedó como snapshot histórico.
+**Brand guidelines:** versionadas en el repo. La fuente de verdad es `docs/brand-guidelines.md` (v3.0). El PDF distribuible se genera con `npm run build:brand-pdf` y se guarda en `docs/brand-guidelines-v3.0.pdf`.
 
 ---
 
