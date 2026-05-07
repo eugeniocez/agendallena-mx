@@ -408,12 +408,18 @@ p { text-wrap: pretty; }
   display: flex;
   align-items: center;
   gap: 4px;
-  background: rgba(10, 10, 11, 0.80);
+  background: rgba(10, 10, 11, 0.50);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 999px;
   padding: 5px 10px 5px 5px;
   z-index: 10;
+  transition: opacity 0.4s ease;
+}
+
+.vp.vp-hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .vp-btn {
@@ -444,6 +450,10 @@ p { text-wrap: pretty; }
   .hero-video {
     margin-top: 40px;
     border-radius: var(--radius-lg);
+  }
+  .vp {
+    transform: scale(0.82);
+    transform-origin: bottom left;
   }
 }
 

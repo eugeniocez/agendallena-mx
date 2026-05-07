@@ -112,5 +112,27 @@ const {
       video.muted = !video.muted;
       muteBtn.innerHTML = video.muted ? SVG.muted : SVG.unmuted;
     });
+
+    // Mobile auto-hide
+    var vp = document.getElementById('videoPlayer');
+    if (vp && window.matchMedia('(max-width: 700px)').matches) {
+      var hideTimer;
+      var container = video.parentElement;
+
+      function scheduleHide() {
+        clearTimeout(hideTimer);
+        hideTimer = setTimeout(function () { vp.classList.add('vp-hidden'); }, 3000);
+      }
+
+      scheduleHide();
+
+      container.addEventListener('touchstart', function (e) {
+        if (vp.classList.contains('vp-hidden')) {
+          e.preventDefault();
+          vp.classList.remove('vp-hidden');
+        }
+        scheduleHide();
+      }, { passive: false });
+    }
   })();
 </script>
