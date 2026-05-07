@@ -12,8 +12,8 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, '..');
 
-const TMP_HTML_PATH = resolve(root, 'docs/_brand-guidelines.tmp.html');
-const PDF_PATH = resolve(root, 'docs/brand-guidelines-v3.0.pdf');
+const TMP_HTML_PATH = resolve(root, 'docs/brand/_brand-guidelines.tmp.html');
+const PDF_PATH = resolve(root, 'docs/brand/brand-guidelines-v3.0.pdf');
 const CHROME_PATH = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const FONTS_PATH = resolve(__dirname, 'pjs-fonts.css');
 

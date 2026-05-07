@@ -243,7 +243,12 @@ agendallena-mx/
 ├── astro.config.mjs
 ├── package.json
 ├── docs/
-│   └── brand-guidelines.md            ← Brand guidelines v3.0 (fuente de verdad visual)
+│   ├── brand/
+│   │   ├── brand-guidelines.md        ← Brand guidelines v3.0 (fuente de verdad visual)
+│   │   └── brand-guidelines-v3.0.pdf
+│   ├── seo/
+│   │   └── PLAN.md
+│   └── marketing/
 ├── public/
 │   └── assets/                        ← imágenes estáticas (/assets/*)
 ├── src/
