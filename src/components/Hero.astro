@@ -24,7 +24,7 @@ const {
       <a href="#empezar" class="btn btn-primary-lg">
         Empezar gratis
       </a>
-      <a href="#como-funciona" class="btn btn-secondary-lg">
+      <a href="#demo" class="btn btn-secondary-lg">
         <svg style="width:14px;height:14px" viewBox="0 0 14 14" fill="currentColor"><path d="M3 2.5v9l8-4.5z"/></svg>
         Ver demo
       </a>
@@ -35,7 +35,7 @@ const {
       <div class="hero-meta-item"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l3 3 5-6"/></svg> Listo en 5 minutos</div>
     </div>
 
-    <div class="hero-video">
+    <div class="hero-video" id="demo">
       <video
         id="heroVideo"
         src="/assets/agendallena-demo.mp4"
@@ -132,17 +132,26 @@ const {
     if (fsBtn) {
       fsBtn.addEventListener('click', function () {
         if (!document.fullscreenElement && !document.webkitFullscreenElement) {
-          (container.requestFullscreen || container.webkitRequestFullscreen).call(container);
+          if (video.webkitEnterFullscreen) {
+            // iOS Safari: solo soporta fullscreen en el elemento <video> directamente
+            video.webkitEnterFullscreen();
+          } else {
+            (container.requestFullscreen || container.webkitRequestFullscreen).call(container);
+          }
         } else {
           (document.exitFullscreen || document.webkitExitFullscreen).call(document);
         }
       });
+      // Estándar + Android
       ['fullscreenchange', 'webkitfullscreenchange'].forEach(function (ev) {
         document.addEventListener(ev, function () {
           var inFs = !!(document.fullscreenElement || document.webkitFullscreenElement);
           fsBtn.innerHTML = inFs ? SVG_FS.exit : SVG_FS.enter;
         });
       });
+      // iOS: los eventos de fullscreen viven en el video, no en document
+      video.addEventListener('webkitbeginfullscreen', function () { fsBtn.innerHTML = SVG_FS.exit; });
+      video.addEventListener('webkitendfullscreen',   function () { fsBtn.innerHTML = SVG_FS.enter; });
     }
 
     // Mobile auto-hide

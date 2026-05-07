@@ -481,6 +481,9 @@ p { text-wrap: pretty; }
 }
 
 @media (max-width: 700px) {
+  .hero {
+    padding-bottom: 72px;
+  }
   .hero-video {
     margin-top: 40px;
     border-radius: var(--radius-lg);
