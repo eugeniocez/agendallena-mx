@@ -821,6 +821,30 @@ p { text-wrap: pretty; }
   letter-spacing: -0.01em;
 }
 
+.how-it-works-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-top: 40px;
+}
+
+.how-it-works-cta .btn-primary-lg {
+  background: var(--hueso);
+  color: var(--tinta);
+}
+
+.how-it-works-cta .btn-primary-lg:hover {
+  background: #f0ede6;
+}
+
+.how-it-works-cta-meta {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(250, 250, 247, 0.5);
+  letter-spacing: 0.01em;
+}
+
 .step {
   display: grid;
   grid-template-columns: 80px 1fr;
