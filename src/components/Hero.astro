@@ -34,5 +34,83 @@ const {
       <div class="hero-meta-item"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l3 3 5-6"/></svg> Mensajes y llamadas incluidos</div>
       <div class="hero-meta-item"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l3 3 5-6"/></svg> Listo en 5 minutos</div>
     </div>
+
+    <div class="hero-video">
+      <video
+        id="heroVideo"
+        src="/assets/agendallena-demo.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+      ></video>
+
+      <div class="vp" id="videoPlayer">
+        <!-- Play / Pause -->
+        <button class="vp-btn vp-play" id="vpPlay" aria-label="Reproducir o pausar">
+          <!-- pause (default: video starts playing) -->
+          <svg width="11" height="13" viewBox="0 0 11 13" fill="white">
+            <rect x="0" y="0" width="3.5" height="13" rx="1.5"/>
+            <rect x="7.5" y="0" width="3.5" height="13" rx="1.5"/>
+          </svg>
+        </button>
+
+        <!-- Replay -->
+        <button class="vp-btn vp-icon" id="vpReplay" aria-label="Reiniciar">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2.5 8A5.5 5.5 0 1 0 3.9 4.3"/>
+            <polyline points="2,1.5 2,5 5.5,5"/>
+          </svg>
+        </button>
+
+        <!-- Mute toggle -->
+        <button class="vp-btn vp-icon" id="vpMute" aria-label="Silenciar o activar sonido">
+          <!-- muted icon (default: starts muted) -->
+          <svg id="vpMuteIcon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M2.5 5.5H0.5v5h2l4 2.5v-10l-4 2.5z" fill="white"/>
+            <line x1="10" y1="6" x2="14" y2="10" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="14" y1="6" x2="10" y2="10" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
 </section>
+
+<script is:inline>
+  (function () {
+    var video   = document.getElementById('heroVideo');
+    var playBtn = document.getElementById('vpPlay');
+    var replayBtn = document.getElementById('vpReplay');
+    var muteBtn = document.getElementById('vpMute');
+    var muteIcon = document.getElementById('vpMuteIcon');
+    if (!video || !playBtn) return;
+
+    var SVG = {
+      play:  '<svg width="11" height="13" viewBox="0 0 11 13" fill="white"><path d="M0.5 0.5l10 6-10 6V0.5z"/></svg>',
+      pause: '<svg width="11" height="13" viewBox="0 0 11 13" fill="white"><rect x="0" y="0" width="3.5" height="13" rx="1.5"/><rect x="7.5" y="0" width="3.5" height="13" rx="1.5"/></svg>',
+      muted: '<svg id="vpMuteIcon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2.5 5.5H0.5v5h2l4 2.5v-10l-4 2.5z" fill="white"/><line x1="10" y1="6" x2="14" y2="10" stroke="white" stroke-width="1.6" stroke-linecap="round"/><line x1="14" y1="6" x2="10" y2="10" stroke="white" stroke-width="1.6" stroke-linecap="round"/></svg>',
+      unmuted: '<svg id="vpMuteIcon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2.5 5.5H0.5v5h2l4 2.5v-10l-4 2.5z" fill="white"/><path d="M11 6.5a3 3 0 0 1 0 3" stroke="white" stroke-width="1.6" stroke-linecap="round"/><path d="M13.2 4.5a6 6 0 0 1 0 7" stroke="white" stroke-width="1.6" stroke-linecap="round"/></svg>',
+    };
+
+    // Play / Pause
+    playBtn.addEventListener('click', function () {
+      if (video.paused) { video.play(); } else { video.pause(); }
+    });
+    video.addEventListener('play',  function () { playBtn.innerHTML = SVG.pause; });
+    video.addEventListener('pause', function () { playBtn.innerHTML = SVG.play;  });
+
+    // Replay
+    replayBtn.addEventListener('click', function () {
+      video.currentTime = 0;
+      video.play();
+    });
+
+    // Mute
+    muteBtn.addEventListener('click', function () {
+      video.muted = !video.muted;
+      muteBtn.innerHTML = video.muted ? SVG.muted : SVG.unmuted;
+    });
+  })();
+</script>
