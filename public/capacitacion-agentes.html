@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guía del agente · agendallena</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --tinta: #0A0A0B;
+      --hueso: #FAFAF7;
+      --verde: #0F7B3F;
+      --verde-hover: #0C6633;
+      --verde-tenue: #E8F5EE;
+      --verde-acento: #4ADE80;
+      --verde-superficie: #245C32;
+      --grafito: #6B6B6B;
+      --gris-claro: #F1EFE8;
+      --gris-borde: #E8E6DE;
+      --shadow-sm: 0 1px 2px rgba(10,10,11,.04);
+      --shadow-md: 0 4px 24px rgba(10,10,11,.06);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 17px; line-height: 1.6;
+      color: var(--tinta); background: var(--hueso);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    .doc-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,11,.92); backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      padding: 12px 24px; display: flex; align-items: center; gap: 4px; overflow-x: auto;
+    }
+    .doc-nav-brand { font-size: 14px; font-weight: 600; color: var(--verde-acento); white-space: nowrap; letter-spacing: -.02em; margin-right: 16px; }
+    .doc-nav a { font-size: 12px; font-weight: 500; color: rgba(255,255,255,.45); text-decoration: none; white-space: nowrap; padding: 4px 10px; border-radius: 999px; transition: all .2s; }
+    .doc-nav a:hover { color: #fff; background: rgba(255,255,255,.08); }
+
+    /* SECTIONS */
+    .section { padding: 88px 24px; }
+    .section-inner { max-width: 800px; margin: 0 auto; }
+    .section-inner-wide { max-width: 1040px; margin: 0 auto; }
+    .section-dark { background: var(--verde-superficie); color: var(--hueso); }
+    .section-ink { background: var(--tinta); color: var(--hueso); }
+
+    /* TYPOGRAPHY */
+    h1, h2, h3, h4 { line-height: 1.1; letter-spacing: -.03em; }
+    .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--verde); margin-bottom: 14px; }
+    .eyebrow-light { color: var(--verde-acento); }
+    .title-xl { font-size: clamp(32px,4vw,52px); font-weight: 700; margin-bottom: 20px; }
+    .title-lg { font-size: clamp(20px,2.5vw,30px); font-weight: 700; margin-bottom: 14px; }
+    .lead { font-size: clamp(15px,1.6vw,18px); color: var(--grafito); line-height: 1.65; max-width: 680px; }
+    .lead-light { color: rgba(250,250,247,.65); }
+    .body-light { font-size: 16px; color: rgba(250,250,247,.65); line-height: 1.75; margin-bottom: 18px; }
+
+    /* PORTADA */
+    .portada {
+      min-height: 100vh; display: flex; flex-direction: column;
+      justify-content: center; align-items: flex-start;
+      padding: 100px 56px 72px; position: relative; overflow: hidden;
+      background: var(--tinta);
+    }
+    .portada-mesh {
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 80% 60% at 18% 52%, rgba(15,123,63,.52) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 70% at 82% 28%, rgba(15,123,63,.36) 0%, transparent 65%),
+        radial-gradient(ellipse 70% 50% at 54% 84%, rgba(15,123,63,.24) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 8% 14%, rgba(15,123,63,.28) 0%, transparent 55%);
+      filter: blur(40px); transform: scale(1.12);
+    }
+    .portada-badge { position: relative; z-index: 1; display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--verde-acento); background: rgba(74,222,128,.1); border: 1px solid rgba(74,222,128,.2); padding: 6px 16px; border-radius: 999px; margin-bottom: 36px; }
+    .portada-wordmark { position: relative; z-index: 1; font-size: clamp(56px,10vw,120px); font-weight: 600; letter-spacing: -.04em; color: #fff; line-height: 1; margin-bottom: 12px; }
+    .portada-wordmark .llena { color: var(--verde-acento); }
+    .portada-label { position: relative; z-index: 1; font-size: clamp(18px,2.5vw,28px); font-weight: 400; color: rgba(255,255,255,.45); letter-spacing: -.02em; margin-bottom: 44px; }
+    .portada-sub { position: relative; z-index: 1; font-size: clamp(15px,1.6vw,18px); color: rgba(255,255,255,.55); max-width: 460px; line-height: 1.6; margin-bottom: 64px; }
+    .portada-stats { position: relative; z-index: 1; display: flex; gap: 40px; flex-wrap: wrap; }
+    .portada-stat-value { font-size: 30px; font-weight: 700; color: var(--verde-acento); letter-spacing: -.04em; font-variant-numeric: tabular-nums; display: block; margin-bottom: 4px; }
+    .portada-stat-label { font-size: 11px; font-weight: 600; color: rgba(255,255,255,.35); text-transform: uppercase; letter-spacing: .06em; }
+
+    /* MANIFIESTO */
+    .manifiesto-quote { font-size: clamp(26px,3.5vw,44px); font-weight: 700; letter-spacing: -.03em; line-height: 1.18; color: var(--hueso); border-left: 4px solid var(--verde-acento); padding-left: 28px; margin: 44px 0; }
+    .manifiesto-quote .accent { color: var(--verde-acento); }
+
+    /* NARRATIVE BOX */
+    .narrative { background: var(--gris-claro); border-radius: var(--radius-xl); padding: 28px 36px; margin: 28px 0; border-left: 4px solid var(--verde); }
+    .narrative-label { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--verde); margin-bottom: 12px; }
+    .narrative-text { font-size: 15px; color: var(--tinta); line-height: 1.7; }
+    .narrative-text em { font-style: italic; color: var(--grafito); }
+    .narrative-text strong { font-weight: 700; }
+
+    /* PROFILE LIST */
+    .profile-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+    .profile-list li { font-size: 15px; color: var(--grafito); padding-left: 18px; position: relative; line-height: 1.55; }
+    .profile-list li::before { content: '·'; position: absolute; left: 0; color: var(--verde); font-weight: 700; font-size: 20px; line-height: 1; top: 2px; }
+
+    /* CARDS */
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 14px; margin-top: 24px; }
+    .card { background: #fff; border-radius: var(--radius-lg); padding: 24px; border: 1px solid var(--gris-borde); box-shadow: var(--shadow-md); }
+    .card-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; margin-bottom: 12px; }
+    .card-tag-problem { background: rgba(220,38,38,.08); color: #DC2626; }
+    .card-title { font-size: 16px; font-weight: 700; letter-spacing: -.02em; margin-bottom: 8px; }
+    .card-body { font-size: 14px; color: var(--grafito); line-height: 1.6; }
+
+    /* STAT BANNER */
+    .stat-banner { background: var(--verde-tenue); border-radius: var(--radius-xl); padding: 32px 40px; margin: 28px 0; display: flex; align-items: center; gap: 28px; }
+    .stat-banner-num { font-size: clamp(48px,6vw,72px); font-weight: 700; letter-spacing: -.05em; color: var(--verde); font-variant-numeric: tabular-nums; white-space: nowrap; flex-shrink: 0; }
+    .stat-banner-text { font-size: 16px; font-weight: 500; color: var(--tinta); line-height: 1.55; }
+
+    /* CHIPS */
+    .chips-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
+    .chip { font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 999px; background: var(--verde-tenue); color: var(--verde); border: 1px solid rgba(15,123,63,.15); }
+
+    /* FLOW STEPS */
+    .flow-steps { margin-top: 20px; }
+    .flow-step { display: grid; grid-template-columns: 48px 1fr; gap: 16px; align-items: start; padding: 18px 0; border-bottom: 1px solid var(--gris-borde); }
+    .flow-step:last-child { border-bottom: none; }
+    .flow-step-num { width: 38px; height: 38px; border-radius: 50%; background: var(--verde-tenue); color: var(--verde); font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-variant-numeric: tabular-nums; }
+    .flow-step h4 { font-size: 15px; font-weight: 700; letter-spacing: -.02em; margin-bottom: 4px; }
+    .flow-step p { font-size: 14px; color: var(--grafito); line-height: 1.6; }
+    .step-tag { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 2px 7px; border-radius: 999px; margin-left: 7px; vertical-align: middle; }
+    .tag-auto { background: rgba(15,123,63,.1); color: var(--verde); }
+    .tag-manual { background: rgba(107,107,107,.1); color: var(--grafito); }
+
+    /* MODULES */
+    .modules-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 20px; }
+    .module-card { background: #fff; border: 1px solid var(--gris-borde); border-radius: var(--radius-md); padding: 18px; box-shadow: var(--shadow-sm); }
+    .module-num { font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--verde); margin-bottom: 8px; }
+    .module-name { font-size: 15px; font-weight: 700; letter-spacing: -.02em; margin-bottom: 6px; }
+    .module-desc { font-size: 13px; color: var(--grafito); line-height: 1.55; }
+
+    /* PRICE */
+    .price-highlight { background: var(--verde-tenue); border-radius: var(--radius-xl); padding: 28px 36px; margin: 24px 0; display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
+    .price-number { font-size: 52px; font-weight: 700; color: var(--verde); letter-spacing: -.04em; font-variant-numeric: tabular-nums; line-height: 1; }
+    .price-period { font-size: 14px; color: var(--grafito); font-weight: 500; margin-top: 4px; }
+    .price-context { font-size: 15px; color: var(--tinta); line-height: 1.6; max-width: 400px; }
+    .price-context strong { font-weight: 700; color: var(--verde); }
+
+    /* OUTCOMES */
+    .outcomes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 20px; }
+    .outcome-card { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius-lg); padding: 24px 16px; text-align: center; }
+    .outcome-value { font-size: 34px; font-weight: 700; color: var(--verde-acento); letter-spacing: -.04em; font-variant-numeric: tabular-nums; margin-bottom: 8px; }
+    .outcome-label { font-size: 12px; color: rgba(250,250,247,.6); line-height: 1.5; }
+
+    /* COMPARISON TABLE */
+    .table-wrap { overflow-x: auto; margin-top: 24px; border-radius: var(--radius-lg); overflow: hidden; }
+    .comparison-table { width: 100%; border-collapse: collapse; background: rgba(255,255,255,.04); font-size: 13px; }
+    .comparison-table th { padding: 14px 16px; font-weight: 700; font-size: 12px; border-bottom: 1px solid rgba(255,255,255,.1); }
+    .comparison-table th.col-feature { color: rgba(250,250,247,.4); text-align: left; }
+    .comparison-table th.col-winner { background: var(--verde); color: var(--hueso); text-align: center; }
+    .comparison-table th.col-other { color: rgba(250,250,247,.35); text-align: center; }
+    .comparison-table td { padding: 11px 16px; border-bottom: 1px solid rgba(255,255,255,.06); }
+    .comparison-table td.col-feature { color: rgba(250,250,247,.75); text-align: left; }
+    .comparison-table td.col-winner { background: rgba(15,123,63,.18); text-align: center; }
+    .comparison-table td.col-other { text-align: center; color: rgba(250,250,247,.25); }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .ck { color: var(--verde-acento); font-size: 16px; font-weight: 700; }
+    .cx { font-size: 14px; }
+
+    /* FUNNEL (DCSC) */
+    .funnel { margin: 24px 0; }
+    .funnel-step { padding: 20px 24px; border-left: 3px solid transparent; margin-bottom: 2px; }
+    .funnel-step:nth-child(1) { border-color:#DC2626; background:rgba(220,38,38,.04); border-radius: var(--radius-md) var(--radius-md) 0 0; }
+    .funnel-step:nth-child(2) { border-color:#D97706; background:rgba(245,158,11,.04); }
+    .funnel-step:nth-child(3) { border-color:var(--verde); background:rgba(15,123,63,.04); }
+    .funnel-step:nth-child(4) { border-color:#3B82F6; background:rgba(59,130,246,.04); border-radius: 0 0 var(--radius-md) var(--radius-md); }
+    .funnel-label { font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 5px; }
+    .funnel-step:nth-child(1) .funnel-label { color:#DC2626; }
+    .funnel-step:nth-child(2) .funnel-label { color:#D97706; }
+    .funnel-step:nth-child(3) .funnel-label { color:var(--verde); }
+    .funnel-step:nth-child(4) .funnel-label { color:#3B82F6; }
+    .funnel-title { font-size: 16px; font-weight: 700; letter-spacing: -.02em; margin-bottom: 6px; }
+    .funnel-desc { font-size: 14px; color: var(--grafito); line-height: 1.6; }
+    .funnel-q { margin-top: 10px; font-size: 13px; font-weight: 600; color: var(--tinta); background: rgba(10,10,11,.06); padding: 9px 14px; border-radius: var(--radius-sm); font-style: italic; }
+
+    /* GUION GRID */
+    .guion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+    .guion-card { background: var(--gris-claro); border-radius: var(--radius-lg); padding: 22px; }
+    .guion-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+    .guion-num { width: 28px; height: 28px; border-radius: 50%; background: var(--tinta); color: var(--hueso); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .guion-title { font-size: 16px; font-weight: 700; letter-spacing: -.02em; }
+    .guion-time { font-size: 11px; color: var(--grafito); background: rgba(10,10,11,.1); padding: 2px 8px; border-radius: 999px; font-weight: 500; }
+    .guion-tip { font-size: 13px; color: var(--grafito); line-height: 1.5; margin-bottom: 10px; }
+    .guion-script { font-size: 13px; font-style: italic; background: var(--tinta); color: rgba(250,250,247,.85); padding: 12px 14px; border-radius: var(--radius-sm); line-height: 1.55; }
+    .guion-note { font-size: 11px; color: var(--grafito); margin-top: 8px; font-style: italic; }
+
+    /* OBJECTIONS */
+    .objections-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 18px; }
+    .objection-card { border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--gris-borde); }
+    .obj-q { padding: 12px 16px; background: var(--gris-claro); display: flex; align-items: flex-start; gap: 10px; }
+    .obj-badge { font-size: 9px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--grafito); background: rgba(107,107,107,.12); padding: 2px 8px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
+    .obj-q-text { font-size: 13px; font-weight: 600; color: var(--tinta); font-style: italic; }
+    .obj-a { padding: 10px 16px; background: #fff; display: flex; align-items: flex-start; gap: 10px; }
+    .obj-a-badge { font-size: 9px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--verde); background: var(--verde-tenue); padding: 2px 8px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
+    .obj-a-text { font-size: 13px; color: var(--tinta); line-height: 1.6; }
+
+    /* AFFIRMATIONS */
+    .affirmations { display: flex; flex-direction: column; gap: 10px; margin: 28px 0; }
+    .affirmation { display: flex; align-items: flex-start; gap: 14px; padding: 16px 20px; background: rgba(255,255,255,.06); border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,.1); }
+    .affirmation-mark { width: 26px; height: 26px; border-radius: 50%; background: var(--verde-acento); color: var(--tinta); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .affirmation-text { font-size: 15px; font-weight: 500; color: var(--hueso); line-height: 1.55; }
+
+    /* CHEAT SHEET */
+    .cheat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 14px; margin-top: 24px; }
+    .cheat-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius-lg); padding: 20px; }
+    .cheat-card-title { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--verde-acento); margin-bottom: 14px; }
+    .cheat-stat { display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .cheat-stat:last-child { border-bottom: none; }
+    .cheat-stat-val { font-size: 24px; font-weight: 700; color: var(--verde-acento); letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+    .cheat-stat-lbl { font-size: 12px; color: rgba(250,250,247,.45); }
+    .cheat-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .cheat-list li { font-size: 13px; color: rgba(250,250,247,.75); line-height: 1.45; padding-left: 14px; position: relative; }
+    .cheat-list li::before { content: '—'; position: absolute; left: 0; color: var(--verde-acento); }
+    .cheat-list li strong { color: rgba(250,250,247,.9); font-weight: 600; }
+
+    /* DIVIDER */
+    hr { border: none; border-top: 1px solid var(--gris-borde); }
+
+    /* FOOTER */
+    .doc-footer { background: var(--tinta); color: rgba(255,255,255,.35); text-align: center; padding: 48px 24px; font-size: 13px; }
+    .doc-footer-brand { font-size: 22px; font-weight: 600; color: #fff; letter-spacing: -.03em; margin-bottom: 8px; }
+    .doc-footer-brand .llena { color: var(--verde-acento); }
+
+    /* ÍNDICE */
+    .indice-section { background: var(--tinta); color: var(--hueso); padding: 72px 48px; }
+    .indice-inner { max-width: 800px; margin: 0 auto; }
+    .indice-title { font-size: clamp(32px,4vw,52px); font-weight: 700; letter-spacing: -.03em; color: var(--hueso); margin-bottom: 8px; }
+    .indice-sub { font-size: 15px; color: rgba(250,250,247,.45); margin-bottom: 48px; }
+    .indice-list { list-style: none; display: flex; flex-direction: column; }
+    .indice-item { display: grid; grid-template-columns: 48px 1fr auto; align-items: baseline; gap: 16px; padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,.07); text-decoration: none; color: inherit; }
+    .indice-item:last-child { border-bottom: none; }
+    .indice-item:hover .indice-item-title { color: var(--verde-acento); }
+    .indice-num { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--verde-acento); font-variant-numeric: tabular-nums; }
+    .indice-item-content { display: flex; flex-direction: column; gap: 3px; }
+    .indice-item-title { font-size: 17px; font-weight: 600; color: var(--hueso); letter-spacing: -.02em; transition: color .2s; }
+    .indice-item-desc { font-size: 13px; color: rgba(250,250,247,.4); }
+    .indice-item-arrow { font-size: 14px; color: rgba(255,255,255,.2); }
+
+    /* UTILITIES */
+    .mt-12 { margin-top: 12px; }
+    .mt-20 { margin-top: 20px; }
+    .mt-28 { margin-top: 28px; }
+
+    /* ─────────── PRINT ─────────── */
+    @media print {
+      *, *::before, *::after {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .doc-nav { display: none; }
+      .doc-footer { display: none; }
+
+      .portada {
+        min-height: 100vh; padding: 60px;
+        break-after: page; justify-content: center; gap: 0;
+      }
+      .portada-badge { margin-bottom: 24px; }
+      .portada-wordmark { font-size: 96px; margin-bottom: 6px; }
+      .portada-label { font-size: 17px; margin-bottom: 14px; }
+      .portada-sub { margin-bottom: 28px; font-size: 13px; }
+      .portada-stats { gap: 24px; }
+      .portada-stat-value { font-size: 20px; }
+      .portada-stat-label { font-size: 9px; }
+
+      .indice-section { min-height: 100vh; break-after: page; padding: 60px 64px; }
+      .indice-title { font-size: 32px; margin-bottom: 4px; }
+      .indice-sub { margin-bottom: 24px; font-size: 12px; }
+      .indice-item { padding: 11px 0; }
+      .indice-item-title { font-size: 14px; }
+      .indice-item-desc { font-size: 10px; }
+      .indice-num { font-size: 10px; }
+
+      body { font-size: 11px; }
+
+      .section, .section-dark, .section-ink {
+        break-before: page;
+        padding: 32px 44px;
+      }
+      .section-dark, .section-ink { min-height: 100vh; }
+      hr { display: none; }
+
+      /* Typography */
+      .eyebrow { margin-bottom: 5px; font-size: 9px; }
+      .title-xl { font-size: 22px !important; margin-bottom: 5px; }
+      .title-lg { font-size: 13px !important; margin-bottom: 5px; }
+      .lead { font-size: 11px !important; line-height: 1.5; max-width: none; }
+      .lead-light { font-size: 11px !important; line-height: 1.5; }
+      .body-light { font-size: 11px; line-height: 1.55; margin-bottom: 6px; }
+      .manifiesto-quote { font-size: 18px; margin: 12px 0; padding-left: 12px; }
+
+      .mt-28 { margin-top: 12px !important; }
+      .mt-20 { margin-top: 8px !important; }
+      .mt-12 { margin-top: 5px !important; }
+
+      /* Narrative */
+      .narrative { padding: 10px 16px; margin: 9px 0; border-radius: 10px; }
+      .narrative-label { font-size: 8px; margin-bottom: 6px; }
+      .narrative-text { font-size: 10px; line-height: 1.5; }
+
+      /* Profile list */
+      .profile-list { gap: 4px; margin-top: 6px; }
+      .profile-list li { font-size: 10px; padding-left: 12px; }
+      .profile-list li::before { font-size: 13px; top: 1px; }
+
+      /* Cards */
+      .cards-grid { margin-top: 9px; gap: 6px; }
+      .card { padding: 10px 12px; border-radius: 10px; box-shadow: none; }
+      .card-tag { margin-bottom: 6px; font-size: 7px; padding: 2px 6px; }
+      .card-title { font-size: 11px; margin-bottom: 3px; }
+      .card-body { font-size: 10px; line-height: 1.45; }
+
+      /* Stat banner */
+      .stat-banner { padding: 12px 16px; margin: 9px 0; gap: 12px; border-radius: 10px; }
+      .stat-banner-num { font-size: 28px; }
+      .stat-banner-text { font-size: 10px; line-height: 1.45; }
+
+      /* Chips */
+      .chips-row { margin-top: 6px; gap: 3px; }
+      .chip { font-size: 9px; padding: 2px 7px; }
+
+      /* Flow steps */
+      .flow-steps { margin-top: 9px; }
+      .flow-step { padding: 7px 0; gap: 10px; grid-template-columns: 36px 1fr; }
+      .flow-step-num { width: 24px; height: 24px; font-size: 9px; }
+      .flow-step h4 { font-size: 10px; margin-bottom: 1px; }
+      .flow-step p { font-size: 9px; line-height: 1.4; }
+      .step-tag { font-size: 7px; padding: 1px 5px; margin-left: 5px; }
+
+      /* Modules */
+      .modules-grid { margin-top: 9px; gap: 5px; grid-template-columns: repeat(5, 1fr); }
+      .module-card { padding: 9px 10px; border-radius: 8px; box-shadow: none; }
+      .module-num { font-size: 8px; margin-bottom: 2px; }
+      .module-name { font-size: 10px; margin-bottom: 2px; }
+      .module-desc { font-size: 9px; line-height: 1.4; }
+
+      /* Price */
+      .price-highlight { padding: 12px 16px; margin: 9px 0; gap: 16px; border-radius: 10px; flex-wrap: nowrap; }
+      .price-number { font-size: 28px; }
+      .price-period { font-size: 9px; margin-top: 1px; }
+      .price-context { font-size: 9px; line-height: 1.45; max-width: none; }
+
+      /* Outcomes */
+      .outcomes-grid { margin-top: 12px; gap: 6px; grid-template-columns: repeat(4, 1fr); }
+      .outcome-card { padding: 10px 6px; border-radius: 10px; }
+      .outcome-value { font-size: 20px; margin-bottom: 3px; }
+      .outcome-label { font-size: 8px; line-height: 1.4; }
+
+      /* Table */
+      .table-wrap { margin-top: 10px; border-radius: 8px; }
+      .comparison-table { font-size: 9px; }
+      .comparison-table th { padding: 6px 8px; font-size: 9px; }
+      .comparison-table td { padding: 5px 8px; }
+      .ck { font-size: 12px; }
+
+      /* Funnel */
+      .funnel { margin: 9px 0; }
+      .funnel-step { padding: 9px 12px; margin-bottom: 1px; }
+      .funnel-label { font-size: 7px; margin-bottom: 2px; }
+      .funnel-title { font-size: 11px; margin-bottom: 3px; }
+      .funnel-desc { font-size: 9px; line-height: 1.4; }
+      .funnel-q { margin-top: 4px; font-size: 9px; padding: 4px 8px; border-radius: 5px; }
+
+      /* Guion */
+      .guion-grid { margin-top: 12px; gap: 8px; }
+      .guion-card { padding: 12px; border-radius: 10px; }
+      .guion-head { margin-bottom: 6px; gap: 6px; }
+      .guion-num { width: 20px; height: 20px; font-size: 9px; }
+      .guion-title { font-size: 11px; }
+      .guion-time { font-size: 8px; padding: 1px 6px; }
+      .guion-tip { font-size: 9px; margin-bottom: 6px; line-height: 1.4; }
+      .guion-script { font-size: 9px; padding: 7px 9px; line-height: 1.4; border-radius: 5px; }
+      .guion-note { font-size: 8px; margin-top: 5px; }
+
+      /* Objections */
+      .objections-grid { margin-top: 10px; gap: 5px; }
+      .objection-card { border-radius: 8px; }
+      .obj-q { padding: 7px 11px; gap: 7px; }
+      .obj-badge { font-size: 7px; padding: 1px 5px; }
+      .obj-q-text { font-size: 10px; }
+      .obj-a { padding: 6px 11px; gap: 7px; }
+      .obj-a-badge { font-size: 7px; padding: 1px 5px; }
+      .obj-a-text { font-size: 9px; line-height: 1.4; }
+
+      /* Affirmations */
+      .affirmations { gap: 5px; margin: 10px 0; }
+      .affirmation { padding: 8px 12px; gap: 9px; border-radius: 8px; }
+      .affirmation-mark { width: 20px; height: 20px; font-size: 9px; }
+      .affirmation-text { font-size: 10px; line-height: 1.45; }
+
+      /* Cheat */
+      .cheat-grid { gap: 8px; margin-top: 10px; }
+      .cheat-card { padding: 10px 12px; border-radius: 10px; }
+      .cheat-card-title { font-size: 7px; margin-bottom: 8px; }
+      .cheat-stat { padding: 3px 0; }
+      .cheat-stat-val { font-size: 15px; }
+      .cheat-stat-lbl { font-size: 8px; }
+      .cheat-list { gap: 2px; }
+      .cheat-list li { font-size: 9px; line-height: 1.35; padding-left: 10px; }
+
+      /* Break control */
+      .guion-card, .objection-card, .affirmation { break-inside: avoid; }
+      .flow-step, .module-card, .outcome-card, .narrative,
+      .funnel-step, .stat-banner, .price-highlight { break-inside: avoid; }
+      h2, h3 { break-after: avoid; }
+    }
+
+    /* MOBILE */
+    @media (max-width: 700px) {
+      .section { padding: 64px 20px; }
+      .portada { padding: 80px 24px 48px; }
+      .stat-banner { flex-direction: column; padding: 24px; gap: 14px; }
+      .price-highlight { flex-direction: column; padding: 24px; gap: 20px; }
+      .comparison-table { font-size: 11px; }
+      .comparison-table th, .comparison-table td { padding: 8px 8px; }
+      .doc-nav { display: none; }
+      .modules-grid { grid-template-columns: repeat(2, 1fr); }
+      .guion-grid { grid-template-columns: 1fr; }
+      .objections-grid { grid-template-columns: 1fr; }
+      .outcomes-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="doc-nav">
+    <span class="doc-nav-brand">agendallena · guía del agente</span>
+    <a href="#manifiesto">Manifiesto</a>
+    <a href="#problema">El problema</a>
+    <a href="#producto">Producto</a>
+    <a href="#ventaja">Por qué gana</a>
+    <a href="#psicologia">Psicología</a>
+    <a href="#guion">Guión</a>
+    <a href="#objeciones">Objeciones</a>
+    <a href="#mentalidad">Mentalidad</a>
+    <a href="#cheatsheet">Cheat sheet</a>
+  </nav>
+
+
+  <!-- ░░ PORTADA ░░ -->
+  <section class="portada" id="portada">
+    <div class="portada-mesh"></div>
+    <div class="portada-badge">Edición interna &middot; Solo agentes</div>
+    <div class="portada-wordmark">agenda<span class="llena">llena</span></div>
+    <div class="portada-label">Guía del agente</div>
+    <div class="portada-sub">Todo lo que necesitas para vender con convicción, manejar cualquier objeción y cerrar con seguridad.</div>
+    <div class="portada-stats">
+      <div>
+        <span class="portada-stat-value">30%</span>
+        <span class="portada-stat-label">citas perdidas sin automatización</span>
+      </div>
+      <div>
+        <span class="portada-stat-value">−70%</span>
+        <span class="portada-stat-label">inasistencias con agendallena</span>
+      </div>
+      <div>
+        <span class="portada-stat-value">$199</span>
+        <span class="portada-stat-label">MXN al mes, todo incluido</span>
+      </div>
+      <div>
+        <span class="portada-stat-value">14 días</span>
+        <span class="portada-stat-label">gratis, sin tarjeta</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ░░ ÍNDICE ░░ -->
+  <section class="indice-section" id="indice">
+    <div class="indice-inner">
+      <h2 class="indice-title">Índice</h2>
+      <p class="indice-sub">Guía del agente agendallena · Edición interna · Confidencial</p>
+      <ul class="indice-list">
+        <li><a href="#manifiesto" class="indice-item"><span class="indice-num">01</span><span class="indice-item-content"><span class="indice-item-title">Bienvenido — el manifiesto</span><span class="indice-item-desc">Por qué esto importa y qué estás vendiendo en realidad</span></span><span class="indice-item-arrow">→</span></a></li>
+        <li><a href="#problema" class="indice-item"><span class="indice-num">02</span><span class="indice-item-content"><span class="indice-item-title">El problema que resolvemos</span><span class="indice-item-desc">La situación real de tu cliente antes de conocer agendallena</span></span><span class="indice-item-arrow">→</span></a></li>
+        <li><a href="#producto" class="indice-item"><span class="indice-num">03</span><span class="indice-item-content"><span class="indice-item-title">El producto — qué es y cómo funciona</span><span class="indice-item-desc">Los 5 pasos del flujo automático, los 5 módulos y el precio</span></span><span class="indice-item-arrow">→</span></a></li>
+        <li><a href="#ventaja" class="indice-item"><span class="indice-num">04</span><span class="indice-item-content"><span class="indice-item-title">La ventaja competitiva</span><span class="indice-item-desc">Comparativa vs WhatsApp, Libreta y Calendly. Números de impacto.</span></span><span class="indice-item-arrow">→</span></a></li>
+        <li><a href="#psicologia" class="indice-item"><span class="indice-num">05</span><span class="indice-item-content"><span class="indice-item-title">Psicología de la venta</span><span class="indice-item-desc">Modelo DCSC — los 4 momentos de toda llamada efectiva</span></span><span class="indice-item-arrow">→</span></a></li>
+        <li><a href="#guion" class="indice-item"><span class="indice-num">06</span><span class="indice-item-content"><span class="indice-item-title">El guión — la llamada perfecta</span><span class="indice-item-desc">Apertura, detección, presentación y cierre en tarjetas de referencia</span></span><span class="indice-item-arrow">→</span></a></li>
+        <li><a href="#objeciones" class="indice-item"><span class="indice-num">07</span><span class="indice-item-content"><span class="indice-item-title">Manejo de objeciones</span><span class="indice-item-desc">6 objeciones frecuentes con respuesta sugerida</span></span><span class="indice-item-arrow">→</span></a></li>
+        <li><a href="#mentalidad" class="indice-item"><span class="indice-num">08</span><span class="indice-item-content"><span class="indice-item-title">Mentalidad del agente ganador</span><span class="indice-item-desc">Las 5 afirmaciones para antes de marcar</span></span><span class="indice-item-arrow">→</span></a></li>
+        <li><a href="#cheatsheet" class="indice-item"><span class="indice-num">09</span><span class="indice-item-content"><span class="indice-item-title">Cheat sheet — referencia rápida</span><span class="indice-item-desc">Datos, frases de impacto, objeciones en una línea y estructura de llamada</span></span><span class="indice-item-arrow">→</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- ░░ 01 MANIFIESTO ░░ -->
+  <section class="section section-dark" id="manifiesto">
+    <div class="section-inner">
+      <div class="eyebrow eyebrow-light">01 &middot; Bienvenido</div>
+      <h2 class="title-xl">Lo que tienes en las manos no es un manual.</h2>
+      <p class="lead lead-light">Es una ventaja. Y si la usas bien, vas a cerrar más rápido, con más seguridad, y sin improvisar.</p>
+
+      <p class="body-light mt-28">
+        Cada negocio que vive de su agenda — el dentista, la estilista, el psicólogo, el barbero — está perdiendo dinero hoy. No porque sea mal negocio. Sino porque su sistema de confirmación está roto: depende de WhatsApp, de su memoria, o de un cuaderno que no avisa nada.
+      </p>
+      <p class="body-light">
+        Tú eres la persona que llama para cambiarlo. Pero antes de hacer esa llamada, tienes que creerlo. No como vendedor — como alguien que sabe que lo que ofrece vale mucho más de lo que cuesta.
+      </p>
+
+      <blockquote class="manifiesto-quote">
+        "No vendes software.<br>Vendes <span class="accent">dinero que no se pierde.</span>"
+      </blockquote>
+
+      <p class="body-light">
+        Cuando alguien le dice que sí a agendallena, está recuperando las citas que se le escapaban, dejando de perseguir clientes por WhatsApp, y empezando el día sabiendo exactamente quién va a llegar. Eso tiene un valor real, medible, inmediato.
+      </p>
+      <p class="body-light">
+        Aprende este material. Créelo. Un agente que cree en lo que vende cierra el doble.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ░░ 02 EL PROBLEMA ░░ -->
+  <section class="section" id="problema">
+    <div class="section-inner">
+      <div class="eyebrow">02 &middot; El problema</div>
+      <h2 class="title-xl">Cada cita perdida es dinero que no regresa.</h2>
+      <p class="lead">Entiende la situación real de quien va a contestar tu llamada.</p>
+
+      <div class="narrative">
+        <div class="narrative-label">Escena real &middot; 11:00 am, cualquier martes</div>
+        <p class="narrative-text">
+          El dentista lleva dos horas disponible. La de las 9:00 <em>no llegó, sin avisar.</em> La de las 10:00 canceló por WhatsApp pero no vio el mensaje. La de las 11:00 no respondió el recordatorio. Costos corriendo, silla vacía. <strong>Esto es el martes de cualquier semana para la mayoría de sus clientes.</strong>
+        </p>
+      </div>
+
+      <h3 class="title-lg mt-20">Tres razones por las que esto pasa</h3>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-tag card-tag-problem">Problema 1</div>
+          <h4 class="card-title">WhatsApp se pierde</h4>
+          <p class="card-body">Las confirmaciones se entierran entre conversaciones. Para cuando se acuerdan, ya es tarde.</p>
+        </div>
+        <div class="card">
+          <div class="card-tag card-tag-problem">Problema 2</div>
+          <h4 class="card-title">La libreta no avisa</h4>
+          <p class="card-body">No manda recordatorios, no hace llamadas, no avisa si el cliente no llegó. Es completamente pasiva.</p>
+        </div>
+        <div class="card">
+          <div class="card-tag card-tag-problem">Problema 3</div>
+          <h4 class="card-title">La memoria falla</h4>
+          <p class="card-body">Con el día lleno de citas y operación, es imposible recordar quién confirmó y quién no.</p>
+        </div>
+      </div>
+
+      <div class="stat-banner">
+        <div class="stat-banner-num">30%</div>
+        <div class="stat-banner-text">
+          Hasta 3 de cada 10 citas se pierden sin confirmación automática. Para un consultorio con 20 citas por semana, son 6 citas menos — <strong>semana tras semana.</strong>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:14px;align-items:start;">
+        <div>
+          <h3 class="title-lg">Tu cliente ideal</h3>
+          <div class="chips-row">
+            <span class="chip">Clínicas dentales</span>
+            <span class="chip">Consultorios médicos</span>
+            <span class="chip">Psicólogos</span>
+            <span class="chip">Salones de belleza</span>
+            <span class="chip">Barberías</span>
+            <span class="chip">Spas</span>
+            <span class="chip">Talleres mecánicos</span>
+            <span class="chip">Terapistas</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="title-lg">Cómo piensa</h3>
+          <ul class="profile-list">
+            <li>No es técnico. WhatsApp es su herramienta principal de negocio.</li>
+            <li>$199 debe sentirse barato comparado con lo que está perdiendo.</li>
+            <li>Lo que lo mueve: saber quién va a llegar sin perseguir a nadie.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ░░ 03 EL PRODUCTO ░░ -->
+  <section class="section" id="producto">
+    <div class="section-inner">
+      <div class="eyebrow">03 &middot; El producto</div>
+      <h2 class="title-xl">El sistema que confirma tu agenda por ti.</h2>
+      <p class="lead">No es un calendario más bonito. No es un CRM. Convierte cada cita tentativa en una cita confirmada — por SMS, WhatsApp y llamada automática. El negocio solo hace el paso 1.</p>
+
+      <h3 class="title-lg mt-20">El flujo automático en 5 pasos</h3>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="flow-step-num">01</div>
+          <div>
+            <h4>El negocio agenda la cita <span class="step-tag tag-manual">Manual</span></h4>
+            <p>Nombre, celular, hora. 4 campos. En 10 segundos, listo.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-num">02</div>
+          <div>
+            <h4>Confirmación inmediata <span class="step-tag tag-auto">Automático</span></h4>
+            <p>SMS al instante con los detalles de la cita. Sin que el negocio haga nada más.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-num">03</div>
+          <div>
+            <h4>Recordatorio 24 horas antes <span class="step-tag tag-auto">Automático</span></h4>
+            <p>Mensaje con tres botones: Confirmar · Cancelar · Reagendar. La respuesta se refleja al instante.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-num">04</div>
+          <div>
+            <h4>¿Sin respuesta? Llamada automática <span class="step-tag tag-auto">Automático</span></h4>
+            <p>2 horas antes. El sistema llama. Tasas de respuesta superiores al 90%.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-num">05</div>
+          <div>
+            <h4>El calendario dice la verdad</h4>
+            <p>Verde confirmada · Amarillo pendiente · Rojo cancelada. Sin preguntar a nadie.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="title-lg mt-20">Los 5 módulos</h3>
+      <div class="modules-grid">
+        <div class="module-card">
+          <div class="module-num">Módulo 01</div>
+          <div class="module-name">Calendario</div>
+          <p class="module-desc">Vista día / 3 días. Estado en tiempo real: verde, amarillo, rojo.</p>
+        </div>
+        <div class="module-card">
+          <div class="module-num">Módulo 02</div>
+          <div class="module-name">Nueva cita</div>
+          <p class="module-desc">4 campos. En 10 segundos el cliente está agendado y la confirmación ya salió.</p>
+        </div>
+        <div class="module-card">
+          <div class="module-num">Módulo 03</div>
+          <div class="module-name">Invitar</div>
+          <p class="module-desc">Reactivación masiva a clientes inactivos por SMS, en dos clics.</p>
+        </div>
+        <div class="module-card">
+          <div class="module-num">Módulo 04</div>
+          <div class="module-name">Directorio</div>
+          <p class="module-desc">Clientes auto-guardados con historial de visitas e inasistencias.</p>
+        </div>
+        <div class="module-card">
+          <div class="module-num">Módulo 05</div>
+          <div class="module-name">Ajustes</div>
+          <p class="module-desc">Suscripción, pagos y soporte humano por WhatsApp.</p>
+        </div>
+      </div>
+
+      <div class="price-highlight">
+        <div>
+          <div class="price-number">$199</div>
+          <div class="price-period">MXN / mes &middot; todo incluido</div>
+        </div>
+        <div class="price-context">
+          Mensajes ilimitados · Llamadas automáticas · Clientes ilimitados · Reactivación masiva · Soporte humano.<br>
+          <strong>Sin límites. Sin contratos.</strong> 14 días gratis, sin tarjeta.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ░░ 04 POR QUÉ GANA ░░ -->
+  <section class="section section-dark" id="ventaja">
+    <div class="section-inner-wide">
+      <div class="eyebrow eyebrow-light">04 &middot; La ventaja competitiva</div>
+      <h2 class="title-xl">Por qué agendallena gana.</h2>
+      <p class="lead lead-light">Cuando el cliente diga "ya uso WhatsApp" o "ya tengo Calendly", aquí está tu respuesta.</p>
+
+      <div class="table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th class="col-feature">Función</th>
+              <th class="col-winner">agendallena</th>
+              <th class="col-other">Libreta</th>
+              <th class="col-other">WhatsApp</th>
+              <th class="col-other">Calendly</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="col-feature">Confirmación automática</td><td class="col-winner"><span class="ck">✓</span></td><td class="col-other"><span class="cx">—</span></td><td class="col-other"><span class="cx">—</span></td><td class="col-other" style="color:rgba(250,250,247,.4);">✓</td></tr>
+            <tr><td class="col-feature">Recordatorios automáticos</td><td class="col-winner"><span class="ck">✓</span></td><td class="col-other"><span class="cx">—</span></td><td class="col-other"><span class="cx">—</span></td><td class="col-other" style="color:rgba(250,250,247,.4);">✓</td></tr>
+            <tr><td class="col-feature">Llamada si no responde</td><td class="col-winner"><span class="ck">✓</span></td><td class="col-other"><span class="cx">—</span></td><td class="col-other"><span class="cx">—</span></td><td class="col-other"><span class="cx">—</span></td></tr>
+            <tr><td class="col-feature">SMS y llamadas sin costo extra</td><td class="col-winner"><span class="ck">✓</span></td><td class="col-other"><span class="cx">—</span></td><td class="col-other"><span class="cx">—</span></td><td class="col-other"><span class="cx">—</span></td></tr>
+            <tr><td class="col-feature">Estado visual de cada cita</td><td class="col-winner"><span class="ck">✓</span></td><td class="col-other"><span class="cx">—</span></td><td class="col-other"><span class="cx">—</span></td><td class="col-other"><span class="cx">—</span></td></tr>
+            <tr><td class="col-feature">Reactivación de clientes inactivos</td><td class="col-winner"><span class="ck">✓</span></td><td class="col-other"><span class="cx">—</span></td><td class="col-other"><span class="cx">—</span></td><td class="col-other"><span class="cx">—</span></td></tr>
+            <tr><td class="col-feature">Diseñado para negocios LATAM</td><td class="col-winner"><span class="ck">✓</span></td><td class="col-other"><span class="cx">—</span></td><td class="col-other"><span class="cx">—</span></td><td class="col-other"><span class="cx">—</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="font-size:15px;font-weight:600;color:rgba(250,250,247,.65);margin-top:16px;font-style:italic;">"Calendly es para reuniones. agendallena es para tu negocio."</p>
+
+      <div class="outcomes-grid">
+        <div class="outcome-card">
+          <div class="outcome-value">−70%</div>
+          <div class="outcome-label">inasistencias con recordatorio y llamada automáticos</div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-value">3</div>
+          <div class="outcome-label">canales: SMS, WhatsApp y llamada — todo incluido</div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-value">0 min</div>
+          <div class="outcome-label">persiguiendo confirmaciones después de agendar</div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-value">24/7</div>
+          <div class="outcome-label">la agenda se confirma sola, incluso fuera de horario</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ░░ 05 PSICOLOGÍA ░░ -->
+  <section class="section" id="psicologia">
+    <div class="section-inner">
+      <div class="eyebrow">05 &middot; Psicología de la venta</div>
+      <h2 class="title-xl">La venta empieza antes de que el cliente hable.</h2>
+      <p class="lead">
+        El 80% de las ventas se pierden porque el agente no entiende qué está comprando el cliente. No compran software — compran tranquilidad. Escucha más de lo que hablas. Las mejores ventas se hacen con preguntas, no con argumentos.
+      </p>
+
+      <h3 class="title-lg mt-20">El modelo DCSC — cuatro momentos en toda llamada efectiva</h3>
+
+      <div class="funnel">
+        <div class="funnel-step">
+          <div class="funnel-label">D &middot; Dolor</div>
+          <div class="funnel-title">Haz que el dolor sea visible</div>
+          <div class="funnel-desc">El cliente sabe que pierde citas, pero no lo ha cuantificado. Tu trabajo es hacerlo consciente con una pregunta, no con un argumento.</div>
+          <div class="funnel-q">"¿Cuántas citas al mes le pasa que el cliente simplemente no llega, sin avisar?"</div>
+        </div>
+        <div class="funnel-step">
+          <div class="funnel-label">C &middot; Consecuencia</div>
+          <div class="funnel-title">Haz que calcule lo que le cuesta</div>
+          <div class="funnel-desc">Una vez que mencionó el número, ayúdalo a ponerle precio. Cuando la cifra es real, $199 se vuelve obviamente barato.</div>
+          <div class="funnel-q">"¿Cuánto cobra por consulta? Entonces esas [X] citas perdidas al mes representan como [Y] pesos, ¿verdad?"</div>
+        </div>
+        <div class="funnel-step">
+          <div class="funnel-label">S &middot; Solución</div>
+          <div class="funnel-title">Presenta solo lo que resuelve su problema</div>
+          <div class="funnel-desc">No enumeres features. Conecta exactamente lo que escuchaste con lo que hace agendallena.</div>
+          <div class="funnel-q">"agendallena confirma esas citas automáticamente — SMS, recordatorio, y si no responde, una llamada. Sin que usted haga nada."</div>
+        </div>
+        <div class="funnel-step">
+          <div class="funnel-label">C &middot; Confianza</div>
+          <div class="funnel-title">Elimina el riesgo de decir que sí</div>
+          <div class="funnel-desc">El cliente ya quiere la solución. El último obstáculo es el miedo a comprometerse. Elimínalo con la prueba gratis.</div>
+          <div class="funnel-q">"14 días de prueba completamente gratis. Sin tarjeta. Si no le sirve, no pasa nada. Si le sirve, ya sabe lo que vale."</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ░░ 06 GUIÓN ░░ -->
+  <section class="section" id="guion">
+    <div class="section-inner">
+      <div class="eyebrow">06 &middot; El guión</div>
+      <h2 class="title-xl">La llamada perfecta, paso a paso.</h2>
+      <p class="lead">No es un script rígido — es una estructura. Adáptala, pero sigue el orden. Apunta el número de inasistencias que te diga el cliente en la detección — lo necesitas en el cierre.</p>
+
+      <div class="guion-grid">
+        <div class="guion-card">
+          <div class="guion-head">
+            <div class="guion-num">1</div>
+            <span class="guion-title">Apertura</span>
+            <span class="guion-time">0 – 30 seg</span>
+          </div>
+          <p class="guion-tip">Directo al grano: quién eres, por qué llamas, pide 2 minutos. Si está ocupado, agenda una hora exacta para rellamar.</p>
+          <div class="guion-script">"Buenos días, ¿hablo con [nombre]? Soy [tu nombre] de agendallena. En dos minutos quiero mostrarle cómo eliminamos hasta el 70% de las inasistencias de forma automática. ¿Me regala un par de minutos?"</div>
+        </div>
+
+        <div class="guion-card">
+          <div class="guion-head">
+            <div class="guion-num">2</div>
+            <span class="guion-title">Detección</span>
+            <span class="guion-time">30 seg – 2 min</span>
+          </div>
+          <p class="guion-tip">Tres preguntas. Escucha completo. No interrumpas. Apunta el número que te digan — es el argumento del cierre.</p>
+          <div class="guion-script">"¿Cómo maneja las confirmaciones de sus citas hoy?" — "¿Cuántas veces al mes el cliente no llega sin avisar?" — "¿Ha calculado cuánto representa eso en dinero?"</div>
+          <p class="guion-note">Deja que haga el cálculo en voz alta. Ese silencio es el mejor vendedor.</p>
+        </div>
+
+        <div class="guion-card">
+          <div class="guion-head">
+            <div class="guion-num">3</div>
+            <span class="guion-title">Presentación</span>
+            <span class="guion-time">2 – 4 min</span>
+          </div>
+          <p class="guion-tip">90 segundos. No presentes todo el producto — solo lo que resuelve su problema específico.</p>
+          <div class="guion-script">"Usted solo agenda: nombre, celular, hora. El sistema manda confirmación inmediata, recordatorio 24 horas antes, y si no responde — llamada automática 2 horas antes. El 90% confirma antes de la llamada. Verde, amarillo, rojo — siempre sabe qué pasa."</div>
+        </div>
+
+        <div class="guion-card">
+          <div class="guion-head">
+            <div class="guion-num">4</div>
+            <span class="guion-title">Cierre</span>
+            <span class="guion-time">4 – 6 min</span>
+          </div>
+          <p class="guion-tip">No preguntes "¿le interesa?" — eso invita al "déjame pensarlo". Llévalo directo a la prueba gratis.</p>
+          <div class="guion-script">"14 días completamente gratis. Sin tarjeta, sin contratos. En 5 minutos está operando. Si en dos semanas no recuperó al menos [el número que calculó] pesos, no paga nada. ¿Qué le parece si nos metemos ahorita a registrarse?"</div>
+          <p class="guion-note">Usa el número que calculó en detección. El cierre personalizado cierra el doble que el genérico.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ░░ 07 OBJECIONES ░░ -->
+  <section class="section" id="objeciones">
+    <div class="section-inner">
+      <div class="eyebrow">07 &middot; Manejo de objeciones</div>
+      <h2 class="title-xl">La objeción no es un no. Es una pregunta.</h2>
+      <p class="lead">Cuando alguien objeta, dice "no entendí cómo esto me beneficia" o "tengo miedo de equivocarme". Tu trabajo es resolver esa duda.</p>
+
+      <div class="objections-grid">
+        <div class="objection-card">
+          <div class="obj-q"><span class="obj-badge">Objeción 1</span><span class="obj-q-text">"No tengo tiempo para aprender esto."</span></div>
+          <div class="obj-a"><span class="obj-a-badge">Respuesta</span><p class="obj-a-text">En 5 minutos tiene la primera cita agendada y el sistema trabajando. Son 4 campos. Si puede mandar un WhatsApp, puede usar agendallena.</p></div>
+        </div>
+
+        <div class="objection-card">
+          <div class="obj-q"><span class="obj-badge">Objeción 2</span><span class="obj-q-text">"Ya uso WhatsApp para confirmar."</span></div>
+          <div class="obj-a"><span class="obj-a-badge">Respuesta</span><p class="obj-a-text">WhatsApp no manda el recordatorio automático, no hace la llamada si no contesta, y no muestra en colores qué citas están confirmadas. ¿Cuánto tiempo pasa al día en eso?</p></div>
+        </div>
+
+        <div class="objection-card">
+          <div class="obj-q"><span class="obj-badge">Objeción 3</span><span class="obj-q-text">"Está caro."</span></div>
+          <div class="obj-a"><span class="obj-a-badge">Respuesta</span><p class="obj-a-text">¿Caro comparado con qué? Me dijo que pierde [número] citas al mes — si una sola recuperada ya cubre los $199, ¿qué pasa si recupera tres? Los 14 días gratis quitan el riesgo.</p></div>
+        </div>
+
+        <div class="objection-card">
+          <div class="obj-q"><span class="obj-badge">Objeción 4</span><span class="obj-q-text">"Déjame pensarlo."</span></div>
+          <div class="obj-a"><span class="obj-a-badge">Respuesta</span><p class="obj-a-text">¿Qué específicamente le genera duda? Si es el costo, la prueba gratis lo elimina. Si es si va a funcionar, le cuento cómo lo usan otros [vertical]. ¿Qué le genera más duda?</p></div>
+        </div>
+
+        <div class="objection-card">
+          <div class="obj-q"><span class="obj-badge">Objeción 5</span><span class="obj-q-text">"No soy muy de tecnología."</span></div>
+          <div class="obj-a"><span class="obj-a-badge">Respuesta</span><p class="obj-a-text">Diseñado exactamente para eso: 4 campos, nada más. Además tiene soporte humano por WhatsApp — personas reales, sin bots — que le ayudan si se atora.</p></div>
+        </div>
+
+        <div class="objection-card">
+          <div class="obj-q"><span class="obj-badge">Objeción 6</span><span class="obj-q-text">"¿Y si mis clientes no responden?"</span></div>
+          <div class="obj-a"><span class="obj-a-badge">Respuesta</span><p class="obj-a-text">Para eso existe la llamada automática. Si no responde el SMS, 2 horas antes recibe una llamada. SMS + llamada tiene tasas de respuesta superiores al 90%.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ░░ 08 MENTALIDAD ░░ -->
+  <section class="section section-dark" id="mentalidad">
+    <div class="section-inner">
+      <div class="eyebrow eyebrow-light">08 &middot; Mentalidad del agente ganador</div>
+      <h2 class="title-xl">El 50% de la venta pasa antes de marcar.</h2>
+      <p class="lead lead-light">Tu estado mental antes de cada llamada es el primer factor de éxito. Los que cierran más no hablan mejor — creen más en lo que ofrecen.</p>
+
+      <h3 class="title-lg mt-20" style="color:var(--hueso);">Lo que tienes que creer — porque es verdad</h3>
+
+      <div class="affirmations">
+        <div class="affirmation">
+          <div class="affirmation-mark">1</div>
+          <div class="affirmation-text">Resuelvo un problema real y costoso. El cliente ya está perdiendo ese dinero — yo le muestro cómo recuperarlo.</div>
+        </div>
+        <div class="affirmation">
+          <div class="affirmation-mark">2</div>
+          <div class="affirmation-text">$199 es barato. Una sola cita recuperada paga el mes. La mayoría lo recupera en la primera semana.</div>
+        </div>
+        <div class="affirmation">
+          <div class="affirmation-mark">3</div>
+          <div class="affirmation-text">14 días gratis elimina el riesgo. No pido fe ciega — doy dos semanas para comprobarlo.</div>
+        </div>
+        <div class="affirmation">
+          <div class="affirmation-mark">4</div>
+          <div class="affirmation-text">Soy consultor, no vendedor. Si no tienen el problema, termino rápido y en buenos términos.</div>
+        </div>
+        <div class="affirmation">
+          <div class="affirmation-mark">5</div>
+          <div class="affirmation-text">El rechazo es información. Cinco noes bien analizados valen más que diez síes accidentales.</div>
+        </div>
+      </div>
+
+      <div style="margin-top:20px;padding:24px 28px;background:rgba(255,255,255,.06);border-radius:var(--radius-xl);border:1px solid rgba(255,255,255,.1);">
+        <h3 style="font-size:18px;font-weight:700;color:var(--hueso);margin-bottom:12px;letter-spacing:-.03em;">El agente que cierra más no es el que habla mejor.</h3>
+        <p style="font-size:14px;color:rgba(250,250,247,.65);line-height:1.65;">Es el que escucha mejor, hace las preguntas correctas y entiende que vender no es convencer a alguien de comprar algo que no quiere — es ayudar a alguien a tomar una decisión que ya debería haber tomado. Si el negocio tiene agenda y tiene inasistencias, agendallena les sirve. Tu trabajo no es crear necesidad — es hacerla visible.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ░░ 09 CHEAT SHEET ░░ -->
+  <section class="section section-ink" id="cheatsheet">
+    <div class="section-inner-wide">
+      <div class="eyebrow eyebrow-light">09 &middot; Cheat sheet</div>
+      <h2 class="title-xl">Referencia rápida.</h2>
+      <p class="lead lead-light">Todo lo que necesitas en una pantalla. Para consultar antes o durante la llamada.</p>
+
+      <div class="cheat-grid">
+        <div class="cheat-card">
+          <div class="cheat-card-title">Datos clave del producto</div>
+          <div class="cheat-stat"><span class="cheat-stat-val">$199 MXN</span><span class="cheat-stat-lbl">al mes — todo incluido, sin extras</span></div>
+          <div class="cheat-stat"><span class="cheat-stat-val">14 días</span><span class="cheat-stat-lbl">prueba gratis, sin tarjeta de crédito</span></div>
+          <div class="cheat-stat"><span class="cheat-stat-val">5 min</span><span class="cheat-stat-lbl">para estar operando desde el registro</span></div>
+          <div class="cheat-stat"><span class="cheat-stat-val">90%+</span><span class="cheat-stat-lbl">tasa de respuesta SMS + llamada automática</span></div>
+          <div class="cheat-stat"><span class="cheat-stat-val">−70%</span><span class="cheat-stat-lbl">reducción de inasistencias con el sistema</span></div>
+        </div>
+
+        <div class="cheat-card">
+          <div class="cheat-card-title">Frases de impacto listas para usar</div>
+          <ul class="cheat-list">
+            <li>"No vendes software. Vendes dinero que no se pierde."</li>
+            <li>"Una cita recuperada ya paga el mes."</li>
+            <li>"Calendly es para reuniones. agendallena es para tu negocio."</li>
+            <li>"Verde, amarillo, rojo — sin tener que preguntar a nadie."</li>
+            <li>"14 días gratis. Si no sirve, no paga. Si sirve, ya sabe lo que vale."</li>
+          </ul>
+        </div>
+
+        <div class="cheat-card">
+          <div class="cheat-card-title">Objeciones — respuesta en una línea</div>
+          <ul class="cheat-list">
+            <li><strong>Sin tiempo:</strong> "En 5 min está operando. No hay curva."</li>
+            <li><strong>Ya uso WhatsApp:</strong> "¿Hace la llamada si no contesta?"</li>
+            <li><strong>Está caro:</strong> "Una cita recuperada ya lo pagó."</li>
+            <li><strong>Déjame pensar:</strong> "¿Qué específicamente le genera duda?"</li>
+            <li><strong>No soy técnico:</strong> "Soporte humano por WhatsApp, sin bots."</li>
+            <li><strong>No responden:</strong> "Por eso existe la llamada automática."</li>
+          </ul>
+        </div>
+
+        <div class="cheat-card">
+          <div class="cheat-card-title">Verticales objetivo</div>
+          <ul class="cheat-list">
+            <li>Clínicas dentales</li>
+            <li>Consultorios médicos</li>
+            <li>Psicólogos y terapeutas</li>
+            <li>Salones de belleza</li>
+            <li>Barberías</li>
+            <li>Spas</li>
+            <li>Talleres mecánicos</li>
+            <li>Entrenadores personales</li>
+          </ul>
+        </div>
+
+        <div class="cheat-card" style="grid-column: 1 / -1;">
+          <div class="cheat-card-title">Estructura de la llamada</div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px;">
+            <div style="padding:12px;background:rgba(255,255,255,.05);border-radius:10px;">
+              <div style="font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(250,250,247,.35);margin-bottom:5px;">1 · Apertura · 0–30s</div>
+              <div style="font-size:12px;color:rgba(250,250,247,.75);line-height:1.4;">Nombre + empresa + gancho + pedir 2 min</div>
+            </div>
+            <div style="padding:12px;background:rgba(255,255,255,.05);border-radius:10px;">
+              <div style="font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(250,250,247,.35);margin-bottom:5px;">2 · Detección · 30s–2min</div>
+              <div style="font-size:12px;color:rgba(250,250,247,.75);line-height:1.4;">¿Cómo confirma? · ¿Cuántas inasistencias? · ¿Cuánto le cuesta?</div>
+            </div>
+            <div style="padding:12px;background:rgba(255,255,255,.05);border-radius:10px;">
+              <div style="font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(250,250,247,.35);margin-bottom:5px;">3 · Presentación · 2–4min</div>
+              <div style="font-size:12px;color:rgba(250,250,247,.75);line-height:1.4;">Conecta su dolor con el flujo automático. Breve y específico.</div>
+            </div>
+            <div style="padding:12px;background:rgba(255,255,255,.05);border-radius:10px;">
+              <div style="font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(250,250,247,.35);margin-bottom:5px;">4 · Cierre · 4–6min</div>
+              <div style="font-size:12px;color:rgba(250,250,247,.75);line-height:1.4;">14 días gratis + usa su número + llévalo al registro ahora</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="doc-footer-brand">agenda<span class="llena">llena</span></div>
+    <p>Guía del agente &middot; Uso interno &middot; Confidencial</p>
+    <p style="margin-top:8px;">agendallena.mx &middot; hola@agendallena.mx</p>
+  </footer>
+
+</body>
+</html>

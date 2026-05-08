@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>agendallena — [Título del documento]</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --tinta: #0A0A0B;
+      --hueso: #FAFAF7;
+      --verde: #0F7B3F;
+      --verde-tenue: #E8F5EE;
+      --grafito: #6B6B6B;
+      --gris-claro: #F1EFE8;
+      --gris-borde: #E8E6DE;
+      --verde-superficie: #245C32;
+      --verde-acento: #4ADE80;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background: #DEDEDE;
+      color: var(--tinta);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Página ── */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 20px auto;
+      background: var(--hueso);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 22mm 20mm 18mm;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.14);
+    }
+
+    .content { flex: 1; }
+
+    /* ── Footer de página ── */
+    .page-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 7mm;
+      border-top: 1px solid var(--gris-borde);
+      margin-top: 8mm;
+    }
+
+    .page-footer .brand {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--grafito);
+      letter-spacing: -0.01em;
+    }
+
+    .page-footer .page-num {
+      font-size: 11px;
+      color: var(--grafito);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ── Portada ── */
+    .page.cover {
+      background: var(--verde-superficie);
+      justify-content: space-between;
+    }
+
+    .cover-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--verde-acento);
+      border: 1px solid rgba(74, 222, 128, 0.35);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .cover-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 14mm 0 10mm;
+    }
+
+    .cover-wordmark {
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: -0.02em;
+      margin-bottom: 8mm;
+    }
+
+    .cover-title {
+      font-size: 52px;
+      font-weight: 700;
+      color: var(--hueso);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 6mm;
+    }
+
+    .cover-subtitle {
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(250, 250, 247, 0.6);
+      line-height: 1.55;
+      max-width: 120mm;
+    }
+
+    .cover-footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .cover-footer-row .date {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .cover-footer-row .cover-brand {
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* ── Índice ── */
+    .toc-heading {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--grafito);
+      margin-bottom: 10mm;
+    }
+
+    .toc-list { list-style: none; }
+
+    .toc-item {
+      display: flex;
+      align-items: baseline;
+      gap: 6mm;
+      padding: 5mm 0;
+      border-bottom: 1px solid var(--gris-borde);
+    }
+
+    .toc-item:last-child { border-bottom: none; }
+
+    .toc-num {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--verde);
+      font-variant-numeric: tabular-nums;
+      min-width: 18px;
+    }
+
+    .toc-section-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--tinta);
+      line-height: 1.3;
+    }
+
+    .toc-section-desc {
+      font-size: 12px;
+      color: var(--grafito);
+      margin-top: 2px;
+      line-height: 1.4;
+    }
+
+    /* ── Encabezado de sección ── */
+    .section-eyebrow {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--grafito);
+      margin-bottom: 5mm;
+    }
+
+    .section-eyebrow span { color: var(--verde); }
+
+    .section-title {
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--tinta);
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      margin-bottom: 4mm;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--grafito);
+      line-height: 1.6;
+      max-width: 130mm;
+      margin-bottom: 9mm;
+      padding-bottom: 8mm;
+      border-bottom: 1px solid var(--gris-borde);
+    }
+
+    /* ── Cuerpo ── */
+    .body-text {
+      font-size: 13px;
+      color: var(--tinta);
+      line-height: 1.65;
+      margin-bottom: 5mm;
+    }
+
+    /* ── Tabla ── */
+    .doc-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 6mm;
+      font-size: 12px;
+    }
+
+    .doc-table th {
+      background: var(--verde);
+      color: var(--hueso);
+      font-weight: 600;
+      text-align: left;
+      padding: 8px 12px;
+      font-size: 11px;
+      letter-spacing: 0.02em;
+    }
+
+    .doc-table th:first-child { border-radius: 6px 0 0 0; }
+    .doc-table th:last-child  { border-radius: 0 6px 0 0; }
+
+    .doc-table td {
+      padding: 9px 12px;
+      color: var(--tinta);
+      border-bottom: 1px solid var(--gris-borde);
+      line-height: 1.45;
+      vertical-align: top;
+    }
+
+    .doc-table tr:nth-child(even) td { background: var(--gris-claro); }
+
+    /* ── Cards de métricas ── */
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4mm;
+      margin-bottom: 6mm;
+    }
+
+    .metric-card {
+      border: 1px solid var(--gris-borde);
+      border-radius: var(--radius-md);
+      padding: 5mm;
+    }
+
+    .metric-num {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--verde);
+      letter-spacing: -0.03em;
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+      margin-bottom: 2mm;
+    }
+
+    .metric-label {
+      font-size: 11px;
+      color: var(--grafito);
+      line-height: 1.4;
+    }
+
+    /* ── Bloque de cita ── */
+    .quote-block {
+      border-left: 3px solid var(--verde);
+      background: var(--verde-tenue);
+      padding: 5mm 6mm;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-bottom: 5mm;
+    }
+
+    .quote-block p {
+      font-size: 13px;
+      color: var(--tinta);
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    .quote-block .quote-source {
+      font-size: 11px;
+      color: var(--grafito);
+      font-style: normal;
+      font-weight: 600;
+      margin-top: 2mm;
+    }
+
+    /* ── Lista numerada ── */
+    .numbered-list { list-style: none; margin-bottom: 5mm; }
+
+    .numbered-list li {
+      display: flex;
+      gap: 4mm;
+      align-items: flex-start;
+      margin-bottom: 4mm;
+    }
+
+    .numbered-list .num {
+      min-width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--verde);
+      color: var(--hueso);
+      font-size: 10px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .numbered-list .li-text {
+      font-size: 13px;
+      color: var(--tinta);
+      line-height: 1.55;
+    }
+
+    .numbered-list .li-title {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 1px;
+    }
+
+    /* ── Separador ── */
+    .divider {
+      height: 1px;
+      background: var(--gris-borde);
+      margin: 7mm 0;
+    }
+
+    /* ── Info box ── */
+    .info-box {
+      background: var(--gris-claro);
+      border-radius: var(--radius-md);
+      padding: 5mm;
+      margin-bottom: 5mm;
+    }
+
+    .info-box-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--verde);
+      margin-bottom: 2mm;
+    }
+
+    .info-box p {
+      font-size: 12px;
+      color: var(--tinta);
+      line-height: 1.55;
+    }
+
+    /* ── Dos columnas ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6mm;
+      margin-bottom: 5mm;
+    }
+
+    /* ── Página oscura ── */
+    .page.dark { background: var(--verde-superficie); }
+
+    .page.dark .section-eyebrow        { color: rgba(255,255,255,0.4); }
+    .page.dark .section-eyebrow span   { color: var(--verde-acento); }
+    .page.dark .section-title          { color: var(--hueso); }
+    .page.dark .section-subtitle       { color: rgba(250,250,247,0.6); border-bottom-color: rgba(255,255,255,0.1); }
+    .page.dark .body-text              { color: rgba(250,250,247,0.82); }
+    .page.dark .divider                { background: rgba(255,255,255,0.1); }
+    .page.dark .page-footer            { border-top-color: rgba(255,255,255,0.1); }
+    .page.dark .page-footer .brand,
+    .page.dark .page-footer .page-num  { color: rgba(255,255,255,0.3); }
+    .page.dark .metric-card            { border-color: rgba(255,255,255,0.1); }
+    .page.dark .metric-num             { color: var(--verde-acento); }
+    .page.dark .metric-label           { color: rgba(255,255,255,0.5); }
+
+    /* ── Impresión ── */
+    @media print {
+      body { background: none; }
+
+      .page {
+        margin: 0;
+        box-shadow: none;
+        page-break-after: always;
+        break-after: page;
+      }
+
+      .page:last-child {
+        page-break-after: avoid;
+        break-after: avoid;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════
+       PORTADA
+       Fondo: verde-superficie
+       Tag: tipo de documento (INTERNO / EXTERNO / CONFIDENCIAL)
+       Título: 1–3 palabras clave, bold, blanco
+       Subtítulo: descripción de 1-2 líneas
+  ═══════════════════════════════ -->
+  <div class="page cover">
+    <div>
+      <span class="cover-tag">DOCUMENTO INTERNO</span>
+    </div>
+
+    <div class="cover-body">
+      <div class="cover-wordmark">agendallena</div>
+      <h1 class="cover-title">Título del<br>documento</h1>
+      <p class="cover-subtitle">Una o dos líneas describiendo de qué trata este documento y a quién va dirigido.</p>
+    </div>
+
+    <div class="cover-footer-row">
+      <span class="date">Mayo 2026</span>
+      <span class="cover-brand">agendallena.mx</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════
+       ÍNDICE
+       Máximo 8 secciones
+       Fondo: hueso (claro)
+  ═══════════════════════════════ -->
+  <div class="page">
+    <div class="content">
+      <p class="toc-heading">Contenido</p>
+      <ol class="toc-list">
+        <li class="toc-item">
+          <span class="toc-num">01</span>
+          <div>
+            <div class="toc-section-title">Nombre de la primera sección</div>
+            <div class="toc-section-desc">Descripción breve de qué cubre esta sección.</div>
+          </div>
+        </li>
+        <li class="toc-item">
+          <span class="toc-num">02</span>
+          <div>
+            <div class="toc-section-title">Nombre de la segunda sección</div>
+            <div class="toc-section-desc">Descripción breve de qué cubre esta sección.</div>
+          </div>
+        </li>
+        <li class="toc-item">
+          <span class="toc-num">03</span>
+          <div>
+            <div class="toc-section-title">Nombre de la tercera sección</div>
+            <div class="toc-section-desc">Descripción breve de qué cubre esta sección.</div>
+          </div>
+        </li>
+        <li class="toc-item">
+          <span class="toc-num">04</span>
+          <div>
+            <div class="toc-section-title">Nombre de la cuarta sección</div>
+            <div class="toc-section-desc">Descripción breve de qué cubre esta sección.</div>
+          </div>
+        </li>
+        <li class="toc-item">
+          <span class="toc-num">05</span>
+          <div>
+            <div class="toc-section-title">Nombre de la quinta sección</div>
+            <div class="toc-section-desc">Descripción breve de qué cubre esta sección.</div>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="page-footer">
+      <span class="brand">agendallena</span>
+      <span class="page-num">02</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════
+       PÁGINA — TEXTO + TABLA
+       Usar para comparativas, listados, datos estructurados
+  ═══════════════════════════════ -->
+  <div class="page">
+    <div class="content">
+      <p class="section-eyebrow"><span>01</span> · NOMBRE DE SECCIÓN</p>
+      <h2 class="section-title">Título de la sección.</h2>
+      <p class="section-subtitle">Subtítulo descriptivo que contextualiza el contenido en una o dos líneas.</p>
+
+      <p class="body-text">Párrafo de cuerpo. Frases cortas, verbos activos. La tipografía organiza la jerarquía, no los efectos visuales.</p>
+
+      <div class="divider"></div>
+
+      <table class="doc-table">
+        <thead>
+          <tr>
+            <th>Columna A</th>
+            <th>Columna B</th>
+            <th>Columna C</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dato uno</td>
+            <td>Descripción del dato</td>
+            <td>Valor o resultado</td>
+          </tr>
+          <tr>
+            <td>Dato dos</td>
+            <td>Descripción del dato</td>
+            <td>Valor o resultado</td>
+          </tr>
+          <tr>
+            <td>Dato tres</td>
+            <td>Descripción del dato</td>
+            <td>Valor o resultado</td>
+          </tr>
+          <tr>
+            <td>Dato cuatro</td>
+            <td>Descripción del dato</td>
+            <td>Valor o resultado</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="info-box">
+        <div class="info-box-label">Nota importante</div>
+        <p>Bloque de información destacada. Úsalo para aclaraciones, advertencias o datos clave que no deben perderse en el cuerpo del texto.</p>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span class="brand">agendallena</span>
+      <span class="page-num">03</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════
+       PÁGINA — MÉTRICAS + LISTA NUMERADA
+       Usar para KPIs, procesos paso a paso
+  ═══════════════════════════════ -->
+  <div class="page">
+    <div class="content">
+      <p class="section-eyebrow"><span>02</span> · NOMBRE DE SECCIÓN</p>
+      <h2 class="section-title">Métricas y pasos clave.</h2>
+      <p class="section-subtitle">Subtítulo que contextualiza los números o el proceso que se explica en esta página.</p>
+
+      <div class="metric-grid">
+        <div class="metric-card">
+          <div class="metric-num">−70%</div>
+          <div class="metric-label">Reducción en inasistencias con confirmación automática</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-num">24/7</div>
+          <div class="metric-label">Confirmaciones activas sin intervención del negocio</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-num">$199</div>
+          <div class="metric-label">MXN al mes, sin contratos ni sorpresas</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <ul class="numbered-list">
+        <li>
+          <span class="num">1</span>
+          <div class="li-text">
+            <span class="li-title">Primer paso del proceso</span>
+            Descripción concreta de qué sucede en este paso y qué implica para el usuario o el negocio.
+          </div>
+        </li>
+        <li>
+          <span class="num">2</span>
+          <div class="li-text">
+            <span class="li-title">Segundo paso del proceso</span>
+            Descripción concreta de qué sucede en este paso y qué implica para el usuario o el negocio.
+          </div>
+        </li>
+        <li>
+          <span class="num">3</span>
+          <div class="li-text">
+            <span class="li-title">Tercer paso del proceso</span>
+            Descripción concreta de qué sucede en este paso y qué implica para el usuario o el negocio.
+          </div>
+        </li>
+        <li>
+          <span class="num">4</span>
+          <div class="li-text">
+            <span class="li-title">Cuarto paso del proceso</span>
+            Descripción concreta de qué sucede en este paso y qué implica para el usuario o el negocio.
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="page-footer">
+      <span class="brand">agendallena</span>
+      <span class="page-num">04</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════
+       PÁGINA — CITAS + DOS COLUMNAS
+       Usar para testimonios, contraste de ideas
+  ═══════════════════════════════ -->
+  <div class="page">
+    <div class="content">
+      <p class="section-eyebrow"><span>03</span> · NOMBRE DE SECCIÓN</p>
+      <h2 class="section-title">Citas o ideas en paralelo.</h2>
+      <p class="section-subtitle">Subtítulo que introduce el contexto de los testimonios o el contraste presentado.</p>
+
+      <div class="quote-block">
+        <p>"Texto de la cita o testimonio relevante para esta sección. Frases directas, en voz de quien las dijo."</p>
+        <div class="quote-source">— Nombre, rol o contexto</div>
+      </div>
+
+      <div class="quote-block">
+        <p>"Segunda cita que complementa o contrasta. Máximo dos o tres por página para no saturar."</p>
+        <div class="quote-source">— Nombre, rol o contexto</div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="two-col">
+        <div>
+          <p class="body-text"><strong>Columna izquierda.</strong> Información que funciona bien en paralelo con la de la derecha. Misma extensión aproximada.</p>
+        </div>
+        <div>
+          <p class="body-text"><strong>Columna derecha.</strong> Información complementaria o que contrasta con la columna izquierda.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span class="brand">agendallena</span>
+      <span class="page-num">05</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════
+       PÁGINA OSCURA — CIERRE
+       Usar solo para la última página o sección de impacto
+       Fondo: verde-superficie
+  ═══════════════════════════════ -->
+  <div class="page dark">
+    <div class="content">
+      <p class="section-eyebrow"><span>05</span> · CIERRE</p>
+      <h2 class="section-title">Llamada a acción<br>o conclusión.</h2>
+      <p class="section-subtitle">Mensaje de cierre directo, operativo, sin adornos.</p>
+
+      <div class="divider"></div>
+
+      <div class="metric-grid">
+        <div class="metric-card">
+          <div class="metric-num">14</div>
+          <div class="metric-label">Días de prueba gratis, sin tarjeta</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-num">$199</div>
+          <div class="metric-label">MXN al mes después de la prueba</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-num">5 min</div>
+          <div class="metric-label">Para tener el sistema activo</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span class="brand">agendallena</span>
+      <span class="page-num">06</span>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -76,6 +76,19 @@
 
 **Regla 90 / 8 / 2:** 90% tinta/hueso/grises · 8% verde de marca · 2% verde tenue. Más de 15% de verde = fuera del sistema.
 
+**Combinaciones permitidas:**
+
+| Combinación | Uso |
+|---|---|
+| Tinta sobre hueso | Body, párrafos, jerarquía principal |
+| Hueso sobre tinta | Fondos oscuros, headers de sección |
+| Verde sobre hueso | CTAs, eyebrows, acentos |
+| Hueso sobre verde | Texto en botones CTA |
+| Verde tenue como fondo | Con texto verde o tinta — badges, callouts |
+| Verde acento sobre verde-superficie | Acentos en secciones oscuras únicamente |
+
+**Combinaciones prohibidas:** verde sobre verde-tenue en bloques grandes · gradientes entre colores de marca · cualquier otro color de acento.
+
 **Colores del semáforo** (amarillo, rojo, naranja): solo dentro del producto. No son colores de marca, nunca aparecen en marketing.
 
 **Mapeo de superficies oscuras:**
@@ -178,6 +191,14 @@ Solo para favicons, app icons (PWA), avatares, notificaciones. Contenedor 88×88
 | Onboarding en menos de 5 minutos | Listo en 5 minutos |
 | Plataforma all-in-one para tu negocio | Todas tus citas en un solo lugar |
 
+### Valores de marca
+
+Tres principios que guían cada decisión de producto, marketing y comunicación.
+
+- **Claridad sobre adorno** — Cada elemento debe tener una función. Si no comunica algo, no va. El espacio en blanco es un activo.
+- **Automático, no autómata** — Automatizamos lo repetitivo para que el dueño se enfoque en lo humano. La tecnología trabaja en silencio.
+- **Honestidad operativa** — No vendemos magia. Los precios se escriben sin asteriscos. Si una cita está en riesgo, lo decimos.
+
 ---
 
 ## 4. Producto
@@ -197,6 +218,17 @@ agendallena es un sistema de confirmación automática de citas para negocios B2
 | Nueva cita | 4 campos; citas con <30 min de anticipación no entran al flujo automático |
 | Invitar | Reactivación masiva por SMS a clientes filtrados por días sin visitar |
 | Ajustes | Perfil, suscripción, métodos de pago (tarjeta recurrente / OXXO / tarjeta único), FAQ, PWA |
+
+**Sistema semafórico del calendario:**
+
+| Color | Estado |
+|---|---|
+| Blanco | Cita apartada · recordatorio por enviar |
+| Verde | Cliente confirmó la cita |
+| Amarillo | Recordatorio enviado · sin confirmar |
+| Rojo | Cliente solicitó cancelar |
+| Negro / naranja | Inasistencia registrada |
+| Verde claro | Cliente llegó sin cita previa |
 
 ### Flujo automático de confirmación
 
@@ -244,8 +276,8 @@ agendallena-mx/
 ├── package.json
 ├── docs/
 │   ├── brand/
-│   │   ├── brand-guidelines.md        ← Brand guidelines v3.0 (fuente de verdad visual)
-│   │   └── brand-guidelines-v3.0.pdf
+│   │   ├── plantilla-documento.html   ← Plantilla HTML para documentos PDF
+│   │   └── document-system-prompt.md  ← System prompt para proyecto Claude.ai
 │   ├── seo/
 │   │   └── PLAN.md
 │   └── marketing/
