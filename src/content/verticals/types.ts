@@ -16,6 +16,13 @@ export interface FaqItem {
   answer: string;
 }
 
+export type CompetitorCell = 'check' | 'x' | 'dash';
+
+export interface VerticalCompetitor {
+  name: string;
+  rows: [CompetitorCell, CompetitorCell, CompetitorCell, CompetitorCell, CompetitorCell, CompetitorCell, CompetitorCell];
+}
+
 export interface VerticalContent {
   slug: string;
   meta: {
@@ -48,5 +55,8 @@ export interface VerticalContent {
   finalCta?: {
     heading: string;
     body: string;
+  };
+  comparison?: {
+    competitor: VerticalCompetitor;
   };
 }

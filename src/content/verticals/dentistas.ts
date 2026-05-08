@@ -77,4 +77,10 @@ export const dentistas: VerticalContent = {
     heading: 'Un sillón vacío es ingreso que no vuelve.',
     body: 'Cada cita que se pierde sin aviso es tiempo, materiales y agenda desperdiciados. agendallena confirma cada paciente antes de que llegue el día — para que cuando abras el consultorio, ya sepas cómo va a ir.',
   },
+  comparison: {
+    competitor: {
+      name: 'Doctoralia',
+      rows: ['check', 'check', 'x', 'x', 'check', 'x', 'check'],
+    },
+  },
 };

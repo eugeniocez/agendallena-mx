@@ -77,4 +77,10 @@ export const salonesDeBelleza: VerticalContent = {
     heading: 'Sin huecos de último momento. Sin correr para rellenar.',
     body: 'Cada cita confirmada es una hora de tu día que ya puedes contar. agendallena avisa, recuerda y confirma sola — para que llegues al salón sabiendo exactamente cómo va el día.',
   },
+  comparison: {
+    competitor: {
+      name: 'AgendaPro',
+      rows: ['check', 'check', 'x', 'x', 'check', 'check', 'check'],
+    },
+  },
 };

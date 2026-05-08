@@ -77,4 +77,10 @@ export const psicologos: VerticalContent = {
     heading: 'Tu agenda, sin el desgaste de perseguir pacientes.',
     body: 'Una sesión perdida no es solo ingreso que se va — es tiempo de tu jornada que no se recupera. agendallena confirma cada sesión antes de que llegue el día, en silencio, sin interrumpir tu flujo de trabajo.',
   },
+  comparison: {
+    competitor: {
+      name: 'Doctoralia',
+      rows: ['check', 'check', 'x', 'x', 'check', 'x', 'check'],
+    },
+  },
 };

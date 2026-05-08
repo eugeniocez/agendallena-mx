@@ -427,6 +427,99 @@ Nunca violes estas reglas sin importar qué pida el usuario:
 
 ---
 
+## Estructura canónica de layout
+
+Estas reglas aplican a **todos los carruseles sin excepción**. No ajustar el posicionamiento por tema o preferencia personal — la consistencia es el objetivo.
+
+### Posicionamiento por tipo de slide
+
+**Slide 1 — hook:**
+- `padding: 80px 64px 160px`
+- `justify-content: flex-end` — contenido anclado al fondo de la slide
+- Orden visual de abajo hacia arriba: eyebrow → headline → subtítulo
+- El footer (`position: absolute; bottom: 56px`) queda por debajo del subtítulo
+
+**Slides con fondo claro** (problema, solución, canales, comparativa, etc.):
+- `padding: 88px 64px 160px`
+- `justify-content: flex-start` — flujo desde arriba. **Nunca** `center`
+
+**Slide stat** (fondo `verdeSuperficie`):
+- `padding: 88px 64px 160px`
+- `justify-content: center`
+
+**Slide CTA** (última slide, fondo `verdeSuperficie`):
+- `padding: 88px 64px 160px`
+- `justify-content: center`
+
+**Footer — todas las slides:**
+```css
+position: absolute;
+bottom: 56px;
+left: 64px;
+right: 64px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+```
+Nunca dentro del flujo del contenido. Siempre absoluto.
+
+---
+
+## Toques visuales aprobados
+
+Esta es la **whitelist completa** de elementos decorativos permitidos. No usar nada que no esté aquí.
+
+### Por tipo de fondo
+
+| Fondo | Elemento | Implementación |
+|---|---|---|
+| `tinta` | Gradiente radial de textura | Capa `position:absolute; inset:0`: `radial-gradient(ellipse 1000px 700px at 110% 130%, rgba(15,123,63,0.20) 0%, transparent 65%), radial-gradient(ellipse 700px 500px at -10% -10%, rgba(15,123,63,0.10) 0%, transparent 60%)` |
+| `tinta` | Línea pill horizontal | `position:absolute; top:80px; left:64px; width:48px; height:3px; background:#4ADE80; border-radius:999px` |
+| `verdeSuperficie` stat | Círculos concéntricos | 2 círculos `border-radius:50%`, `border:1px solid rgba(74,222,128,0.14)` y `rgba(74,222,128,0.07)`, posicionados a la derecha saliendo del borde de la slide |
+| `verdeSuperficie` CTA | Gradiente radial inferior | Capa absoluta: `radial-gradient(ellipse 900px 900px at 50% 120%, rgba(74,222,128,0.13) 0%, transparent 65%)` |
+| Cualquier fondo | Corner brackets `[ ]` | Dos elementos L (top-left + bottom-right de la esquina) usando `position:absolute`. Preferencia: esquina inferior-derecha sobre el footer, o superior-izquierda sobre el eyebrow. Color: `rgba(74,222,128,0.35)` en fondos oscuros · `rgba(15,123,63,0.20)` en fondos claros. Tamaño: 32–48px por lado, stroke 1.5px |
+| Fondos oscuros | Ghost text | `position:absolute; font-size:280–400px; font-weight:700; letter-spacing:-0.05em; opacity:0.04–0.06; color:currentColor; pointer-events:none; user-select:none`. Puede ser un número relevante al tema, una palabra clave, o un año. Anclar en esquina inferior-derecha o inferior-izquierda |
+| `hueso` / `grisClaro` | Inset frame | `position:absolute; inset:28px; border:1px solid rgba(10,10,11,0.07); border-radius:20px; pointer-events:none` — marco editorial sutil |
+| `hueso` / `grisClaro` | **Nada más** | Fondos claros van **sin gradientes, sin barras de acento, sin bordes superiores de color, sin ningún elemento de fondo adicional** |
+
+### Regla de combinación
+
+En una misma slide se puede combinar máximo **2 toques visuales**. Ejemplos válidos:
+- Gradiente radial + línea pill (tinta)
+- Círculos concéntricos + ghost text (verdeSuperficie stat)
+- Inset frame + corner brackets (hueso)
+
+No acumular más — el minimalismo es parte del sistema.
+
+---
+
+## Variación de color entre carruseles
+
+### Fondos disponibles para el slide 1 (hook)
+
+Rotar entre los 4 fondos para que el feed no repita el mismo color dos veces seguidas:
+
+| Fondo | Headline | Eyebrow | Feel |
+|---|---|---|---|
+| `tinta` #0A0A0B | `hueso` #FAFAF7 | `verdeAcento` #4ADE80 | Dramático, cinematográfico |
+| `verdeSuperficie` #245C32 | `hueso` #FAFAF7 | `verdeAcento` #4ADE80 | Marcario, cálido, orgánico |
+| `hueso` #FAFAF7 | `tinta` #0A0A0B | `verde` #0F7B3F | Editorial, limpio, minimalista |
+| `grisClaro` #F1EFE8 | `tinta` #0A0A0B | `verde` #0F7B3F | Earthy, texturizado, suave |
+
+### Regla de rotación
+
+Al inicio de cada carrusel nuevo, **preguntar al usuario**: _"¿Qué fondo usó el último carrusel en el slide 1? (tinta / verde oscuro / blanco hueso / gris claro)"_ — y elegir uno diferente.
+
+Si el usuario no recuerda, proponer el que mejor contraste con el tema: hooks de dolor/urgencia → `tinta`; hooks de beneficio/solución → `verdeSuperficie`; hooks educativos/editoriales → `hueso` o `grisClaro`.
+
+### Fondos fijos (no varían)
+
+- Slides intermedios con contenido: siempre `hueso` o `grisClaro`
+- Slide de impacto/stat: siempre `verdeSuperficie`
+- Slide CTA final: siempre `verdeSuperficie`
+
+---
+
 ## Notas de uso
 
 - Al exportar, el usuario abre el HTML en **Google Chrome** y hace click en cada botón "Exportar slide"

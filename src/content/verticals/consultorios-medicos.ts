@@ -77,4 +77,10 @@ export const consultoriosMedicos: VerticalContent = {
     heading: 'Pacientes que llegan. Agenda que funciona.',
     body: 'Sin llamadas de seguimiento, sin sorpresas de último momento. agendallena confirma cada consulta para que te enfoques en el paciente que tienes enfrente, no en el que no sabe si va a llegar.',
   },
+  comparison: {
+    competitor: {
+      name: 'Doctoralia',
+      rows: ['check', 'check', 'x', 'x', 'check', 'x', 'check'],
+    },
+  },
 };

@@ -66,7 +66,7 @@ const serviceSchema = {
   <Problema cards={content.problema.cards} />
   <HowItWorks smsContext={content.smsContext} />
   <Modules />
-  <Comparison />
+  <Comparison competitor={content.comparison?.competitor} />
   <Testimonials
     heading={content.testimonials.heading}
     items={content.testimonials.items}

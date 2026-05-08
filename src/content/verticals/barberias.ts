@@ -77,4 +77,10 @@ export const barberias: VerticalContent = {
     heading: 'Sin turnos fantasma. Sin esperar a alguien que no llega.',
     body: 'Un turno vacío entre clientes son $300 pesos y 30 minutos perdidos. Con agendallena, cada turno tiene confirmación antes del día. Si alguien no puede, te enteras a tiempo para no quedarte parado esperando.',
   },
+  comparison: {
+    competitor: {
+      name: 'Fresha',
+      rows: ['check', 'check', 'x', 'x', 'check', 'check', 'dash'],
+    },
+  },
 };

@@ -1,3 +1,22 @@
+---
+import type { VerticalCompetitor, CompetitorCell } from '../content/verticals/types';
+
+interface Props {
+  competitor?: VerticalCompetitor;
+}
+const { competitor } = Astro.props;
+
+const CHECK = `<span class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span>`;
+const X = `<span class="x-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3l6 6m0-6l-6 6"/></svg></span>`;
+function cell(v: CompetitorCell): string {
+  return v === 'check' ? CHECK : v === 'x' ? X : '—';
+}
+
+const col = competitor ?? {
+  name: 'Calendly',
+  rows: ['check', 'check', 'x', 'x', 'x', 'x', 'x'] as [CompetitorCell, CompetitorCell, CompetitorCell, CompetitorCell, CompetitorCell, CompetitorCell, CompetitorCell],
+};
+---
 <section class="section">
   <div class="container">
     <div class="section-eyebrow">Comparativa</div>
@@ -12,7 +31,7 @@
             <th class="agendallena-col">agendallena</th>
             <th>Libreta</th>
             <th>WhatsApp</th>
-            <th>Calendly</th>
+            <th>{col.name}</th>
           </tr>
         </thead>
         <tbody>
@@ -21,49 +40,49 @@
             <td class="agendallena-col"><span class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span></td>
             <td><span class="x-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3l6 6m0-6l-6 6"/></svg></span></td>
             <td><span class="x-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3l6 6m0-6l-6 6"/></svg></span></td>
-            <td><span class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span></td>
+            <td set:html={cell(col.rows[0])} />
           </tr>
           <tr>
             <td>Recordatorios automáticos</td>
             <td class="agendallena-col"><span class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span></td>
             <td><span class="x-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3l6 6m0-6l-6 6"/></svg></span></td>
             <td><span class="x-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3l6 6m0-6l-6 6"/></svg></span></td>
-            <td><span class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span></td>
+            <td set:html={cell(col.rows[1])} />
           </tr>
           <tr>
             <td>Llamada automatizada si no responde</td>
             <td class="agendallena-col"><span class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span></td>
             <td><span class="x-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3l6 6m0-6l-6 6"/></svg></span></td>
             <td><span class="x-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3l6 6m0-6l-6 6"/></svg></span></td>
-            <td><span class="x-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3l6 6m0-6l-6 6"/></svg></span></td>
+            <td set:html={cell(col.rows[2])} />
           </tr>
           <tr>
             <td>Mensajes y llamadas sin costo extra</td>
             <td class="agendallena-col"><span class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span></td>
             <td>—</td>
             <td>—</td>
-            <td><span class="x-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3l6 6m0-6l-6 6"/></svg></span></td>
+            <td set:html={cell(col.rows[3])} />
           </tr>
           <tr>
             <td>Estado visual de cada cita</td>
             <td class="agendallena-col"><span class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span></td>
             <td><span class="x-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3l6 6m0-6l-6 6"/></svg></span></td>
             <td><span class="x-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3l6 6m0-6l-6 6"/></svg></span></td>
-            <td><span class="x-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3l6 6m0-6l-6 6"/></svg></span></td>
+            <td set:html={cell(col.rows[4])} />
           </tr>
           <tr>
             <td>Reactivación de clientes inactivos</td>
             <td class="agendallena-col"><span class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span></td>
             <td><span class="x-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3l6 6m0-6l-6 6"/></svg></span></td>
             <td><span class="x-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3l6 6m0-6l-6 6"/></svg></span></td>
-            <td><span class="x-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3l6 6m0-6l-6 6"/></svg></span></td>
+            <td set:html={cell(col.rows[5])} />
           </tr>
           <tr>
             <td>Diseñado para negocios LATAM</td>
             <td class="agendallena-col"><span class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span></td>
             <td>—</td>
             <td>—</td>
-            <td><span class="x-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 3l6 6m0-6l-6 6"/></svg></span></td>
+            <td set:html={cell(col.rows[6])} />
           </tr>
         </tbody>
       </table>
