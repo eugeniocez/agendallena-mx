@@ -8,7 +8,10 @@
 
 ## Del usuario
 
-<!-- Agregar aquí tareas e ideas que Eugenio mencione explícitamente -->
+- [ ] **Google Ads — conversión de registro completo**
+  Crear conversión que mida usuarios que llegan a `/inicio` tras completar el registro.
+  - Marcarla como conversión **principal**
+  - Mover la conversión actual (click en "Empezar gratis") a **secundaria**
 
 ---
 
