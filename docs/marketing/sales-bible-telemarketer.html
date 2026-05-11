@@ -210,6 +210,77 @@
     .closing-headline { font-size: 44px; font-weight: 700; color: var(--hueso); line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 8mm; }
     .closing-headline .accent { color: var(--verde-acento); }
 
+    /* ── PORTADA CON FOTO ── */
+    .cover-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+      opacity: 1;
+    }
+    .cover-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(36, 92, 50, 0.62);
+      z-index: 1;
+    }
+    .page.cover > div:not(.cover-overlay),
+    .page.cover > p {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ── GRID DE INDUSTRIAS ── */
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4mm;
+      margin-bottom: 5mm;
+    }
+    .industry-card {
+      border: 1px solid var(--gris-borde);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .industry-card img {
+      width: 100%;
+      height: 27mm;
+      object-fit: cover;
+      display: block;
+    }
+    .industry-card-body {
+      padding: 3mm 4mm 4mm;
+    }
+    .industry-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--tinta);
+      margin-bottom: 1mm;
+      line-height: 1.2;
+    }
+    .industry-pain {
+      font-size: 11px;
+      color: var(--grafito);
+      line-height: 1.4;
+    }
+    .industry-more {
+      background: var(--gris-claro);
+      border-radius: var(--radius-md);
+      padding: 4mm 5mm;
+    }
+    .industry-more p {
+      font-size: 11.5px;
+      color: var(--grafito);
+      line-height: 1.6;
+    }
+
+    /* ── Énfasis en texto ── */
+    .hl { color: var(--verde); font-weight: 700; }
+    strong { font-weight: 700; }
+
     /* ── Impresión ── */
     @media print {
       body { background: none; }
@@ -225,6 +296,12 @@
      01 / PORTADA
 ══════════════════════════════════════ -->
 <div class="page cover">
+  <img
+    src="https://images.unsplash.com/photo-1759143545924-beb85b33c0f1?w=840&auto=format&fit=crop&q=80"
+    class="cover-photo"
+    alt=""
+  >
+  <div class="cover-overlay"></div>
   <div>
     <span class="cover-tag">Equipo de ventas</span>
   </div>
@@ -339,12 +416,12 @@
       class="section-photo"
     >
 
-    <p class="body-text">El negocio al que vas a llamar opera con la agenda al límite. Anota citas en papel o WhatsApp, confirma cuando puede, y pierde clientes sin entender por qué. La semana termina con huecos que nadie avisó.</p>
+    <p class="body-text">El negocio al que vas a llamar opera con la agenda al límite. Anota citas en papel o WhatsApp, confirma cuando puede, y <strong>pierde clientes sin entender por qué</strong>. La semana termina con <strong>huecos que nadie avisó</strong>.</p>
 
-    <p class="body-text">Tú tienes la solución. No estás vendiendo software: estás ofreciendo certeza, tiempo recuperado y dinero que deja de salir por la puerta.</p>
+    <p class="body-text">Tú tienes la solución. No estás vendiendo software: estás ofreciendo <span class="hl">certeza</span>, <span class="hl">tiempo recuperado</span> y <span class="hl">dinero que deja de salir por la puerta</span>.</p>
 
     <div class="quote-block">
-      <p>"Una cita perdida en un consultorio dental vale entre $600 y $1,500 pesos. Cuatro inasistencias a la semana son más de $3,000 pesos al mes que no entran. agendallena detiene eso desde el primer día."</p>
+      <p>"Una cita perdida en un consultorio dental vale entre <strong>$600 y $1,500 pesos</strong>. Cuatro inasistencias a la semana son <strong>más de $3,000 pesos al mes</strong> que no entran. agendallena detiene eso <strong>desde el primer día</strong>."</p>
       <div class="quote-source">— El argumento que cierra</div>
     </div>
 
@@ -388,23 +465,23 @@
       <div class="problem-card">
         <div class="problem-card-label">Problema 01</div>
         <h3>La libreta no confirma nada</h3>
-        <p>El negocio anota la cita y espera que el cliente llegue. Sin recordatorio, sin seguimiento. La inasistencia llega sin aviso y el horario queda vacío.</p>
+        <p>El negocio anota la cita y espera que el cliente llegue. Sin recordatorio, sin seguimiento. <strong>La inasistencia llega sin aviso</strong> y <strong>el horario queda vacío</strong>.</p>
       </div>
       <div class="problem-card">
         <div class="problem-card-label">Problema 02</div>
         <h3>WhatsApp se pierde en el ruido</h3>
-        <p>Confirmar por WhatsApp es manual y agotador. Los mensajes se pierden entre conversaciones. En temporada alta, no alcanza el tiempo para hacerlo.</p>
+        <p>Confirmar por WhatsApp es manual y agotador. <strong>Los mensajes se pierden</strong> entre conversaciones. En temporada alta, <strong>no alcanza el tiempo</strong> para hacerlo.</p>
       </div>
       <div class="problem-card">
         <div class="problem-card-label">Problema 03</div>
         <h3>Calendly no sirve aquí</h3>
-        <p>Calendly no manda SMS en México. No hace llamadas. No habla el idioma operativo de un estilista o dentista que atiende 20 citas al día en LATAM.</p>
+        <p>Calendly <strong>no manda SMS en México</strong>. <strong>No hace llamadas</strong>. No habla el idioma operativo de un estilista o dentista que atiende 20 citas al día en LATAM.</p>
       </div>
     </div>
 
     <div class="info-box">
       <div class="info-box-label">Para tu pitch</div>
-      <p>El cliente al que llamas ya conoce el problema. Puede que no sepa que hay solución. Tu trabajo es conectar su dolor con lo que agendallena hace — no vender funciones, sino resolver lo que ya lo está afectando.</p>
+      <p>El cliente al que llamas ya conoce el problema. Puede que no sepa que hay solución. <strong>Tu trabajo es conectar su dolor con lo que agendallena hace</strong> — no vender funciones, sino <strong>resolver lo que ya lo está afectando</strong>.</p>
     </div>
   </div>
   <div class="page-footer">
@@ -422,7 +499,13 @@
     <h2 class="section-title">Un sistema de confirmación<br>automática. Nada más.</h2>
     <p class="section-subtitle">No es un calendario más bonito. No es un CRM. No es un bot con IA. Es el sistema que confirma la agenda del negocio por él — sin que el dueño tenga que hacer nada.</p>
 
-    <p class="body-text">En cuanto el negocio agenda una cita, agendallena activa la cadena completa: SMS de confirmación al cliente, recordatorio 24 horas antes con opciones de Confirmar / Cancelar / Reagendar, llamada automatizada si no contesta, y mensaje de agradecimiento al cierre. El negocio no interviene. La agenda se confirma sola.</p>
+    <img
+      src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?w=1200&auto=format&fit=crop&q=80"
+      alt="Dueña de negocio usando smartphone"
+      class="section-photo"
+    >
+
+    <p class="body-text">En cuanto el negocio agenda una cita, agendallena activa la cadena completa: <span class="hl">SMS de confirmación</span> al cliente, <span class="hl">recordatorio 24 horas antes</span> con opciones de Confirmar / Cancelar / Reagendar, <span class="hl">llamada automatizada</span> si no contesta, y mensaje de agradecimiento al cierre. <strong>El negocio no interviene. La agenda se confirma sola.</strong></p>
 
     <div class="divider"></div>
 
@@ -485,42 +568,42 @@
         <span class="num">1</span>
         <div class="li-text">
           <span class="li-title">El negocio agenda la cita</span>
-          Registra el nombre del cliente, el servicio y la hora. Eso es todo lo que hace el dueño. El sistema toma el control desde aquí.
+          Registra el nombre del cliente, el servicio y la hora. <strong>Eso es todo lo que hace el dueño.</strong> El sistema toma el control desde aquí.
         </div>
       </li>
       <li>
         <span class="num">2</span>
         <div class="li-text">
           <span class="li-title">SMS inmediato de confirmación</span>
-          El cliente recibe un mensaje al instante con su cita, fecha, hora y negocio. Con un link para confirmar o cancelar en un tap.
+          El cliente recibe un mensaje <span class="hl">al instante</span> con su cita, fecha, hora y negocio. Con un link para confirmar o cancelar en un tap.
         </div>
       </li>
       <li>
         <span class="num">3</span>
         <div class="li-text">
           <span class="li-title">Recordatorio 24 horas antes</span>
-          Automático. SMS con tres botones: Confirmar · Cancelar · Reagendar. La respuesta del cliente aparece en el calendario del negocio en tiempo real.
+          Automático. SMS con tres botones: Confirmar · Cancelar · Reagendar. La respuesta del cliente aparece en el calendario del negocio <span class="hl">en tiempo real</span>.
         </div>
       </li>
       <li>
         <span class="num">4</span>
         <div class="li-text">
           <span class="li-title">Llamada automática si no contesta</span>
-          2 horas antes de la cita, si el cliente no respondió, el sistema llama. Mensaje profesional, respuesta sincronizada al calendario.
+          2 horas antes de la cita, si el cliente no respondió, <strong>el sistema llama</strong>. Mensaje profesional, respuesta sincronizada al calendario.
         </div>
       </li>
       <li>
         <span class="num">5</span>
         <div class="li-text">
           <span class="li-title">Mensaje de cierre post-cita</span>
-          2 horas después de la cita, el cliente recibe un agradecimiento automático. El negocio no escribe nada.
+          2 horas después de la cita, el cliente recibe un agradecimiento automático. <strong>El negocio no escribe nada.</strong>
         </div>
       </li>
     </ul>
 
     <div class="info-box">
       <div class="info-box-label">El diferencial que nadie tiene</div>
-      <p>La llamada automática es exclusiva de agendallena en México. WhatsApp no llama. Calendly no llama. Cuando el cliente pregunte "¿en qué es diferente?", esa es la respuesta que cierra.</p>
+      <p>La <span class="hl">llamada automática</span> es exclusiva de agendallena en México. WhatsApp no llama. Calendly no llama. Cuando el cliente pregunte "¿en qué es diferente?", <strong>esa es la respuesta que cierra</strong>.</p>
     </div>
   </div>
   <div class="page-footer">
@@ -535,53 +618,112 @@
 <div class="page">
   <div class="content">
     <p class="section-eyebrow"><span>05</span> · A QUIÉN LE HABLAS</p>
-    <h2 class="section-title">Los 3 perfiles que<br>más convierten.</h2>
-    <p class="section-subtitle">No todos los negocios sienten el dolor igual. Estos son los que lo conocen de primera mano y reaccionan más rápido al valor.</p>
+    <h2 class="section-title">Para cualquier negocio<br>que opera por citas.</h2>
+    <p class="section-subtitle">Si agenda citas y esas citas pueden no presentarse, agendallena le funciona. Estas son las verticales donde el impacto es más inmediato.</p>
 
-    <div class="persona-grid">
-      <div class="persona-card">
+    <div class="industry-grid">
+      <div class="industry-card">
         <img
           src="https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=600&auto=format&fit=crop&q=80"
-          alt="Barbero en su negocio"
+          alt="Barbería"
         >
-        <div class="persona-card-body">
-          <div class="persona-role">Barbería</div>
-          <div class="persona-name">El barbero que no para</div>
-          <div class="persona-pain">"Tengo la agenda llena para el viernes y siempre hay dos o tres que no me avisan que cancelan."</div>
-          <div class="persona-hook">Entrada: ¿Cómo avisas a tus clientes cuando se acerca su cita?</div>
+        <div class="industry-card-body">
+          <div class="industry-name">Barberías</div>
+          <div class="industry-pain">15–30 citas diarias. Cada hueco es ingreso perdido.</div>
         </div>
       </div>
 
-      <div class="persona-card">
+      <div class="industry-card">
         <img
           src="https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=600&auto=format&fit=crop&q=80"
-          alt="Profesional de salud dental"
+          alt="Consultorio dental"
         >
-        <div class="persona-card-body">
-          <div class="persona-role">Consultorio dental</div>
-          <div class="persona-name">La dentista con horario apretado</div>
-          <div class="persona-pain">"Cada silla vacía son $1,200 pesos que no entran. Y confirmar por teléfono me quita tiempo que no tengo."</div>
-          <div class="persona-hook">Entrada: ¿Cuántas citas te quedan vacías en una semana típica?</div>
+        <div class="industry-card-body">
+          <div class="industry-name">Consultorios médicos/dentales</div>
+          <div class="industry-pain">Sillas vacías cuestan entre $600 y $1,500 por hora.</div>
         </div>
       </div>
 
-      <div class="persona-card">
+      <div class="industry-card">
         <img
           src="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=600&auto=format&fit=crop&q=80"
-          alt="Estilista en salón"
+          alt="Salón de belleza"
         >
-        <div class="persona-card-body">
-          <div class="persona-role">Salón de belleza</div>
-          <div class="persona-name">La estilista con agenda propia</div>
-          <div class="persona-pain">"Tengo Instagram y WhatsApp Business, pero confirmar cada cita a mano me consume media mañana."</div>
-          <div class="persona-hook">Entrada: ¿Cuánto tiempo pasas al día confirmando citas?</div>
+        <div class="industry-card-body">
+          <div class="industry-name">Salones y estilistas</div>
+          <div class="industry-pain">Confirmar a mano consume horas que el negocio no tiene.</div>
+        </div>
+      </div>
+
+      <div class="industry-card">
+        <img
+          src="https://images.unsplash.com/photo-1714976694867-bc0e012fab70?w=600&auto=format&fit=crop&q=80"
+          alt="Psicólogo y terapeuta"
+        >
+        <div class="industry-card-body">
+          <div class="industry-name">Psicólogos y terapeutas</div>
+          <div class="industry-pain">Sesiones canceladas sin aviso son horas de agenda desperdiciadas.</div>
+        </div>
+      </div>
+
+      <div class="industry-card">
+        <img
+          src="https://images.unsplash.com/photo-1676018366904-c083ed678e60?w=600&auto=format&fit=crop&q=80"
+          alt="Taller mecánico"
+        >
+        <div class="industry-card-body">
+          <div class="industry-name">Talleres mecánicos</div>
+          <div class="industry-pain">Turnos que no llegan retrasan toda la operación del día.</div>
+        </div>
+      </div>
+
+      <div class="industry-card">
+        <img
+          src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&auto=format&fit=crop&q=80"
+          alt="Spa y bienestar"
+        >
+        <div class="industry-card-body">
+          <div class="industry-name">Spas y bienestar</div>
+          <div class="industry-pain">El negocio entero depende de que los clientes lleguen a su hora.</div>
+        </div>
+      </div>
+
+      <div class="industry-card">
+        <img
+          src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&auto=format&fit=crop&q=80"
+          alt="Nutriólogos"
+        >
+        <div class="industry-card-body">
+          <div class="industry-name">Nutriólogos</div>
+          <div class="industry-pain">Consultas de alto valor donde cada cancelación duele directo al ingreso.</div>
+        </div>
+      </div>
+
+      <div class="industry-card">
+        <img
+          src="https://images.unsplash.com/photo-1533560904424-a0c61dc306fc?w=600&auto=format&fit=crop&q=80"
+          alt="Entrenadores personales"
+        >
+        <div class="industry-card-body">
+          <div class="industry-name">Entrenadores personales</div>
+          <div class="industry-pain">Una sesión que no llega es tiempo y espacio que no se puede recuperar.</div>
+        </div>
+      </div>
+
+      <div class="industry-card">
+        <img
+          src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&auto=format&fit=crop&q=80"
+          alt="Despachos legales"
+        >
+        <div class="industry-card-body">
+          <div class="industry-name">Despachos legales</div>
+          <div class="industry-pain">Citas con clientes que no llegan afectan la operación del despacho completo.</div>
         </div>
       </div>
     </div>
 
-    <div class="info-box">
-      <div class="info-box-label">Más verticales activas</div>
-      <p>Consultorios médicos, psicólogos y terapeutas, talleres mecánicos, spas, salones de uñas, entrenadores personales. Si el negocio opera por citas y tiene WhatsApp, agendallena le sirve.</p>
+    <div class="industry-more">
+      <p>También: salones de uñas · fisioterapeutas · y cualquier negocio donde la cita es el corazón de la operación.</p>
     </div>
   </div>
   <div class="page-footer">
@@ -664,7 +806,7 @@
 
     <div class="info-box">
       <div class="info-box-label">El argumento que nadie puede refutar</div>
-      <p>Cuando el cliente dude, pregúntale: "¿Calendly o WhatsApp te llaman automáticamente si el cliente no contesta el mensaje?" La respuesta es no. agendallena sí. Eso no tiene réplica.</p>
+      <p>Cuando el cliente dude, pregúntale: "¿Calendly o WhatsApp <strong>te llaman automáticamente</strong> si el cliente no contesta el mensaje?" La respuesta es no. <span class="hl">agendallena sí.</span> Eso no tiene réplica.</p>
     </div>
   </div>
   <div class="page-footer">
@@ -684,8 +826,8 @@
 
     <div class="roi-box">
       <div class="roi-box-label">El encuadre que funciona</div>
-      <p>Antes de decir el precio, ancla el costo del problema. "¿Cuánto cobra por una cita de promedio?" [Espera la respuesta.] "Si recupera dos citas al mes que antes se perdían, agendallena ya se pagó solo." A partir de ahí, $199 suena a lo que es: el seguro de la agenda.</p>
-      <p class="roi-math">Ejemplo real: 2 citas dentales recuperadas × $800 = $1,600/mes recuperados. Costo de agendallena: $199. Retorno: 8x.</p>
+      <p>Antes de decir el precio, ancla el costo del problema. "¿Cuánto cobra por una cita de promedio?" [Espera la respuesta.] "Si recupera dos citas al mes que antes se perdían, <strong>agendallena ya se pagó solo</strong>." A partir de ahí, $199 suena a lo que es: <span class="hl">el seguro de la agenda</span>.</p>
+      <p class="roi-math">Ejemplo real: 2 citas dentales recuperadas × $800 = <strong>$1,600/mes recuperados</strong>. Costo de agendallena: $199. <strong>Retorno: 8x.</strong></p>
     </div>
 
     <div class="divider"></div>
@@ -710,7 +852,7 @@
     </div>
 
     <div class="quote-block">
-      <p>"No les estás vendiendo una app. Les estás vendiendo 14 días de prueba gratis para que lo vean con sus propios clientes. El precio viene después — cuando ya funciona."</p>
+      <p>"No les estás vendiendo una app. Les estás vendiendo <strong>14 días de prueba gratis</strong> para que lo vean con sus propios clientes. El precio viene después — <span class="hl">cuando ya funciona</span>."</p>
       <div class="quote-source">— El enfoque correcto para el cierre</div>
     </div>
   </div>
@@ -739,30 +881,30 @@
       <tbody>
         <tr>
           <td class="obj-q">"Ya confirmo por WhatsApp, no lo necesito."</td>
-          <td class="obj-a">Claro, y eso funciona cuando tienes tiempo. agendallena lo hace automáticamente, a todas horas, aunque estés con un cliente. Sin que tengas que escribir nada.</td>
+          <td class="obj-a">Claro, y eso funciona cuando tienes tiempo. agendallena lo hace <strong>automáticamente, a todas horas</strong>, aunque estés con un cliente. <strong>Sin que tengas que escribir nada.</strong></td>
         </tr>
         <tr>
           <td class="obj-q">"Está caro para lo que es."</td>
-          <td class="obj-a">¿Cuánto te cuesta una inasistencia? [Espera.] agendallena se paga con menos de dos citas recuperadas al mes. El resto es ganancia neta.</td>
+          <td class="obj-a">¿Cuánto te cuesta una inasistencia? [Espera.] agendallena <strong>se paga con menos de dos citas recuperadas al mes</strong>. El resto es <span class="hl">ganancia neta</span>.</td>
         </tr>
         <tr>
           <td class="obj-q">"No tengo tiempo de aprenderlo."</td>
-          <td class="obj-a">Listo en 5 minutos. Si sabes agendar en WhatsApp, sabes usar agendallena. Los 14 días gratis son para que lo compruebes sin riesgo ni tarjeta.</td>
+          <td class="obj-a"><strong>Listo en 5 minutos.</strong> Si sabes agendar en WhatsApp, sabes usar agendallena. Los 14 días gratis son para que lo compruebes <strong>sin riesgo ni tarjeta</strong>.</td>
         </tr>
         <tr>
           <td class="obj-q">"Mis clientes no responden mensajes."</td>
-          <td class="obj-a">Por eso existe la llamada. El SMS llega primero — y si no responden, el sistema llama automáticamente dos horas antes. Eso sí llega.</td>
+          <td class="obj-a">Por eso existe la llamada. El SMS llega primero — y si no responden, <strong>el sistema llama automáticamente</strong> dos horas antes. <span class="hl">Eso sí llega.</span></td>
         </tr>
         <tr>
           <td class="obj-q">"Déjame pensarlo."</td>
-          <td class="obj-a">Perfecto. ¿Qué necesitarías ver para decidir? [Escucha.] Te mando el acceso a la prueba gratis hoy — así lo ves en tu negocio real antes de comprometerte a nada.</td>
+          <td class="obj-a">Perfecto. ¿Qué necesitarías ver para decidir? [Escucha.] Te mando el acceso a la <strong>prueba gratis hoy</strong> — así lo ves en tu negocio real <strong>antes de comprometerte a nada</strong>.</td>
         </tr>
       </tbody>
     </table>
 
     <div class="info-box">
       <div class="info-box-label">Regla de oro</div>
-      <p>Cuando el cliente diga "déjame pensarlo", no cierres la llamada sin una acción concreta: enviar el link de prueba, agendar seguimiento en 48 horas, o resolver la duda específica que lo frena. El "pensarlo" sin acción rara vez cierra.</p>
+      <p>Cuando el cliente diga "déjame pensarlo", <strong>no cierres la llamada sin una acción concreta</strong>: enviar el link de prueba, agendar seguimiento en 48 horas, o resolver la duda específica que lo frena. El "pensarlo" sin acción <strong>rara vez cierra</strong>.</p>
     </div>
   </div>
   <div class="page-footer">
@@ -786,7 +928,7 @@
         <span class="pitch-phase-name">Apertura</span>
         <span class="pitch-phase-time">0 – 30 seg</span>
       </div>
-      <p>Saluda, preséntate y confirma que hablas con quien toma decisiones. Sin esto, el resto no sirve.</p>
+      <p>Saluda, preséntate y confirma que hablas con <strong>quien toma decisiones</strong>. <strong>Sin esto, el resto no sirve.</strong></p>
       <p class="pitch-script">"Hola, soy [nombre], llamo de agendallena. ¿Hablo con quien maneja la agenda del negocio?"</p>
     </div>
 
@@ -796,7 +938,7 @@
         <span class="pitch-phase-name">Diagnóstico</span>
         <span class="pitch-phase-time">30 – 90 seg</span>
       </div>
-      <p>Una sola pregunta abierta. Escucha todo antes de hablar tú. El diagnóstico es donde se gana o se pierde el cierre.</p>
+      <p>Una sola pregunta abierta. <strong>Escucha todo antes de hablar tú.</strong> El diagnóstico es donde <span class="hl">se gana o se pierde el cierre</span>.</p>
       <p class="pitch-script">"¿Cómo confirman sus citas hoy — por teléfono, WhatsApp, otro sistema?" [Espera. No interrumpas. Toma nota del dolor que describen.]</p>
     </div>
 
@@ -806,7 +948,7 @@
         <span class="pitch-phase-name">Conexión</span>
         <span class="pitch-phase-time">90 – 180 seg</span>
       </div>
-      <p>Conecta lo que escuchaste con lo que resuelve agendallena. Dos frases máximo — no expliques todo el producto, explica la solución al dolor que describieron.</p>
+      <p>Conecta lo que escuchaste con lo que resuelve agendallena. <strong>Dos frases máximo</strong> — no expliques todo el producto, explica <strong>la solución al dolor que describieron</strong>.</p>
       <p class="pitch-script">"Lo que describes es exactamente lo que resuelve agendallena: [el sistema manda el recordatorio solo / llama si no contestan]. El negocio no hace nada — la cita se confirma sola."</p>
     </div>
 
@@ -816,13 +958,13 @@
         <span class="pitch-phase-name">Cierre</span>
         <span class="pitch-phase-time">180 – 240 seg</span>
       </div>
-      <p>Propuesta directa. No preguntes si quieren comprarlo — ofrece la prueba gratis. El riesgo cero facilita el sí.</p>
+      <p>Propuesta directa. No preguntes si quieren comprarlo — <strong>ofrece la prueba gratis</strong>. <span class="hl">El riesgo cero facilita el sí.</span></p>
       <p class="pitch-script">"Los 14 días gratis no requieren tarjeta. ¿Te mando el link ahora para que lo prueben esta semana con sus propios clientes?"</p>
     </div>
 
     <div class="info-box">
       <div class="info-box-label">Recuerda siempre</div>
-      <p>El diagnóstico (fase 02) es donde se gana el cierre. Si escuchas bien, la fase 03 es fácil — solo repites su propio dolor con la solución. No apresures la escucha. Vale más que cualquier feature que puedas mencionar.</p>
+      <p><span class="hl">El diagnóstico (fase 02) es donde se gana el cierre.</span> Si escuchas bien, la fase 03 es fácil — solo repites su propio dolor con la solución. <strong>No apresures la escucha.</strong> Vale más que cualquier feature que puedas mencionar.</p>
     </div>
   </div>
   <div class="page-footer">
@@ -862,7 +1004,7 @@
       <div class="quote-source">— agendallena · Equipo de ventas</div>
     </div>
 
-    <p class="body-text">El mercado es enorme: hay más de 800,000 negocios basados en citas en México operando sin confirmación automática. Cada llamada que haces llega a alguien que ya tiene el problema — tu trabajo es ser la solución que encontraron hoy.</p>
+    <p class="body-text">El mercado es enorme: hay <span class="hl" style="color:var(--verde-acento);">más de 800,000 negocios</span> basados en citas en México operando sin confirmación automática. Cada llamada que haces llega a alguien que ya tiene el problema — <strong>tu trabajo es ser la solución que encontraron hoy</strong>.</p>
   </div>
   <div class="page-footer">
     <span class="brand">agendallena</span>
