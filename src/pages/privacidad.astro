@@ -25,27 +25,23 @@ import Base from '../layouts/Base.astro';
 
       <h2>1. Identidad del responsable</h2>
       <p>
-        <strong>[NOMBRE DE LA PERSONA MORAL O FÍSICA RESPONSABLE]</strong>, con domicilio en
-        <strong>[DIRECCIÓN COMPLETA, CIUDAD, ESTADO, CP]</strong>, es responsable del tratamiento de los datos personales que usted nos proporcione a través del uso del servicio <strong class="brand-mention">agendallena<span class="dot">.</span>mx</strong>.
+        <strong>LAYER7, S.A.P.I. DE C.V.</strong>, con domicilio en
+        <strong>Avenida Pedro Ramírez Vázquez no. 200, interior 11, Colonia Valle Oriente, San Pedro Garza García, Nuevo León. C.P. 66269</strong>, es responsable del tratamiento de los datos personales que usted nos proporcione a través del uso del servicio <strong class="brand-mention">agendallena<span class="dot">.</span>mx</strong>.
       </p>
-      <p>Para cualquier asunto relacionado con este aviso, puede contactarnos en: <a href="mailto:privacidad@agendallena.mx">privacidad@agendallena.mx</a></p>
+      <p>Para cualquier asunto relacionado con este aviso, puede contactarnos en: <a href="mailto:eugenio@layer7.mx">eugenio@layer7.mx</a></p>
 
       <h2>2. Datos personales que recabamos</h2>
       <p>Recabamos los siguientes datos de los <strong>titulares del negocio</strong> (nuestros clientes directos):</p>
       <ul>
-        <li>Nombre completo</li>
-        <li>Número de teléfono celular</li>
-        <li>Correo electrónico (opcional)</li>
         <li>Nombre del negocio</li>
-        <li>Dirección del negocio (opcional)</li>
-        <li>Datos de pago (procesados por terceros; no los almacenamos directamente)</li>
+        <li>Número de teléfono celular</li>
+        <li>Datos de pago (procesados directamente por Stripe; no los almacenamos)</li>
       </ul>
       <p>Adicionalmente, como parte del servicio, el negocio registra datos de sus <strong>clientes finales</strong>:</p>
       <ul>
         <li>Nombre del cliente</li>
         <li>Número de teléfono celular</li>
         <li>Fecha y hora de cita</li>
-        <li>Notas internas sobre la cita (opcionales, ingresadas por el negocio)</li>
       </ul>
       <p>
         El negocio actúa como <strong>responsable</strong> de los datos de sus clientes finales.
@@ -55,6 +51,7 @@ import Base from '../layouts/Base.astro';
       <h2>3. Finalidades del tratamiento</h2>
       <p><strong>Finalidades primarias</strong> (necesarias para prestar el servicio):</p>
       <ul>
+        <li>Verificar la identidad del titular del negocio al momento del registro mediante código enviado por SMS</li>
         <li>Registrar y gestionar las citas agendadas por el negocio</li>
         <li>Enviar confirmaciones automáticas de cita a los clientes del negocio vía SMS</li>
         <li>Enviar recordatorios automáticos de cita vía SMS</li>
@@ -65,17 +62,17 @@ import Base from '../layouts/Base.astro';
       </ul>
       <p><strong>Finalidades secundarias</strong> (puede oponerse a estas):</p>
       <ul>
-        <li>Envío de comunicaciones sobre nuevas funcionalidades del servicio</li>
+        <li>Envío de comunicaciones comerciales sobre el servicio agendallena.mx, incluyendo novedades y actualizaciones</li>
         <li>Análisis estadísticos internos para mejorar el producto (datos anonimizados)</li>
       </ul>
-      <p>Si no desea que sus datos sean tratados para las finalidades secundarias, envíe un correo a <a href="mailto:privacidad@agendallena.mx">privacidad@agendallena.mx</a> indicando su oposición.</p>
+      <p>Si no desea que sus datos sean tratados para las finalidades secundarias, envíe un correo a <a href="mailto:eugenio@layer7.mx">eugenio@layer7.mx</a> indicando su oposición.</p>
 
       <h2>4. Transferencias de datos</h2>
       <p>Para operar el servicio, compartimos datos con los siguientes terceros bajo estrictos acuerdos de confidencialidad:</p>
       <ul>
-        <li><strong>Proveedor de mensajería SMS y llamadas</strong> [nombre del proveedor, ej. Twilio] — para el envío de mensajes y llamadas automatizadas a los clientes finales del negocio</li>
-        <li><strong>Procesador de pagos</strong> [nombre del procesador, ej. Stripe / Conekta] — para el cobro de la suscripción mensual</li>
-        <li><strong>Proveedor de infraestructura en la nube</strong> [Vercel / proveedor de base de datos] — para el alojamiento y almacenamiento del servicio</li>
+        <li><strong>Proveedor de mensajería SMS y llamadas</strong> — para el envío de mensajes y llamadas automatizadas a los clientes finales del negocio</li>
+        <li><strong>Stripe</strong> (procesador de pagos) — para el cobro de la suscripción mensual. Stripe opera bajo sus propias políticas de privacidad y seguridad.</li>
+        <li><strong>Vercel</strong> y proveedores de infraestructura en la nube — para el alojamiento y almacenamiento del servicio</li>
       </ul>
       <p>No vendemos ni cedemos sus datos a terceros con fines comerciales propios.</p>
 
@@ -84,7 +81,7 @@ import Base from '../layouts/Base.astro';
         Usted tiene derecho a <strong>Acceder</strong>, <strong>Rectificar</strong>, <strong>Cancelar</strong> u <strong>Oponerse</strong> al tratamiento de sus datos personales (derechos ARCO). Para ejercer estos derechos:
       </p>
       <ol>
-        <li>Envíe una solicitud a <a href="mailto:privacidad@agendallena.mx">privacidad@agendallena.mx</a></li>
+        <li>Envíe una solicitud a <a href="mailto:eugenio@layer7.mx">eugenio@layer7.mx</a></li>
         <li>Incluya su nombre completo y número de celular registrado</li>
         <li>Describa claramente el derecho que desea ejercer y los datos sobre los que solicita la acción</li>
         <li>En su caso, adjunte documentación que sustente su solicitud</li>
@@ -105,7 +102,7 @@ import Base from '../layouts/Base.astro';
 
       <h2>8. Retención de datos</h2>
       <p>
-        Conservamos sus datos mientras mantenga activa su cuenta en <strong class="brand-mention">agendallena<span class="dot">.</span>mx</strong>. Al cancelar su suscripción, eliminamos o anonimizamos sus datos en un plazo máximo de <strong>90 días naturales</strong>, salvo que la ley exija conservarlos por un período mayor.
+        Conservamos sus datos mientras mantenga activa su cuenta en <strong class="brand-mention">agendallena<span class="dot">.</span>mx</strong>. Al eliminar su cuenta, sus datos son eliminados en un plazo máximo de <strong>30 días naturales</strong>.
       </p>
 
       <h2>9. Cambios a este aviso</h2>
@@ -119,7 +116,7 @@ import Base from '../layouts/Base.astro';
       </p>
 
       <div class="legal-footer-note">
-        <p>¿Tienes dudas? Escríbenos a <a href="mailto:privacidad@agendallena.mx">privacidad@agendallena.mx</a> y te respondemos en menos de 24 horas.</p>
+        <p>¿Tienes dudas? Escríbenos a <a href="mailto:eugenio@layer7.mx">eugenio@layer7.mx</a> y te respondemos en menos de 24 horas.</p>
       </div>
 
     </div>
