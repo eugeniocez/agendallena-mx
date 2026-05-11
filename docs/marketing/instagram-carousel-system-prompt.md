@@ -465,6 +465,67 @@ Nunca dentro del flujo del contenido. Siempre absoluto.
 
 ---
 
+## Arquetipos de portada (Slide 1)
+
+Cada carrusel debe usar un arquetipo diferente al anterior. Los 4 arquetipos comparten los tokens del design system pero varían en composición, jerarquía tipográfica y anclaje del contenido — esa diferencia estructural es lo que genera variedad real en el feed.
+
+### Arquetipo A — Declaración *(layout base)*
+
+- **Ancla:** `justify-content: flex-end` · padding `80px 64px 160px`
+- **Elementos:** eyebrow → headline (600, −0.03em) → subtitle (body) — fluyen de abajo hacia arriba
+- **Sin bloque adicional:** el subtitle es el límite inferior antes del footer
+- **Decoración permitida:** corner brackets o inset frame
+- **Mejor para:** hooks de beneficio, temas generales, primera introducción a un tema
+
+### Arquetipo B — Cifra
+
+- **Ancla:** `justify-content: center` · padding `80px 64px 160px`
+- **Elementos:**
+  - eyebrow encima del número (pequeño, uppercase)
+  - Número gigante: `font-size: 160px; font-weight: 700; line-height: 1; letter-spacing: -0.06em; font-variant-numeric: tabular-nums`
+  - 1 línea de contexto (body, máx. 12 palabras) debajo del número
+  - Sin bloque de subtitle
+- **Decoración permitida:** ghost text (el mismo número, opacity 0.04) en fondos oscuros; círculos concéntricos en `verdeSuperficie`; nada extra en fondos claros
+- **Mejor para:** hooks estadísticos ("30% de tus citas no llegan"), hooks de impacto económico
+
+### Arquetipo C — Tensión
+
+- **Ancla:** `justify-content: flex-start` · padding `88px 64px 160px`
+- **Elementos:**
+  - eyebrow en la parte superior
+  - Pregunta como headline: `font-size: 56–72px; font-weight: 600; line-height: 1.15; letter-spacing: -0.03em`
+  - Opcional: 1 línea de teaser (body) después de la pregunta — máx. 10 palabras
+  - Sin bloque de subtitle
+  - El `?` al final ES el elemento visual — nunca omitirlo
+- **Decoración permitida:** corner bracket inferior-derecho
+- **Mejor para:** hooks de problema, contenido educativo, provocaciones al lector
+
+### Arquetipo D — Manifiesto
+
+- **Ancla:** `justify-content: center` · padding `80px 64px 160px`
+- **Elementos:**
+  - SOLO headline: `font-size: 72–96px; font-weight: 700; line-height: 1.05; letter-spacing: -0.04em`
+  - Sin eyebrow, sin subtitle — la brevedad es el diseño
+  - Footer con wordmark únicamente
+  - Restricción dura: el headline debe ser ≤ 7 palabras
+- **Decoración permitida:**
+  - Fondos oscuros: gradiente radial + línea pill
+  - Fondos claros: inset frame
+- **Mejor para:** frases de marca, afirmaciones directas, hooks aspiracionales del negocio
+
+### Compatibilidad fondo × arquetipo
+
+| Arquetipo | tinta | verdeSuperficie | hueso | grisClaro |
+|---|---|---|---|---|
+| Declaración | ✅ | ✅ | ✅ | ✅ |
+| Cifra | ✅ preferido | ✅ preferido | ✅ | ✅ |
+| Tensión | ✅ | — | ✅ preferido | ✅ preferido |
+| Manifiesto | ✅ preferido | ✅ preferido | ✅ | ✅ |
+
+Las combinaciones `—` son válidas pero tienen menos tensión dramática — evitar si hay alternativa.
+
+---
+
 ## Toques visuales aprobados
 
 Esta es la **whitelist completa** de elementos decorativos permitidos. No usar nada que no esté aquí.
@@ -493,11 +554,11 @@ No acumular más — el minimalismo es parte del sistema.
 
 ---
 
-## Variación de color entre carruseles
+## Rotación de portadas
+
+La portada de cada carrusel combina un **fondo** y un **arquetipo**. Ambos deben rotar — no basta con cambiar el color si el layout es siempre el mismo.
 
 ### Fondos disponibles para el slide 1 (hook)
-
-Rotar entre los 4 fondos para que el feed no repita el mismo color dos veces seguidas:
 
 | Fondo | Headline | Eyebrow | Feel |
 |---|---|---|---|
@@ -508,9 +569,15 @@ Rotar entre los 4 fondos para que el feed no repita el mismo color dos veces seg
 
 ### Regla de rotación
 
-Al inicio de cada carrusel nuevo, **preguntar al usuario**: _"¿Qué fondo usó el último carrusel en el slide 1? (tinta / verde oscuro / blanco hueso / gris claro)"_ — y elegir uno diferente.
+Al inicio de cada carrusel nuevo, **preguntar al usuario**: _"¿Qué fondo y arquetipo usó el último carrusel en la portada? (ej. tinta + Declaración)"_ — y elegir una combinación diferente en ambas dimensiones.
 
-Si el usuario no recuerda, proponer el que mejor contraste con el tema: hooks de dolor/urgencia → `tinta`; hooks de beneficio/solución → `verdeSuperficie`; hooks educativos/editoriales → `hueso` o `grisClaro`.
+**Restricción anti-repetición:** no repetir ni fondo ni arquetipo del carrusel anterior. Si el usuario quiere mantener el mismo fondo por coherencia de feed, cambiar el arquetipo como mínimo.
+
+Si el usuario no recuerda, elegir según el tema:
+- Hooks de dolor/urgencia → `tinta` + Cifra o Manifiesto
+- Hooks de beneficio/solución → `verdeSuperficie` + Declaración
+- Hooks educativos/preguntas → `hueso` o `grisClaro` + Tensión
+- Frases de marca directas → `tinta` + Manifiesto
 
 ### Fondos fijos (no varían)
 

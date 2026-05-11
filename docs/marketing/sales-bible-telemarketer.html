@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>agendallena — La guía del que cierra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --tinta: #0A0A0B;
+      --hueso: #FAFAF7;
+      --verde: #0F7B3F;
+      --verde-tenue: #E8F5EE;
+      --grafito: #6B6B6B;
+      --gris-claro: #F1EFE8;
+      --gris-borde: #E8E6DE;
+      --verde-superficie: #245C32;
+      --verde-acento: #4ADE80;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background: #DEDEDE;
+      color: var(--tinta);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 20px auto;
+      background: var(--hueso);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 22mm 20mm 18mm;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.14);
+    }
+
+    .content { flex: 1; }
+
+    .page-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 7mm;
+      border-top: 1px solid var(--gris-borde);
+      margin-top: 8mm;
+    }
+    .page-footer .brand { font-size: 11px; font-weight: 600; color: var(--grafito); letter-spacing: -0.01em; }
+    .page-footer .page-num { font-size: 11px; color: var(--grafito); font-variant-numeric: tabular-nums; }
+
+    /* ── Portada ── */
+    .page.cover { background: var(--verde-superficie); justify-content: space-between; }
+    .cover-tag {
+      display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--verde-acento);
+      border: 1px solid rgba(74,222,128,0.35); padding: 4px 10px; border-radius: 4px;
+    }
+    .cover-body { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 14mm 0 10mm; }
+    .cover-wordmark { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.45); letter-spacing: -0.02em; margin-bottom: 8mm; }
+    .cover-title { font-size: 52px; font-weight: 700; color: var(--hueso); line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 6mm; }
+    .cover-subtitle { font-size: 16px; font-weight: 400; color: rgba(250,250,247,0.6); line-height: 1.55; max-width: 120mm; }
+    .cover-footer-row { display: flex; justify-content: space-between; align-items: flex-end; }
+    .cover-footer-row .date { font-size: 12px; color: rgba(255,255,255,0.35); }
+    .cover-footer-row .cover-brand { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.3); }
+
+    /* ── Índice ── */
+    .toc-heading { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grafito); margin-bottom: 10mm; }
+    .toc-list { list-style: none; }
+    .toc-item { display: flex; align-items: baseline; gap: 6mm; padding: 5mm 0; border-bottom: 1px solid var(--gris-borde); }
+    .toc-item:last-child { border-bottom: none; }
+    .toc-num { font-size: 11px; font-weight: 600; color: var(--verde); font-variant-numeric: tabular-nums; min-width: 18px; }
+    .toc-section-title { font-size: 15px; font-weight: 600; color: var(--tinta); line-height: 1.3; }
+    .toc-section-desc { font-size: 12px; color: var(--grafito); margin-top: 2px; line-height: 1.4; }
+
+    /* ── Encabezado de sección ── */
+    .section-eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grafito); margin-bottom: 5mm; }
+    .section-eyebrow span { color: var(--verde); }
+    .section-title { font-size: 38px; font-weight: 700; color: var(--tinta); line-height: 1.08; letter-spacing: -0.025em; margin-bottom: 4mm; }
+    .section-subtitle { font-size: 14px; font-weight: 400; color: var(--grafito); line-height: 1.6; max-width: 130mm; margin-bottom: 9mm; padding-bottom: 8mm; border-bottom: 1px solid var(--gris-borde); }
+
+    /* ── Cuerpo ── */
+    .body-text { font-size: 13px; color: var(--tinta); line-height: 1.65; margin-bottom: 5mm; }
+
+    /* ── Tabla ── */
+    .doc-table { width: 100%; border-collapse: collapse; margin-bottom: 6mm; font-size: 12px; }
+    .doc-table th { background: var(--verde); color: var(--hueso); font-weight: 600; text-align: left; padding: 8px 12px; font-size: 11px; letter-spacing: 0.02em; }
+    .doc-table th:first-child { border-radius: 6px 0 0 0; }
+    .doc-table th:last-child  { border-radius: 0 6px 0 0; }
+    .doc-table td { padding: 9px 12px; color: var(--tinta); border-bottom: 1px solid var(--gris-borde); line-height: 1.45; vertical-align: top; }
+    .doc-table tr:nth-child(even) td { background: var(--gris-claro); }
+    .doc-table .check-yes { color: var(--verde); font-weight: 700; }
+    .doc-table .check-no  { color: #9CA3AF; }
+    .doc-table .highlight-col { font-weight: 700; }
+
+    /* ── Métricas ── */
+    .metric-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; margin-bottom: 6mm; }
+    .metric-card { border: 1px solid var(--gris-borde); border-radius: var(--radius-md); padding: 5mm; }
+    .metric-num { font-size: 32px; font-weight: 700; color: var(--verde); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; line-height: 1; margin-bottom: 2mm; }
+    .metric-label { font-size: 11px; color: var(--grafito); line-height: 1.4; }
+
+    /* ── Cita ── */
+    .quote-block { border-left: 3px solid var(--verde); background: var(--verde-tenue); padding: 5mm 6mm; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin-bottom: 5mm; }
+    .quote-block p { font-size: 13px; color: var(--tinta); line-height: 1.6; font-style: italic; }
+    .quote-block .quote-source { font-size: 11px; color: var(--grafito); font-style: normal; font-weight: 600; margin-top: 2mm; }
+
+    /* ── Lista numerada ── */
+    .numbered-list { list-style: none; margin-bottom: 5mm; }
+    .numbered-list li { display: flex; gap: 4mm; align-items: flex-start; margin-bottom: 4mm; }
+    .numbered-list .num { min-width: 22px; height: 22px; border-radius: 50%; background: var(--verde); color: var(--hueso); font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .numbered-list .li-text { font-size: 13px; color: var(--tinta); line-height: 1.55; }
+    .numbered-list .li-title { font-weight: 600; display: block; margin-bottom: 1px; }
+
+    /* ── Separador ── */
+    .divider { height: 1px; background: var(--gris-borde); margin: 7mm 0; }
+
+    /* ── Info box ── */
+    .info-box { background: var(--gris-claro); border-radius: var(--radius-md); padding: 5mm; margin-bottom: 5mm; }
+    .info-box-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--verde); margin-bottom: 2mm; }
+    .info-box p { font-size: 12px; color: var(--tinta); line-height: 1.55; }
+    .info-box p + p { margin-top: 2mm; }
+
+    /* ── Dos columnas ── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; margin-bottom: 5mm; }
+
+    /* ── Página oscura ── */
+    .page.dark { background: var(--verde-superficie); }
+    .page.dark .section-eyebrow        { color: rgba(255,255,255,0.4); }
+    .page.dark .section-eyebrow span   { color: var(--verde-acento); }
+    .page.dark .section-title          { color: var(--hueso); }
+    .page.dark .section-subtitle       { color: rgba(250,250,247,0.6); border-bottom-color: rgba(255,255,255,0.1); }
+    .page.dark .body-text              { color: rgba(250,250,247,0.82); }
+    .page.dark .divider                { background: rgba(255,255,255,0.1); }
+    .page.dark .page-footer            { border-top-color: rgba(255,255,255,0.1); }
+    .page.dark .page-footer .brand,
+    .page.dark .page-footer .page-num  { color: rgba(255,255,255,0.3); }
+    .page.dark .metric-card            { border-color: rgba(255,255,255,0.1); }
+    .page.dark .metric-num             { color: var(--verde-acento); }
+    .page.dark .metric-label           { color: rgba(255,255,255,0.5); }
+    .page.dark .quote-block            { border-left-color: var(--verde-acento); background: rgba(255,255,255,0.06); }
+    .page.dark .quote-block p          { color: rgba(250,250,247,0.9); }
+    .page.dark .quote-block .quote-source { color: rgba(255,255,255,0.45); }
+
+    /* ── NUEVOS: Sales Bible ── */
+
+    /* Foto de sección */
+    .section-photo { width: 100%; height: 52mm; object-fit: cover; border-radius: var(--radius-md); display: block; margin-bottom: 7mm; }
+
+    /* Cards de problema */
+    .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; margin-bottom: 5mm; }
+    .problem-card { border: 1px solid var(--gris-borde); border-radius: var(--radius-md); padding: 5mm; }
+    .problem-card-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grafito); margin-bottom: 2mm; }
+    .problem-card h3 { font-size: 13px; font-weight: 600; color: var(--tinta); margin-bottom: 2mm; line-height: 1.3; }
+    .problem-card p { font-size: 11.5px; color: var(--grafito); line-height: 1.55; }
+
+    /* Persona cards */
+    .persona-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; margin-bottom: 5mm; }
+    .persona-card { border: 1px solid var(--gris-borde); border-radius: var(--radius-lg); overflow: hidden; }
+    .persona-card img { width: 100%; height: 38mm; object-fit: cover; display: block; }
+    .persona-card-body { padding: 4mm 4mm 5mm; }
+    .persona-role { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--verde); margin-bottom: 1.5mm; }
+    .persona-name { font-size: 13px; font-weight: 700; color: var(--tinta); margin-bottom: 2.5mm; line-height: 1.2; }
+    .persona-pain { font-size: 11px; color: var(--grafito); font-style: italic; line-height: 1.5; margin-bottom: 3mm; border-left: 2px solid var(--gris-borde); padding-left: 3mm; }
+    .persona-hook { font-size: 11px; font-weight: 600; color: var(--verde); line-height: 1.4; }
+
+    /* Fases del pitch */
+    .pitch-phase { border-left: 3px solid var(--verde); background: var(--gris-claro); padding: 4.5mm 5mm; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin-bottom: 4mm; }
+    .pitch-phase-header { display: flex; align-items: center; gap: 3mm; margin-bottom: 2mm; }
+    .pitch-phase-num { font-size: 10px; font-weight: 700; color: var(--verde); background: var(--verde-tenue); border-radius: 4px; padding: 1.5px 5px; font-variant-numeric: tabular-nums; }
+    .pitch-phase-name { font-size: 12px; font-weight: 700; color: var(--tinta); }
+    .pitch-phase-time { font-size: 10px; color: var(--grafito); margin-left: auto; }
+    .pitch-phase p { font-size: 12px; color: var(--tinta); line-height: 1.55; }
+    .pitch-script { font-size: 11.5px; color: var(--grafito); font-style: italic; margin-top: 1.5mm; }
+
+    /* Checklist */
+    .check-list { list-style: none; margin-bottom: 5mm; }
+    .check-list li { display: flex; gap: 3mm; align-items: flex-start; font-size: 12.5px; color: var(--tinta); line-height: 1.5; margin-bottom: 2.5mm; }
+    .check-icon { color: var(--verde); font-weight: 700; font-size: 11px; margin-top: 1px; flex-shrink: 0; }
+
+    /* Lista negativa (inline) */
+    .no-list { list-style: none; }
+    .no-list li { display: flex; gap: 3mm; align-items: flex-start; font-size: 12.5px; color: var(--grafito); line-height: 1.5; margin-bottom: 2.5mm; }
+    .no-icon { color: #9CA3AF; font-weight: 700; font-size: 11px; margin-top: 1px; flex-shrink: 0; }
+
+    /* ROI callout */
+    .roi-box { background: var(--verde-tenue); border: 1.5px solid rgba(15,123,63,0.2); border-radius: var(--radius-md); padding: 5mm 6mm; margin-bottom: 5mm; }
+    .roi-box-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--verde); margin-bottom: 2mm; }
+    .roi-box p { font-size: 13px; color: var(--tinta); line-height: 1.6; }
+    .roi-math { font-size: 11.5px; color: var(--grafito); margin-top: 2mm; }
+
+    /* Tabla de objeciones */
+    .objection-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 5mm; }
+    .objection-table th { background: var(--tinta); color: var(--hueso); font-weight: 600; text-align: left; padding: 8px 12px; font-size: 11px; letter-spacing: 0.02em; }
+    .objection-table th:first-child { border-radius: 6px 0 0 0; }
+    .objection-table th:last-child  { border-radius: 0 6px 0 0; }
+    .objection-table td { padding: 9px 12px; border-bottom: 1px solid var(--gris-borde); vertical-align: top; line-height: 1.5; }
+    .objection-table tr:nth-child(even) td { background: var(--gris-claro); }
+    .obj-q { color: var(--tinta); font-weight: 600; font-size: 12px; width: 40%; }
+    .obj-a { color: var(--tinta); font-size: 12px; width: 60%; }
+
+    /* Headline de cierre */
+    .closing-headline { font-size: 44px; font-weight: 700; color: var(--hueso); line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 8mm; }
+    .closing-headline .accent { color: var(--verde-acento); }
+
+    /* ── Impresión ── */
+    @media print {
+      body { background: none; }
+      .page { margin: 0; box-shadow: none; page-break-after: always; break-after: page; }
+      .page:last-child { page-break-after: avoid; break-after: avoid; }
+      @page { size: A4; margin: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     01 / PORTADA
+══════════════════════════════════════ -->
+<div class="page cover">
+  <div>
+    <span class="cover-tag">Equipo de ventas</span>
+  </div>
+  <div class="cover-body">
+    <div class="cover-wordmark">agendallena</div>
+    <h1 class="cover-title">La guía del<br>que cierra.</h1>
+    <p class="cover-subtitle">Todo lo que necesitas para vender agendallena con confianza — de la primera llamada al cierre.</p>
+  </div>
+  <div class="cover-footer-row">
+    <span class="date">Mayo 2026</span>
+    <span class="cover-brand">agendallena.mx</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     02 / ÍNDICE
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="content">
+    <p class="toc-heading">Contenido</p>
+    <ol class="toc-list">
+      <li class="toc-item">
+        <span class="toc-num">01</span>
+        <div>
+          <div class="toc-section-title">Tu misión</div>
+          <div class="toc-section-desc">Por qué esta venta importa antes de marcar el número.</div>
+        </div>
+      </li>
+      <li class="toc-item">
+        <span class="toc-num">02</span>
+        <div>
+          <div class="toc-section-title">El problema</div>
+          <div class="toc-section-desc">Qué está pasando hoy en los negocios que vas a llamar.</div>
+        </div>
+      </li>
+      <li class="toc-item">
+        <span class="toc-num">03</span>
+        <div>
+          <div class="toc-section-title">Qué es agendallena</div>
+          <div class="toc-section-desc">Una sola página. Lo que es, lo que hace, lo que no es.</div>
+        </div>
+      </li>
+      <li class="toc-item">
+        <span class="toc-num">04</span>
+        <div>
+          <div class="toc-section-title">Cómo funciona</div>
+          <div class="toc-section-desc">Los 5 pasos del sistema de confirmación automática.</div>
+        </div>
+      </li>
+      <li class="toc-item">
+        <span class="toc-num">05</span>
+        <div>
+          <div class="toc-section-title">A quién le hablas</div>
+          <div class="toc-section-desc">Los 3 perfiles de cliente que más convierten.</div>
+        </div>
+      </li>
+      <li class="toc-item">
+        <span class="toc-num">06</span>
+        <div>
+          <div class="toc-section-title">Por qué ganamos</div>
+          <div class="toc-section-desc">Contra libreta, WhatsApp y Calendly.</div>
+        </div>
+      </li>
+      <li class="toc-item">
+        <span class="toc-num">07</span>
+        <div>
+          <div class="toc-section-title">El precio</div>
+          <div class="toc-section-desc">Cómo presentar $199 MXN sin titubear.</div>
+        </div>
+      </li>
+      <li class="toc-item">
+        <span class="toc-num">08</span>
+        <div>
+          <div class="toc-section-title">Manejo de objeciones</div>
+          <div class="toc-section-desc">Las 5 que más escucharás y cómo responderlas.</div>
+        </div>
+      </li>
+      <li class="toc-item">
+        <span class="toc-num">09</span>
+        <div>
+          <div class="toc-section-title">El pitch</div>
+          <div class="toc-section-desc">Guía de conversación de apertura a cierre.</div>
+        </div>
+      </li>
+      <li class="toc-item">
+        <span class="toc-num">10</span>
+        <div>
+          <div class="toc-section-title">Eres parte del equipo</div>
+          <div class="toc-section-desc">Por qué esto importa más allá de la comisión.</div>
+        </div>
+      </li>
+    </ol>
+  </div>
+  <div class="page-footer">
+    <span class="brand">agendallena</span>
+    <span class="page-num">02</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     03 / TU MISIÓN
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="content">
+    <p class="section-eyebrow"><span>01</span> · TU MISIÓN</p>
+    <h2 class="section-title">Antes de marcar, entiende<br>lo que estás resolviendo.</h2>
+    <p class="section-subtitle">El 30% de las citas agendadas en México no se presentan. No por mal cliente — por falta de seguimiento.</p>
+
+    <img
+      src="https://images.unsplash.com/photo-1496180470114-6ef490f3ff22?w=1200&auto=format&fit=crop&q=80"
+      alt="Dueña de negocio en llamada"
+      class="section-photo"
+    >
+
+    <p class="body-text">El negocio al que vas a llamar opera con la agenda al límite. Anota citas en papel o WhatsApp, confirma cuando puede, y pierde clientes sin entender por qué. La semana termina con huecos que nadie avisó.</p>
+
+    <p class="body-text">Tú tienes la solución. No estás vendiendo software: estás ofreciendo certeza, tiempo recuperado y dinero que deja de salir por la puerta.</p>
+
+    <div class="quote-block">
+      <p>"Una cita perdida en un consultorio dental vale entre $600 y $1,500 pesos. Cuatro inasistencias a la semana son más de $3,000 pesos al mes que no entran. agendallena detiene eso desde el primer día."</p>
+      <div class="quote-source">— El argumento que cierra</div>
+    </div>
+
+    <div class="metric-grid">
+      <div class="metric-card">
+        <div class="metric-num">30%</div>
+        <div class="metric-label">de citas que no se presentan sin recordatorio activo</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">$3,200</div>
+        <div class="metric-label">pesos que pierde un negocio promedio cada mes por inasistencias</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">$199</div>
+        <div class="metric-label">MXN/mes para resolver el problema de forma permanente</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span class="brand">agendallena</span>
+    <span class="page-num">03</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     04 / EL PROBLEMA
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="content">
+    <p class="section-eyebrow"><span>02</span> · EL PROBLEMA</p>
+    <h2 class="section-title">Así está gestionando<br>su agenda hoy.</h2>
+    <p class="section-subtitle">Antes de presentar la solución, conoce el dolor. Es lo que conecta tu pitch con la realidad del cliente.</p>
+
+    <img
+      src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1200&auto=format&fit=crop&q=80"
+      alt="Barbería — negocio basado en citas"
+      class="section-photo"
+    >
+
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-card-label">Problema 01</div>
+        <h3>La libreta no confirma nada</h3>
+        <p>El negocio anota la cita y espera que el cliente llegue. Sin recordatorio, sin seguimiento. La inasistencia llega sin aviso y el horario queda vacío.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-label">Problema 02</div>
+        <h3>WhatsApp se pierde en el ruido</h3>
+        <p>Confirmar por WhatsApp es manual y agotador. Los mensajes se pierden entre conversaciones. En temporada alta, no alcanza el tiempo para hacerlo.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-label">Problema 03</div>
+        <h3>Calendly no sirve aquí</h3>
+        <p>Calendly no manda SMS en México. No hace llamadas. No habla el idioma operativo de un estilista o dentista que atiende 20 citas al día en LATAM.</p>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <div class="info-box-label">Para tu pitch</div>
+      <p>El cliente al que llamas ya conoce el problema. Puede que no sepa que hay solución. Tu trabajo es conectar su dolor con lo que agendallena hace — no vender funciones, sino resolver lo que ya lo está afectando.</p>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span class="brand">agendallena</span>
+    <span class="page-num">04</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     05 / QUÉ ES AGENDALLENA
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="content">
+    <p class="section-eyebrow"><span>03</span> · QUÉ ES AGENDALLENA</p>
+    <h2 class="section-title">Un sistema de confirmación<br>automática. Nada más.</h2>
+    <p class="section-subtitle">No es un calendario más bonito. No es un CRM. No es un bot con IA. Es el sistema que confirma la agenda del negocio por él — sin que el dueño tenga que hacer nada.</p>
+
+    <p class="body-text">En cuanto el negocio agenda una cita, agendallena activa la cadena completa: SMS de confirmación al cliente, recordatorio 24 horas antes con opciones de Confirmar / Cancelar / Reagendar, llamada automatizada si no contesta, y mensaje de agradecimiento al cierre. El negocio no interviene. La agenda se confirma sola.</p>
+
+    <div class="divider"></div>
+
+    <div class="two-col">
+      <div>
+        <p style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--verde);margin-bottom:3mm;">Esto SÍ es agendallena</p>
+        <ul class="check-list">
+          <li><span class="check-icon">✓</span> Sistema de confirmación automática</li>
+          <li><span class="check-icon">✓</span> Recordatorios por SMS y por llamada</li>
+          <li><span class="check-icon">✓</span> Reagenda por WhatsApp</li>
+          <li><span class="check-icon">✓</span> App web + PWA para móvil</li>
+          <li><span class="check-icon">✓</span> Precio fijo, sin costo por cita</li>
+          <li><span class="check-icon">✓</span> Listo en menos de 5 minutos</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--grafito);margin-bottom:3mm;">Esto NO es agendallena</p>
+        <ul class="no-list">
+          <li><span class="no-icon">✕</span> Un calendario más bonito</li>
+          <li><span class="no-icon">✕</span> Un CRM de gestión de clientes</li>
+          <li><span class="no-icon">✕</span> Un chatbot o bot conversacional</li>
+          <li><span class="no-icon">✕</span> Una plataforma de pagos o facturación</li>
+          <li><span class="no-icon">✕</span> Un reemplazo de WhatsApp</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="metric-grid">
+      <div class="metric-card">
+        <div class="metric-num">5</div>
+        <div class="metric-label">módulos en la app: Calendario, Directorio, Nueva cita, Invitar, Ajustes</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">24/7</div>
+        <div class="metric-label">el sistema trabaja sin intervención del negocio, incluso de madrugada</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">14 días</div>
+        <div class="metric-label">de prueba gratis sin tarjeta — para que el negocio lo vea antes de decidir</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span class="brand">agendallena</span>
+    <span class="page-num">05</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     06 / CÓMO FUNCIONA
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="content">
+    <p class="section-eyebrow"><span>04</span> · CÓMO FUNCIONA</p>
+    <h2 class="section-title">Los 5 pasos del sistema.</h2>
+    <p class="section-subtitle">Esto es lo que activa agendallena en cuanto el negocio agenda una cita. Memorízalo — este flujo es el corazón de tu pitch.</p>
+
+    <ul class="numbered-list">
+      <li>
+        <span class="num">1</span>
+        <div class="li-text">
+          <span class="li-title">El negocio agenda la cita</span>
+          Registra el nombre del cliente, el servicio y la hora. Eso es todo lo que hace el dueño. El sistema toma el control desde aquí.
+        </div>
+      </li>
+      <li>
+        <span class="num">2</span>
+        <div class="li-text">
+          <span class="li-title">SMS inmediato de confirmación</span>
+          El cliente recibe un mensaje al instante con su cita, fecha, hora y negocio. Con un link para confirmar o cancelar en un tap.
+        </div>
+      </li>
+      <li>
+        <span class="num">3</span>
+        <div class="li-text">
+          <span class="li-title">Recordatorio 24 horas antes</span>
+          Automático. SMS con tres botones: Confirmar · Cancelar · Reagendar. La respuesta del cliente aparece en el calendario del negocio en tiempo real.
+        </div>
+      </li>
+      <li>
+        <span class="num">4</span>
+        <div class="li-text">
+          <span class="li-title">Llamada automática si no contesta</span>
+          2 horas antes de la cita, si el cliente no respondió, el sistema llama. Mensaje profesional, respuesta sincronizada al calendario.
+        </div>
+      </li>
+      <li>
+        <span class="num">5</span>
+        <div class="li-text">
+          <span class="li-title">Mensaje de cierre post-cita</span>
+          2 horas después de la cita, el cliente recibe un agradecimiento automático. El negocio no escribe nada.
+        </div>
+      </li>
+    </ul>
+
+    <div class="info-box">
+      <div class="info-box-label">El diferencial que nadie tiene</div>
+      <p>La llamada automática es exclusiva de agendallena en México. WhatsApp no llama. Calendly no llama. Cuando el cliente pregunte "¿en qué es diferente?", esa es la respuesta que cierra.</p>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span class="brand">agendallena</span>
+    <span class="page-num">06</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     07 / A QUIÉN LE HABLAS
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="content">
+    <p class="section-eyebrow"><span>05</span> · A QUIÉN LE HABLAS</p>
+    <h2 class="section-title">Los 3 perfiles que<br>más convierten.</h2>
+    <p class="section-subtitle">No todos los negocios sienten el dolor igual. Estos son los que lo conocen de primera mano y reaccionan más rápido al valor.</p>
+
+    <div class="persona-grid">
+      <div class="persona-card">
+        <img
+          src="https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=600&auto=format&fit=crop&q=80"
+          alt="Barbero en su negocio"
+        >
+        <div class="persona-card-body">
+          <div class="persona-role">Barbería</div>
+          <div class="persona-name">El barbero que no para</div>
+          <div class="persona-pain">"Tengo la agenda llena para el viernes y siempre hay dos o tres que no me avisan que cancelan."</div>
+          <div class="persona-hook">Entrada: ¿Cómo avisas a tus clientes cuando se acerca su cita?</div>
+        </div>
+      </div>
+
+      <div class="persona-card">
+        <img
+          src="https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=600&auto=format&fit=crop&q=80"
+          alt="Profesional de salud dental"
+        >
+        <div class="persona-card-body">
+          <div class="persona-role">Consultorio dental</div>
+          <div class="persona-name">La dentista con horario apretado</div>
+          <div class="persona-pain">"Cada silla vacía son $1,200 pesos que no entran. Y confirmar por teléfono me quita tiempo que no tengo."</div>
+          <div class="persona-hook">Entrada: ¿Cuántas citas te quedan vacías en una semana típica?</div>
+        </div>
+      </div>
+
+      <div class="persona-card">
+        <img
+          src="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=600&auto=format&fit=crop&q=80"
+          alt="Estilista en salón"
+        >
+        <div class="persona-card-body">
+          <div class="persona-role">Salón de belleza</div>
+          <div class="persona-name">La estilista con agenda propia</div>
+          <div class="persona-pain">"Tengo Instagram y WhatsApp Business, pero confirmar cada cita a mano me consume media mañana."</div>
+          <div class="persona-hook">Entrada: ¿Cuánto tiempo pasas al día confirmando citas?</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <div class="info-box-label">Más verticales activas</div>
+      <p>Consultorios médicos, psicólogos y terapeutas, talleres mecánicos, spas, salones de uñas, entrenadores personales. Si el negocio opera por citas y tiene WhatsApp, agendallena le sirve.</p>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span class="brand">agendallena</span>
+    <span class="page-num">07</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     08 / POR QUÉ GANAMOS
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="content">
+    <p class="section-eyebrow"><span>06</span> · POR QUÉ GANAMOS</p>
+    <h2 class="section-title">Contra la competencia real.</h2>
+    <p class="section-subtitle">El cliente va a comparar. No lo temas — prepárate. Estos son los argumentos que ganan cada vez.</p>
+
+    <table class="doc-table">
+      <thead>
+        <tr>
+          <th>Función</th>
+          <th>Libreta</th>
+          <th>WhatsApp</th>
+          <th>Calendly</th>
+          <th>agendallena</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>SMS de confirmación automático</td>
+          <td class="check-no">✕</td>
+          <td class="check-no">Manual</td>
+          <td class="check-no">✕</td>
+          <td class="check-yes highlight-col">✓ Automático</td>
+        </tr>
+        <tr>
+          <td>Recordatorio 24 horas antes</td>
+          <td class="check-no">✕</td>
+          <td class="check-no">Manual</td>
+          <td class="check-no">Solo email</td>
+          <td class="check-yes highlight-col">✓ SMS</td>
+        </tr>
+        <tr>
+          <td>Llamada automática si no contesta</td>
+          <td class="check-no">✕</td>
+          <td class="check-no">✕</td>
+          <td class="check-no">✕</td>
+          <td class="check-yes highlight-col">✓ Único en MX</td>
+        </tr>
+        <tr>
+          <td>Reagenda por WhatsApp</td>
+          <td class="check-no">✕</td>
+          <td class="check-no">Manual</td>
+          <td class="check-no">✕</td>
+          <td class="check-yes highlight-col">✓ Automático</td>
+        </tr>
+        <tr>
+          <td>Precio fijo sin costo por cita</td>
+          <td>$0 (+ inasistencias)</td>
+          <td>$0 (+ tiempo)</td>
+          <td class="check-no">Variable</td>
+          <td class="check-yes highlight-col">$199/mes fijo</td>
+        </tr>
+        <tr>
+          <td>Sin contratos</td>
+          <td>—</td>
+          <td>—</td>
+          <td class="check-no">✕</td>
+          <td class="check-yes highlight-col">✓</td>
+        </tr>
+        <tr>
+          <td>Diseñado para México y LATAM</td>
+          <td>—</td>
+          <td>Parcial</td>
+          <td class="check-no">✕</td>
+          <td class="check-yes highlight-col">✓ 100%</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <div class="info-box-label">El argumento que nadie puede refutar</div>
+      <p>Cuando el cliente dude, pregúntale: "¿Calendly o WhatsApp te llaman automáticamente si el cliente no contesta el mensaje?" La respuesta es no. agendallena sí. Eso no tiene réplica.</p>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span class="brand">agendallena</span>
+    <span class="page-num">08</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     09 / EL PRECIO
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="content">
+    <p class="section-eyebrow"><span>07</span> · EL PRECIO</p>
+    <h2 class="section-title">$199. Así lo presentas.</h2>
+    <p class="section-subtitle">El precio no es una objeción — es una decisión de valor. Tu trabajo es establecer el contexto correcto antes de decirlo.</p>
+
+    <div class="roi-box">
+      <div class="roi-box-label">El encuadre que funciona</div>
+      <p>Antes de decir el precio, ancla el costo del problema. "¿Cuánto cobra por una cita de promedio?" [Espera la respuesta.] "Si recupera dos citas al mes que antes se perdían, agendallena ya se pagó solo." A partir de ahí, $199 suena a lo que es: el seguro de la agenda.</p>
+      <p class="roi-math">Ejemplo real: 2 citas dentales recuperadas × $800 = $1,600/mes recuperados. Costo de agendallena: $199. Retorno: 8x.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <p style="font-size:12px;font-weight:600;color:var(--tinta);margin-bottom:3mm;">Todo lo que incluye la suscripción de $199 MXN/mes:</p>
+
+    <div class="two-col">
+      <ul class="check-list">
+        <li><span class="check-icon">✓</span> SMS de confirmación inmediata</li>
+        <li><span class="check-icon">✓</span> Recordatorio 24 horas antes</li>
+        <li><span class="check-icon">✓</span> Llamada automática si no contesta</li>
+        <li><span class="check-icon">✓</span> Reagenda por WhatsApp prellenado</li>
+        <li><span class="check-icon">✓</span> Mensaje post-cita automático</li>
+      </ul>
+      <ul class="check-list">
+        <li><span class="check-icon">✓</span> App completa con 5 módulos</li>
+        <li><span class="check-icon">✓</span> Calendario con sistema de estados</li>
+        <li><span class="check-icon">✓</span> Directorio de clientes automático</li>
+        <li><span class="check-icon">✓</span> Sin contratos — cancela cuando quieran</li>
+        <li><span class="check-icon">✓</span> 14 días gratis, sin tarjeta</li>
+      </ul>
+    </div>
+
+    <div class="quote-block">
+      <p>"No les estás vendiendo una app. Les estás vendiendo 14 días de prueba gratis para que lo vean con sus propios clientes. El precio viene después — cuando ya funciona."</p>
+      <div class="quote-source">— El enfoque correcto para el cierre</div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span class="brand">agendallena</span>
+    <span class="page-num">09</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     10 / MANEJO DE OBJECIONES
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="content">
+    <p class="section-eyebrow"><span>08</span> · MANEJO DE OBJECIONES</p>
+    <h2 class="section-title">Las 5 que más escucharás.</h2>
+    <p class="section-subtitle">No hay que refutar. Hay que reconocer, encuadrar y redirigir. Confirma lo que dicen y agrega la perspectiva que les falta.</p>
+
+    <table class="objection-table">
+      <thead>
+        <tr>
+          <th>Lo que dice el cliente</th>
+          <th>Lo que responde el vendedor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="obj-q">"Ya confirmo por WhatsApp, no lo necesito."</td>
+          <td class="obj-a">Claro, y eso funciona cuando tienes tiempo. agendallena lo hace automáticamente, a todas horas, aunque estés con un cliente. Sin que tengas que escribir nada.</td>
+        </tr>
+        <tr>
+          <td class="obj-q">"Está caro para lo que es."</td>
+          <td class="obj-a">¿Cuánto te cuesta una inasistencia? [Espera.] agendallena se paga con menos de dos citas recuperadas al mes. El resto es ganancia neta.</td>
+        </tr>
+        <tr>
+          <td class="obj-q">"No tengo tiempo de aprenderlo."</td>
+          <td class="obj-a">Listo en 5 minutos. Si sabes agendar en WhatsApp, sabes usar agendallena. Los 14 días gratis son para que lo compruebes sin riesgo ni tarjeta.</td>
+        </tr>
+        <tr>
+          <td class="obj-q">"Mis clientes no responden mensajes."</td>
+          <td class="obj-a">Por eso existe la llamada. El SMS llega primero — y si no responden, el sistema llama automáticamente dos horas antes. Eso sí llega.</td>
+        </tr>
+        <tr>
+          <td class="obj-q">"Déjame pensarlo."</td>
+          <td class="obj-a">Perfecto. ¿Qué necesitarías ver para decidir? [Escucha.] Te mando el acceso a la prueba gratis hoy — así lo ves en tu negocio real antes de comprometerte a nada.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <div class="info-box-label">Regla de oro</div>
+      <p>Cuando el cliente diga "déjame pensarlo", no cierres la llamada sin una acción concreta: enviar el link de prueba, agendar seguimiento en 48 horas, o resolver la duda específica que lo frena. El "pensarlo" sin acción rara vez cierra.</p>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span class="brand">agendallena</span>
+    <span class="page-num">10</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     11 / EL PITCH
+══════════════════════════════════════ -->
+<div class="page">
+  <div class="content">
+    <p class="section-eyebrow"><span>09</span> · EL PITCH</p>
+    <h2 class="section-title">La guía de conversación.</h2>
+    <p class="section-subtitle">No es un script que recites. Es un mapa. Aprende la estructura, adapta las palabras. La velocidad de cada fase la dicta el cliente, no el reloj.</p>
+
+    <div class="pitch-phase">
+      <div class="pitch-phase-header">
+        <span class="pitch-phase-num">01</span>
+        <span class="pitch-phase-name">Apertura</span>
+        <span class="pitch-phase-time">0 – 30 seg</span>
+      </div>
+      <p>Saluda, preséntate y confirma que hablas con quien toma decisiones. Sin esto, el resto no sirve.</p>
+      <p class="pitch-script">"Hola, soy [nombre], llamo de agendallena. ¿Hablo con quien maneja la agenda del negocio?"</p>
+    </div>
+
+    <div class="pitch-phase">
+      <div class="pitch-phase-header">
+        <span class="pitch-phase-num">02</span>
+        <span class="pitch-phase-name">Diagnóstico</span>
+        <span class="pitch-phase-time">30 – 90 seg</span>
+      </div>
+      <p>Una sola pregunta abierta. Escucha todo antes de hablar tú. El diagnóstico es donde se gana o se pierde el cierre.</p>
+      <p class="pitch-script">"¿Cómo confirman sus citas hoy — por teléfono, WhatsApp, otro sistema?" [Espera. No interrumpas. Toma nota del dolor que describen.]</p>
+    </div>
+
+    <div class="pitch-phase">
+      <div class="pitch-phase-header">
+        <span class="pitch-phase-num">03</span>
+        <span class="pitch-phase-name">Conexión</span>
+        <span class="pitch-phase-time">90 – 180 seg</span>
+      </div>
+      <p>Conecta lo que escuchaste con lo que resuelve agendallena. Dos frases máximo — no expliques todo el producto, explica la solución al dolor que describieron.</p>
+      <p class="pitch-script">"Lo que describes es exactamente lo que resuelve agendallena: [el sistema manda el recordatorio solo / llama si no contestan]. El negocio no hace nada — la cita se confirma sola."</p>
+    </div>
+
+    <div class="pitch-phase">
+      <div class="pitch-phase-header">
+        <span class="pitch-phase-num">04</span>
+        <span class="pitch-phase-name">Cierre</span>
+        <span class="pitch-phase-time">180 – 240 seg</span>
+      </div>
+      <p>Propuesta directa. No preguntes si quieren comprarlo — ofrece la prueba gratis. El riesgo cero facilita el sí.</p>
+      <p class="pitch-script">"Los 14 días gratis no requieren tarjeta. ¿Te mando el link ahora para que lo prueben esta semana con sus propios clientes?"</p>
+    </div>
+
+    <div class="info-box">
+      <div class="info-box-label">Recuerda siempre</div>
+      <p>El diagnóstico (fase 02) es donde se gana el cierre. Si escuchas bien, la fase 03 es fácil — solo repites su propio dolor con la solución. No apresures la escucha. Vale más que cualquier feature que puedas mencionar.</p>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span class="brand">agendallena</span>
+    <span class="page-num">11</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     12 / CIERRE — ERES PARTE DEL EQUIPO
+══════════════════════════════════════ -->
+<div class="page dark">
+  <div class="content">
+    <p class="section-eyebrow"><span>10</span> · <span>ERES PARTE DEL EQUIPO</span></p>
+    <h2 class="section-title">No estás vendiendo software.<br>Estás devolviendo tiempo.</h2>
+    <p class="section-subtitle">Cada negocio que empieza a usar agendallena recupera horas a la semana, cierra meses en verde y deja de perseguir clientes por WhatsApp. Tú eres quien conecta eso.</p>
+
+    <div class="divider"></div>
+
+    <div class="metric-grid">
+      <div class="metric-card">
+        <div class="metric-num">−70%</div>
+        <div class="metric-label">reducción en inasistencias con confirmación automática activa</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">14 días</div>
+        <div class="metric-label">prueba gratis para cada negocio que cierras — sin fricción, sin tarjeta</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">$0</div>
+        <div class="metric-label">costo para el negocio de probar la solución — el riesgo corre por nuestra cuenta</div>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      <p>"Los mejores vendedores no convencen. Diagnostican. Escuchan lo que el negocio ya sabe que necesita y le conectan la solución que existía. Eso es exactamente lo que tú haces."</p>
+      <div class="quote-source">— agendallena · Equipo de ventas</div>
+    </div>
+
+    <p class="body-text">El mercado es enorme: hay más de 800,000 negocios basados en citas en México operando sin confirmación automática. Cada llamada que haces llega a alguien que ya tiene el problema — tu trabajo es ser la solución que encontraron hoy.</p>
+  </div>
+  <div class="page-footer">
+    <span class="brand">agendallena</span>
+    <span class="page-num">12</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     13 / PÁGINA FINAL
+══════════════════════════════════════ -->
+<div class="page dark">
+  <div class="content" style="display:flex;flex-direction:column;justify-content:center;height:100%;">
+    <p class="section-eyebrow" style="margin-bottom:12mm;"><span>agendallena</span></p>
+
+    <h2 class="closing-headline">
+      Tu agenda,<br>
+      <span class="accent">confirmada.</span>
+    </h2>
+
+    <p style="font-size:15px;color:rgba(250,250,247,0.6);line-height:1.6;max-width:120mm;margin-bottom:12mm;">Cada llamada que haces puede ser la diferencia entre un negocio que sigue perdiendo citas y uno que las confirma solo. Esa es la diferencia que vendes.</p>
+
+    <div class="divider"></div>
+
+    <div style="margin-top:8mm;">
+      <p style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:3mm;">Link de prueba para compartir con clientes</p>
+      <p style="font-size:16px;font-weight:600;color:rgba(250,250,247,0.85);letter-spacing:-0.01em;">app.agendallena.mx/registro</p>
+      <p style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:2mm;">14 días gratis · Sin tarjeta · Sin contratos</p>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span class="brand">agendallena</span>
+    <span class="page-num">13</span>
+  </div>
+</div>
+
+</body>
+</html>
