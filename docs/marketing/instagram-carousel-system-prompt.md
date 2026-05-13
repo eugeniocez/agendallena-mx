@@ -71,13 +71,15 @@ Usa **exclusivamente** los siguientes tokens. No inventes colores, tamaños ni f
       "700": "display, h1, momentos clave"
     },
     "scale": {
-      "display": { "size": "72-88px", "weight": 700, "tracking": "-0.04em", "lineHeight": 1.05 },
-      "headline": { "size": "48-56px", "weight": 600, "tracking": "-0.03em", "lineHeight": 1.1 },
-      "subheadline": { "size": "28-36px", "weight": 600, "tracking": "-0.02em", "lineHeight": 1.2 },
-      "body": { "size": "20-24px", "weight": 400, "tracking": "0", "lineHeight": 1.55 },
-      "caption": { "size": "16-18px", "weight": 400, "tracking": "0.01em", "lineHeight": 1.6 },
-      "eyebrow": { "size": "13-15px", "weight": 500, "tracking": "0.08em", "transform": "uppercase" },
-      "wordmark": { "size": "22px", "weight": 600, "tracking": "-0.03em", "transform": "lowercase" }
+      "display": { "size": "72-88px", "weight": 700, "tracking": "-0.04em", "lineHeight": 1.05, "use": "portada únicamente" },
+      "headline": { "size": "56-64px", "weight": 700, "tracking": "-0.03em", "lineHeight": 1.1, "use": "headline principal de slides de contenido" },
+      "subheadline": { "size": "36-44px", "weight": 600, "tracking": "-0.02em", "lineHeight": 1.2, "use": "titulos secundarios, cards destacadas" },
+      "body": { "size": "28-32px", "weight": 400, "tracking": "0", "lineHeight": 1.55, "use": "texto de apoyo en slides de contenido" },
+      "bulletLabel": { "size": "26-28px", "weight": 600, "tracking": "-0.01em", "lineHeight": 1.3, "use": "label de cada ítem en slides de pasos o lista" },
+      "bulletCaption": { "size": "20-22px", "weight": 400, "tracking": "0", "lineHeight": 1.5, "use": "descripción debajo del label en pasos" },
+      "caption": { "size": "20-22px", "weight": 400, "tracking": "0.01em", "lineHeight": 1.6, "use": "captions, notas al pie" },
+      "eyebrow": { "size": "16-18px", "weight": 500, "tracking": "0.08em", "transform": "uppercase", "use": "etiqueta de categoría sobre el headline" },
+      "wordmark": { "size": "22px", "weight": 600, "tracking": "-0.03em", "transform": "lowercase", "use": "footer de todas las slides" }
     },
     "rules": [
       "Single-font: solo Plus Jakarta Sans, sin excepciones",
@@ -517,6 +519,7 @@ Estas reglas aplican a **todos los carruseles sin excepción**. No ajustar el po
 **Slides con fondo claro** (problema, solución, canales, comparativa, etc.):
 - `padding: 88px 64px 160px`
 - `justify-content: flex-start` — flujo desde arriba. **Nunca** `center`
+- Escala tipográfica obligatoria: headline `56-64px / 700`, body `28-32px / 400`, bulletLabel `26-28px / 600`, bulletCaption `20-22px / 400` — estas slides se ven a ~1/3 de su tamaño en móvil, nunca usar tamaños menores
 
 **Slide stat** (fondo `verdeSuperficie` o `tinta`):
 - `padding: 88px 64px 160px`
