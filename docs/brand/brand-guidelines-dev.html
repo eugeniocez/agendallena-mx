@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>agendallena — Brand Guidelines · Dev Team</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --tinta: #0A0A0B;
+      --hueso: #FAFAF7;
+      --verde: #0F7B3F;
+      --verde-hover: #0C6633;
+      --verde-tenue: #E8F5EE;
+      --verde-acento: #4ADE80;
+      --verde-superficie: #245C32;
+      --grafito: #6B6B6B;
+      --gris-claro: #F1EFE8;
+      --gris-borde: #E8E6DE;
+      --amarillo: #F59E0B;
+      --rojo: #DC2626;
+      --shadow-sm: 0 1px 2px rgba(10,10,11,0.04);
+      --shadow-md: 0 4px 24px rgba(10,10,11,0.06);
+      --shadow-lg: 0 24px 60px rgba(10,10,11,0.12);
+      --shadow-tinted: 0 16px 48px -12px rgba(15,123,63,0.16);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+      --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+      --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background: #DEDEDE;
+      color: var(--tinta);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    code {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-size: 11px;
+      background: rgba(0,0,0,0.06);
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 20px auto;
+      background: var(--hueso);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 22mm 20mm 18mm;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.14);
+    }
+
+    .content { flex: 1; }
+
+    .page-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 7mm;
+      border-top: 1px solid var(--gris-borde);
+      margin-top: 8mm;
+    }
+
+    .page-footer .brand {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--grafito);
+      letter-spacing: -0.01em;
+    }
+
+    .page-footer .page-num {
+      font-size: 11px;
+      color: var(--grafito);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ── Portada ── */
+    .page.cover { background: var(--verde-superficie); justify-content: space-between; }
+
+    .cover-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--verde-acento);
+      border: 1px solid rgba(74,222,128,0.35);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .cover-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 14mm 0 10mm;
+    }
+
+    .cover-wordmark {
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: -0.02em;
+      margin-bottom: 8mm;
+    }
+
+    .cover-title {
+      font-size: 52px;
+      font-weight: 700;
+      color: var(--hueso);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 6mm;
+    }
+
+    .cover-subtitle {
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(250,250,247,0.6);
+      line-height: 1.55;
+      max-width: 120mm;
+    }
+
+    .cover-footer-row { display: flex; justify-content: space-between; align-items: flex-end; }
+    .cover-footer-row .date { font-size: 12px; color: rgba(255,255,255,0.35); }
+    .cover-footer-row .cover-brand { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.3); }
+
+    /* ── Índice ── */
+    .toc-heading {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--grafito);
+      margin-bottom: 10mm;
+    }
+
+    .toc-list { list-style: none; }
+
+    .toc-item {
+      display: flex;
+      align-items: baseline;
+      gap: 6mm;
+      padding: 5mm 0;
+      border-bottom: 1px solid var(--gris-borde);
+    }
+
+    .toc-item:last-child { border-bottom: none; }
+
+    .toc-num {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--verde);
+      font-variant-numeric: tabular-nums;
+      min-width: 18px;
+    }
+
+    .toc-section-title { font-size: 15px; font-weight: 600; color: var(--tinta); line-height: 1.3; }
+    .toc-section-desc { font-size: 12px; color: var(--grafito); margin-top: 2px; line-height: 1.4; }
+
+    /* ── Encabezado de sección ── */
+    .section-eyebrow {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--grafito);
+      margin-bottom: 5mm;
+    }
+
+    .section-eyebrow span { color: var(--verde); }
+
+    .section-title {
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--tinta);
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      margin-bottom: 4mm;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--grafito);
+      line-height: 1.6;
+      max-width: 145mm;
+      margin-bottom: 9mm;
+      padding-bottom: 8mm;
+      border-bottom: 1px solid var(--gris-borde);
+    }
+
+    .body-text { font-size: 13px; color: var(--tinta); line-height: 1.65; margin-bottom: 5mm; }
+
+    /* ── Tabla ── */
+    .doc-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 5mm;
+      font-size: 12px;
+    }
+
+    .doc-table th {
+      background: var(--verde);
+      color: var(--hueso);
+      font-weight: 600;
+      text-align: left;
+      padding: 8px 12px;
+      font-size: 11px;
+      letter-spacing: 0.02em;
+    }
+
+    .doc-table th:first-child { border-radius: 6px 0 0 0; }
+    .doc-table th:last-child  { border-radius: 0 6px 0 0; }
+
+    .doc-table td {
+      padding: 8px 12px;
+      color: var(--tinta);
+      border-bottom: 1px solid var(--gris-borde);
+      line-height: 1.45;
+      vertical-align: middle;
+    }
+
+    .doc-table tr:nth-child(even) td { background: var(--gris-claro); }
+
+    .token-name {
+      font-weight: 600;
+      font-size: 11.5px;
+      letter-spacing: -0.01em;
+    }
+
+    /* ── Swatches ── */
+    .swatch {
+      display: inline-block;
+      width: 13px;
+      height: 13px;
+      border-radius: 3px;
+      vertical-align: middle;
+      margin-right: 5px;
+      border: 1px solid rgba(0,0,0,0.1);
+      flex-shrink: 0;
+    }
+
+    .swatch-lg {
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      border-radius: 5px;
+      vertical-align: middle;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+
+    /* ── Métricas ── */
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4mm;
+      margin-bottom: 6mm;
+    }
+
+    .metric-card {
+      border: 1px solid var(--gris-borde);
+      border-radius: var(--radius-md);
+      padding: 5mm;
+    }
+
+    .metric-num {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--verde);
+      letter-spacing: -0.03em;
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+      margin-bottom: 2mm;
+    }
+
+    .metric-label { font-size: 11px; color: var(--grafito); line-height: 1.4; }
+
+    /* ── Info boxes ── */
+    .info-box {
+      background: var(--gris-claro);
+      border-radius: var(--radius-md);
+      padding: 5mm;
+      margin-bottom: 5mm;
+    }
+
+    .info-box-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--verde);
+      margin-bottom: 2mm;
+    }
+
+    .info-box p { font-size: 12px; color: var(--tinta); line-height: 1.55; }
+
+    .info-box-warning {
+      background: #FEF9EC;
+      border-left: 3px solid var(--amarillo);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 4mm 5mm;
+      margin-bottom: 5mm;
+    }
+
+    .info-box-warning .info-box-label { color: #92400E; }
+    .info-box-warning p { font-size: 12px; color: var(--tinta); line-height: 1.6; }
+
+    /* ── Dos columnas ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6mm;
+      margin-bottom: 5mm;
+    }
+
+    /* ── Sub-heading ── */
+    .sub-heading {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--grafito);
+      margin-bottom: 3mm;
+      margin-top: 5mm;
+    }
+
+    .sub-heading:first-child { margin-top: 0; }
+
+    /* ── Separador ── */
+    .divider { height: 1px; background: var(--gris-borde); margin: 6mm 0; }
+
+    /* ── Página oscura ── */
+    .page.dark { background: var(--verde-superficie); }
+    .page.dark .section-eyebrow        { color: rgba(255,255,255,0.4); }
+    .page.dark .section-eyebrow span   { color: var(--verde-acento); }
+    .page.dark .section-title          { color: var(--hueso); }
+    .page.dark .section-subtitle       { color: rgba(250,250,247,0.6); border-bottom-color: rgba(255,255,255,0.1); }
+    .page.dark .body-text              { color: rgba(250,250,247,0.82); }
+    .page.dark .divider                { background: rgba(255,255,255,0.1); }
+    .page.dark .page-footer            { border-top-color: rgba(255,255,255,0.1); }
+    .page.dark .page-footer .brand,
+    .page.dark .page-footer .page-num  { color: rgba(255,255,255,0.3); }
+    .page.dark .info-box               { background: rgba(255,255,255,0.08); }
+    .page.dark .info-box-label         { color: var(--verde-acento); }
+    .page.dark .info-box p             { color: rgba(255,255,255,0.75); }
+    .page.dark .sub-heading            { color: rgba(255,255,255,0.4); }
+
+    /* ── Páginas compactas (contenido denso) ── */
+    .page.compact .section-eyebrow   { margin-bottom: 3mm; }
+    .page.compact .section-title     { font-size: 32px; margin-bottom: 3mm; }
+    .page.compact .section-subtitle  { margin-bottom: 5mm; padding-bottom: 5mm; }
+    .page.compact .sub-heading       { margin-top: 3mm; margin-bottom: 2mm; }
+    .page.compact .doc-table         { margin-bottom: 3mm; }
+    .page.compact .info-box          { padding: 3.5mm 4mm; }
+    .page.compact .two-col           { margin-bottom: 3mm; }
+
+    @media print {
+      body { background: none; }
+      .page { margin: 0; box-shadow: none; page-break-after: always; break-after: page; }
+      .page:last-child { page-break-after: avoid; break-after: avoid; }
+      @page { size: A4; margin: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PORTADA -->
+  <div class="page cover">
+    <div><span class="cover-tag">REFERENCIA TÉCNICA</span></div>
+    <div class="cover-body">
+      <div class="cover-wordmark">agendallena</div>
+      <h1 class="cover-title">Brand<br>guidelines</h1>
+      <p class="cover-subtitle">Tokens de diseño, tipografía, color, marca y estados del calendario para el web app.</p>
+    </div>
+    <div class="cover-footer-row">
+      <span class="date">Mayo 2026</span>
+      <span class="cover-brand">agendallena.mx</span>
+    </div>
+  </div>
+
+  <!-- ÍNDICE -->
+  <div class="page">
+    <div class="content">
+      <p class="toc-heading">Contenido</p>
+      <ol class="toc-list">
+        <li class="toc-item">
+          <span class="toc-num">01</span>
+          <div>
+            <div class="toc-section-title">Tokens de diseño</div>
+            <div class="toc-section-desc">Variables CSS de color, radio, sombra y easing. La única fuente de verdad para valores visuales.</div>
+          </div>
+        </li>
+        <li class="toc-item">
+          <span class="toc-num">02</span>
+          <div>
+            <div class="toc-section-title">Sistema tipográfico</div>
+            <div class="toc-section-desc">Plus Jakarta Sans — única familia permitida. Pesos, tracking, line-height y números tabulares.</div>
+          </div>
+        </li>
+        <li class="toc-item">
+          <span class="toc-num">03</span>
+          <div>
+            <div class="toc-section-title">Sistema de color</div>
+            <div class="toc-section-desc">Regla 90/8/2, combinaciones permitidas y prohibidas, y defaults de framework a reemplazar.</div>
+          </div>
+        </li>
+        <li class="toc-item">
+          <span class="toc-num">04</span>
+          <div>
+            <div class="toc-section-title">Logotipo y símbolo</div>
+            <div class="toc-section-desc">Wordmark, símbolo reducido [.] y patrones HTML para escribir la marca en código.</div>
+          </div>
+        </li>
+        <li class="toc-item">
+          <span class="toc-num">05</span>
+          <div>
+            <div class="toc-section-title">Estados del calendario</div>
+            <div class="toc-section-desc">Sistema semafórico de 6 estados. Colores exclusivos del producto — no del marketing.</div>
+          </div>
+        </li>
+      </ol>
+    </div>
+    <div class="page-footer">
+      <span class="brand">agendallena</span>
+      <span class="page-num">02</span>
+    </div>
+  </div>
+
+  <!-- 01 · TOKENS: COLORES -->
+  <div class="page">
+    <div class="content">
+      <p class="section-eyebrow"><span>01</span> · TOKENS DE DISEÑO</p>
+      <h2 class="section-title">Colores del sistema.</h2>
+      <p class="section-subtitle">Todas las propiedades de color usan <strong>var(--nombre)</strong>. Nunca hex directos en el código.</p>
+
+      <table class="doc-table">
+        <thead>
+          <tr><th>Token</th><th>Hex</th><th>Uso</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="token-name">--tinta</td>
+            <td><span class="swatch" style="background:#0A0A0B;"></span>#0A0A0B</td>
+            <td>Texto principal, fondos oscuros, símbolo [.]</td>
+          </tr>
+          <tr>
+            <td class="token-name">--hueso</td>
+            <td><span class="swatch" style="background:#FAFAF7; border-color:rgba(0,0,0,0.18);"></span>#FAFAF7</td>
+            <td>Fondo principal de la app — nunca blanco puro</td>
+          </tr>
+          <tr>
+            <td class="token-name">--verde</td>
+            <td><span class="swatch" style="background:#0F7B3F;"></span>#0F7B3F</td>
+            <td>Color de marca: CTAs, acentos, íconos de estado activo</td>
+          </tr>
+          <tr>
+            <td class="token-name">--verde-hover</td>
+            <td><span class="swatch" style="background:#0C6633;"></span>#0C6633</td>
+            <td>Hover state de botones y elementos verdes</td>
+          </tr>
+          <tr>
+            <td class="token-name">--verde-tenue</td>
+            <td><span class="swatch" style="background:#E8F5EE;"></span>#E8F5EE</td>
+            <td>Fondos de badges, callouts de éxito, estado stat-banner</td>
+          </tr>
+          <tr>
+            <td class="token-name">--verde-acento</td>
+            <td><span class="swatch" style="background:#4ADE80;"></span>#4ADE80</td>
+            <td>Acentos <em>solo sobre --verde-superficie</em> — no en fondos claros</td>
+          </tr>
+          <tr>
+            <td class="token-name">--verde-superficie</td>
+            <td><span class="swatch" style="background:#245C32;"></span>#245C32</td>
+            <td>Secciones oscuras del producto y del landing</td>
+          </tr>
+          <tr>
+            <td class="token-name">--grafito</td>
+            <td><span class="swatch" style="background:#6B6B6B;"></span>#6B6B6B</td>
+            <td>Texto secundario, captions, labels de ayuda</td>
+          </tr>
+          <tr>
+            <td class="token-name">--gris-claro</td>
+            <td><span class="swatch" style="background:#F1EFE8; border-color:rgba(0,0,0,0.12);"></span>#F1EFE8</td>
+            <td>Surfaces secundarios, fondos de cards, filas alternas de tabla</td>
+          </tr>
+          <tr>
+            <td class="token-name">--gris-borde</td>
+            <td><span class="swatch" style="background:#E8E6DE; border-color:rgba(0,0,0,0.12);"></span>#E8E6DE</td>
+            <td>Bordes sutiles, separadores, divisores, inputs</td>
+          </tr>
+          <tr>
+            <td class="token-name">--amarillo</td>
+            <td><span class="swatch" style="background:#F59E0B;"></span>#F59E0B</td>
+            <td><strong>Solo producto:</strong> estado "recordatorio enviado" en el calendario</td>
+          </tr>
+          <tr>
+            <td class="token-name">--rojo</td>
+            <td><span class="swatch" style="background:#DC2626;"></span>#DC2626</td>
+            <td><strong>Solo producto:</strong> estado "cancelada" en el calendario</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="page-footer">
+      <span class="brand">agendallena</span>
+      <span class="page-num">03</span>
+    </div>
+  </div>
+
+  <!-- 01 · TOKENS: ESPACIADO, SOMBRAS, EASING -->
+  <div class="page compact">
+    <div class="content">
+      <p class="section-eyebrow"><span>01</span> · TOKENS DE DISEÑO</p>
+      <h2 class="section-title">Espaciado, sombras<br>y movimiento.</h2>
+      <p class="section-subtitle">Tokens de borde, elevación y curva de animación. Siempre los tokens — nunca valores literales.</p>
+
+      <p class="sub-heading">Radios de borde</p>
+      <table class="doc-table">
+        <thead><tr><th>Token</th><th>Valor</th><th>Uso típico</th></tr></thead>
+        <tbody>
+          <tr><td class="token-name">--radius-sm</td><td>8px</td><td>Inputs, tags, badges pequeños</td></tr>
+          <tr><td class="token-name">--radius-md</td><td>12px</td><td>Default para la mayoría de componentes</td></tr>
+          <tr><td class="token-name">--radius-lg</td><td>20px</td><td>Cards de contenido</td></tr>
+          <tr><td class="token-name">--radius-xl</td><td>28px</td><td>Secciones grandes, cards destacadas</td></tr>
+        </tbody>
+      </table>
+
+      <p class="sub-heading">Sombras</p>
+      <table class="doc-table">
+        <thead><tr><th>Token</th><th>Uso</th></tr></thead>
+        <tbody>
+          <tr><td class="token-name">--shadow-sm</td><td>Elevación mínima — inputs activos, chips</td></tr>
+          <tr><td class="token-name">--shadow-md</td><td>Cards, modales, dropdowns</td></tr>
+          <tr><td class="token-name">--shadow-lg</td><td>Overlays, drawers, elementos flotantes</td></tr>
+          <tr><td class="token-name">--shadow-tinted</td><td>Botones CTA verdes sobre fondo claro</td></tr>
+        </tbody>
+      </table>
+
+      <p class="sub-heading">Easing</p>
+      <table class="doc-table">
+        <thead><tr><th>Token</th><th>Valor</th><th>Uso</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="token-name">--ease-out</td>
+            <td style="font-size:11px; color:var(--grafito);">cubic-bezier(0.22, 1, 0.36, 1)</td>
+            <td><strong>Easing canónico.</strong> Todas las transiciones y animaciones</td>
+          </tr>
+          <tr>
+            <td class="token-name">--ease-spring</td>
+            <td style="font-size:11px; color:var(--grafito);">cubic-bezier(0.34, 1.56, 0.64, 1)</td>
+            <td>Microinteracciones con rebote — <strong>no usar en botones</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="info-box">
+        <div class="info-box-label">Botones: siempre pill</div>
+        <p>Todos los botones usan <strong>border-radius: 999px</strong> sin excepción — aplica a <code>.btn</code>, <code>.btn-primary-lg</code>, <code>.btn-secondary-lg</code> y <code>.pricing-cta</code>. No usar los tokens de radio anteriores en botones.</p>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span class="brand">agendallena</span>
+      <span class="page-num">04</span>
+    </div>
+  </div>
+
+  <!-- 02 · TIPOGRAFÍA -->
+  <div class="page compact">
+    <div class="content">
+      <p class="section-eyebrow"><span>02</span> · SISTEMA TIPOGRÁFICO</p>
+      <h2 class="section-title">Plus Jakarta Sans.<br>Una sola familia.</h2>
+      <p class="section-subtitle">Sin mono, serif ni ninguna fuente secundaria. La jerarquía visual se construye solo con pesos y tamaños.</p>
+
+      <div class="info-box">
+        <div class="info-box-label">CDN requerido en &lt;head&gt;</div>
+        <p style="word-break:break-all; color:var(--grafito);">https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap</p>
+      </div>
+
+      <p class="sub-heading">Pesos y usos</p>
+      <table class="doc-table">
+        <thead><tr><th>Peso</th><th>Nombre</th><th>Uso en la app</th></tr></thead>
+        <tbody>
+          <tr><td>300</td><td>Light</td><td>Uso editorial limitado — no para UI funcional</td></tr>
+          <tr><td>400</td><td>Regular</td><td>Body, párrafos, texto de citas, placeholders</td></tr>
+          <tr><td>500</td><td>Medium</td><td>Labels de inputs, botones, énfasis inline, eyebrows</td></tr>
+          <tr><td>600</td><td>SemiBold</td><td>Headings h2/h3, nombres de sección, wordmark</td></tr>
+          <tr><td>700</td><td>Bold</td><td>H1, números destacados, momentos de impacto</td></tr>
+        </tbody>
+      </table>
+
+      <div class="two-col">
+        <div>
+          <p class="sub-heading">Tracking (letter-spacing)</p>
+          <table class="doc-table">
+            <thead><tr><th>Contexto</th><th>Valor</th></tr></thead>
+            <tbody>
+              <tr><td>Títulos grandes</td><td>−0.025 a −0.05em</td></tr>
+              <tr><td>Captions</td><td>+0.02em</td></tr>
+              <tr><td>Eyebrows uppercase</td><td>0.05–0.1em</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <p class="sub-heading">Line-height</p>
+          <table class="doc-table">
+            <thead><tr><th>Contexto</th><th>Valor</th></tr></thead>
+            <tbody>
+              <tr><td>Body, párrafos</td><td>1.5–1.6</td></tr>
+              <tr><td>Headlines</td><td>1.0–1.15</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <div class="info-box-label">Números tabulares — obligatorio</div>
+        <p>Usar <strong>font-variant-numeric: tabular-nums</strong> en todos los elementos que muestren precios, contadores, timestamps, IDs o estadísticas. Evita que los números "bailen" al actualizarse.</p>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span class="brand">agendallena</span>
+      <span class="page-num">05</span>
+    </div>
+  </div>
+
+  <!-- 03 · COLOR: PALETA + REGLA -->
+  <div class="page">
+    <div class="content">
+      <p class="section-eyebrow"><span>03</span> · SISTEMA DE COLOR</p>
+      <h2 class="section-title">Paleta y proporciones.</h2>
+      <p class="section-subtitle">El color de marca se usa con restricción deliberada. Más de 15% de verde en pantalla está fuera del sistema.</p>
+
+      <div class="metric-grid">
+        <div class="metric-card">
+          <div class="metric-num">90%</div>
+          <div class="metric-label">Tinta, hueso y grises — fondos y texto</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-num">8%</div>
+          <div class="metric-label">Verde de marca — CTAs, acentos, badges</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-num">2%</div>
+          <div class="metric-label">Verde tenue — fondos de callouts y estados</div>
+        </div>
+      </div>
+
+      <p class="sub-heading">Combinaciones permitidas</p>
+      <table class="doc-table">
+        <thead><tr><th>Fondo</th><th>Texto / elemento</th><th>Uso</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="swatch" style="background:#FAFAF7; border-color:rgba(0,0,0,0.18);"></span>--hueso</td>
+            <td><span class="swatch" style="background:#0A0A0B;"></span>--tinta</td>
+            <td>Body, párrafos, jerarquía principal</td>
+          </tr>
+          <tr>
+            <td><span class="swatch" style="background:#0A0A0B;"></span>--tinta</td>
+            <td><span class="swatch" style="background:#FAFAF7; border-color:rgba(0,0,0,0.18);"></span>--hueso</td>
+            <td>Fondos oscuros, headers de sección</td>
+          </tr>
+          <tr>
+            <td><span class="swatch" style="background:#FAFAF7; border-color:rgba(0,0,0,0.18);"></span>--hueso</td>
+            <td><span class="swatch" style="background:#0F7B3F;"></span>--verde</td>
+            <td>CTAs, eyebrows, acentos sobre fondo claro</td>
+          </tr>
+          <tr>
+            <td><span class="swatch" style="background:#0F7B3F;"></span>--verde</td>
+            <td><span class="swatch" style="background:#FAFAF7; border-color:rgba(0,0,0,0.18);"></span>--hueso</td>
+            <td>Texto en botones CTA primarios</td>
+          </tr>
+          <tr>
+            <td><span class="swatch" style="background:#E8F5EE;"></span>--verde-tenue</td>
+            <td><span class="swatch" style="background:#0F7B3F;"></span>--verde / --tinta</td>
+            <td>Badges de estado, callouts de éxito</td>
+          </tr>
+          <tr>
+            <td><span class="swatch" style="background:#245C32;"></span>--verde-superficie</td>
+            <td><span class="swatch" style="background:#4ADE80;"></span>--verde-acento</td>
+            <td>Acentos en secciones oscuras únicamente</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="info-box-warning">
+        <div class="info-box-label">Combinaciones prohibidas</div>
+        <p>
+          — Verde (#0F7B3F) sobre verde-tenue en bloques grandes<br>
+          — Gradientes entre colores de marca<br>
+          — --amarillo o --rojo fuera del módulo Calendario<br>
+          — Cualquier color de acento distinto de la paleta definida
+        </p>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span class="brand">agendallena</span>
+      <span class="page-num">06</span>
+    </div>
+  </div>
+
+  <!-- 03 · COLOR: SUPERFICIES + DEFAULTS -->
+  <div class="page">
+    <div class="content">
+      <p class="section-eyebrow"><span>03</span> · SISTEMA DE COLOR</p>
+      <h2 class="section-title">Defaults de<br>framework.</h2>
+      <p class="section-subtitle">Colores que vienen por defecto en React y Vite — y los tokens correctos que los reemplazan en agendallena.</p>
+
+      <p class="sub-heading">Defaults de React / Vite a reemplazar</p>
+      <table class="doc-table">
+        <thead><tr><th>Default del framework</th><th>Usar en agendallena</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><code>background: #fff</code> / <code>background: white</code></td>
+            <td><span class="swatch" style="background:#FAFAF7; border-color:rgba(0,0,0,0.18);"></span><strong>var(--hueso)</strong> = #FAFAF7</td>
+          </tr>
+          <tr>
+            <td><code>color: #000</code> / <code>color: black</code></td>
+            <td><span class="swatch" style="background:#0A0A0B;"></span><strong>var(--tinta)</strong> = #0A0A0B</td>
+          </tr>
+          <tr>
+            <td><code>border-color: #ccc</code></td>
+            <td><span class="swatch" style="background:#E8E6DE; border-color:rgba(0,0,0,0.12);"></span><strong>var(--gris-borde)</strong> = #E8E6DE</td>
+          </tr>
+          <tr>
+            <td><code>color: blue</code> (links por defecto)</td>
+            <td><span class="swatch" style="background:#0F7B3F;"></span><strong>var(--verde)</strong> = #0F7B3F</td>
+          </tr>
+          <tr>
+            <td><code>background: #f5f5f5</code> (surfaces)</td>
+            <td><span class="swatch" style="background:#F1EFE8; border-color:rgba(0,0,0,0.12);"></span><strong>var(--gris-claro)</strong> = #F1EFE8</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="page-footer">
+      <span class="brand">agendallena</span>
+      <span class="page-num">07</span>
+    </div>
+  </div>
+
+  <!-- 04 · LOGOTIPO Y SÍMBOLO -->
+  <div class="page">
+    <div class="content">
+      <p class="section-eyebrow"><span>04</span> · LOGOTIPO Y SÍMBOLO</p>
+      <h2 class="section-title">Wordmark, símbolo<br>y marca en código.</h2>
+      <p class="section-subtitle">Cómo se escribe y renderiza la identidad en cada contexto del producto.</p>
+
+      <div class="two-col">
+        <div>
+          <p class="sub-heading">Wordmark</p>
+          <table class="doc-table">
+            <thead><tr><th>Propiedad</th><th>Valor</th></tr></thead>
+            <tbody>
+              <tr><td>Fuente / peso</td><td>Plus Jakarta Sans 600</td></tr>
+              <tr><td>Tracking</td><td>−0.03em</td></tr>
+              <tr><td>Casing</td><td>todo minúsculas</td></tr>
+              <tr><td>Incluye ".mx"</td><td>Nunca — solo en URLs</td></tr>
+              <tr><td>Ancho mínimo</td><td>80px</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <p class="sub-heading">Símbolo [.]</p>
+          <table class="doc-table">
+            <thead><tr><th>Propiedad</th><th>Valor</th></tr></thead>
+            <tbody>
+              <tr><td>Contenedor</td><td>88×88px · radius 6</td></tr>
+              <tr><td>Corchetes</td><td>stroke 6 · terminación cuadrada</td></tr>
+              <tr><td>Punto</td><td>cuadrado 16×16 · --verde</td></tr>
+              <tr><td>Estándar</td><td>fondo --tinta · corchetes --hueso</td></tr>
+              <tr><td>Inverso</td><td>fondo --hueso · corchetes --tinta</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <p class="sub-heading">Patrones HTML de marca</p>
+      <table class="doc-table">
+        <thead><tr><th>Contexto</th><th>Patrón HTML</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Body copy, subtítulos, CTAs</td>
+            <td style="font-size:10.5px;"><code>&lt;strong class="brand-mention"&gt;agenda&lt;span class="brand-llena"&gt;llena&lt;/span&gt;&lt;/strong&gt;</code></td>
+          </tr>
+          <tr>
+            <td>Dominio en texto corrido</td>
+            <td style="font-size:10.5px;"><code>agendallena&lt;span class="dot"&gt;.&lt;/span&gt;mx</code></td>
+          </tr>
+          <tr>
+            <td>&lt;title&gt;, meta, JSON-LD, copyright</td>
+            <td style="font-size:10.5px;"><code>agendallena</code> plain, sin clases</td>
+          </tr>
+          <tr>
+            <td>Testimonios (cita textual)</td>
+            <td style="font-size:10.5px;"><code>agendallena</code> plain — no romper la naturalidad del habla</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="info-box">
+        <div class="info-box-label">Clases CSS requeridas</div>
+        <p>
+          <strong>.dot</strong> → <code>color: var(--verde)</code><br>
+          <strong>.brand-mention</strong> → <code>font-weight: 600; font-style: normal</code><br>
+          <strong>.brand-llena</strong> → <code>color: var(--verde)</code>
+        </p>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span class="brand">agendallena</span>
+      <span class="page-num">08</span>
+    </div>
+  </div>
+
+  <!-- 05 · ESTADOS DEL CALENDARIO -->
+  <div class="page">
+    <div class="content">
+      <p class="section-eyebrow"><span>05</span> · ESTADOS DEL CALENDARIO</p>
+      <h2 class="section-title">Sistema semafórico<br>de citas.</h2>
+      <p class="section-subtitle">Seis estados representan el ciclo de vida de una cita. --amarillo y --rojo son exclusivos del producto y no aparecen en ninguna pantalla de marketing.</p>
+
+      <table class="doc-table">
+        <thead>
+          <tr><th style="width:36px;"></th><th>Estado</th><th>Hex / token</th><th>Descripción</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="swatch-lg" style="background:#FAFAF7; border-color:rgba(0,0,0,0.2);"></span></td>
+            <td>Apartada</td>
+            <td style="font-size:11px;">#FAFAF7 (--hueso)</td>
+            <td>Cita agendada · recordatorio por enviar</td>
+          </tr>
+          <tr>
+            <td><span class="swatch-lg" style="background:#0F7B3F;"></span></td>
+            <td>Confirmada</td>
+            <td style="font-size:11px;">#0F7B3F (--verde)</td>
+            <td>Cliente confirmó asistencia</td>
+          </tr>
+          <tr>
+            <td><span class="swatch-lg" style="background:#F59E0B;"></span></td>
+            <td>Recordatorio enviado</td>
+            <td style="font-size:11px;">#F59E0B (--amarillo)</td>
+            <td>Recordatorio enviado · sin respuesta del cliente</td>
+          </tr>
+          <tr>
+            <td><span class="swatch-lg" style="background:#DC2626;"></span></td>
+            <td>Cancelada</td>
+            <td style="font-size:11px;">#DC2626 (--rojo)</td>
+            <td>Cliente solicitó cancelar</td>
+          </tr>
+          <tr>
+            <td><span class="swatch-lg" style="background:#0A0A0B; border-width:2px; border-color:#F97316;"></span></td>
+            <td>Inasistencia</td>
+            <td style="font-size:11px;">#0A0A0B + borde naranja*</td>
+            <td>Cliente no se presentó · inasistencia registrada</td>
+          </tr>
+          <tr>
+            <td><span class="swatch-lg" style="background:#86EFAC; border-color:rgba(0,0,0,0.1);"></span></td>
+            <td>Sin cita previa</td>
+            <td style="font-size:11px;">Verde claro*</td>
+            <td>Cliente llegó sin cita — walk-in registrado</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="info-box-warning">
+        <div class="info-box-label">Verificar en el código del PWA</div>
+        <p>Los valores exactos del naranja de borde (inasistencia) y del verde claro (walk-in) no están definidos como tokens CSS en el sistema de diseño. Confirmar con el código fuente del PWA antes de implementar.</p>
+      </div>
+
+      <div class="info-box">
+        <div class="info-box-label">Solo en el módulo Calendario</div>
+        <p>--amarillo y --rojo son colores de semáforo del producto. No se usan en el landing, en pantallas de incorporación ni en ninguna pieza de marketing.</p>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span class="brand">agendallena</span>
+      <span class="page-num">09</span>
+    </div>
+  </div>
+
+  <!-- CIERRE -->
+  <div class="page dark">
+    <div class="content">
+      <p class="section-eyebrow"><span>·</span> REFERENCIA</p>
+      <h2 class="section-title">Más contexto<br>en el repositorio.</h2>
+      <p class="section-subtitle">Este documento cubre tokens y reglas esenciales. El CLAUDE.md tiene el contexto completo de producto, voz de marca y arquitectura de componentes.</p>
+
+      <div class="divider"></div>
+
+      <div class="info-box">
+        <div class="info-box-label">CLAUDE.md</div>
+        <p>El archivo <strong>CLAUDE.md</strong> en la raíz de <strong>agendallena-mx</strong> es la fuente de verdad del proyecto: reglas absolutas de diseño, copy, estructura de páginas y decisiones de arquitectura.</p>
+      </div>
+
+      <div class="info-box" style="margin-top:4mm;">
+        <div class="info-box-label">Contacto</div>
+        <p>eugenio@layer7.mx</p>
+      </div>
+    </div>
+    <div class="page-footer">
+      <span class="brand">agendallena</span>
+      <span class="page-num">10</span>
+    </div>
+  </div>
+
+</body>
+</html>
