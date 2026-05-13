@@ -1825,8 +1825,8 @@ p { text-wrap: pretty; }
 
 .footer-top {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 32px;
   padding-bottom: 56px;
   border-bottom: 0.5px solid var(--gris-borde);
   margin-bottom: 32px;
