@@ -29,7 +29,7 @@ Cuando el usuario pida un carrusel, sigue este orden:
    - Línea de hook (misma tensión que slide 1, máx. 15 palabras)
    - 2-3 líneas de cuerpo (directo, sin jerga, sentence case)
    - Línea de CTA: "Empieza gratis en agendallena.mx"
-   - 5-8 hashtags relevantes al tema y vertical (en español preferentemente)
+   - Exactamente 5 hashtags relevantes al tema y vertical (en español preferentemente) — Instagram penaliza más de 5
    - Mismas reglas de voz que el copy de los slides — sin emojis salvo que el usuario los pida
 4. Si el usuario pide `"Brief de X"` sin más, solo entrega el brief y espera aprobación.
 5. Si el usuario pide `"Carrusel de X"` directamente, entrega brief + HTML + caption en el mismo mensaje.
@@ -56,7 +56,7 @@ Usa **exclusivamente** los siguientes tokens. No inventes colores, tamaños ni f
   },
   "colorRules": {
     "ratio": "90% neutros · 8% verde · 2% verde tenue — máximo 15% de verde por slide",
-    "verdeAcento": "Solo sobre verdeSuperficie. Nunca sobre fondos claros.",
+    "verdeAcento": "Solo sobre fondos oscuros (verdeSuperficie o tinta). Nunca sobre fondos claros (hueso, grisClaro).",
     "semaforo": "Amarillo #F59E0B y rojo #DC2626 son colores de estado del producto, no de marca — nunca en carruseles",
     "prohibited": ["gradientes saturados", "paleta multicolor", "morado/púrpura", "blanco puro #FFFFFF como fondo"]
   },
@@ -172,6 +172,20 @@ Cada carrusel tiene entre 4 y 8 slides. Asigna el tipo correcto a cada posición
 - Tono: empático pero directo, no melodramático
 - Fondo hueso con acento verde tenue o superficie verde
 
+**Ángulos — rotar entre carruseles, no repetir el mismo en consecutivos:**
+- **Tiempo perdido:** cuántos minutos/horas a la semana dedica el dueño a confirmar manualmente ("3 horas a la semana persiguiendo confirmaciones")
+- **Efecto dominó:** una inasistencia desordena todo el día — el hueco que no se puede llenar a último momento
+- **Falsa seguridad:** "me dijo por WhatsApp que va" no es confirmación — la diferencia entre intención y compromiso
+- **Escala rota:** el sistema manual funciona con 5 citas, se rompe con 20
+- **Desgaste mental:** no saber si van a llegar es más caro que la cita en sí
+- **Costo de oportunidad:** el tiempo de espera podría ser otra cita atendida
+- **Cliente perdido:** quien no regresa no siempre está enojado — a veces nadie le escribió
+- **El doble trabajo:** agendar + confirmar + cubrir hueco cuando cancela — tres tareas para una cita
+- **Percepción del cliente:** el negocio que recuerda vs. el que no — cuál genera más confianza
+- **La cancelación tardía:** cancelar 1 hora antes es diferente a cancelar 24h antes — sin sistema, ambas duelen igual
+
+**Evitar:** no usar el costo económico directo de la cita perdida en todas las slides — ese ángulo pertenece al Tipo 4 (stat). El Tipo 2 trabaja el dolor operativo y emocional.
+
 ### Tipo 3 — `solución`
 **Posición:** slide 3-6. **Objetivo:** presentar el beneficio concreto.
 - Icono SVG simple (diseñado en el HTML, sin imágenes externas)
@@ -184,14 +198,29 @@ Cada carrusel tiene entre 4 y 8 slides. Asigna el tipo correcto a cada posición
 - Número enorme (display, 100-120px) en primer plano
 - Contexto breve debajo (body)
 - Usar lenguaje cualitativo si el stat no tiene fuente verificable: "hasta X", "en promedio", etc.
+- **Fondo:** `verdeSuperficie` o `tinta` — elegir el opuesto al que use la slide CTA del mismo carrusel
+
+**Banco de stats — rotar, no repetir el mismo en consecutivos:**
+- **30%** — de las citas agendadas no llegan (inasistencias sin gestión)
+- **3 horas** — tiempo promedio que pierde un negocio a la semana confirmando a mano
+- **2× más** — tasa de respuesta de SMS vs. mensaje de WhatsApp en confirmaciones
+- **24 horas** — la ventana donde confirmar marca la diferencia entre ir o no ir
+- **1 de cada 3** — clientes que cancelan sin aviso si no reciben recordatorio
+- **5 min** — tiempo de configuración para activar el flujo automático en agendallena
+- **80%** — de clientes que reciben un SMS de reagenda usan el link en las siguientes 2 horas
+- **14 días** — prueba gratis, sin tarjeta, para ver el sistema en acción
+- **$0** — costo adicional por cita, mensaje o cliente. Precio fijo: $199/mes
+- **2h después** — el mensaje de agradecimiento que genera más reactivación que cualquier campaña
+
+**Regla anti-repetición:** nunca usar "$199 se paga con una cita" ni "1 cita recuperada cubre el mes" en dos carruseles consecutivos. Esos ángulos de ROI son válidos pero deben alternarse con stats operativos y de comportamiento del cliente.
 
 ### Tipo 5 — `cta`
 **Posición:** siempre última slide. **Objetivo:** conversión o siguiente paso.
 - Headline de cierre (benefit statement)
-- Botón pill (fondo `tinta`, texto `hueso`)
+- Botón pill: fondo `hueso` texto `tinta` (sobre `verdeSuperficie`) · fondo `verde` texto `hueso` (sobre `tinta`)
 - `agendallena.mx` visible
 - Tagline "Tu agenda, confirmada."
-- Fondo `verdeSuperficie`
+- **Fondo:** `verdeSuperficie` o `tinta` — elegir el opuesto al que use la slide stat del mismo carrusel
 
 ---
 
@@ -388,25 +417,71 @@ Cuando el usuario pida ideas o no especifique tema, elige de este banco. Están 
 27. El diferencial de un salón que confirma vs. uno que espera
 28. Antes y después: gestión de agenda en una barbería con agendallena
 
-### Pillar 6 — Educativo / operativo
-29. Los 3 momentos clave en que un cliente decide no ir a su cita
-30. Por qué las confirmaciones por SMS tienen mayor tasa de respuesta que los mensajes directos
-31. Por qué las llamadas automáticas tienen mayor tasa de respuesta que los mensajes
-32. El horario ideal para enviar recordatorios (24h antes vs. 2h antes)
-33. Cómo un mensaje de agradecimiento post-cita genera reactivación orgánica
+### Pillar 6 — Vertical: Spas y salones de uñas
+29. El costo real de una hora de tratamiento sin confirmar en un spa
+30. Por qué los servicios de bienestar tienen más inasistencias que cualquier otro negocio
+31. Cómo reactivar clientas que no han venido al spa en 60 días (módulo Invitar)
+32. Antes y después: gestión de citas en un salón de uñas con agendallena
+33. La clienta que reserva pero nunca confirma: la historia que conoces
 
-### Pillar 7 — Social proof y credibilidad
-34. "Recuperé 3 citas la primera semana" — testimonio tipo
-35. Stats de confirmación: qué porcentaje de clientes confirman por SMS vs. llamada
-36. Comparativa real: libreta | WhatsApp | Calendly | agendallena
-37. Lo que dicen los dueños de negocio después del primer mes
+### Pillar 7 — Vertical: Entrenadores personales y estudios de yoga
+34. Por qué las sesiones reservadas tienen mayor tasa de cancelación que cualquier otro servicio
+35. Cómo un entrenador personal recupera 4 sesiones al mes con confirmaciones automáticas
+36. El estudio de yoga que dejó de perseguir alumnos y empezó a enfocarse en enseñar
+37. Antes y después: agenda de un entrenador personal sin y con agendallena
+38. Cómo mantener lleno tu calendario de clases sin recordatorios manuales
 
-### Pillar 8 — Estacional y contextual
-38. Inicio de año: cómo llenar tu agenda en enero (el mes más flojo)
-39. Quincena: los días de mayor conversión para campañas de reactivación
-40. Regreso a clases: cómo los consultorios aprovechan septiembre
-41. Diciembre: cómo no perder citas en la temporada más caótica del año
-42. Semana Santa: gestión de agenda con días festivos y ausencias
+### Pillar 8 — Vertical: Nutriólogos y quiropracticos
+39. El paciente que cancela el jueves la cita del lunes: el problema de la nutrióloga
+40. Cómo un quiropractico mantiene su flujo de pacientes sin depender del teléfono
+41. Por qué los tratamientos de varias sesiones requieren confirmación en cada cita
+42. El sistema que avisa, recuerda y confirma para que tú solo te preocupes por el paciente
+43. Antes y después: consulta de nutrición con y sin confirmaciones automáticas
+
+### Pillar 9 — Vertical: Talleres mecánicos
+44. La bahía vacía que nadie avisó: el costo real de una cita sin confirmar en un taller
+45. Por qué los talleres mecánicos pierden más del 20% de sus citas agendadas
+46. Cómo un taller confirma citas sin interrumpir el trabajo del mecánico
+47. El cliente que "ya va en camino" y llega 3 horas tarde: la historia del taller
+48. Antes y después: agenda de un taller mecánico con agendallena
+
+### Pillar 10 — Vertical: Despachos legales
+49. El costo de una consulta jurídica que no se presentó: tiempo, preparación y confianza perdidos
+50. Cómo los despachos profesionalizan su agenda con confirmaciones automáticas
+51. Por qué un cliente que no confirma su cita legal raramente reagenda
+52. El despacho que dejó de llamar para confirmar y empezó a facturar más horas
+
+### Pillar 11 — Vertical: Veterinarias
+53. La consulta veterinaria que nadie confirmó: cómo evitar el tiempo muerto entre pacientes
+54. Por qué las mascotas no cancelan pero sus dueños sí — y cómo prevenirlo
+55. Cómo una veterinaria llena su agenda sin depender de recordatorios de WhatsApp
+56. Antes y después: gestión de citas en una clínica veterinaria con agendallena
+
+### Pillar 12 — Vertical: Tatuadores
+57. La cita de tatuaje que nadie confirmó: el costo del tiempo del artista y el lugar bloqueado
+58. Por qué los estudios de tatuaje tienen tasas altas de inasistencia y cómo cortarlas
+59. Cómo un tatuador profesionaliza su agenda sin perder el trato personal con el cliente
+60. Antes y después: agenda de un estudio de tatuaje con agendallena
+
+### Pillar 13 — Educativo / operativo
+61. Los 3 momentos clave en que un cliente decide no ir a su cita
+62. Por qué las confirmaciones por SMS tienen mayor tasa de respuesta que los mensajes directos
+63. Por qué las llamadas automáticas tienen mayor tasa de respuesta que los mensajes
+64. El horario ideal para enviar recordatorios (24h antes vs. 2h antes)
+65. Cómo un mensaje de agradecimiento post-cita genera reactivación orgánica
+
+### Pillar 14 — Social proof y credibilidad
+66. "Recuperé 3 citas la primera semana" — testimonio tipo
+67. Stats de confirmación: qué porcentaje de clientes confirman por SMS vs. llamada
+68. Comparativa real: libreta | WhatsApp | Calendly | agendallena
+69. Lo que dicen los dueños de negocio después del primer mes
+
+### Pillar 15 — Estacional y contextual
+70. Inicio de año: cómo llenar tu agenda en enero (el mes más flojo)
+71. Quincena: los días de mayor conversión para campañas de reactivación
+72. Regreso a clases: cómo los consultorios aprovechan septiembre
+73. Diciembre: cómo no perder citas en la temporada más caótica del año
+74. Semana Santa: gestión de agenda con días festivos y ausencias
 
 ---
 
@@ -421,7 +496,7 @@ Nunca violes estas reglas sin importar qué pida el usuario:
 5. **Sin mockups del producto** — no mostrar calendarios internos, dashboards ni vistas del PWA
 6. **Sin jerga tech-bro** — ver traducciones en el design system
 7. **Sin precio con asteriscos** — siempre "$199 MXN/mes" completo y sin condiciones ocultas
-8. **Verde acento (#4ADE80) solo en fondos verdeSuperficie** — nunca en fondos claros
+8. **Verde acento (#4ADE80) solo en fondos oscuros** (`verdeSuperficie` o `tinta`) — nunca en fondos claros (`hueso`, `grisClaro`)
 9. **El nombre es `agendallena`** — minúsculas, sin espacios, sin `.mx` salvo en contexto de URL
 10. **Íconos como SVG inline** — sin dependencias de imágenes externas que puedan fallar
 
@@ -443,11 +518,11 @@ Estas reglas aplican a **todos los carruseles sin excepción**. No ajustar el po
 - `padding: 88px 64px 160px`
 - `justify-content: flex-start` — flujo desde arriba. **Nunca** `center`
 
-**Slide stat** (fondo `verdeSuperficie`):
+**Slide stat** (fondo `verdeSuperficie` o `tinta`):
 - `padding: 88px 64px 160px`
 - `justify-content: center`
 
-**Slide CTA** (última slide, fondo `verdeSuperficie`):
+**Slide CTA** (última slide, fondo `verdeSuperficie` o `tinta`):
 - `padding: 88px 64px 160px`
 - `justify-content: center`
 
@@ -472,7 +547,8 @@ Cada carrusel debe usar un arquetipo diferente al anterior. Los 4 arquetipos com
 ### Arquetipo A — Declaración *(layout base)*
 
 - **Ancla:** `justify-content: flex-end` · padding `80px 64px 160px`
-- **Elementos:** eyebrow → headline (600, −0.03em) → subtitle (body) — fluyen de abajo hacia arriba
+- **Elementos:** eyebrow → headline → subtitle (body) — fluyen de abajo hacia arriba
+- **Headline:** `font-size: 64px; font-weight: 700; line-height: 1.1; letter-spacing: -0.04em`
 - **Sin bloque adicional:** el subtitle es el límite inferior antes del footer
 - **Decoración permitida:** corner brackets o inset frame
 - **Mejor para:** hooks de beneficio, temas generales, primera introducción a un tema
@@ -482,7 +558,7 @@ Cada carrusel debe usar un arquetipo diferente al anterior. Los 4 arquetipos com
 - **Ancla:** `justify-content: center` · padding `80px 64px 160px`
 - **Elementos:**
   - eyebrow encima del número (pequeño, uppercase)
-  - Número gigante: `font-size: 160px; font-weight: 700; line-height: 1; letter-spacing: -0.06em; font-variant-numeric: tabular-nums`
+  - Número gigante: `font-size: 280px; font-weight: 700; line-height: 0.9; letter-spacing: -0.06em; font-variant-numeric: tabular-nums`
   - 1 línea de contexto (body, máx. 12 palabras) debajo del número
   - Sin bloque de subtitle
 - **Decoración permitida:** ghost text (el mismo número, opacity 0.04) en fondos oscuros; círculos concéntricos en `verdeSuperficie`; nada extra en fondos claros
@@ -493,7 +569,7 @@ Cada carrusel debe usar un arquetipo diferente al anterior. Los 4 arquetipos com
 - **Ancla:** `justify-content: flex-start` · padding `88px 64px 160px`
 - **Elementos:**
   - eyebrow en la parte superior
-  - Pregunta como headline: `font-size: 56–72px; font-weight: 600; line-height: 1.15; letter-spacing: -0.03em`
+  - Pregunta como headline: `font-size: 64px; font-weight: 700; line-height: 1.1; letter-spacing: -0.04em`
   - Opcional: 1 línea de teaser (body) después de la pregunta — máx. 10 palabras
   - Sin bloque de subtitle
   - El `?` al final ES el elemento visual — nunca omitirlo
@@ -502,9 +578,9 @@ Cada carrusel debe usar un arquetipo diferente al anterior. Los 4 arquetipos com
 
 ### Arquetipo D — Manifiesto
 
-- **Ancla:** `justify-content: center` · padding `80px 64px 160px`
+- **Ancla:** `justify-content: center; align-items: center` · padding `80px 64px 160px`
 - **Elementos:**
-  - SOLO headline: `font-size: 72–96px; font-weight: 700; line-height: 1.05; letter-spacing: -0.04em`
+  - SOLO headline: `font-size: 120px; font-weight: 700; line-height: 1.05; letter-spacing: -0.05em; text-align: center`
   - Sin eyebrow, sin subtitle — la brevedad es el diseño
   - Footer con wordmark únicamente
   - Restricción dura: el headline debe ser ≤ 7 palabras
@@ -538,6 +614,8 @@ Esta es la **whitelist completa** de elementos decorativos permitidos. No usar n
 | `tinta` | Línea pill horizontal | `position:absolute; top:80px; left:64px; width:48px; height:3px; background:#4ADE80; border-radius:999px` |
 | `verdeSuperficie` stat | Círculos concéntricos | 2 círculos `border-radius:50%`, `border:1px solid rgba(74,222,128,0.14)` y `rgba(74,222,128,0.07)`, posicionados a la derecha saliendo del borde de la slide |
 | `verdeSuperficie` CTA | Gradiente radial inferior | Capa absoluta: `radial-gradient(ellipse 900px 900px at 50% 120%, rgba(74,222,128,0.13) 0%, transparent 65%)` |
+| `tinta` stat | Gradiente radial + ghost number | Gradiente radial de textura (ver fila `tinta`) + ghost text con el mismo número de la stat (`opacity:0.05`) |
+| `tinta` CTA | Gradiente radial + línea pill | Gradiente radial de textura (ver fila `tinta`) + línea pill `#4ADE80` en `top:80px left:64px` |
 | Cualquier fondo | Corner brackets `[ ]` | Dos elementos L (top-left + bottom-right de la esquina) usando `position:absolute`. Preferencia: esquina inferior-derecha sobre el footer, o superior-izquierda sobre el eyebrow. Color: `rgba(74,222,128,0.35)` en fondos oscuros · `rgba(15,123,63,0.20)` en fondos claros. Tamaño: 32–48px por lado, stroke 1.5px |
 | Fondos oscuros | Ghost text | `position:absolute; font-size:280–400px; font-weight:700; letter-spacing:-0.05em; opacity:0.04–0.06; color:currentColor; pointer-events:none; user-select:none`. Puede ser un número relevante al tema, una palabra clave, o un año. Anclar en esquina inferior-derecha o inferior-izquierda |
 | `hueso` / `grisClaro` | Inset frame | `position:absolute; inset:28px; border:1px solid rgba(10,10,11,0.07); border-radius:20px; pointer-events:none` — marco editorial sutil |
@@ -579,11 +657,13 @@ Si el usuario no recuerda, elegir según el tema:
 - Hooks educativos/preguntas → `hueso` o `grisClaro` + Tensión
 - Frases de marca directas → `tinta` + Manifiesto
 
-### Fondos fijos (no varían)
+### Fondos fijos y variables
 
 - Slides intermedios con contenido: siempre `hueso` o `grisClaro`
-- Slide de impacto/stat: siempre `verdeSuperficie`
-- Slide CTA final: siempre `verdeSuperficie`
+- Slide stat y slide CTA: `verdeSuperficie` o `tinta` — **obligatoriamente distintos entre sí**
+  - Si stat es `verdeSuperficie` → CTA es `tinta`
+  - Si stat es `tinta` → CTA es `verdeSuperficie`
+  - Alternar entre carruseles para no repetir la misma combinación dos veces seguidas
 
 ---
 
