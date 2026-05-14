@@ -45,26 +45,26 @@ Abre `http://localhost:4321`.
 
 ## Scripts
 
-| Comando | Descripción |
-|---|---|
-| `npm run dev` | Servidor de desarrollo en `http://localhost:4321` |
-| `npm run build` | Genera `dist/` con HTML estático |
-| `npm run preview` | Vista previa del build antes de deploy |
-| `npm run build:brand-pdf` | Genera PDF de brand guidelines en `docs/` |
+| Comando                   | Descripción                                       |
+| ------------------------- | ------------------------------------------------- |
+| `npm run dev`             | Servidor de desarrollo en `http://localhost:4321` |
+| `npm run build`           | Genera `dist/` con HTML estático                  |
+| `npm run preview`         | Vista previa del build antes de deploy            |
+| `npm run build:brand-pdf` | Genera PDF de brand guidelines en `docs/`         |
 
 ## Páginas
 
-| Ruta | Descripción |
-|---|---|
-| `/` | Landing principal multi-vertical |
-| `/dentistas` | Vertical clínicas dentales |
-| `/consultorios-medicos` | Vertical consultorios médicos |
-| `/psicologos` | Vertical psicólogos y terapeutas |
-| `/salones-de-belleza` | Vertical salones de belleza |
-| `/barberias` | Vertical barberías |
-| `/soporte` | Centro de ayuda |
-| `/terminos` | Términos de servicio (en construcción) |
-| `/privacidad` | Política de privacidad (en construcción) |
+| Ruta                    | Descripción                              |
+| ----------------------- | ---------------------------------------- |
+| `/`                     | Landing principal multi-vertical         |
+| `/dentistas`            | Vertical clínicas dentales               |
+| `/consultorios-medicos` | Vertical consultorios médicos            |
+| `/psicologos`           | Vertical psicólogos y terapeutas         |
+| `/salones-de-belleza`   | Vertical salones de belleza              |
+| `/barberias`            | Vertical barberías                       |
+| `/soporte`              | Centro de ayuda                          |
+| `/terminos`             | Términos de servicio (en construcción)   |
+| `/privacidad`           | Política de privacidad (en construcción) |
 
 ## Deploy
 

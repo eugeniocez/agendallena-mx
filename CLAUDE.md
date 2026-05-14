@@ -39,11 +39,11 @@
 
 ### Ilustraciones: permitidas vs no
 
-| ✅ SÍ (ilustraciones del mensaje al cliente) | ❌ NO (mockups de la app del negocio) |
-|---|---|
-| SMS bubble al cliente (paso 02) | Vista del calendario interno |
-| SMS con pills Confirmar/Cancelar/Reagendar (paso 03) | Dashboard o módulos de la app |
-| Call card horizontal (paso 04) | Cualquier vista interna del PWA |
+| ✅ SÍ (ilustraciones del mensaje al cliente)         | ❌ NO (mockups de la app del negocio) |
+| ---------------------------------------------------- | ------------------------------------- |
+| SMS bubble al cliente (paso 02)                      | Vista del calendario interno          |
+| SMS con pills Confirmar/Cancelar/Reagendar (paso 03) | Dashboard o módulos de la app         |
+| Call card horizontal (paso 04)                       | Cualquier vista interna del PWA       |
 
 ### Avisar antes de hacer
 
@@ -59,33 +59,33 @@
 
 ### Paleta de colores
 
-| Token | HEX | Uso |
-|---|---|---|
-| `--tinta` | `#0A0A0B` | Texto principal, fondos oscuros, símbolo |
-| `--hueso` | `#FAFAF7` | Fondo principal (cálido, no blanco puro) |
-| `--verde` | `#0F7B3F` | Color hero, CTAs, acentos, "confirmado" |
-| `--verde-hover` | `#0C6633` | Hover state del verde |
-| `--verde-tenue` | `#E8F5EE` | Fondos suaves de éxito, badges |
-| `--verde-acento` | `#4ADE80` | Acentos **solo sobre `--verde-superficie`** — no usar en fondos claros |
-| `--verde-superficie` | `#245C32` | Secciones oscuras landing (ver mapeo abajo) |
-| `--grafito` | `#6B6B6B` | Texto secundario, captions |
-| `--gris-claro` | `#F1EFE8` | Surfaces secundarios, fondos de cards |
-| `--gris-borde` | `#E8E6DE` | Bordes sutiles |
-| `--amarillo` | `#F59E0B` | Solo estado "pendiente" en **producto** |
-| `--rojo` | `#DC2626` | Solo estado "cancelado" en **producto** |
+| Token                | HEX       | Uso                                                                    |
+| -------------------- | --------- | ---------------------------------------------------------------------- |
+| `--tinta`            | `#0A0A0B` | Texto principal, fondos oscuros, símbolo                               |
+| `--hueso`            | `#FAFAF7` | Fondo principal (cálido, no blanco puro)                               |
+| `--verde`            | `#0F7B3F` | Color hero, CTAs, acentos, "confirmado"                                |
+| `--verde-hover`      | `#0C6633` | Hover state del verde                                                  |
+| `--verde-tenue`      | `#E8F5EE` | Fondos suaves de éxito, badges                                         |
+| `--verde-acento`     | `#4ADE80` | Acentos **solo sobre `--verde-superficie`** — no usar en fondos claros |
+| `--verde-superficie` | `#245C32` | Secciones oscuras landing (ver mapeo abajo)                            |
+| `--grafito`          | `#6B6B6B` | Texto secundario, captions                                             |
+| `--gris-claro`       | `#F1EFE8` | Surfaces secundarios, fondos de cards                                  |
+| `--gris-borde`       | `#E8E6DE` | Bordes sutiles                                                         |
+| `--amarillo`         | `#F59E0B` | Solo estado "pendiente" en **producto**                                |
+| `--rojo`             | `#DC2626` | Solo estado "cancelado" en **producto**                                |
 
 **Regla 90 / 8 / 2:** 90% tinta/hueso/grises · 8% verde de marca · 2% verde tenue. Más de 15% de verde = fuera del sistema.
 
 **Combinaciones permitidas:**
 
-| Combinación | Uso |
-|---|---|
-| Tinta sobre hueso | Body, párrafos, jerarquía principal |
-| Hueso sobre tinta | Fondos oscuros, headers de sección |
-| Verde sobre hueso | CTAs, eyebrows, acentos |
-| Hueso sobre verde | Texto en botones CTA |
-| Verde tenue como fondo | Con texto verde o tinta — badges, callouts |
-| Verde acento sobre verde-superficie | Acentos en secciones oscuras únicamente |
+| Combinación                         | Uso                                        |
+| ----------------------------------- | ------------------------------------------ |
+| Tinta sobre hueso                   | Body, párrafos, jerarquía principal        |
+| Hueso sobre tinta                   | Fondos oscuros, headers de sección         |
+| Verde sobre hueso                   | CTAs, eyebrows, acentos                    |
+| Hueso sobre verde                   | Texto en botones CTA                       |
+| Verde tenue como fondo              | Con texto verde o tinta — badges, callouts |
+| Verde acento sobre verde-superficie | Acentos en secciones oscuras únicamente    |
 
 **Combinaciones prohibidas:** verde sobre verde-tenue en bloques grandes · gradientes entre colores de marca · cualquier otro color de acento.
 
@@ -93,12 +93,12 @@
 
 **Mapeo de superficies oscuras:**
 
-| Componente | Token de fondo |
-|---|---|
-| `.stat-banner` | `var(--verde-tenue)` — excepción luminosa (fondo claro, texto oscuro) |
-| `.how-it-works` | `var(--verde-superficie)` |
-| `.module-card.featured` (Calendario) | `var(--verde-superficie)` |
-| `.final-cta` | `var(--verde-superficie)` |
+| Componente                           | Token de fondo                                                        |
+| ------------------------------------ | --------------------------------------------------------------------- |
+| `.stat-banner`                       | `var(--verde-tenue)` — excepción luminosa (fondo claro, texto oscuro) |
+| `.how-it-works`                      | `var(--verde-superficie)`                                             |
+| `.module-card.featured` (Calendario) | `var(--verde-superficie)`                                             |
+| `.final-cta`                         | `var(--verde-superficie)`                                             |
 
 **Acentos dentro de superficies oscuras:** `var(--verde-acento)` (#4ADE80), no `--verde` de marca (contraste insuficiente ~1.5:1). Aplica en: `.step-num`, `.step-tag`, `.module-num`, `.module-feature::before`, `.final-cta h2 .accent`, `.final-cta .brand-llena`, `.call-name .dot`.
 
@@ -107,16 +107,17 @@
 ### Tipografía
 
 Single-font: **Plus Jakarta Sans** vía Google Fonts. Sin mono, serif ni ninguna otra familia.
+
 - Números alineados: `font-variant-numeric: tabular-nums` (no se necesita mono)
 - Eyebrows técnicos: `text-transform: uppercase` + `letter-spacing: 0.05–0.1em` + peso 500/600
 
-| Peso | Uso |
-|---|---|
-| 300 Light | Uso editorial limitado |
-| 400 Regular | Body, párrafos, captions |
-| 500 Medium | Labels, buttons, énfasis, eyebrows |
+| Peso         | Uso                                   |
+| ------------ | ------------------------------------- |
+| 300 Light    | Uso editorial limitado                |
+| 400 Regular  | Body, párrafos, captions              |
+| 500 Medium   | Labels, buttons, énfasis, eyebrows    |
 | 600 SemiBold | Wordmark, headlines, h2, step numbers |
-| 700 Bold | Display, h1, momentos clave |
+| 700 Bold     | Display, h1, momentos clave           |
 
 - Tracking: tamaños grandes −0.025 a −0.05em · captions +0.02em · eyebrows uppercase 0.05–0.1em
 - Line-height: 1.5–1.6 body · 1.0–1.15 headlines
@@ -130,17 +131,24 @@ Single-font: **Plus Jakarta Sans** vía Google Fonts. Sin mono, serif ni ninguna
 ### Clases CSS de marca
 
 ```css
-.dot           { color: var(--verde); }              /* "." del dominio agendallena.mx */
-.brand-mention { font-weight: 600; font-style: normal; }
-.brand-llena   { color: var(--verde); }              /* "llena" pintada en verde */
+.dot {
+  color: var(--verde);
+} /* "." del dominio agendallena.mx */
+.brand-mention {
+  font-weight: 600;
+  font-style: normal;
+}
+.brand-llena {
+  color: var(--verde);
+} /* "llena" pintada en verde */
 ```
 
-| Contexto | Patrón HTML |
-|---|---|
-| Body copy (subtítulos, FAQ, CTAs, párrafos) | `<strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong>` |
-| Dominio como URL ("Entra a agendallena.mx") | `agendallena<span class="dot">.</span>mx` |
-| Wordmark header/footer, `<title>`, meta tags, JSON-LD, copyright | `agendallena` plain, sin clases |
-| Testimonios (citas textuales) | `agendallena` plain — no romper la naturalidad del habla |
+| Contexto                                                         | Patrón HTML                                                                           |
+| ---------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| Body copy (subtítulos, FAQ, CTAs, párrafos)                      | `<strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong>` |
+| Dominio como URL ("Entra a agendallena.mx")                      | `agendallena<span class="dot">.</span>mx`                                             |
+| Wordmark header/footer, `<title>`, meta tags, JSON-LD, copyright | `agendallena` plain, sin clases                                                       |
+| Testimonios (citas textuales)                                    | `agendallena` plain — no romper la naturalidad del habla                              |
 
 ### Símbolo reducido `[.]`
 
@@ -150,9 +158,9 @@ Solo para favicons, app icons (PWA), avatares, notificaciones. Contenedor 88×88
 
 ```css
 --radius-sm: 8px;
---radius-md: 12px;   /* default para componentes */
---radius-lg: 20px;   /* cards */
---radius-xl: 28px;   /* secciones grandes, cards destacadas */
+--radius-md: 12px; /* default para componentes */
+--radius-lg: 20px; /* cards */
+--radius-xl: 28px; /* secciones grandes, cards destacadas */
 ```
 
 ### Sombras
@@ -183,12 +191,12 @@ Solo para favicons, app icons (PWA), avatares, notificaciones. Contenedor 88×88
 
 ### Traducciones de tono
 
-| ❌ NO escribir | ✅ SÍ escribir |
-|---|---|
-| Optimiza tu workflow de bookings | Agenda más rápido |
-| Engagement automatizado con clientes | Confirmaciones automáticas |
-| Reduce tu no-show rate | Menos inasistencias |
-| Onboarding en menos de 5 minutos | Listo en 5 minutos |
+| ❌ NO escribir                        | ✅ SÍ escribir                   |
+| ------------------------------------- | -------------------------------- |
+| Optimiza tu workflow de bookings      | Agenda más rápido                |
+| Engagement automatizado con clientes  | Confirmaciones automáticas       |
+| Reduce tu no-show rate                | Menos inasistencias              |
+| Onboarding en menos de 5 minutos      | Listo en 5 minutos               |
 | Plataforma all-in-one para tu negocio | Todas tus citas en un solo lugar |
 
 ### Valores de marca
@@ -211,24 +219,24 @@ agendallena es un sistema de confirmación automática de citas para negocios B2
 
 ### 5 módulos
 
-| Módulo | Función |
-|---|---|
+| Módulo     | Función                                                                                                        |
+| ---------- | -------------------------------------------------------------------------------------------------------------- |
 | Calendario | Vista día/3 días con sistema semafórico de estados (blanco, verde, amarillo, rojo, negro+naranja, verde claro) |
-| Directorio | Base de clientes auto-registrada al agendar, con historial y perfil |
-| Nueva cita | 4 campos; citas con <30 min de anticipación no entran al flujo automático |
-| Invitar | Reactivación masiva por SMS a clientes filtrados por días sin visitar |
-| Ajustes | Perfil, suscripción, métodos de pago (tarjeta recurrente / OXXO / tarjeta único), FAQ, PWA |
+| Directorio | Base de clientes auto-registrada al agendar, con historial y perfil                                            |
+| Nueva cita | 4 campos; citas con <30 min de anticipación no entran al flujo automático                                      |
+| Invitar    | Reactivación masiva por SMS a clientes filtrados por días sin visitar                                          |
+| Ajustes    | Perfil, suscripción, métodos de pago (tarjeta recurrente / OXXO / tarjeta único), FAQ, PWA                     |
 
 **Sistema semafórico del calendario:**
 
-| Color | Estado |
-|---|---|
-| Blanco | Cita apartada · recordatorio por enviar |
-| Verde | Cliente confirmó la cita |
-| Amarillo | Recordatorio enviado · sin confirmar |
-| Rojo | Cliente solicitó cancelar |
-| Negro / naranja | Inasistencia registrada |
-| Verde claro | Cliente llegó sin cita previa |
+| Color           | Estado                                  |
+| --------------- | --------------------------------------- |
+| Blanco          | Cita apartada · recordatorio por enviar |
+| Verde           | Cliente confirmó la cita                |
+| Amarillo        | Recordatorio enviado · sin confirmar    |
+| Rojo            | Cliente solicitó cancelar               |
+| Negro / naranja | Inasistencia registrada                 |
+| Verde claro     | Cliente llegó sin cita previa           |
 
 ### Flujo automático de confirmación
 
@@ -258,6 +266,7 @@ Los negocios basados en citas pierden hasta el **30% de sus citas** por inasiste
 **Verticales:** Clínicas dentales · Consultorios médicos · Psicólogos · Estilistas · Barberías · Spas · Talleres mecánicos · y cualquier negocio que opere por citas.
 
 **Lo que NO somos:**
+
 - No somos "un calendario más bonito"
 - No somos un CRM
 - No somos un bot con IA
@@ -323,17 +332,17 @@ agendallena-mx/
 
 ### Rutas live
 
-| Ruta | Descripción |
-|---|---|
-| `/` | Landing principal multi-vertical |
-| `/dentistas` | Vertical clínicas dentales |
-| `/consultorios-medicos` | Vertical consultorios médicos |
-| `/psicologos` | Vertical psicólogos y terapeutas |
-| `/salones-de-belleza` | Vertical salones de belleza |
-| `/barberias` | Vertical barberías |
-| `/soporte` | Centro de ayuda |
-| `/terminos` | Términos de servicio (stub — contenido pendiente) |
-| `/privacidad` | Política de privacidad (stub — contenido pendiente) |
+| Ruta                    | Descripción                                         |
+| ----------------------- | --------------------------------------------------- |
+| `/`                     | Landing principal multi-vertical                    |
+| `/dentistas`            | Vertical clínicas dentales                          |
+| `/consultorios-medicos` | Vertical consultorios médicos                       |
+| `/psicologos`           | Vertical psicólogos y terapeutas                    |
+| `/salones-de-belleza`   | Vertical salones de belleza                         |
+| `/barberias`            | Vertical barberías                                  |
+| `/soporte`              | Centro de ayuda                                     |
+| `/terminos`             | Términos de servicio (stub — contenido pendiente)   |
+| `/privacidad`           | Política de privacidad (stub — contenido pendiente) |
 
 **Rutas pendientes (Fase 4):** `/spas` · `/salones-de-unas` · `/entrenadores-personales` · `/despachos-legales` · `/terapistas`
 
