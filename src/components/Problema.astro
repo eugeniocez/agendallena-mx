@@ -9,15 +9,18 @@ const {
   cards = [
     {
       title: 'WhatsApp se pierde',
-      description: 'Entre un mar de conversaciones, las confirmaciones se entierran. Para cuando te acuerdas, ya es tarde.',
+      description:
+        'Entre un mar de conversaciones, las confirmaciones se entierran. Para cuando te acuerdas, ya es tarde.',
     },
     {
       title: 'La libreta no avisa',
-      description: 'Una hoja en blanco no te recuerda que un cliente no llegó. La libreta es pasiva. El dinero perdido, también.',
+      description:
+        'Una hoja en blanco no te recuerda que un cliente no llegó. La libreta es pasiva. El dinero perdido, también.',
     },
     {
       title: 'Tu memoria falla',
-      description: 'Cuando todo el día agendas, recibes y atiendes, recordar quién confirmó y quién no es imposible.',
+      description:
+        'Cuando todo el día agendas, recibes y atiendes, recordar quién confirmó y quién no es imposible.',
     },
   ],
 } = Astro.props;
@@ -34,32 +37,46 @@ const icons = [
   '<circle cx="11" cy="11" r="8"/><path d="M11 6v5l3 2"/>',
 ];
 ---
+
 <section class="section">
   <div class="container">
     <div class="section-eyebrow">Lo que pasa hoy</div>
     <h2 class="section-title">Cada cita perdida es dinero que no recibes.</h2>
-    <p class="section-subtitle">Tres razones por las que tu agenda actual te está costando más de lo que crees.</p>
+    <p class="section-subtitle">
+      Tres razones por las que tu agenda actual te está costando más de lo que crees.
+    </p>
 
     <div class="problem-grid">
-      {cards.map((card, i) => (
-        <div class="problem-card spotlight">
-          <div class="problem-bg">
-            <img src={images[i]} alt="" loading="lazy">
-          </div>
-          <div class="problem-text">
-            <div class="problem-icon">
-              <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8" set:html={icons[i]} />
+      {
+        cards.map((card, i) => (
+          <div class="problem-card spotlight">
+            <div class="problem-bg">
+              <img src={images[i]} alt="" loading="lazy" />
             </div>
-            <h3>{card.title}</h3>
-            <p>{card.description}</p>
+            <div class="problem-text">
+              <div class="problem-icon">
+                <svg
+                  viewBox="0 0 22 22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  set:html={icons[i]}
+                />
+              </div>
+              <h3>{card.title}</h3>
+              <p>{card.description}</p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
 
     <div class="stat-banner">
       <div class="stat-big"><span data-count="30">0</span>%</div>
-      <div class="stat-text">Hasta <strong>3 de cada 10 citas</strong> se pierden en negocios que no tienen confirmación automática. Eso es dinero perdido.</div>
+      <div class="stat-text">
+        Hasta <strong>3 de cada 10 citas</strong> se pierden en negocios que no tienen confirmación automática.
+        Eso es dinero perdido.
+      </div>
     </div>
   </div>
 </section>

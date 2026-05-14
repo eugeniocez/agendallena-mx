@@ -4,26 +4,31 @@ export const consultoriosMedicos: VerticalContent = {
   slug: 'consultorios-medicos',
   meta: {
     title: 'Solución para consultorios médicos — agenda y confirma citas | agendallena',
-    description: 'Solución que confirma citas de consultorios médicos automáticamente por SMS, WhatsApp y llamada. Pacientes que llegan, agenda predecible. $199 MXN/mes.',
+    description:
+      'Solución que confirma citas de consultorios médicos automáticamente por SMS, WhatsApp y llamada. Pacientes que llegan, agenda predecible. $199 MXN/mes.',
   },
   hero: {
     eyebrow: 'Para consultorios médicos',
     h1: 'Solución para consultorios médicos en México',
-    subtitle: 'La solución que confirma las citas de tu consultorio por ti. Pacientes que llegan, agenda predecible, sin llamadas de seguimiento.',
+    subtitle:
+      'La solución que confirma las citas de tu consultorio por ti. Pacientes que llegan, agenda predecible, sin llamadas de seguimiento.',
   },
   problema: {
     cards: [
       {
         title: 'El paciente no apareció',
-        description: 'Bloqueaste una hora de tu agenda para alguien que nunca llegó. Y nunca avisó. Eso pasa cuando no hay confirmación automática.',
+        description:
+          'Bloqueaste una hora de tu agenda para alguien que nunca llegó. Y nunca avisó. Eso pasa cuando no hay confirmación automática.',
       },
       {
         title: 'La recepción no sabe',
-        description: 'Tienes una lista de 20 nombres para hoy. No sabes cuántos van a llegar. Tu recepcionista tampoco. Así empieza cualquier día.',
+        description:
+          'Tienes una lista de 20 nombres para hoy. No sabes cuántos van a llegar. Tu recepcionista tampoco. Así empieza cualquier día.',
       },
       {
         title: 'Demasiadas variables',
-        description: 'Entre urgencias, reprogramaciones y pacientes nuevos, llevar el control de quién confirmó es un trabajo de tiempo completo.',
+        description:
+          'Entre urgencias, reprogramaciones y pacientes nuevos, llevar el control de quién confirmó es un trabajo de tiempo completo.',
       },
     ],
   },
@@ -31,7 +36,8 @@ export const consultoriosMedicos: VerticalContent = {
     heading: 'Consultorios que recuperaron el control de su agenda.',
     items: [
       {
-        quote: 'Mis pacientes reciben el recordatorio automático y confirman desde el SMS. Yo solo abro la app y ya sé cómo va el día.',
+        quote:
+          'Mis pacientes reciben el recordatorio automático y confirman desde el SMS. Yo solo abro la app y ya sé cómo va el día.',
         name: 'Dra. Laura Vega',
         role: 'Medicina general, Monterrey',
         initials: 'LV',
@@ -45,7 +51,8 @@ export const consultoriosMedicos: VerticalContent = {
         avatarStyle: 'dark',
       },
       {
-        quote: 'La recepcionista ahora se enfoca en atender bien al paciente que llega, no en perseguir al que todavía no ha confirmado.',
+        quote:
+          'La recepcionista ahora se enfoca en atender bien al paciente que llega, no en perseguir al que todavía no ha confirmado.',
         name: 'Dra. Mariana Torres',
         role: 'Clínica familiar, CDMX',
         initials: 'MT',
@@ -59,17 +66,20 @@ export const consultoriosMedicos: VerticalContent = {
   },
   smsContext: 'en Consultorio Dr. Ríos',
   statementStrip: {
-    title: 'Qué cambia en tu <strong class="brand-mention"><span class="dot">consultorio</span></strong> cuando <strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong> trabaja por ti.',
+    title:
+      'Qué cambia en tu <strong class="brand-mention"><span class="dot">consultorio</span></strong> cuando <strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong> trabaja por ti.',
   },
   faq: {
     extraItems: [
       {
         question: '¿Funciona para consultas de especialidad o solo medicina general?',
-        answer: 'Para ambas. No importa si eres médico general, especialista o si manejas citas de primera vez y seguimientos — el sistema trabaja igual en todos los casos. Tú agendas la cita con el tiempo que necesitas y <strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong> hace el seguimiento automático.',
+        answer:
+          'Para ambas. No importa si eres médico general, especialista o si manejas citas de primera vez y seguimientos — el sistema trabaja igual en todos los casos. Tú agendas la cita con el tiempo que necesitas y <strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong> hace el seguimiento automático.',
       },
       {
         question: '¿El recordatorio llega a tiempo aunque la consulta sea muy temprano?',
-        answer: 'El recordatorio de 24 horas se envía a las 10 AM del día anterior. Si el paciente no responde al SMS, la llamada automática sale 2 horas antes de la cita. Todo sin que tengas que supervisar nada.',
+        answer:
+          'El recordatorio de 24 horas se envía a las 10 AM del día anterior. Si el paciente no responde al SMS, la llamada automática sale 2 horas antes de la cita. Todo sin que tengas que supervisar nada.',
       },
     ],
   },

@@ -4,17 +4,21 @@ interface Props {
 }
 const { smsContext = 'en Studio Norte' } = Astro.props;
 ---
+
 <section class="how-it-works" id="como-funciona">
   <div class="container">
     <div class="section-eyebrow">Cómo funciona</div>
-    <h2 class="section-title">El flujo que tu negocio ya tenía,<br>ahora en automático.</h2>
+    <h2 class="section-title">El flujo que tu negocio ya tenía,<br />ahora en automático.</h2>
 
     <div class="steps-list">
       <div class="step">
         <div class="step-num">01</div>
         <div class="step-content">
           <h3>El cliente te pide cita</h3>
-          <p>Por WhatsApp, llamada, en persona — como sea. Tú abres la app y la registras: nombre, celular y hora.</p>
+          <p>
+            Por WhatsApp, llamada, en persona — como sea. Tú abres la app y la registras: nombre,
+            celular y hora.
+          </p>
           <span class="step-tag">manual</span>
         </div>
       </div>
@@ -22,14 +26,19 @@ const { smsContext = 'en Studio Norte' } = Astro.props;
         <div class="step-num">02</div>
         <div class="step-content">
           <h3>Confirmación inmediata</h3>
-          <p>Al instante, el cliente recibe un mensaje de confirmación con los detalles de su cita. Sin que tú levantes un dedo.</p>
+          <p>
+            Al instante, el cliente recibe un mensaje de confirmación con los detalles de su cita.
+            Sin que tú levantes un dedo.
+          </p>
           <span class="step-tag">automático</span>
         </div>
         <div class="step-visual">
           <div class="sms-mockup">
             <div class="sms-meta">+52 55 ••• 4329 · ahora</div>
             <div class="sms-bubble">
-              Hola María, tu cita {smsContext} está confirmada para el <strong>sábado 4 de mayo a las 11:00</strong>. Te esperamos.
+              Hola María, tu cita {smsContext} está confirmada para el <strong
+                >sábado 4 de mayo a las 11:00</strong
+              >. Te esperamos.
             </div>
           </div>
         </div>
@@ -38,14 +47,19 @@ const { smsContext = 'en Studio Norte' } = Astro.props;
         <div class="step-num">03</div>
         <div class="step-content">
           <h3>Recordatorio 24 horas antes</h3>
-          <p>El día anterior, el cliente recibe otro mensaje con tres botones: confirmar, cancelar o reagendar. Su respuesta se refleja en tu calendario al momento.</p>
+          <p>
+            El día anterior, el cliente recibe otro mensaje con tres botones: confirmar, cancelar o
+            reagendar. Su respuesta se refleja en tu calendario al momento.
+          </p>
           <span class="step-tag">automático</span>
         </div>
         <div class="step-visual">
           <div class="sms-mockup">
             <div class="sms-meta">+52 55 ••• 4329 · ayer 18:00</div>
             <div class="sms-bubble">
-              Hola María, te recordamos tu cita {smsContext} el <strong>sábado 4 de mayo a las 11:00</strong>.
+              Hola María, te recordamos tu cita {smsContext} el <strong
+                >sábado 4 de mayo a las 11:00</strong
+              >.
               <div class="sms-actions">
                 <span class="sms-action sms-action--primary">Confirmar</span>
                 <span class="sms-action">Reagendar</span>
@@ -59,7 +73,10 @@ const { smsContext = 'en Studio Norte' } = Astro.props;
         <div class="step-num">04</div>
         <div class="step-content">
           <h3>¿No contestó? Llamada automática</h3>
-          <p>2 horas antes de la cita, si el cliente sigue sin confirmar, recibe una llamada automatizada pidiendo confirmación. La respuesta también se sincroniza.</p>
+          <p>
+            2 horas antes de la cita, si el cliente sigue sin confirmar, recibe una llamada
+            automatizada pidiendo confirmación. La respuesta también se sincroniza.
+          </p>
           <span class="step-tag">automático</span>
         </div>
         <div class="step-visual">
@@ -73,7 +90,17 @@ const { smsContext = 'en Studio Norte' } = Astro.props;
               <span class="call-pulse"></span>
               <span class="call-pulse"></span>
               <span class="call-icon-bg">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  ><path
+                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"
+                  ></path></svg
+                >
               </span>
             </div>
           </div>
@@ -83,13 +110,18 @@ const { smsContext = 'en Studio Norte' } = Astro.props;
         <div class="step-num">05</div>
         <div class="step-content">
           <h3>Tu calendario te dice la verdad</h3>
-          <p>Verde: confirmada. Amarillo: pendiente. Rojo: cancelada. Empiezas el día sabiendo exactamente quién va a llegar y quién no.</p>
+          <p>
+            Verde: confirmada. Amarillo: pendiente. Rojo: cancelada. Empiezas el día sabiendo
+            exactamente quién va a llegar y quién no.
+          </p>
           <span class="step-tag">resultado</span>
         </div>
       </div>
     </div>
 
-    <p class="how-it-works-footer">Mensajes, llamadas y recordatorios — todo incluido en $199 MXN al mes.</p>
+    <p class="how-it-works-footer">
+      Mensajes, llamadas y recordatorios — todo incluido en $199 MXN al mes.
+    </p>
     <div class="how-it-works-cta">
       <a href="https://app.agendallena.mx/registro" class="btn btn-primary-lg">Empezar gratis</a>
       <p class="how-it-works-cta-meta">14 días completos. Sin tarjeta de crédito.</p>

@@ -1,378 +1,499 @@
 ---
 import Base from '../layouts/Base.astro';
 ---
+
 <Base
   title="Centro de ayuda — agendallena"
   description="Resuelve tus dudas sobre agendallena. Cómo empezar, cómo funciona la agenda, mensajes automáticos, clientes y suscripción."
   canonical="https://agendallena.mx/soporte"
 >
+  <section class="section soporte-hero">
+    <div class="container">
+      <div class="section-eyebrow">Soporte</div>
+      <h1 class="section-title">¿En qué te podemos ayudar?</h1>
+      <p class="section-subtitle">Resuelve tus dudas o escríbenos directo por WhatsApp.</p>
+    </div>
+  </section>
 
-<section class="section soporte-hero">
-  <div class="container">
-    <div class="section-eyebrow">Soporte</div>
-    <h1 class="section-title">¿En qué te podemos ayudar?</h1>
-    <p class="section-subtitle">Resuelve tus dudas o escríbenos directo por WhatsApp.</p>
-  </div>
-</section>
+  <section class="section-tight soporte-faq">
+    <div class="container">
+      <div class="soporte-group">
+        <h2 class="soporte-group-title">Primeros pasos</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Cómo registro mi negocio?
+              <span class="faq-icon"
+                ><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"
+                  ><line x1="6" y1="1" x2="6" y2="11"></line><line x1="1" y1="6" x2="11" y2="6"
+                  ></line></svg
+                ></span
+              >
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Entra a agendallena.mx y haz clic en "Empezar gratis". Te pedimos tu nombre, el
+                nombre de tu negocio y tu número de celular. En menos de 5 minutos ya puedes agendar
+                tu primera cita.
+              </div>
+            </div>
+          </div>
 
-<section class="section-tight soporte-faq">
-  <div class="container">
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Necesito dar mis datos de tarjeta para el trial?
+              <span class="faq-icon"
+                ><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"
+                  ><line x1="6" y1="1" x2="6" y2="11"></line><line x1="1" y1="6" x2="11" y2="6"
+                  ></line></svg
+                ></span
+              >
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                No. Los 14 días de prueba son completamente gratis y sin tarjeta. Solo necesitas tu
+                celular para registrarte.
+              </div>
+            </div>
+          </div>
 
-    <div class="soporte-group">
-      <h2 class="soporte-group-title">Primeros pasos</h2>
-      <div class="faq-list">
-
-        <div class="faq-item">
-          <button class="faq-question">
-            ¿Cómo registro mi negocio?
-            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Entra a agendallena.mx y haz clic en "Empezar gratis". Te pedimos tu nombre, el nombre de tu negocio y tu número de celular. En menos de 5 minutos ya puedes agendar tu primera cita.
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Cuánto tarda en estar listo?
+              <span class="faq-icon"
+                ><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"
+                  ><line x1="6" y1="1" x2="6" y2="11"></line><line x1="1" y1="6" x2="11" y2="6"
+                  ></line></svg
+                ></span
+              >
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                5 minutos. Sin instalaciones ni configuraciones complicadas. <strong
+                  class="brand-mention">agenda<span class="brand-llena">llena</span></strong
+                > funciona directo desde el navegador de tu celular — puedes agregarla a tu pantalla de
+                inicio como si fuera una app.
+              </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="faq-item">
-          <button class="faq-question">
-            ¿Necesito dar mis datos de tarjeta para el trial?
-            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              No. Los 14 días de prueba son completamente gratis y sin tarjeta. Solo necesitas tu celular para registrarte.
+      <div class="soporte-group">
+        <h2 class="soporte-group-title">Agenda y citas</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Cómo agendo una cita nueva?
+              <span class="faq-icon"
+                ><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"
+                  ><line x1="6" y1="1" x2="6" y2="11"></line><line x1="1" y1="6" x2="11" y2="6"
+                  ></line></svg
+                ></span
+              >
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Toca el botón "Nueva cita" y llena 4 campos: nombre del cliente, su número de
+                celular, fecha y hora. Puedes agregar una nota interna opcional. Al guardar, el
+                cliente recibe un SMS de confirmación automáticamente.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Qué significa cada color en el calendario?
+              <span class="faq-icon"
+                ><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"
+                  ><line x1="6" y1="1" x2="6" y2="11"></line><line x1="1" y1="6" x2="11" y2="6"
+                  ></line></svg
+                ></span
+              >
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <strong>Blanco</strong> — cita registrada, recordatorio pendiente de enviar.<br />
+                <strong>Amarillo</strong> — recordatorio enviado, cliente no ha contestado.<br />
+                <strong>Verde</strong> — cliente confirmó su asistencia.<br />
+                <strong>Rojo</strong> — cliente solicitó cancelar.<br />
+                <strong>Negro con franjas naranjas</strong> — inasistencia registrada.<br />
+                <strong>Verde claro</strong> — cliente llegó sin cita previa.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Puedo cancelar o mover una cita?
+              <span class="faq-icon"
+                ><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"
+                  ><line x1="6" y1="1" x2="6" y2="11"></line><line x1="1" y1="6" x2="11" y2="6"
+                  ></line></svg
+                ></span
+              >
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Sí. Toca la cita en el calendario para ver sus opciones. Puedes editarla, moverla a
+                otra fecha y hora, o cancelarla. Si el cliente quiere reagendar desde el mensaje
+                automático, recibe un link para escribirte directamente por WhatsApp.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Funciona con más de un empleado o silla?
+              <span class="faq-icon"
+                ><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"
+                  ><line x1="6" y1="1" x2="6" y2="11"></line><line x1="1" y1="6" x2="11" y2="6"
+                  ></line></svg
+                ></span
+              >
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Sí. Puedes agendar citas para diferentes personas o sillas desde la misma cuenta. El
+                calendario muestra todas las citas del día sin importar quién las atiende, sin costo
+                adicional.
+              </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="faq-item">
-          <button class="faq-question">
-            ¿Cuánto tarda en estar listo?
-            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              5 minutos. Sin instalaciones ni configuraciones complicadas. <strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong> funciona directo desde el navegador de tu celular — puedes agregarla a tu pantalla de inicio como si fuera una app.
+      <div class="soporte-group">
+        <h2 class="soporte-group-title">Mensajes automáticos</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Cuándo se envía el recordatorio automático?
+              <span class="faq-icon"
+                ><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"
+                  ><line x1="6" y1="1" x2="6" y2="11"></line><line x1="1" y1="6" x2="11" y2="6"
+                  ></line></svg
+                ></span
+              >
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Al registrar la cita, tu cliente recibe un SMS inmediato de confirmación. Después,
+                24 horas antes de la cita recibe un recordatorio con botones para confirmar,
+                cancelar o reagendar. Si no contesta, 2 horas antes recibe una llamada automatizada.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Qué pasa si el cliente no contesta ningún mensaje?
+              <span class="faq-icon"
+                ><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"
+                  ><line x1="6" y1="1" x2="6" y2="11"></line><line x1="1" y1="6" x2="11" y2="6"
+                  ></line></svg
+                ></span
+              >
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                La cita queda en amarillo en tu calendario — significa que el recordatorio fue
+                enviado pero el cliente no confirmó. Tú decides si la dejas, la cancelas o marcas
+                inasistencia después.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Qué número ve mi cliente cuando recibe el SMS?
+              <span class="faq-icon"
+                ><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"
+                  ><line x1="6" y1="1" x2="6" y2="11"></line><line x1="1" y1="6" x2="11" y2="6"
+                  ></line></svg
+                ></span
+              >
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Un número dedicado del servicio, no tu número personal. En el cuerpo del mensaje
+                siempre aparece el nombre de tu negocio para que tu cliente sepa exactamente de
+                quién es el recordatorio.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Puedo personalizar el texto de los mensajes?
+              <span class="faq-icon"
+                ><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"
+                  ><line x1="6" y1="1" x2="6" y2="11"></line><line x1="1" y1="6" x2="11" y2="6"
+                  ></line></svg
+                ></span
+              >
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Los mensajes siguen un template optimizado para tasa de respuesta — incluyen el
+                nombre de tu negocio, la fecha y la hora de la cita. La personalización libre de los
+                textos está en el roadmap.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Puedo desactivar los mensajes automáticos?
+              <span class="faq-icon"
+                ><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"
+                  ><line x1="6" y1="1" x2="6" y2="11"></line><line x1="1" y1="6" x2="11" y2="6"
+                  ></line></svg
+                ></span
+              >
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Los mensajes automáticos son el corazón de <strong class="brand-mention"
+                  >agenda<span class="brand-llena">llena</span></strong
+                > — desactivarlos le quita el sentido a la solución. Si agendas una cita con menos de
+                30 minutos de anticipación, el flujo automático no aplica para esa cita en particular.
+              </div>
             </div>
           </div>
         </div>
+      </div>
 
+      <div class="soporte-group">
+        <h2 class="soporte-group-title">Clientes</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Cómo agrego un cliente al directorio?
+              <span class="faq-icon"
+                ><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"
+                  ><line x1="6" y1="1" x2="6" y2="11"></line><line x1="1" y1="6" x2="11" y2="6"
+                  ></line></svg
+                ></span
+              >
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Solo necesitas agendar una cita con su nombre y celular. <strong
+                  class="brand-mention">agenda<span class="brand-llena">llena</span></strong
+                > crea el perfil del cliente automáticamente en el directorio. No hay que agregar clientes
+                manualmente.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Qué es la función "Invitar"?
+              <span class="faq-icon"
+                ><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"
+                  ><line x1="6" y1="1" x2="6" y2="11"></line><line x1="1" y1="6" x2="11" y2="6"
+                  ></line></svg
+                ></span
+              >
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Es la herramienta de reactivación de clientes. Te muestra los clientes que llevan
+                más días sin visitarte, y puedes enviarles un mensaje personalizado por SMS con tu
+                nombre, el nombre de tu negocio y un link para que te escriban por WhatsApp. Útil
+                para semanas flojas o temporadas bajas.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="soporte-group">
+        <h2 class="soporte-group-title">Suscripción y pagos</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Los SMS y las llamadas automáticas tienen costo adicional?
+              <span class="faq-icon"
+                ><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"
+                  ><line x1="6" y1="1" x2="6" y2="11"></line><line x1="1" y1="6" x2="11" y2="6"
+                  ></line></svg
+                ></span
+              >
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                No. Los $199 MXN/mes incluyen todos los SMS de confirmación, recordatorio y
+                reactivación, más las llamadas automáticas de seguimiento. Sin cargos por volumen,
+                sin sorpresas. El precio que ves es el precio que pagas.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Cuánto cuesta <strong class="brand-mention"
+                >agenda<span class="brand-llena">llena</span></strong
+              >?
+              <span class="faq-icon"
+                ><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"
+                  ><line x1="6" y1="1" x2="6" y2="11"></line><line x1="1" y1="6" x2="11" y2="6"
+                  ></line></svg
+                ></span
+              >
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                $199 MXN al mes. Un solo plan, sin límites de citas, clientes ni mensajes. 14 días
+                de prueba gratis sin tarjeta. Sin contratos ni permanencia.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Cómo cancelo mi suscripción?
+              <span class="faq-icon"
+                ><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"
+                  ><line x1="6" y1="1" x2="6" y2="11"></line><line x1="1" y1="6" x2="11" y2="6"
+                  ></line></svg
+                ></span
+              >
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Desde Ajustes → Suscripción, con un clic. Sin trámites, sin llamadas, sin letras
+                pequeñas. Si cancelas, tu cuenta sigue activa hasta el final del período que ya
+                pagaste.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              ¿Qué métodos de pago aceptan?
+              <span class="faq-icon"
+                ><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"
+                  ><line x1="6" y1="1" x2="6" y2="11"></line><line x1="1" y1="6" x2="11" y2="6"
+                  ></line></svg
+                ></span
+              >
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Aceptamos tres formas de pago:<br /><br />
+                <strong>Tarjeta recurrente</strong> — tu tarjeta de débito o crédito se cobra automáticamente
+                cada mes. No tienes que hacer nada.<br /><br />
+                <strong>OXXO</strong> — el sistema genera una ficha de pago que puedes pagar en cualquier
+                tienda OXXO.<br /><br />
+                <strong>Tarjeta pago único</strong> — si solo quieres probar un mes sin comprometerte
+                a una suscripción recurrente, puedes pagar un mes directo con tarjeta.
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="soporte-group">
-      <h2 class="soporte-group-title">Agenda y citas</h2>
-      <div class="faq-list">
-
-        <div class="faq-item">
-          <button class="faq-question">
-            ¿Cómo agendo una cita nueva?
-            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Toca el botón "Nueva cita" y llena 4 campos: nombre del cliente, su número de celular, fecha y hora. Puedes agregar una nota interna opcional. Al guardar, el cliente recibe un SMS de confirmación automáticamente.
-            </div>
-          </div>
+  <section class="section-tight soporte-contact">
+    <div class="container">
+      <div class="soporte-contact-card">
+        <p class="soporte-contact-label">¿No encontraste lo que buscas?</p>
+        <h2 class="soporte-contact-title">Escríbenos y te respondemos.</h2>
+        <div class="soporte-contact-actions">
+          <a
+            href="https://wa.me/521XXXXXXXXXX"
+            class="btn btn-primary-lg"
+            target="_blank"
+            rel="noopener">Escribir por WhatsApp</a
+          >
+          <a href="mailto:soporte@agendallena.mx" class="soporte-email">soporte@agendallena.mx</a>
         </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            ¿Qué significa cada color en el calendario?
-            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              <strong>Blanco</strong> — cita registrada, recordatorio pendiente de enviar.<br>
-              <strong>Amarillo</strong> — recordatorio enviado, cliente no ha contestado.<br>
-              <strong>Verde</strong> — cliente confirmó su asistencia.<br>
-              <strong>Rojo</strong> — cliente solicitó cancelar.<br>
-              <strong>Negro con franjas naranjas</strong> — inasistencia registrada.<br>
-              <strong>Verde claro</strong> — cliente llegó sin cita previa.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            ¿Puedo cancelar o mover una cita?
-            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Sí. Toca la cita en el calendario para ver sus opciones. Puedes editarla, moverla a otra fecha y hora, o cancelarla. Si el cliente quiere reagendar desde el mensaje automático, recibe un link para escribirte directamente por WhatsApp.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            ¿Funciona con más de un empleado o silla?
-            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Sí. Puedes agendar citas para diferentes personas o sillas desde la misma cuenta. El calendario muestra todas las citas del día sin importar quién las atiende, sin costo adicional.
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
-
-    <div class="soporte-group">
-      <h2 class="soporte-group-title">Mensajes automáticos</h2>
-      <div class="faq-list">
-
-        <div class="faq-item">
-          <button class="faq-question">
-            ¿Cuándo se envía el recordatorio automático?
-            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Al registrar la cita, tu cliente recibe un SMS inmediato de confirmación. Después, 24 horas antes de la cita recibe un recordatorio con botones para confirmar, cancelar o reagendar. Si no contesta, 2 horas antes recibe una llamada automatizada.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            ¿Qué pasa si el cliente no contesta ningún mensaje?
-            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              La cita queda en amarillo en tu calendario — significa que el recordatorio fue enviado pero el cliente no confirmó. Tú decides si la dejas, la cancelas o marcas inasistencia después.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            ¿Qué número ve mi cliente cuando recibe el SMS?
-            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Un número dedicado del servicio, no tu número personal. En el cuerpo del mensaje siempre aparece el nombre de tu negocio para que tu cliente sepa exactamente de quién es el recordatorio.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            ¿Puedo personalizar el texto de los mensajes?
-            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Los mensajes siguen un template optimizado para tasa de respuesta — incluyen el nombre de tu negocio, la fecha y la hora de la cita. La personalización libre de los textos está en el roadmap.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            ¿Puedo desactivar los mensajes automáticos?
-            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Los mensajes automáticos son el corazón de <strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong> — desactivarlos le quita el sentido a la solución. Si agendas una cita con menos de 30 minutos de anticipación, el flujo automático no aplica para esa cita en particular.
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="soporte-group">
-      <h2 class="soporte-group-title">Clientes</h2>
-      <div class="faq-list">
-
-        <div class="faq-item">
-          <button class="faq-question">
-            ¿Cómo agrego un cliente al directorio?
-            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Solo necesitas agendar una cita con su nombre y celular. <strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong> crea el perfil del cliente automáticamente en el directorio. No hay que agregar clientes manualmente.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            ¿Qué es la función "Invitar"?
-            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Es la herramienta de reactivación de clientes. Te muestra los clientes que llevan más días sin visitarte, y puedes enviarles un mensaje personalizado por SMS con tu nombre, el nombre de tu negocio y un link para que te escriban por WhatsApp. Útil para semanas flojas o temporadas bajas.
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="soporte-group">
-      <h2 class="soporte-group-title">Suscripción y pagos</h2>
-      <div class="faq-list">
-
-        <div class="faq-item">
-          <button class="faq-question">
-            ¿Los SMS y las llamadas automáticas tienen costo adicional?
-            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              No. Los $199 MXN/mes incluyen todos los SMS de confirmación, recordatorio y reactivación, más las llamadas automáticas de seguimiento. Sin cargos por volumen, sin sorpresas. El precio que ves es el precio que pagas.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            ¿Cuánto cuesta <strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong>?
-            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              $199 MXN al mes. Un solo plan, sin límites de citas, clientes ni mensajes. 14 días de prueba gratis sin tarjeta. Sin contratos ni permanencia.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            ¿Cómo cancelo mi suscripción?
-            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Desde Ajustes → Suscripción, con un clic. Sin trámites, sin llamadas, sin letras pequeñas. Si cancelas, tu cuenta sigue activa hasta el final del período que ya pagaste.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            ¿Qué métodos de pago aceptan?
-            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Aceptamos tres formas de pago:<br><br>
-              <strong>Tarjeta recurrente</strong> — tu tarjeta de débito o crédito se cobra automáticamente cada mes. No tienes que hacer nada.<br><br>
-              <strong>OXXO</strong> — el sistema genera una ficha de pago que puedes pagar en cualquier tienda OXXO.<br><br>
-              <strong>Tarjeta pago único</strong> — si solo quieres probar un mes sin comprometerte a una suscripción recurrente, puedes pagar un mes directo con tarjeta.
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section class="section-tight soporte-contact">
-  <div class="container">
-    <div class="soporte-contact-card">
-      <p class="soporte-contact-label">¿No encontraste lo que buscas?</p>
-      <h2 class="soporte-contact-title">Escríbenos y te respondemos.</h2>
-      <div class="soporte-contact-actions">
-        <a href="https://wa.me/521XXXXXXXXXX" class="btn btn-primary-lg" target="_blank" rel="noopener">Escribir por WhatsApp</a>
-        <a href="mailto:soporte@agendallena.mx" class="soporte-email">soporte@agendallena.mx</a>
-      </div>
-    </div>
-  </div>
-</section>
-
+  </section>
 </Base>
 
 <style>
-.soporte-hero {
-  padding-bottom: 0;
-}
-
-.soporte-faq {
-  padding-top: 48px;
-}
-
-.soporte-group {
-  margin-bottom: 48px;
-}
-
-.soporte-group-title {
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--tinta);
-  margin-bottom: 4px;
-}
-
-.soporte-group .faq-list {
-  margin-top: 0;
-}
-
-.soporte-contact {
-  padding-top: 0;
-  padding-bottom: 120px;
-}
-
-.soporte-contact-card {
-  background: var(--gris-claro);
-  border: 0.5px solid var(--gris-borde);
-  border-radius: var(--radius-xl);
-  padding: 64px 48px;
-  text-align: center;
-  max-width: 640px;
-  margin: 0 auto;
-}
-
-.soporte-contact-label {
-  font-size: 13px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--grafito);
-  margin-bottom: 12px;
-}
-
-.soporte-contact-title {
-  font-size: clamp(24px, 4vw, 36px);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  margin-bottom: 32px;
-}
-
-.soporte-contact-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
-
-.soporte-email {
-  font-size: 15px;
-  color: var(--grafito);
-  text-decoration: none;
-  transition: color 0.18s var(--ease-out);
-}
-
-.soporte-email:hover {
-  color: var(--tinta);
-}
-
-@media (max-width: 700px) {
-  .soporte-contact-card {
-    padding: 40px 24px;
+  .soporte-hero {
+    padding-bottom: 0;
   }
-}
+
+  .soporte-faq {
+    padding-top: 48px;
+  }
+
+  .soporte-group {
+    margin-bottom: 48px;
+  }
+
+  .soporte-group-title {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--tinta);
+    margin-bottom: 4px;
+  }
+
+  .soporte-group .faq-list {
+    margin-top: 0;
+  }
+
+  .soporte-contact {
+    padding-top: 0;
+    padding-bottom: 120px;
+  }
+
+  .soporte-contact-card {
+    background: var(--gris-claro);
+    border: 0.5px solid var(--gris-borde);
+    border-radius: var(--radius-xl);
+    padding: 64px 48px;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .soporte-contact-label {
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--grafito);
+    margin-bottom: 12px;
+  }
+
+  .soporte-contact-title {
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 32px;
+  }
+
+  .soporte-contact-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .soporte-email {
+    font-size: 15px;
+    color: var(--grafito);
+    text-decoration: none;
+    transition: color 0.18s var(--ease-out);
+  }
+
+  .soporte-email:hover {
+    color: var(--tinta);
+  }
+
+  @media (max-width: 700px) {
+    .soporte-contact-card {
+      padding: 40px 24px;
+    }
+  }
 </style>

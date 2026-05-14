@@ -12,16 +12,17 @@ import Pricing from '../components/Pricing.astro';
 import FAQ from '../components/FAQ.astro';
 import FinalCTA from '../components/FinalCTA.astro';
 ---
+
 <style is:global>
-:root {
-  --verde: #D97706;
-  --verde-hover: #B45309;
-  --verde-tenue: #FFFBEB;
-  --verde-superficie: #78350F;
-  --verde-acento: #FCD34D;
-  --tinta: #1C1917;
-  --hueso: #FFFDF7;
-}
+  :root {
+    --verde: #d97706;
+    --verde-hover: #b45309;
+    --verde-tenue: #fffbeb;
+    --verde-superficie: #78350f;
+    --verde-acento: #fcd34d;
+    --tinta: #1c1917;
+    --hueso: #fffdf7;
+  }
 </style>
 <Base
   title="agendallena — Tu agenda, confirmada."
@@ -39,15 +40,18 @@ import FinalCTA from '../components/FinalCTA.astro';
     cards={[
       {
         title: 'Confirmar agota',
-        description: 'Mandar mensajes, esperar respuesta, recordar quién contestó y quién no. Todo eso mientras atiendes al cliente de enfrente.',
+        description:
+          'Mandar mensajes, esperar respuesta, recordar quién contestó y quién no. Todo eso mientras atiendes al cliente de enfrente.',
       },
       {
         title: 'La mente no descansa',
-        description: 'Antes de dormir, revisas mentalmente la agenda de mañana. ¿Quién confirmó? ¿Quién no va a llegar? Es una carga que no debería ser tuya.',
+        description:
+          'Antes de dormir, revisas mentalmente la agenda de mañana. ¿Quién confirmó? ¿Quién no va a llegar? Es una carga que no debería ser tuya.',
       },
       {
         title: 'El día que empieza sin certeza',
-        description: 'Llegas a trabajar sin saber si tu agenda es real. Un cliente confirma, otro no. No puedes planear el día hasta que ya empezó.',
+        description:
+          'Llegas a trabajar sin saber si tu agenda es real. Un cliente confirma, otro no. No puedes planear el día hasta que ya empezó.',
       },
     ]}
   />
@@ -59,6 +63,6 @@ import FinalCTA from '../components/FinalCTA.astro';
   <FAQ />
   <FinalCTA
     heading='Tu agenda, bajo control.<br><span class="accent">Sin perseguir a nadie.</span>'
-    body='agendallena trabaja por ti las 24 horas. Confirma, recuerda, hace seguimiento. Tú solo abre el negocio y atiende.'
+    body="agendallena trabaja por ti las 24 horas. Confirma, recuerda, hace seguimiento. Tú solo abre el negocio y atiende."
   />
 </Base>
