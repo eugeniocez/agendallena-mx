@@ -2,8 +2,12 @@
   <div class="container">
     <div style="text-align: center;">
       <div class="section-eyebrow">Precio</div>
-      <h2 class="section-title" style="margin-left: auto; margin-right: auto;">Un plan. Sin sorpresas.</h2>
-      <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">Sin contratos, sin tarifas escondidas, sin asteriscos. Cancelas cuando quieras.</p>
+      <h2 class="section-title" style="margin-left: auto; margin-right: auto;">
+        Un plan. Sin sorpresas.
+      </h2>
+      <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
+        Sin contratos, sin tarifas escondidas, sin asteriscos. Cancelas cuando quieras.
+      </p>
     </div>
 
     <div class="pricing-card">
@@ -15,7 +19,16 @@
       </div>
 
       <div class="savings-badge" id="savings-badge" aria-hidden="true">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l3 3 5-5"/></svg>
+        <svg
+          width="12"
+          height="12"
+          viewBox="0 0 12 12"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"><path d="M2 6l3 3 5-5"></path></svg
+        >
         16% de descuento
       </div>
 
@@ -27,48 +40,85 @@
       <p class="price-sub" id="price-sub">Incluye 14 días de prueba sin tarjeta.</p>
 
       <ul class="pricing-features">
-        <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></div>Citas ilimitadas — sin tope mensual</li>
-        <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></div>Clientes ilimitados en tu directorio</li>
-        <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></div>Mensajes de confirmación, recordatorio y seguimiento automáticos</li>
-        <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></div>Llamadas automatizadas para no-respuestas</li>
-        <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></div>Campañas de reactivación sin límite</li>
-        <li><div class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></div>Soporte humano por WhatsApp</li>
+        <li>
+          <div class="check">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"
+              ><path d="M2 6l3 3 5-6"></path></svg
+            >
+          </div>Citas ilimitadas — sin tope mensual
+        </li>
+        <li>
+          <div class="check">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"
+              ><path d="M2 6l3 3 5-6"></path></svg
+            >
+          </div>Clientes ilimitados en tu directorio
+        </li>
+        <li>
+          <div class="check">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"
+              ><path d="M2 6l3 3 5-6"></path></svg
+            >
+          </div>Mensajes de confirmación, recordatorio y seguimiento automáticos
+        </li>
+        <li>
+          <div class="check">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"
+              ><path d="M2 6l3 3 5-6"></path></svg
+            >
+          </div>Llamadas automatizadas para no-respuestas
+        </li>
+        <li>
+          <div class="check">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"
+              ><path d="M2 6l3 3 5-6"></path></svg
+            >
+          </div>Campañas de reactivación sin límite
+        </li>
+        <li>
+          <div class="check">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"
+              ><path d="M2 6l3 3 5-6"></path></svg
+            >
+          </div>Soporte humano por WhatsApp
+        </li>
       </ul>
 
-      <a href="https://app.agendallena.mx/registro" class="pricing-cta">
-        Empezar prueba gratis      </a>
+      <a href="https://app.agendallena.mx/registro" class="pricing-cta"> Empezar prueba gratis </a>
       <div class="pricing-fineprint">Sin tarjeta de crédito · Cancela en 1 clic</div>
     </div>
   </div>
 </section>
 
 <script is:inline>
-(function () {
-  var opts = document.querySelectorAll('.billing-opt');
-  var amount = document.getElementById('price-amount');
-  var period = document.getElementById('price-period');
-  var sub = document.getElementById('price-sub');
-  var badge = document.getElementById('savings-badge');
+  (function () {
+    const opts = document.querySelectorAll('.billing-opt');
+    const amount = document.getElementById('price-amount');
+    const period = document.getElementById('price-period');
+    const sub = document.getElementById('price-sub');
+    const badge = document.getElementById('savings-badge');
 
-  opts.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      opts.forEach(function (o) { o.classList.remove('active'); });
-      this.classList.add('active');
+    opts.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        opts.forEach(function (o) {
+          o.classList.remove('active');
+        });
+        this.classList.add('active');
 
-      if (this.dataset.plan === 'annual') {
-        amount.textContent = '1,999';
-        period.textContent = 'MXN / año';
-        sub.textContent = 'Equivale a $166/mes. 14 días de prueba sin tarjeta.';
-        badge.classList.add('visible');
-        badge.removeAttribute('aria-hidden');
-      } else {
-        amount.textContent = '199';
-        period.textContent = 'MXN / mes';
-        sub.textContent = 'Incluye 14 días de prueba sin tarjeta.';
-        badge.classList.remove('visible');
-        badge.setAttribute('aria-hidden', 'true');
-      }
+        if (this.dataset.plan === 'annual') {
+          amount.textContent = '1,999';
+          period.textContent = 'MXN / año';
+          sub.textContent = 'Equivale a $166/mes. 14 días de prueba sin tarjeta.';
+          badge.classList.add('visible');
+          badge.removeAttribute('aria-hidden');
+        } else {
+          amount.textContent = '199';
+          period.textContent = 'MXN / mes';
+          sub.textContent = 'Incluye 14 días de prueba sin tarjeta.';
+          badge.classList.remove('visible');
+          badge.setAttribute('aria-hidden', 'true');
+        }
+      });
     });
-  });
-})();
+  })();
 </script>

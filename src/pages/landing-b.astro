@@ -12,15 +12,16 @@ import Pricing from '../components/Pricing.astro';
 import FAQ from '../components/FAQ.astro';
 import FinalCTA from '../components/FinalCTA.astro';
 ---
+
 <style is:global>
-:root {
-  --verde: #1D4ED8;
-  --verde-hover: #1E40AF;
-  --verde-tenue: #EFF6FF;
-  --verde-superficie: #1E3A5F;
-  --verde-acento: #93C5FD;
-  --hueso: #F8FAFF;
-}
+  :root {
+    --verde: #1d4ed8;
+    --verde-hover: #1e40af;
+    --verde-tenue: #eff6ff;
+    --verde-superficie: #1e3a5f;
+    --verde-acento: #93c5fd;
+    --hueso: #f8faff;
+  }
 </style>
 <Base
   title="agendallena — Tu agenda, confirmada."
@@ -38,15 +39,18 @@ import FinalCTA from '../components/FinalCTA.astro';
     cards={[
       {
         title: 'Un hueco en la agenda',
-        description: 'Cada cita que no llega es ingreso que no entra. Y nadie te avisó. Nadie te compensó. Simplemente no llegó.',
+        description:
+          'Cada cita que no llega es ingreso que no entra. Y nadie te avisó. Nadie te compensó. Simplemente no llegó.',
       },
       {
         title: 'WhatsApp no es un sistema',
-        description: 'Mandar confirmaciones por WhatsApp funciona hasta que tienes 20 clientes. Después se pierde, se olvida y la cita tampoco llega.',
+        description:
+          'Mandar confirmaciones por WhatsApp funciona hasta que tienes 20 clientes. Después se pierde, se olvida y la cita tampoco llega.',
       },
       {
         title: 'El mes que no cuadra',
-        description: 'Trabajas el mes entero pero los números no cierran. Las inasistencias son silenciosas pero constantes. Se acumulan.',
+        description:
+          'Trabajas el mes entero pero los números no cierran. Las inasistencias son silenciosas pero constantes. Se acumulan.',
       },
     ]}
   />
@@ -57,7 +61,7 @@ import FinalCTA from '../components/FinalCTA.astro';
   <Pricing />
   <FAQ />
   <FinalCTA
-    heading='Para de perder dinero<br>en citas que no llegan.'
-    body='agendallena confirma cada cita por ti — SMS, WhatsApp y llamada automática. En 5 minutos estás operando. Sin contratos, sin sorpresas.'
+    heading="Para de perder dinero<br>en citas que no llegan."
+    body="agendallena confirma cada cita por ti — SMS, WhatsApp y llamada automática. En 5 minutos estás operando. Sin contratos, sin sorpresas."
   />
 </Base>

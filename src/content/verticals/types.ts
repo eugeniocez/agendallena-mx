@@ -20,7 +20,15 @@ export type CompetitorCell = 'check' | 'x' | 'dash';
 
 export interface VerticalCompetitor {
   name: string;
-  rows: [CompetitorCell, CompetitorCell, CompetitorCell, CompetitorCell, CompetitorCell, CompetitorCell, CompetitorCell];
+  rows: [
+    CompetitorCell,
+    CompetitorCell,
+    CompetitorCell,
+    CompetitorCell,
+    CompetitorCell,
+    CompetitorCell,
+    CompetitorCell,
+  ];
 }
 
 export interface VerticalContent {

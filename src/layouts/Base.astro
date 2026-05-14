@@ -17,282 +17,308 @@ const {
 
 import '../styles/global.css';
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="light">
-<meta name="theme-color" content="#FAFAF7">
-<!-- Google Tag Manager -->
-<script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KW72MQ8X');</script>
-<!-- End Google Tag Manager -->
-<title>{title}</title>
-<meta name="description" content={description}>
-<meta name="author" content="agendallena">
-{noindex && <meta name="robots" content="noindex, nofollow">}
-<link rel="canonical" href={canonicalBase ?? canonical}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#FAFAF7" />
+    <!-- Google Tag Manager -->
+    <script is:inline>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        const f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KW72MQ8X');
+    </script>
+    <!-- End Google Tag Manager -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="agendallena" />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="canonical" href={canonicalBase ?? canonical} />
 
-<meta property="og:type" content="website">
-<meta property="og:url" content={canonical}>
-<meta property="og:title" content={title}>
-<meta property="og:description" content={description}>
-<meta property="og:locale" content="es_MX">
-<meta property="og:site_name" content="agendallena">
-<meta property="og:image" content="https://agendallena.mx/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="agendallena — Tu agenda, confirmada.">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:site_name" content="agendallena" />
+    <meta property="og:image" content="https://agendallena.mx/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="agendallena — Tu agenda, confirmada." />
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content={title}>
-<meta name="twitter:description" content={description}>
-<meta name="twitter:image" content="https://agendallena.mx/og-image.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://agendallena.mx/og-image.png" />
 
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-<script type="application/ld+json" is:inline>
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "agendallena",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web",
-  "description": "La solución que confirma tu agenda por ti. Confirmaciones automáticas por SMS, WhatsApp y llamada para negocios B2B en LATAM.",
-  "offers": {
-    "@type": "Offer",
-    "price": "199",
-    "priceCurrency": "MXN"
-  },
-  "url": "https://agendallena.mx/",
-  "inLanguage": "es-MX"
-}
-</script>
-</head>
-<body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KW72MQ8X"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-<a href="#main" class="skip-link">Saltar al contenido</a>
-
-<header class="header">
-  <div class="header-inner">
-    <a href="/" class="wordmark">agenda<span class="brand-llena">llena</span></a>
-    <nav class="nav">
-      <a href="#producto" class="nav-link">Producto</a>
-      <a href="#como-funciona" class="nav-link">Cómo funciona</a>
-      <a href="#precio" class="nav-link">Precio</a>
-      <a href="#faq" class="nav-link">FAQ</a>
-      <a href="https://app.agendallena.mx/login" class="nav-link" style="color: var(--grafito)">Iniciar sesión</a>
-      <a href="https://app.agendallena.mx/registro" class="btn btn-primary">
-        Empezar gratis
-      </a>
-    </nav>
-  </div>
-</header>
-
-<main id="main">
-  <slot />
-</main>
-
-<footer class="footer">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="wordmark">agenda<span class="brand-llena">llena</span></div>
-        <p>La solución que confirma tu agenda por ti.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Producto</h4>
-        <ul>
-          <li><a href="#producto">Cómo funciona</a></li>
-          <li><a href="#precio">Precio</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#demo">Demo</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Salud</h4>
-        <ul>
-          <li><a href="/dentistas">Dentistas</a></li>
-          <li><a href="/consultorios-medicos">Consultorios médicos</a></li>
-          <li><a href="/psicologos">Psicólogos</a></li>
-          <li><a href="/terapistas">Terapistas</a></li>
-          <li><a href="/quiropracticos">Quiroprácticos</a></li>
-          <li><a href="/nutriologos">Nutriólogos</a></li>
-          <li><a href="/veterinarias">Veterinarias</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Bienestar</h4>
-        <ul>
-          <li><a href="/salones-de-belleza">Salones de belleza</a></li>
-          <li><a href="/barberias">Barberías</a></li>
-          <li><a href="/salones-de-unas">Salones de uñas</a></li>
-          <li><a href="/spas">Spas</a></li>
-          <li><a href="/tatuadores">Tatuadores</a></li>
-          <li><a href="/estudios-de-yoga">Estudios de yoga</a></li>
-          <li><a href="/entrenadores-personales">Entrenadores personales</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Más industrias</h4>
-        <ul>
-          <li><a href="/despachos-legales">Despachos legales</a></li>
-          <li><a href="/talleres-mecanicos">Talleres mecánicos</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Soporte</h4>
-        <ul>
-          <li><a href="/soporte">Centro de ayuda</a></li>
-          <li><a href="#">WhatsApp</a></li>
-          <li><a href="#">Estado del servicio</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 agendallena · Hecho en México</span>
-      <div class="legal-links">
-        <a href="/privacidad">Privacidad</a>
-        <a href="/terminos">Términos</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script is:inline>
-// FAQ accordion
-document.querySelectorAll('.faq-question').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const item = btn.parentElement;
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
-  });
-});
-document.querySelector('.faq-item')?.classList.add('open');
-
-// Number counter on enter
-function tickNumber(el) {
-  const target = parseInt(el.dataset.count, 10);
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    el.textContent = target;
-    return;
-  }
-  const duration = 1200;
-  const start = performance.now();
-  function frame(now) {
-    const t = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - t, 3);
-    el.textContent = Math.round(target * eased);
-    if (t < 1) requestAnimationFrame(frame);
-  }
-  requestAnimationFrame(frame);
-}
-
-if ('IntersectionObserver' in window) {
-  const numIo = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        tickNumber(entry.target);
-        numIo.unobserve(entry.target);
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "agendallena",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "La solución que confirma tu agenda por ti. Confirmaciones automáticas por SMS, WhatsApp y llamada para negocios B2B en LATAM.",
+        "offers": {
+          "@type": "Offer",
+          "price": "199",
+          "priceCurrency": "MXN"
+        },
+        "url": "https://agendallena.mx/",
+        "inLanguage": "es-MX"
       }
-    });
-  }, { threshold: 0.6 });
-  document.querySelectorAll('[data-count]').forEach(el => numIo.observe(el));
-}
+    </script>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KW72MQ8X"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
 
-// Spotlight cursor tracking
-if (!matchMedia('(hover: none)').matches) {
-  document.querySelectorAll('.spotlight').forEach(el => {
-    el.addEventListener('pointermove', e => {
-      const r = el.getBoundingClientRect();
-      el.style.setProperty('--spot-x', `${e.clientX - r.left}px`);
-      el.style.setProperty('--spot-y', `${e.clientY - r.top}px`);
-    });
-  });
-}
+    <a href="#main" class="skip-link">Saltar al contenido</a>
 
-// Reveal on scroll
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if ('IntersectionObserver' in window && !reduceMotion) {
-  const targets = document.querySelectorAll(
-    '.section .section-eyebrow, .section .section-title, .section .section-subtitle, ' +
-    '.section-tight .section-eyebrow, .section-tight .section-title, .section-tight .section-subtitle, ' +
-    '.problem-grid, .stat-banner, .modules-grid, .comparison-wrap, .testimonials-grid, ' +
-    '.pricing-card, .faq-list, .statement-grid, .steps-list'
-  );
-  targets.forEach(el => el.classList.add('reveal'));
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in');
-        io.unobserve(entry.target);
+    <header class="header">
+      <div class="header-inner">
+        <a href="/" class="wordmark">agenda<span class="brand-llena">llena</span></a>
+        <nav class="nav">
+          <a href="#producto" class="nav-link">Producto</a>
+          <a href="#como-funciona" class="nav-link">Cómo funciona</a>
+          <a href="#precio" class="nav-link">Precio</a>
+          <a href="#faq" class="nav-link">FAQ</a>
+          <a href="https://app.agendallena.mx/login" class="nav-link" style="color: var(--grafito)"
+            >Iniciar sesión</a
+          >
+          <a href="https://app.agendallena.mx/registro" class="btn btn-primary"> Empezar gratis </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="wordmark">agenda<span class="brand-llena">llena</span></div>
+            <p>La solución que confirma tu agenda por ti.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Producto</h4>
+            <ul>
+              <li><a href="#producto">Cómo funciona</a></li>
+              <li><a href="#precio">Precio</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#demo">Demo</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Salud</h4>
+            <ul>
+              <li><a href="/dentistas">Dentistas</a></li>
+              <li><a href="/consultorios-medicos">Consultorios médicos</a></li>
+              <li><a href="/psicologos">Psicólogos</a></li>
+              <li><a href="/terapistas">Terapistas</a></li>
+              <li><a href="/quiropracticos">Quiroprácticos</a></li>
+              <li><a href="/nutriologos">Nutriólogos</a></li>
+              <li><a href="/veterinarias">Veterinarias</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Bienestar</h4>
+            <ul>
+              <li><a href="/salones-de-belleza">Salones de belleza</a></li>
+              <li><a href="/barberias">Barberías</a></li>
+              <li><a href="/salones-de-unas">Salones de uñas</a></li>
+              <li><a href="/spas">Spas</a></li>
+              <li><a href="/tatuadores">Tatuadores</a></li>
+              <li><a href="/estudios-de-yoga">Estudios de yoga</a></li>
+              <li><a href="/entrenadores-personales">Entrenadores personales</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Más industrias</h4>
+            <ul>
+              <li><a href="/despachos-legales">Despachos legales</a></li>
+              <li><a href="/talleres-mecanicos">Talleres mecánicos</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Soporte</h4>
+            <ul>
+              <li><a href="/soporte">Centro de ayuda</a></li>
+              <li><a href="#">WhatsApp</a></li>
+              <li><a href="#">Estado del servicio</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 agendallena · Hecho en México</span>
+          <div class="legal-links">
+            <a href="/privacidad">Privacidad</a>
+            <a href="/terminos">Términos</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script is:inline>
+      // FAQ accordion
+      document.querySelectorAll('.faq-question').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const item = btn.parentElement;
+          const isOpen = item.classList.contains('open');
+          document.querySelectorAll('.faq-item').forEach((i) => i.classList.remove('open'));
+          if (!isOpen) item.classList.add('open');
+        });
+      });
+      document.querySelector('.faq-item')?.classList.add('open');
+
+      // Number counter on enter
+      function tickNumber(el) {
+        const target = parseInt(el.dataset.count, 10);
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          el.textContent = target;
+          return;
+        }
+        const duration = 1200;
+        const start = performance.now();
+        function frame(now) {
+          const t = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - t, 3);
+          el.textContent = Math.round(target * eased);
+          if (t < 1) requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
       }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  targets.forEach(el => io.observe(el));
-} else {
-  document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
-}
 
-// Smooth scroll for anchor links (consistent across Safari/Chrome/Firefox)
-const SCROLL_OFFSET = 80;
-const SCROLL_BASE_DURATION = 600;
-const SCROLL_MAX_DURATION = 850;
-function smoothScrollTo(targetY) {
-  const startY = window.pageYOffset;
-  const distance = targetY - startY;
-  if (Math.abs(distance) < 2) return;
-  const distanceRatio = Math.min(Math.abs(distance) / window.innerHeight, 2);
-  const duration = SCROLL_BASE_DURATION + (SCROLL_MAX_DURATION - SCROLL_BASE_DURATION) * (distanceRatio / 2);
-  const startTime = performance.now();
-  function step(now) {
-    const t = Math.min((now - startTime) / duration, 1);
-    const eased = t < 0.5
-      ? 4 * t * t * t
-      : 1 - Math.pow(-2 * t + 2, 3) / 2;
-    window.scrollTo(0, startY + distance * eased);
-    if (t < 1) requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
-    const href = link.getAttribute('href');
-    if (!href || href === '#') return;
-    const target = document.querySelector(href);
-    if (!target) return;
-    e.preventDefault();
-    const targetY = target.getBoundingClientRect().top + window.pageYOffset - SCROLL_OFFSET;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      window.scrollTo(0, targetY);
-    } else {
-      smoothScrollTo(targetY);
-    }
-    history.pushState(null, '', href);
-  });
-});
-</script>
+      if ('IntersectionObserver' in window) {
+        const numIo = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                tickNumber(entry.target);
+                numIo.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.6 }
+        );
+        document.querySelectorAll('[data-count]').forEach((el) => numIo.observe(el));
+      }
 
-<!-- Vercel Analytics -->
-<script is:inline>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
-<script is:inline defer src="/_vercel/insights/script.js"></script>
+      // Spotlight cursor tracking
+      if (!matchMedia('(hover: none)').matches) {
+        document.querySelectorAll('.spotlight').forEach((el) => {
+          el.addEventListener('pointermove', (e) => {
+            const r = el.getBoundingClientRect();
+            el.style.setProperty('--spot-x', `${e.clientX - r.left}px`);
+            el.style.setProperty('--spot-y', `${e.clientY - r.top}px`);
+          });
+        });
+      }
 
-</body>
+      // Reveal on scroll
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if ('IntersectionObserver' in window && !reduceMotion) {
+        const targets = document.querySelectorAll(
+          '.section .section-eyebrow, .section .section-title, .section .section-subtitle, ' +
+            '.section-tight .section-eyebrow, .section-tight .section-title, .section-tight .section-subtitle, ' +
+            '.problem-grid, .stat-banner, .modules-grid, .comparison-wrap, .testimonials-grid, ' +
+            '.pricing-card, .faq-list, .statement-grid, .steps-list'
+        );
+        targets.forEach((el) => el.classList.add('reveal'));
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('in');
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+        );
+        targets.forEach((el) => io.observe(el));
+      } else {
+        document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in'));
+      }
+
+      // Smooth scroll for anchor links (consistent across Safari/Chrome/Firefox)
+      const SCROLL_OFFSET = 80;
+      const SCROLL_BASE_DURATION = 600;
+      const SCROLL_MAX_DURATION = 850;
+      function smoothScrollTo(targetY) {
+        const startY = window.pageYOffset;
+        const distance = targetY - startY;
+        if (Math.abs(distance) < 2) return;
+        const distanceRatio = Math.min(Math.abs(distance) / window.innerHeight, 2);
+        const duration =
+          SCROLL_BASE_DURATION + (SCROLL_MAX_DURATION - SCROLL_BASE_DURATION) * (distanceRatio / 2);
+        const startTime = performance.now();
+        function step(now) {
+          const t = Math.min((now - startTime) / duration, 1);
+          const eased = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+          window.scrollTo(0, startY + distance * eased);
+          if (t < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+      document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener('click', (e) => {
+          const href = link.getAttribute('href');
+          if (!href || href === '#') return;
+          const target = document.querySelector(href);
+          if (!target) return;
+          e.preventDefault();
+          const targetY = target.getBoundingClientRect().top + window.pageYOffset - SCROLL_OFFSET;
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            window.scrollTo(0, targetY);
+          } else {
+            smoothScrollTo(targetY);
+          }
+          history.pushState(null, '', href);
+        });
+      });
+    </script>
+
+    <!-- Vercel Analytics -->
+    <script is:inline>
+      /* eslint-disable prefer-rest-params */
+      window.va =
+        window.va ||
+        function () {
+          (window.vaq = window.vaq || []).push(arguments);
+        };
+      /* eslint-enable prefer-rest-params */
+    </script>
+    <script is:inline defer src="/_vercel/insights/script.js"></script>
+  </body>
 </html>

@@ -3,31 +3,46 @@ interface Props {
   title?: string;
 }
 const { title } = Astro.props;
-const heading = title ?? 'Qué cambia cuando <strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong> empieza a trabajar por ti.';
+const heading =
+  title ??
+  'Qué cambia cuando <strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong> empieza a trabajar por ti.';
 ---
+
 <section class="statement-strip">
   <div class="container">
     <div class="statement-header">
       <div class="section-eyebrow">El impacto</div>
-      <h2 class="section-title" set:html={heading}></h2>
+      <h2 class="section-title" set:html={heading} />
     </div>
 
     <div class="statement-grid">
       <div class="statement-item">
-        <div class="statement-num"><span class="accent">−</span><span class="accent" data-count="70">0</span><span class="unit">%</span></div>
-        <div class="statement-label">menos inasistencias con recordatorio y llamada <strong>automáticos</strong></div>
+        <div class="statement-num">
+          <span class="accent">−</span><span class="accent" data-count="70">0</span><span
+            class="unit">%</span
+          >
+        </div>
+        <div class="statement-label">
+          menos inasistencias con recordatorio y llamada <strong>automáticos</strong>
+        </div>
       </div>
       <div class="statement-item">
         <div class="statement-num">3<span class="unit">canales</span></div>
-        <div class="statement-label">mensaje de confirmación, recordatorio y llamada — <strong>todo incluido</strong></div>
+        <div class="statement-label">
+          mensaje de confirmación, recordatorio y llamada — <strong>todo incluido</strong>
+        </div>
       </div>
       <div class="statement-item">
         <div class="statement-num">0<span class="unit">min</span></div>
-        <div class="statement-label">persiguiendo confirmaciones <strong>después de agendar</strong></div>
+        <div class="statement-label">
+          persiguiendo confirmaciones <strong>después de agendar</strong>
+        </div>
       </div>
       <div class="statement-item">
         <div class="statement-num">24<span class="unit">/7</span></div>
-        <div class="statement-label">tu agenda <strong>se confirma sola</strong>, incluso fuera de horario</div>
+        <div class="statement-label">
+          tu agenda <strong>se confirma sola</strong>, incluso fuera de horario
+        </div>
       </div>
     </div>
   </div>

@@ -4,26 +4,31 @@ export const nutriologos: VerticalContent = {
   slug: 'nutriologos',
   meta: {
     title: 'Solución para nutriólogos en México — agenda y confirma consultas | agendallena',
-    description: 'Solución que confirma consultas de nutriólogos en automático por SMS, WhatsApp y llamada. Menos seguimientos interrumpidos. $199 MXN/mes. Prueba gratis.',
+    description:
+      'Solución que confirma consultas de nutriólogos en automático por SMS, WhatsApp y llamada. Menos seguimientos interrumpidos. $199 MXN/mes. Prueba gratis.',
   },
   hero: {
     eyebrow: 'Para nutriólogos',
     h1: 'Solución de consultas para nutriólogos en México',
-    subtitle: 'La solución que confirma las consultas de tus pacientes por ti. Sin perseguirlos por WhatsApp, sin seguimientos interrumpidos.',
+    subtitle:
+      'La solución que confirma las consultas de tus pacientes por ti. Sin perseguirlos por WhatsApp, sin seguimientos interrumpidos.',
   },
   problema: {
     cards: [
       {
         title: 'El paciente no llegó a la consulta',
-        description: 'Revisaste su historial, preparaste el seguimiento, reservaste el tiempo. A la hora indicada, no apareció. La consulta, el avance y el ingreso se fueron.',
+        description:
+          'Revisaste su historial, preparaste el seguimiento, reservaste el tiempo. A la hora indicada, no apareció. La consulta, el avance y el ingreso se fueron.',
       },
       {
         title: 'El seguimiento mensual se rompe',
-        description: 'Un plan de alimentación funciona con constancia. Cuando el paciente falta sin avisar, pierde su seguimiento — y tú pierdes el tiempo.',
+        description:
+          'Un plan de alimentación funciona con constancia. Cuando el paciente falta sin avisar, pierde su seguimiento — y tú pierdes el tiempo.',
       },
       {
         title: 'El recordatorio no basta',
-        description: 'Le mandaste WhatsApp el día antes. Vio el mensaje. No contestó. Y al día siguiente ya era tarde para reagendar o llenar el espacio.',
+        description:
+          'Le mandaste WhatsApp el día antes. Vio el mensaje. No contestó. Y al día siguiente ya era tarde para reagendar o llenar el espacio.',
       },
     ],
   },
@@ -31,21 +36,24 @@ export const nutriologos: VerticalContent = {
     heading: 'Nutriólogos que dejaron de perder consultas de seguimiento.',
     items: [
       {
-        quote: 'Mis pacientes de seguimiento mensual antes faltaban sin avisar. Ahora confirman solos y el plan no se interrumpe.',
+        quote:
+          'Mis pacientes de seguimiento mensual antes faltaban sin avisar. Ahora confirman solos y el plan no se interrumpe.',
         name: 'Nut. Carmen Salazar',
         role: 'Consultoría nutricional, CDMX',
         initials: 'CS',
         avatarStyle: 'green',
       },
       {
-        quote: 'Lo que más me gustó es la llamada automática si el paciente no responde el SMS. Antes esa llamada la tenía que hacer yo entre consultas.',
+        quote:
+          'Lo que más me gustó es la llamada automática si el paciente no responde el SMS. Antes esa llamada la tenía que hacer yo entre consultas.',
         name: 'Nut. Jorge Medina',
         role: 'Nutrición, Monterrey',
         initials: 'JM',
         avatarStyle: 'dark',
       },
       {
-        quote: 'Mis pacientes llegan más motivados cuando reciben el recordatorio. Se preparan para la consulta y el tiempo se aprovecha mejor.',
+        quote:
+          'Mis pacientes llegan más motivados cuando reciben el recordatorio. Se preparan para la consulta y el tiempo se aprovecha mejor.',
         name: 'Nut. Lucía Peña',
         role: 'Consultorio, Guadalajara',
         initials: 'LP',
@@ -59,17 +67,20 @@ export const nutriologos: VerticalContent = {
   },
   smsContext: 'con tu nutriólogo',
   statementStrip: {
-    title: 'Qué cambia en tu <strong class="brand-mention"><span class="dot">consultorio</span></strong> cuando <strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong> trabaja por ti.',
+    title:
+      'Qué cambia en tu <strong class="brand-mention"><span class="dot">consultorio</span></strong> cuando <strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong> trabaja por ti.',
   },
   faq: {
     extraItems: [
       {
         question: '¿Funciona para consultas de seguimiento mensual?',
-        answer: 'Sí. Cada consulta agendada, sin importar la frecuencia, recibe su recordatorio automático 24 horas antes. <strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong> mantiene el seguimiento con tus pacientes sin que tengas que recordarlo manualmente.',
+        answer:
+          'Sí. Cada consulta agendada, sin importar la frecuencia, recibe su recordatorio automático 24 horas antes. <strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong> mantiene el seguimiento con tus pacientes sin que tengas que recordarlo manualmente.',
       },
       {
         question: '¿Mis pacientes pueden reagendar sin tener que llamarme?',
-        answer: 'Sí. Si un paciente responde que quiere reagendar, recibe un link directo a tu WhatsApp con un mensaje prellenado. Tú coordinas el nuevo horario sin tener que buscar el historial de la conversación.',
+        answer:
+          'Sí. Si un paciente responde que quiere reagendar, recibe un link directo a tu WhatsApp con un mensaje prellenado. Tú coordinas el nuevo horario sin tener que buscar el historial de la conversación.',
       },
     ],
   },

@@ -4,26 +4,31 @@ export const barberias: VerticalContent = {
   slug: 'barberias',
   meta: {
     title: 'Solución para barberías — confirma turnos en automático | agendallena',
-    description: 'Solución que confirma turnos de barberías en automático por SMS, WhatsApp y llamada. Sin huecos sin aviso, sin esperar a alguien que no llega. $199 MXN/mes.',
+    description:
+      'Solución que confirma turnos de barberías en automático por SMS, WhatsApp y llamada. Sin huecos sin aviso, sin esperar a alguien que no llega. $199 MXN/mes.',
   },
   hero: {
     eyebrow: 'Para barberías',
     h1: 'Solución para barberías en México',
-    subtitle: 'La solución que confirma los turnos de tu barbería por ti. Sin huecos sin aviso, sin esperar a alguien que no va a llegar.',
+    subtitle:
+      'La solución que confirma los turnos de tu barbería por ti. Sin huecos sin aviso, sin esperar a alguien que no va a llegar.',
   },
   problema: {
     cards: [
       {
         title: 'El turno fantasma',
-        description: 'Te reservan a las 5 y a las 4:45 todavía no hay señal. Con confirmación automática, lo sabrías desde el día anterior.',
+        description:
+          'Te reservan a las 5 y a las 4:45 todavía no hay señal. Con confirmación automática, lo sabrías desde el día anterior.',
       },
       {
         title: 'El WhatsApp de la barbería',
-        description: 'Manejas reservas, fotos de corte, preguntas de precio y más en el mismo chat. Las confirmaciones se pierden entre todo eso.',
+        description:
+          'Manejas reservas, fotos de corte, preguntas de precio y más en el mismo chat. Las confirmaciones se pierden entre todo eso.',
       },
       {
         title: 'La semana que no cuadra',
-        description: 'Tienes 3 barberos y 8 turnos por día. Nunca sabes con certeza cuántos van a llegar. Esa incertidumbre tiene un costo.',
+        description:
+          'Tienes 3 barberos y 8 turnos por día. Nunca sabes con certeza cuántos van a llegar. Esa incertidumbre tiene un costo.',
       },
     ],
   },
@@ -31,21 +36,24 @@ export const barberias: VerticalContent = {
     heading: 'Barberías que controlaron su agenda.',
     items: [
       {
-        quote: 'En la barbería el ritmo es rápido. Con agendallena los clientes confirman solos y yo sé exactamente cuándo van a llegar.',
+        quote:
+          'En la barbería el ritmo es rápido. Con agendallena los clientes confirman solos y yo sé exactamente cuándo van a llegar.',
         name: 'Carlos Mendez',
         role: 'Barbería, Monterrey',
         initials: 'CM',
         avatarStyle: 'green',
       },
       {
-        quote: 'Antes el WhatsApp era un caos. Ahora las confirmaciones llegan solas y el chat es para lo que debe ser.',
+        quote:
+          'Antes el WhatsApp era un caos. Ahora las confirmaciones llegan solas y el chat es para lo que debe ser.',
         name: 'Rodrigo Vidal',
         role: 'Barbería & lounge, CDMX',
         initials: 'RV',
         avatarStyle: 'dark',
       },
       {
-        quote: 'El primer mes recuperamos los turnos perdidos que antes se iban sin aviso. Eso solo pagó el año entero.',
+        quote:
+          'El primer mes recuperamos los turnos perdidos que antes se iban sin aviso. Eso solo pagó el año entero.',
         name: 'Fernando Ríos',
         role: 'Barbería, Guadalajara',
         initials: 'FR',
@@ -59,17 +67,20 @@ export const barberias: VerticalContent = {
   },
   smsContext: 'en BarberKing',
   statementStrip: {
-    title: 'Qué cambia en tu <strong class="brand-mention"><span class="dot">barbería</span></strong> cuando <strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong> trabaja por ti.',
+    title:
+      'Qué cambia en tu <strong class="brand-mention"><span class="dot">barbería</span></strong> cuando <strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong> trabaja por ti.',
   },
   faq: {
     extraItems: [
       {
         question: '¿Funciona si mis clientes agendan solo por WhatsApp?',
-        answer: 'Exactamente para eso está pensado. Sigues recibiendo los turnos como siempre — por WhatsApp, en persona, por mensaje — y los capturas en <strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong> en segundos. De ahí en adelante, la confirmación es automática. No necesitas cambiar cómo tus clientes agendan.',
+        answer:
+          'Exactamente para eso está pensado. Sigues recibiendo los turnos como siempre — por WhatsApp, en persona, por mensaje — y los capturas en <strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong> en segundos. De ahí en adelante, la confirmación es automática. No necesitas cambiar cómo tus clientes agendan.',
       },
       {
         question: '¿Se puede usar con varios barberos?',
-        answer: 'Sí. Puedes agendar turnos para cada barbero por separado. El cliente recibe el recordatorio con su hora específica y el nombre del local. Desde la app ves el día completo de todos los barberos en una sola vista.',
+        answer:
+          'Sí. Puedes agendar turnos para cada barbero por separado. El cliente recibe el recordatorio con su hora específica y el nombre del local. Desde la app ves el día completo de todos los barberos en una sola vista.',
       },
     ],
   },

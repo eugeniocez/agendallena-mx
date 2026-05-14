@@ -1,9 +1,18 @@
 {
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "build:brand-pdf": "node scripts/build-brand-pdf.mjs"
+    "build:brand-pdf": "node scripts/build-brand-pdf.mjs",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "playwright test",
+    "prepare": "husky"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",
@@ -12,7 +21,21 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
+    "eslint": "^10.3.0",
+    "eslint-plugin-astro": "^1.7.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.4",
     "playwright": "^1.59.1",
-    "typescript": "^5.9.3"
+    "prettier": "^3.8.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.59.3"
+  },
+  "lint-staged": {
+    "*.{astro,ts,tsx,js,mjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,json,md}": "prettier --write"
   }
 }

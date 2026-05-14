@@ -10,141 +10,230 @@ const { extraItems = [] } = Astro.props;
 
 const baseItems = [
   {
-    question: "¿Hay contrato o permanencia?",
-    answer: "No. Es mes a mes. Si decides que no te sirve, cancelas en un clic desde la app y dejas de pagar al siguiente ciclo. Sin llamadas a \"retención\", sin trámites."
+    question: '¿Hay contrato o permanencia?',
+    answer:
+      'No. Es mes a mes. Si decides que no te sirve, cancelas en un clic desde la app y dejas de pagar al siguiente ciclo. Sin llamadas a "retención", sin trámites.',
   },
   {
-    question: "¿Los SMS y las llamadas automáticas tienen costo adicional?",
-    answer: "No. Los $199 MXN/mes incluyen todos los SMS de confirmación, recordatorio y reactivación, más las llamadas automáticas de seguimiento. Sin cargos por volumen, sin sorpresas. El precio que ves es el precio que pagas."
+    question: '¿Los SMS y las llamadas automáticas tienen costo adicional?',
+    answer:
+      'No. Los $199 MXN/mes incluyen todos los SMS de confirmación, recordatorio y reactivación, más las llamadas automáticas de seguimiento. Sin cargos por volumen, sin sorpresas. El precio que ves es el precio que pagas.',
   },
   {
-    question: "¿Qué métodos de pago aceptan?",
-    answer: "Tres opciones: tarjeta recurrente (cobro automático cada mes), OXXO con ficha generada por el sistema, o tarjeta pago único si solo quieres probar un mes sin suscripción automática."
+    question: '¿Qué métodos de pago aceptan?',
+    answer:
+      'Tres opciones: tarjeta recurrente (cobro automático cada mes), OXXO con ficha generada por el sistema, o tarjeta pago único si solo quieres probar un mes sin suscripción automática.',
   },
   {
-    question: "¿Qué número ve mi cliente cuando recibe el SMS?",
-    answer: "Un número dedicado del servicio, no tu número personal. En el cuerpo del mensaje siempre aparece el nombre de tu negocio para que tu cliente sepa exactamente de quién es el recordatorio."
+    question: '¿Qué número ve mi cliente cuando recibe el SMS?',
+    answer:
+      'Un número dedicado del servicio, no tu número personal. En el cuerpo del mensaje siempre aparece el nombre de tu negocio para que tu cliente sepa exactamente de quién es el recordatorio.',
   },
   {
-    question: "¿Puedo personalizar el texto de los mensajes?",
-    answer: "Los mensajes siguen un template optimizado para tasa de respuesta — incluyen el nombre de tu negocio, la fecha y la hora de la cita. La personalización libre de los textos está en el roadmap."
+    question: '¿Puedo personalizar el texto de los mensajes?',
+    answer:
+      'Los mensajes siguen un template optimizado para tasa de respuesta — incluyen el nombre de tu negocio, la fecha y la hora de la cita. La personalización libre de los textos está en el roadmap.',
   },
   {
-    question: "¿Funciona con más de un empleado o silla?",
-    answer: "Sí. Puedes agendar citas para diferentes personas o sillas desde la misma cuenta. El calendario muestra todas las citas del día sin importar quién las atiende, sin costo adicional."
+    question: '¿Funciona con más de un empleado o silla?',
+    answer:
+      'Sí. Puedes agendar citas para diferentes personas o sillas desde la misma cuenta. El calendario muestra todas las citas del día sin importar quién las atiende, sin costo adicional.',
   },
   {
-    question: "¿Qué pasa con mis datos si dejo de usar el servicio?",
-    answer: "Puedes exportar tu directorio de clientes en formato CSV en cualquier momento, incluso después de cancelar. Tu información es tuya."
+    question: '¿Qué pasa con mis datos si dejo de usar el servicio?',
+    answer:
+      'Puedes exportar tu directorio de clientes en formato CSV en cualquier momento, incluso después de cancelar. Tu información es tuya.',
   },
   {
-    question: "¿Funciona con WhatsApp Business?",
-    answer: "Sí. Los mensajes que enviamos son SMS y los links de respuesta abren WhatsApp directamente — funciona perfecto si usas WhatsApp Business o el regular. No requiere ninguna integración técnica de tu parte."
+    question: '¿Funciona con WhatsApp Business?',
+    answer:
+      'Sí. Los mensajes que enviamos son SMS y los links de respuesta abren WhatsApp directamente — funciona perfecto si usas WhatsApp Business o el regular. No requiere ninguna integración técnica de tu parte.',
   },
   {
-    question: "¿Cuántos clientes puedo tener?",
-    answer: "Sin límite. Puedes registrar 50 clientes o 5,000 — el precio es el mismo. La única condición es que el uso sea para tu negocio (sin spam masivo)."
+    question: '¿Cuántos clientes puedo tener?',
+    answer:
+      'Sin límite. Puedes registrar 50 clientes o 5,000 — el precio es el mismo. La única condición es que el uso sea para tu negocio (sin spam masivo).',
   },
   {
-    question: "¿Necesito instalar algo en mi teléfono?",
-    answer: "No. agendallena funciona desde el navegador, pero puedes agregarlo a tu pantalla de inicio para que se sienta como una app nativa. Funciona en iPhone, Android, computadora — donde sea."
+    question: '¿Necesito instalar algo en mi teléfono?',
+    answer:
+      'No. agendallena funciona desde el navegador, pero puedes agregarlo a tu pantalla de inicio para que se sienta como una app nativa. Funciona en iPhone, Android, computadora — donde sea.',
   },
   {
-    question: "¿Y si mis clientes no responden los mensajes?",
-    answer: "Por eso existe la llamada automatizada: 2 horas antes de la cita, si el cliente sigue sin confirmar, recibe una llamada pidiendo confirmación. Combinando los tres canales (texto, WhatsApp, llamada), las tasas de respuesta superan el 90%."
+    question: '¿Y si mis clientes no responden los mensajes?',
+    answer:
+      'Por eso existe la llamada automatizada: 2 horas antes de la cita, si el cliente sigue sin confirmar, recibe una llamada pidiendo confirmación. Combinando los tres canales (texto, WhatsApp, llamada), las tasas de respuesta superan el 90%.',
   },
   {
-    question: "¿Hay soporte humano si me atoro?",
-    answer: "Sí. Soporte directo por WhatsApp, contestado por personas reales. Sin chatbots que te dan vueltas."
-  }
+    question: '¿Hay soporte humano si me atoro?',
+    answer:
+      'Sí. Soporte directo por WhatsApp, contestado por personas reales. Sin chatbots que te dan vueltas.',
+  },
 ];
 
 const allItems = [...baseItems, ...extraItems];
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": allItems.map(item => ({
-    "@type": "Question",
-    "name": item.question,
-    "acceptedAnswer": { "@type": "Answer", "text": item.answer.replace(/<[^>]+>/g, '') }
-  }))
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: allItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer.replace(/<[^>]+>/g, '') },
+  })),
 };
 ---
-<script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)}></script>
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
 <section class="section" id="faq">
   <div class="container">
     <div style="text-align: center;">
       <div class="section-eyebrow">Preguntas frecuentes</div>
-      <h2 class="section-title" style="margin-left: auto; margin-right: auto;">Lo que probablemente te estás preguntando.</h2>
+      <h2 class="section-title" style="margin-left: auto; margin-right: auto;">
+        Lo que probablemente te estás preguntando.
+      </h2>
     </div>
 
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-question">
           ¿Hay contrato o permanencia?
-          <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2v8M2 6h8"/></svg></span>
+          <span class="faq-icon"
+            ><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"
+              ><path d="M6 2v8M2 6h8"></path></svg
+            ></span
+          >
         </button>
-        <div class="faq-answer"><div class="faq-answer-inner">No. Es mes a mes. Si decides que no te sirve, cancelas en un clic desde la app y dejas de pagar al siguiente ciclo. Sin llamadas a "retención", sin trámites.</div></div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            No. Es mes a mes. Si decides que no te sirve, cancelas en un clic desde la app y dejas
+            de pagar al siguiente ciclo. Sin llamadas a "retención", sin trámites.
+          </div>
+        </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question">
           ¿Qué pasa con mis datos si dejo de usar el servicio?
-          <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2v8M2 6h8"/></svg></span>
+          <span class="faq-icon"
+            ><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"
+              ><path d="M6 2v8M2 6h8"></path></svg
+            ></span
+          >
         </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Puedes exportar tu directorio de clientes en formato CSV en cualquier momento, incluso después de cancelar. Tu información es tuya.</div></div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Puedes exportar tu directorio de clientes en formato CSV en cualquier momento, incluso
+            después de cancelar. Tu información es tuya.
+          </div>
+        </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question">
           ¿Funciona con WhatsApp Business?
-          <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2v8M2 6h8"/></svg></span>
+          <span class="faq-icon"
+            ><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"
+              ><path d="M6 2v8M2 6h8"></path></svg
+            ></span
+          >
         </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Sí. Los mensajes que enviamos son SMS y los links de respuesta abren WhatsApp directamente — funciona perfecto si usas WhatsApp Business o el regular. No requiere ninguna integración técnica de tu parte.</div></div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Sí. Los mensajes que enviamos son SMS y los links de respuesta abren WhatsApp
+            directamente — funciona perfecto si usas WhatsApp Business o el regular. No requiere
+            ninguna integración técnica de tu parte.
+          </div>
+        </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question">
           ¿Cuántos clientes puedo tener?
-          <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2v8M2 6h8"/></svg></span>
+          <span class="faq-icon"
+            ><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"
+              ><path d="M6 2v8M2 6h8"></path></svg
+            ></span
+          >
         </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Sin límite. Puedes registrar 50 clientes o 5,000 — el precio es el mismo. La única condición es que el uso sea para tu negocio (sin spam masivo).</div></div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Sin límite. Puedes registrar 50 clientes o 5,000 — el precio es el mismo. La única
+            condición es que el uso sea para tu negocio (sin spam masivo).
+          </div>
+        </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question">
           ¿Necesito instalar algo en mi teléfono?
-          <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2v8M2 6h8"/></svg></span>
+          <span class="faq-icon"
+            ><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"
+              ><path d="M6 2v8M2 6h8"></path></svg
+            ></span
+          >
         </button>
-        <div class="faq-answer"><div class="faq-answer-inner">No. <strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong> funciona desde el navegador, pero puedes agregarlo a tu pantalla de inicio para que se sienta como una app nativa. Funciona en iPhone, Android, computadora — donde sea.</div></div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            No. <strong class="brand-mention">agenda<span class="brand-llena">llena</span></strong> funciona
+            desde el navegador, pero puedes agregarlo a tu pantalla de inicio para que se sienta como
+            una app nativa. Funciona en iPhone, Android, computadora — donde sea.
+          </div>
+        </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question">
           ¿Y si mis clientes no responden los mensajes?
-          <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2v8M2 6h8"/></svg></span>
+          <span class="faq-icon"
+            ><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"
+              ><path d="M6 2v8M2 6h8"></path></svg
+            ></span
+          >
         </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Por eso existe la llamada automatizada: 2 horas antes de la cita, si el cliente sigue sin confirmar, recibe una llamada pidiendo confirmación. Combinando los tres canales (texto, WhatsApp, llamada), las tasas de respuesta superan el 90%.</div></div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Por eso existe la llamada automatizada: 2 horas antes de la cita, si el cliente sigue
+            sin confirmar, recibe una llamada pidiendo confirmación. Combinando los tres canales
+            (texto, WhatsApp, llamada), las tasas de respuesta superan el 90%.
+          </div>
+        </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question">
           ¿Hay soporte humano si me atoro?
-          <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2v8M2 6h8"/></svg></span>
+          <span class="faq-icon"
+            ><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"
+              ><path d="M6 2v8M2 6h8"></path></svg
+            ></span
+          >
         </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Sí. Soporte directo por WhatsApp, contestado por personas reales. Sin chatbots que te dan vueltas.</div></div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Sí. Soporte directo por WhatsApp, contestado por personas reales. Sin chatbots que te
+            dan vueltas.
+          </div>
+        </div>
       </div>
 
-      {extraItems.map(item => (
-        <div class="faq-item">
-          <button class="faq-question">
-            {item.question}
-            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2v8M2 6h8"/></svg></span>
-          </button>
-          <div class="faq-answer"><div class="faq-answer-inner" set:html={item.answer}></div></div>
-        </div>
-      ))}
+      {
+        extraItems.map((item) => (
+          <div class="faq-item">
+            <button class="faq-question">
+              {item.question}
+              <span class="faq-icon">
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6 2v8M2 6h8" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner" set:html={item.answer} />
+            </div>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>

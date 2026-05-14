@@ -28,49 +28,39 @@ const canonical = `https://agendallena.mx/${content.slug}`;
 const audienceLabel = content.hero.eyebrow.replace(/^Para\s+/i, '').toLowerCase();
 
 const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": `${content.serviceSchema.serviceType} para ${audienceLabel}`,
-  "provider": {
-    "@type": "Organization",
-    "name": "agendallena",
-    "url": "https://agendallena.mx"
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `${content.serviceSchema.serviceType} para ${audienceLabel}`,
+  provider: {
+    '@type': 'Organization',
+    name: 'agendallena',
+    url: 'https://agendallena.mx',
   },
-  "areaServed": { "@type": "Country", "name": "México" },
-  "serviceType": content.serviceSchema.serviceType,
-  "audience": {
-    "@type": "BusinessAudience",
-    "audienceType": content.serviceSchema.audience
+  areaServed: { '@type': 'Country', name: 'México' },
+  serviceType: content.serviceSchema.serviceType,
+  audience: {
+    '@type': 'BusinessAudience',
+    audienceType: content.serviceSchema.audience,
   },
-  "offers": {
-    "@type": "Offer",
-    "price": "199",
-    "priceCurrency": "MXN",
-    "url": canonical
-  }
+  offers: {
+    '@type': 'Offer',
+    price: '199',
+    priceCurrency: 'MXN',
+    url: canonical,
+  },
 };
 ---
-<Base
-  title={content.meta.title}
-  description={content.meta.description}
-  canonical={canonical}
->
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)}></script>
-  <Hero
-    eyebrow={content.hero.eyebrow}
-    h1={content.hero.h1}
-    subtitle={content.hero.subtitle}
-  />
+
+<Base title={content.meta.title} description={content.meta.description} canonical={canonical}>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(serviceSchema)} />
+  <Hero eyebrow={content.hero.eyebrow} h1={content.hero.h1} subtitle={content.hero.subtitle} />
   <SocialProof />
   <StatementStrip title={content.statementStrip?.title} />
   <Problema cards={content.problema.cards} />
   <HowItWorks smsContext={content.smsContext} />
   <Modules />
   <Comparison competitor={content.comparison?.competitor} />
-  <Testimonials
-    heading={content.testimonials.heading}
-    items={content.testimonials.items}
-  />
+  <Testimonials heading={content.testimonials.heading} items={content.testimonials.items} />
   <Pricing />
   <FAQ extraItems={content.faq?.extraItems} />
   <FinalCTA heading={content.finalCta?.heading} body={content.finalCta?.body} />
