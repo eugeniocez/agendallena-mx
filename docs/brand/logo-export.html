@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>agendallena — logo export</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --tinta: #0A0A0B;
+      --hueso: #FAFAF7;
+      --verde: #0F7B3F;
+      --verde-tenue: #E8F5EE;
+      --grafito: #6B6B6B;
+      --gris-claro: #F1EFE8;
+      --gris-borde: #E8E6DE;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background: var(--gris-claro);
+      color: var(--tinta);
+      min-height: 100vh;
+      padding: 48px 24px 80px;
+    }
+
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    header { margin-bottom: 36px; }
+
+    .wordmark {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      margin-bottom: 4px;
+    }
+
+    .brand-llena { color: var(--verde); }
+    .dim { color: var(--grafito); font-weight: 400; }
+
+    .subtitle {
+      font-size: 13px;
+      color: var(--grafito);
+    }
+
+    .card {
+      background: var(--hueso);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 12px;
+      border: 1px solid var(--gris-borde);
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--grafito);
+      margin-bottom: 20px;
+    }
+
+    .previews {
+      display: flex;
+      align-items: flex-end;
+      gap: 20px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .preview-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .preview-px {
+      font-size: 11px;
+      color: var(--grafito);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .sep {
+      border: none;
+      border-top: 1px solid var(--gris-borde);
+      margin: 20px 0;
+    }
+
+    .dl-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--grafito);
+      margin-bottom: 8px;
+    }
+
+    .dl-label + .dl-label { margin-top: 14px; }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    button {
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--gris-borde);
+      background: white;
+      color: var(--tinta);
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.1s, color 0.1s, border-color 0.1s;
+      font-variant-numeric: tabular-nums;
+    }
+
+    button:hover {
+      background: var(--tinta);
+      color: var(--hueso);
+      border-color: var(--tinta);
+    }
+
+    button.svg-btn {
+      background: var(--verde-tenue);
+      border-color: transparent;
+      color: var(--verde);
+    }
+
+    button.svg-btn:hover {
+      background: var(--verde);
+      color: white;
+    }
+
+    .guide {
+      font-size: 12px;
+      line-height: 1.9;
+      color: var(--grafito);
+    }
+
+    .guide b {
+      font-weight: 600;
+      color: var(--tinta);
+    }
+
+    .guide a {
+      color: var(--verde);
+      text-decoration: none;
+    }
+
+    .guide a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <p class="wordmark">agenda<span class="brand-llena">llena</span> <span class="dim">— logo export</span></p>
+    <p class="subtitle">App icon · favicon · PWA · avatar</p>
+  </header>
+
+  <!-- Estándar: verde bg + a hueso -->
+  <div class="card">
+    <p class="eyebrow">Estándar — fondo verde</p>
+    <div class="previews" id="prev-dark"></div>
+    <hr class="sep">
+    <p class="dl-label">SVG vectorial</p>
+    <div class="btn-row">
+      <button class="svg-btn" onclick="downloadSVG('dark')">Descargar SVG</button>
+    </div>
+    <p class="dl-label" style="margin-top:14px">PNG — elige tamaño</p>
+    <div class="btn-row" id="btns-dark"></div>
+  </div>
+
+  <!-- Inverso: hueso bg + a tinta -->
+  <div class="card">
+    <p class="eyebrow">Inverso — fondo hueso</p>
+    <div class="previews" id="prev-light"></div>
+    <hr class="sep">
+    <p class="dl-label">SVG vectorial</p>
+    <div class="btn-row">
+      <button class="svg-btn" onclick="downloadSVG('light')">Descargar SVG</button>
+    </div>
+    <p class="dl-label" style="margin-top:14px">PNG — elige tamaño</p>
+    <div class="btn-row" id="btns-light"></div>
+  </div>
+
+  <!-- Guía de uso -->
+  <div class="card" style="padding: 24px 32px;">
+    <p class="eyebrow">Guía de uso por tamaño</p>
+    <div class="guide">
+      <p><b>32px PNG / SVG</b> — favicon.png · favicon.svg (Chrome, Firefox, Edge modernos)</p>
+      <p><b>180px PNG</b> — apple-touch-icon · sin transparencia, fondo sólido</p>
+      <p><b>192px PNG</b> — PWA manifest (mínimo requerido por spec)</p>
+      <p><b>512px PNG</b> — PWA manifest (alta resolución, requerido por Lighthouse)</p>
+      <p><b>256–512px PNG</b> — avatar · Slack · Google · LinkedIn</p>
+      <p><b>favicon.ico</b> — convierte el PNG 32px en <a href="https://favicon.io/favicon-converter/" target="_blank">favicon.io</a></p>
+    </div>
+  </div>
+
+</div>
+
+<canvas id="canvas" style="display:none"></canvas>
+
+<script>
+// Configuración visual del ícono
+const CONFIG = {
+  bg:     { dark: '#0F7B3F', light: '#FAFAF7' },
+  letter: { dark: '#FAFAF7', light: '#0A0A0B' },
+  fontRatio: 0.68,
+  rxRatio: 6 / 88,
+};
+
+// SVG solo para descarga vectorial (la fuente queda declarada por nombre)
+function symbolSVG(variant, px) {
+  px = px || 512;
+  const rx = Math.round(px * CONFIG.rxRatio);
+  const fs = Math.round(px * CONFIG.fontRatio);
+  return (
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${px} ${px}" width="${px}" height="${px}">` +
+    `<rect width="${px}" height="${px}" rx="${rx}" fill="${CONFIG.bg[variant]}"/>` +
+    `<text x="${px/2}" y="${px/2}" ` +
+      `font-family="'Plus Jakarta Sans',system-ui,sans-serif" ` +
+      `font-size="${fs}" font-weight="700" ` +
+      `fill="${CONFIG.letter[variant]}" ` +
+      `text-anchor="middle" dominant-baseline="middle">a</text>` +
+    `</svg>`
+  );
+}
+
+// Dibuja el ícono directo en un canvas 2D (garantiza Plus Jakarta Sans cargada en la página)
+function drawToCanvas(ctx, variant, size) {
+  const rx = Math.round(size * CONFIG.rxRatio);
+  const fs = Math.round(size * CONFIG.fontRatio);
+
+  // Fondo redondeado
+  ctx.beginPath();
+  ctx.roundRect(0, 0, size, size, rx);
+  ctx.fillStyle = CONFIG.bg[variant];
+  ctx.fill();
+
+  // Centrado óptico exacto: medir el bounding box real del glifo 'a'
+  // actualBoundingBoxAscent: distancia de la baseline al tope del glifo (positivo = arriba)
+  // actualBoundingBoxDescent: distancia de la baseline al fondo del glifo (positivo = abajo)
+  // Centro visual del glifo = baseline - (ascent - descent) / 2
+  // Queremos centro visual = size/2 → baseline = size/2 + (ascent - descent) / 2
+  ctx.font = `700 ${fs}px 'Plus Jakarta Sans', system-ui, sans-serif`;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'alphabetic';
+  const m = ctx.measureText('a');
+  const y = size / 2 + (m.actualBoundingBoxAscent - m.actualBoundingBoxDescent) / 2;
+
+  ctx.fillStyle = CONFIG.letter[variant];
+  ctx.fillText('a', size / 2, y);
+}
+
+// Previews con canvas — idénticos al PNG exportado
+// Se renderizan después de que la fuente esté disponible
+function renderPreviews() {
+  const sizes = [128, 64, 32, 16];
+  ['dark', 'light'].forEach(v => {
+    const el = document.getElementById('prev-' + v);
+    sizes.forEach(s => {
+      const div = document.createElement('div');
+      div.className = 'preview-item';
+
+      const cv = document.createElement('canvas');
+      cv.width  = s;
+      cv.height = s;
+      cv.style.display = 'block';
+      drawToCanvas(cv.getContext('2d'), v, s);
+
+      const label = document.createElement('span');
+      label.className = 'preview-px';
+      label.textContent = s + 'px';
+
+      div.appendChild(cv);
+      div.appendChild(label);
+      el.appendChild(div);
+    });
+  });
+}
+
+document.fonts.ready.then(renderPreviews);
+
+// Botones PNG
+(function () {
+  const sizes = [
+    [16,'16px'],[32,'32px'],[48,'48px'],[64,'64px'],[128,'128px'],
+    [180,'180px'],[192,'192px'],[256,'256px'],[512,'512px'],[1024,'1024px']
+  ];
+  ['dark', 'light'].forEach(v => {
+    const el = document.getElementById('btns-' + v);
+    sizes.forEach(([s, label]) => {
+      const btn = document.createElement('button');
+      btn.textContent = label;
+      btn.onclick = () => toPNG(v, s);
+      el.appendChild(btn);
+    });
+  });
+})();
+
+// SVG download (vector, no necesita font embed — queda en la familia declarada)
+function downloadSVG(variant) {
+  const svg = symbolSVG(variant, 512);
+  save(new Blob([svg], { type: 'image/svg+xml;charset=utf-8' }),
+       `agendallena-icon-${variant}.svg`);
+}
+
+// PNG via Canvas 2D directo — así usa la fuente cargada en la página, no una copia aislada
+async function toPNG(variant, size) {
+  // Esperar carga completa de la fuente antes de dibujar
+  await document.fonts.load(`700 ${size}px 'Plus Jakarta Sans'`);
+
+  // Supersampling: render a 4× para tamaños pequeños, 2× para el resto
+  const SCALE  = size < 64 ? 4 : 2;
+  const render = size * SCALE;
+
+  const offscreen = document.createElement('canvas');
+  offscreen.width  = render;
+  offscreen.height = render;
+  const ctx = offscreen.getContext('2d');
+  drawToCanvas(ctx, variant, render);
+
+  // Escalar al tamaño final con antialiasing
+  const out = document.createElement('canvas');
+  out.width  = size;
+  out.height = size;
+  const octx = out.getContext('2d');
+  octx.imageSmoothingEnabled = true;
+  octx.imageSmoothingQuality = 'high';
+  octx.drawImage(offscreen, 0, 0, render, render, 0, 0, size, size);
+
+  return new Promise(resolve => {
+    out.toBlob(png => { save(png, `agendallena-icon-${variant}-${size}x${size}.png`); resolve(); }, 'image/png');
+  });
+}
+
+// Trigger descarga
+function save(blob, name) {
+  const url = URL.createObjectURL(blob);
+  const a = Object.assign(document.createElement('a'), { href: url, download: name });
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 600);
+}
+</script>
+
+</body>
+</html>
