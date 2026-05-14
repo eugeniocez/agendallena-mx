@@ -551,7 +551,7 @@ Cada carrusel debe usar un arquetipo diferente al anterior. Los 4 arquetipos com
 
 - **Ancla:** `justify-content: flex-end` · padding `80px 64px 160px`
 - **Elementos:** eyebrow → headline → subtitle (body) — fluyen de abajo hacia arriba
-- **Headline:** `font-size: 64px; font-weight: 700; line-height: 1.1; letter-spacing: -0.04em`
+- **Headline:** `font-size: 96px; font-weight: 700; line-height: 1.05; letter-spacing: -0.04em`
 - **Sin bloque adicional:** el subtitle es el límite inferior antes del footer
 - **Decoración permitida:** corner brackets o inset frame
 - **Mejor para:** hooks de beneficio, temas generales, primera introducción a un tema
@@ -572,8 +572,9 @@ Cada carrusel debe usar un arquetipo diferente al anterior. Los 4 arquetipos com
 - **Ancla:** `justify-content: flex-start` · padding `88px 64px 160px`
 - **Elementos:**
   - eyebrow en la parte superior
-  - Pregunta como headline: `font-size: 64px; font-weight: 700; line-height: 1.1; letter-spacing: -0.04em`
-  - Opcional: 1 línea de teaser (body) después de la pregunta — máx. 10 palabras
+  - Pregunta como headline: `font-size: 100px; font-weight: 700; line-height: 1.05; letter-spacing: -0.04em`
+  - Restricción: la pregunta debe ser ≤ 7 palabras — a 84px las preguntas largas desbordan
+  - Opcional: 1 línea de teaser (body) después de la pregunta — máx. 8 palabras
   - Sin bloque de subtitle
   - El `?` al final ES el elemento visual — nunca omitirlo
 - **Decoración permitida:** corner bracket inferior-derecho
