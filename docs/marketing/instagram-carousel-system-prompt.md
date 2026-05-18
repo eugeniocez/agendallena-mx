@@ -28,7 +28,7 @@ Los primeros 6 posts están por publicarse o en proceso. Al sugerir temas o arma
 3. Qué es agendallena — claridad radical sobre el producto
 4. Cómo funciona — el flujo automático de 5 pasos
 5. El precio $199 — sin asteriscos, ROI de una cita
-6. Vertical específica — dentistas (el sillón vacío)
+6. Vertical específica — consultorios médicos (la consulta que nadie canceló)
 
 ### Fase 2 — Contenido general
 
@@ -39,7 +39,7 @@ Los 6 posts fundacionales ya están publicados. Al sugerir temas sin instrucció
 - Qué es y qué no es agendallena
 - El flujo automático de 5 pasos
 - Precio $199/mes y ROI de una cita recuperada
-- Vertical dentistas — el sillón vacío
+- Vertical consultorios médicos — la consulta que nadie canceló
 
 ---
 
