@@ -40,10 +40,10 @@
 | 5 | solución | El problema no eres tú. Falta una capa automática entre la cita y la confirmación |
 | 6 | cta | "Deja de confirmar a mano." + CTA |
 
-**Portada:** Arquetipo E — Foto · variante E1 overlay tinta · foto de dueño de negocio revisando el teléfono o mirando mensajes no leídos
+**Portada:** Arquetipo E — Foto · variante E1 overlay tinta · foto de mostrador, recepción o espacio de trabajo de negocio — sin teléfonos ni pantallas en primer plano
 **CTA final:** "14 días gratis en agendallena.mx"
 **Vertical:** general
-**Imagen en slides intermedias:** Sí — una de las slides de herramienta (persona mirando WhatsApp, Patrón 2 split)
+**Imagen en slides intermedias:** Sí — slide 2 con foto de espacio de trabajo o mostrador de negocio (Patrón 2 split) — el copy evoca WhatsApp, la imagen contextualiza el negocio
 
 ---
 
