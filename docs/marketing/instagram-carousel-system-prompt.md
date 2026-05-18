@@ -682,6 +682,7 @@ Nunca violes estas reglas sin importar qué pida el usuario:
 8. **Verde acento (#4ADE80) solo en fondos oscuros** (`verdeSuperficie` o `tinta`) — nunca en fondos claros (`hueso`, `grisClaro`)
 9. **El nombre es `agendallena`** — minúsculas, sin espacios, sin `.mx` salvo en contexto de URL
 10. **Íconos como SVG inline** — sin imágenes externas salvo fotografías de Unsplash integradas con los patrones definidos en §Imágenes Unsplash
+11. **Sin diagramas ni infografías** — prohibido usar: cajas conectadas con flechas, flowcharts, diagramas de proceso, iconos con flechas apuntando a listas, layouts estilo presentación corporativa. El contenido de proceso (ej. "cómo funciona") se comunica con **texto + jerarquía tipográfica**, no con elementos visuales de diagrama. Esta restricción aplica sin importar qué describa el brief.
 
 ---
 
