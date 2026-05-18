@@ -40,7 +40,7 @@
 | 5 | solución | El problema no eres tú. Falta una capa automática entre la cita y la confirmación |
 | 6 | cta | "Deja de confirmar a mano." + CTA |
 
-**Portada:** Arquetipo A — Declaración · fondo `hueso` · headline `tinta`
+**Portada:** Arquetipo E — Foto · variante E1 overlay tinta · foto de dueño de negocio revisando el teléfono o mirando mensajes no leídos
 **CTA final:** "14 días gratis en agendallena.mx"
 **Vertical:** general
 **Imagen en slides intermedias:** Sí — una de las slides de herramienta (persona mirando WhatsApp, Patrón 2 split)
@@ -82,7 +82,7 @@
 | 6 | solución | Paso 5: 2h después — mensaje de agradecimiento que reactiva clientes |
 | 7 | cta | "Tu agenda, confirmada." + CTA |
 
-**Portada:** Arquetipo A — Declaración · fondo `tinta` · headline `hueso`
+**Portada:** Arquetipo E — Foto · variante E2 overlay verde · foto de negocio en operación tranquila (estilista, consultorio, barbería — cualquier espacio de trabajo ordenado)
 **CTA final:** "Empieza gratis en agendallena.mx"
 **Vertical:** general
 **Imagen en slides intermedias:** Sí — alternar: slide 3 con foto de cliente recibiendo SMS (Patrón 1), slide 5 sin imagen (texto puro para dar ritmo)
@@ -109,24 +109,24 @@
 
 ---
 
-## Post 6 — Vertical: Dentistas
+## Post 6 — Vertical: Consultorios médicos
 
-**Tema y ángulo:** El mismo dolor pero hablando directamente al nicho dental. El sillón vacío es la imagen más concreta del costo de una inasistencia. Este es el post más compartible entre el vertical porque se reconocen en él.
+**Tema y ángulo:** El mismo dolor pero hablando directamente al nicho de consultorios médicos. La sala de espera vacía y el tiempo del médico desperdiciado son la imagen más concreta del costo de una inasistencia. Este es el post más compartible entre el vertical porque se reconocen en él.
 
 **Slides:** 6
 | # | Tipo | Contenido |
 |---|---|---|
-| 1 | hook | "El sillón vacío que nadie avisó." |
-| 2 | problema | En odontología cada cita tiene costo: el equipo, el tiempo preparado, el asistente listo |
+| 1 | hook | "La consulta que nadie canceló." |
+| 2 | problema | Cada cita tiene costo para el médico: tiempo de preparación, expediente revisado, sala reservada |
 | 3 | problema | El paciente que "sí iba a ir" — por qué pasa y por qué seguirá pasando sin sistema |
-| 4 | solución | Cómo agendallena funciona en un consultorio dental: flujo automático, sin cambiar cómo recibes pacientes |
+| 4 | solución | Cómo agendallena funciona en un consultorio médico: flujo automático, sin cambiar cómo recibes pacientes |
 | 5 | stat | Hasta 30% menos inasistencias desde la primera semana |
-| 6 | cta | "Para consultorios que no pueden darse el lujo de un sillón vacío." + CTA |
+| 6 | cta | "Para consultorios que no pueden darse el lujo de una cita perdida." + CTA |
 
-**Portada:** Arquetipo E — Foto · variante E1 overlay tinta · foto de consultorio dental o dentista con paciente
+**Portada:** Arquetipo E — Foto · variante E1 overlay tinta · foto de consultorio médico o médico con paciente
 **CTA final:** "14 días gratis en agendallena.mx"
-**Vertical:** dentistas / consultorios médicos
-**Imagen en slides intermedias:** Slide 2 o 3 con foto de sillón dental (Patrón 1 full-bleed)
+**Vertical:** consultorios médicos
+**Imagen en slides intermedias:** Slide 2 o 3 con foto de sala de espera o consultorio (Patrón 1 full-bleed)
 
 ---
 
