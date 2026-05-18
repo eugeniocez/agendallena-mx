@@ -235,12 +235,15 @@ Las imágenes de Unsplash están permitidas en slides intermedias y en la portad
 | Slide | ¿Imagen permitida? | Observación |
 |---|---|---|
 | Slide 1 — hook | Sí (solo Arquetipo E) | Overlay obligatorio; solo para carruseles de vertical específica |
-| Tipo 2 — problema | Sí | Para situar al espectador en el contexto del negocio |
-| Tipo 3 — solución | Sí | Como ilustración de contexto, nunca de producto |
-| Tipo 4 — stat | No | El número es el protagonista |
-| Tipo 5 — CTA | No | Fondo sólido de marca obligatorio |
+| Tipo 2 — problema | Sí | Imagen en todas las que apliquen; rotar patrones, no consecutivas |
+| Tipo 3 — solución | Sí | Imagen en todas las que apliquen; rotar patrones, no consecutivas |
+| Tipo 4 — stat | No | El número es el protagonista; fondo sólido obligatorio |
+| Tipo 5 — CTA | No | El botón necesita respirar; fondo sólido de marca obligatorio |
 
-**Límite:** máximo 3 slides con imagen por carrusel. Si la portada usa Arquetipo E, máximo 1 slide intermedia adicional con imagen. No usar imágenes en dos slides consecutivas.
+**Reglas de uso (sin límite numérico):** todas las slides Tipo 2 y Tipo 3 pueden llevar imagen.
+- No usar imágenes en dos slides consecutivas — alternar siempre imagen / texto puro
+- Rotar patrones: no usar el mismo patrón (full-bleed / split / card) en dos slides seguidas con imagen
+- Si la portada usa Arquetipo E, la primera slide de contenido debe ser de texto puro (para que la foto de portada respire antes de la siguiente imagen)
 
 ### Qué fotografiar
 
