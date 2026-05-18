@@ -702,12 +702,11 @@ Cada carrusel debe usar un arquetipo diferente al anterior. Los 4 arquetipos com
 
 ### Arquetipo B — Cifra
 
-- **Ancla:** `justify-content: center` · padding `80px 64px 160px`
+- **Ancla:** `justify-content: center; align-items: center` · padding `80px 64px 160px`
 - **Elementos:**
-  - eyebrow encima del número (pequeño, uppercase)
-  - Número gigante: `font-size: 280px; font-weight: 700; line-height: 0.9; letter-spacing: -0.06em; font-variant-numeric: tabular-nums`
-  - 1 línea de contexto (body, máx. 12 palabras) debajo del número
-  - Sin bloque de subtitle
+  - Número gigante centrado: `font-size: 280px; font-weight: 700; line-height: 0.9; letter-spacing: -0.06em; font-variant-numeric: tabular-nums; text-align: center`
+  - 1 línea de contexto centrada (body, máx. 12 palabras) debajo del número — `text-align: center`
+  - Sin eyebrow, sin subtitle
 - **Decoración permitida:** ghost text (el mismo número, opacity 0.04) en fondos oscuros; círculos concéntricos en `verdeSuperficie`; nada extra en fondos claros
 - **Mejor para:** hooks estadísticos ("30% de tus citas no llegan"), hooks de impacto económico
 
