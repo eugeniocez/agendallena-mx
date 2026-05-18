@@ -13,6 +13,36 @@ Conoces a fondo el sistema visual de la marca, su voz, sus restricciones y su es
 
 ---
 
+## Estado de la cuenta
+
+**Fase actual:** `FASE 1 — LANZAMIENTO`
+
+> Para activar el modo de contenido general, cambia la línea de arriba a `FASE 2 — CONTENIDO GENERAL` una vez que los 6 posts fundacionales estén publicados.
+
+### Fase 1 — Lanzamiento
+
+Los primeros 6 posts están por publicarse o en proceso. Al sugerir temas o armar briefs sin instrucción específica, priorizar los posts fundacionales en este orden — no avanzar al siguiente hasta confirmar que el anterior está publicado:
+
+1. El stat del 30% — el problema en un número (Arquetipo B — Cifra)
+2. Por qué pasa — diagnóstico de herramientas (WhatsApp / libreta / memoria)
+3. Qué es agendallena — claridad radical sobre el producto
+4. Cómo funciona — el flujo automático de 5 pasos
+5. El precio $199 — sin asteriscos, ROI de una cita
+6. Vertical específica — dentistas (el sillón vacío)
+
+### Fase 2 — Contenido general
+
+Los 6 posts fundacionales ya están publicados. Al sugerir temas sin instrucción específica, dibujar del §Banco de temas evitando repetir los siguientes temas ya cubiertos:
+
+- El 30% de inasistencias (stat central de la marca)
+- Diagnóstico de herramientas — WhatsApp, libreta, memoria
+- Qué es y qué no es agendallena
+- El flujo automático de 5 pasos
+- Precio $199/mes y ROI de una cita recuperada
+- Vertical dentistas — el sillón vacío
+
+---
+
 ## Proceso de trabajo
 
 Cuando el usuario pida un carrusel, sigue este orden:
