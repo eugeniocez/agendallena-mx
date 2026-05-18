@@ -228,19 +228,19 @@ Cada carrusel tiene entre 4 y 8 slides. Asigna el tipo correcto a cada posición
 
 ## Imágenes Unsplash
 
-Las imágenes de Unsplash están permitidas en slides intermedias para añadir contexto visual real. No reemplazan el sistema de diseño — se integran dentro de él.
+Las imágenes de Unsplash están permitidas en slides intermedias y en la portada (Arquetipo E). No reemplazan el sistema de diseño — se integran dentro de él.
 
 ### Cuándo usar
 
 | Slide | ¿Imagen permitida? | Observación |
 |---|---|---|
-| Slide 1 — hook | No | El arquetipo de portada tiene su propio lenguaje visual |
+| Slide 1 — hook | Sí (solo Arquetipo E) | Overlay obligatorio; solo para carruseles de vertical específica |
 | Tipo 2 — problema | Sí | Para situar al espectador en el contexto del negocio |
 | Tipo 3 — solución | Sí | Como ilustración de contexto, nunca de producto |
 | Tipo 4 — stat | No | El número es el protagonista |
 | Tipo 5 — CTA | No | Fondo sólido de marca obligatorio |
 
-**Límite:** máximo 2 slides con imagen por carrusel. No usar imágenes en dos slides consecutivas.
+**Límite:** máximo 3 slides con imagen por carrusel. Si la portada usa Arquetipo E, máximo 1 slide intermedia adicional con imagen. No usar imágenes en dos slides consecutivas.
 
 ### Qué fotografiar
 
@@ -734,6 +734,49 @@ Cada carrusel debe usar un arquetipo diferente al anterior. Los 4 arquetipos com
   - Fondos claros: inset frame
 - **Mejor para:** frases de marca, afirmaciones directas, hooks aspiracionales del negocio
 
+### Arquetipo E — Foto
+
+- **Ancla:** `justify-content: flex-end` · padding `80px 64px 160px`
+- **Base visual:** imagen Unsplash full-bleed + overlay de color (ver variantes) — la imagen siempre debe verse; el overlay da legibilidad sin ocultarla
+- **Elementos:** eyebrow → headline → subtitle (body) — igual que Arquetipo A, flujo de abajo hacia arriba
+- **Headline:** `font-size: 96px; font-weight: 700; line-height: 1.05; letter-spacing: -0.04em` — en `hueso` #FAFAF7
+- **Eyebrow:** `verdeAcento` #4ADE80 en ambas variantes
+- **Wordmark y counter:** en `hueso` con `opacity: 0.75`
+- **Sin toques decorativos adicionales** — la foto reemplaza el decorativo; no añadir corner brackets, ghost text ni gradientes encima
+- **URL de imagen:** `https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=1080&q=85`
+- **Restricción de contenido:** solo fotografías de espacios o personas del vertical que trata el carrusel — nunca imágenes genéricas de "negocio" o tecnología
+- **Mejor para:** hooks de vertical específica (dentistas, barberías, spas, talleres), hooks de problema con fuerte contexto visual
+
+#### Variante E1 — Overlay tinta
+Overlay: `rgba(10, 10, 11, 0.68)` — feel cinematográfico, dramático. Usar para hooks de dolor o urgencia.
+
+#### Variante E2 — Overlay verde marca
+Overlay: `rgba(36, 92, 50, 0.72)` (verdeSuperficie) — feel marcario, orgánico; la imagen toma un tono cálido-verde que refuerza la identidad. Usar para hooks de beneficio o vertical amigable (spas, barberías).
+
+**Regla de elección:** alternar entre E1 y E2 entre carruseles — no repetir la misma variante dos carruseles seguidos.
+
+**Límite de uso del arquetipo:** máximo 1 de cada 3 carruseles usa portada fotográfica. No usar en dos carruseles consecutivos.
+
+**CSS base:**
+
+```css
+/* Arquetipo E — imagen full-bleed como fondo del .slide */
+.slide {
+  background-image: url('https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=1080&q=85');
+  background-size: cover;
+  background-position: center;
+}
+.slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* E1: rgba(10, 10, 11, 0.68)  |  E2: rgba(36, 92, 50, 0.72) */
+  background: rgba(10, 10, 11, 0.68);
+  z-index: 0;
+}
+/* Todo el contenido de texto necesita position: relative; z-index: 1 */
+```
+
 ### Compatibilidad fondo × arquetipo
 
 | Arquetipo | tinta | verdeSuperficie | hueso | grisClaro |
@@ -742,8 +785,9 @@ Cada carrusel debe usar un arquetipo diferente al anterior. Los 4 arquetipos com
 | Cifra | ✅ preferido | ✅ preferido | ✅ | ✅ |
 | Tensión | ✅ | — | ✅ preferido | ✅ preferido |
 | Manifiesto | ✅ preferido | ✅ preferido | ✅ | ✅ |
+| Foto | imagen + overlay tinta (E1) | imagen + overlay verde (E2) | — | — |
 
-Las combinaciones `—` son válidas pero tienen menos tensión dramática — evitar si hay alternativa.
+Las combinaciones `—` son válidas pero tienen menos tensión dramática — evitar si hay alternativa. El Arquetipo E no usa fondos de color; el "fondo" es la imagen Unsplash.
 
 ---
 
@@ -789,6 +833,8 @@ La portada de cada carrusel combina un **fondo** y un **arquetipo**. Ambos deben
 | `verdeSuperficie` #245C32 | `hueso` #FAFAF7 | `verdeAcento` #4ADE80 | Marcario, cálido, orgánico |
 | `hueso` #FAFAF7 | `tinta` #0A0A0B | `verde` #0F7B3F | Editorial, limpio, minimalista |
 | `grisClaro` #F1EFE8 | `tinta` #0A0A0B | `verde` #0F7B3F | Earthy, texturizado, suave |
+| Imagen + overlay tinta | `hueso` #FAFAF7 | `verdeAcento` #4ADE80 | Documental, dramático, cinematográfico |
+| Imagen + overlay verde | `hueso` #FAFAF7 | `verdeAcento` #4ADE80 | Contextual, orgánico, marcario |
 
 ### Regla de rotación
 
@@ -801,6 +847,8 @@ Si el usuario no recuerda, elegir según el tema:
 - Hooks de beneficio/solución → `verdeSuperficie` + Declaración
 - Hooks educativos/preguntas → `hueso` o `grisClaro` + Tensión
 - Frases de marca directas → `tinta` + Manifiesto
+- Hooks de vertical específica (urgencia/problema) → imagen + overlay tinta (E1)
+- Hooks de vertical específica (beneficio/ambiente) → imagen + overlay verde (E2)
 
 ### Fondos fijos y variables
 
