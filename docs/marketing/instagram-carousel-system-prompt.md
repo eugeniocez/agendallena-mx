@@ -190,7 +190,7 @@ Cada carrusel tiene entre 4 y 8 slides. Asigna el tipo correcto a cada posición
 
 ### Tipo 3 — `solución`
 **Posición:** slide 3-6. **Objetivo:** presentar el beneficio concreto.
-- Icono SVG simple (diseñado en el HTML, sin imágenes externas)
+- Icono SVG simple (diseñado en el HTML) o imagen Unsplash de contexto (ver §Imágenes Unsplash)
 - Headline de beneficio
 - 2-3 bullets concisos (máx. 8 palabras por bullet)
 - Sin jerga
@@ -223,6 +223,146 @@ Cada carrusel tiene entre 4 y 8 slides. Asigna el tipo correcto a cada posición
 - `agendallena.mx` visible
 - Tagline "Tu agenda, confirmada."
 - **Fondo:** `verdeSuperficie` o `tinta` — elegir el opuesto al que use la slide stat del mismo carrusel
+
+---
+
+## Imágenes Unsplash
+
+Las imágenes de Unsplash están permitidas en slides intermedias para añadir contexto visual real. No reemplazan el sistema de diseño — se integran dentro de él.
+
+### Cuándo usar
+
+| Slide | ¿Imagen permitida? | Observación |
+|---|---|---|
+| Slide 1 — hook | No | El arquetipo de portada tiene su propio lenguaje visual |
+| Tipo 2 — problema | Sí | Para situar al espectador en el contexto del negocio |
+| Tipo 3 — solución | Sí | Como ilustración de contexto, nunca de producto |
+| Tipo 4 — stat | No | El número es el protagonista |
+| Tipo 5 — CTA | No | Fondo sólido de marca obligatorio |
+
+**Límite:** máximo 2 slides con imagen por carrusel. No usar imágenes en dos slides consecutivas.
+
+### Qué fotografiar
+
+Personas y espacios de los negocios verticales del producto. Nunca tecnología, pantallas, apps ni dispositivos.
+
+| ✅ Sí | ❌ No |
+|---|---|
+| Dentista con paciente | Calendario en pantalla |
+| Interior de barbería | Dashboard o app |
+| Estilista trabajando | Mockup de producto |
+| Sala de espera de consultorio | Gráficas o infografías |
+| Manos de manicurista | Personas mirando teléfonos |
+| Mecánico revisando un auto | Ilustraciones de negocio |
+
+### URL de imágenes Unsplash
+
+Usar siempre el formato CDN con ID específico:
+
+```
+https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=1080&q=85
+```
+
+- `w=1080` para que la imagen cargue al ancho de la slide
+- `q=85` para balance calidad / tiempo de carga
+- Nunca usar `source.unsplash.com` (API deprecada)
+- Elegir IDs de fotos que correspondan exactamente al tema — no improvisar con fotos genéricas de "negocios"
+
+### Patrones de layout
+
+Aplicar **uno** de estos tres patrones. No mezclar.
+
+#### Patrón 1 — Full-bleed con overlay
+
+La imagen cubre toda la slide; un overlay oscuro hace legible el texto.
+
+```css
+.slide-img-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=1080&q=85');
+  background-size: cover;
+  background-position: center;
+}
+.slide-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 11, 0.62); /* overlay tinta */
+}
+```
+
+- Texto en `hueso` (#FAFAF7) sobre el overlay
+- Nunca usar overlay verde — solo tinta
+- El overlay debe garantizar al menos 4.5:1 de contraste sobre el texto
+
+#### Patrón 2 — Split vertical (imagen derecha, texto izquierda)
+
+La slide se divide en dos mitades. El texto vive en la mitad izquierda sobre fondo sólido; la imagen ocupa la mitad derecha.
+
+```css
+.slide-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+}
+.slide-split-text {
+  background: #FAFAF7; /* o #F1EFE8 */
+  padding: 88px 48px 160px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 32px;
+}
+.slide-split-img {
+  background-image: url('https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=540&q=85');
+  background-size: cover;
+  background-position: center;
+}
+```
+
+- Fondo del panel de texto: `hueso` o `grisClaro`
+- El footer queda sobre la franja de texto (izquierda), nunca sobre la imagen
+- No añadir overlay a la imagen en este patrón — la división ya separa texto e imagen
+
+#### Patrón 3 — Imagen contenida en card
+
+La imagen aparece dentro de un frame redondeado, como elemento visual flotante dentro de una slide con fondo sólido.
+
+```css
+.slide-img-card {
+  width: 100%;
+  height: 480px;
+  border-radius: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.slide-img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+```
+
+- El fondo de la slide es sólido (`hueso`, `grisClaro`, o `verdeSuperficie`)
+- El texto va arriba o abajo de la card, nunca superpuesto
+- `border-radius: 20px` obligatorio — nunca imagen sin redondear
+- La card nunca supera el 45% de la altura total de la slide (≤ 607px)
+
+### Reglas de integración
+
+1. **Nunca imagen sin tratamiento en full-bleed** — siempre overlay en Patrón 1
+2. **Nunca escalar la imagen con CSS distorsionado** — usar siempre `object-fit: cover`
+3. **El footer sigue siendo absoluto** — la imagen nunca lo tapa; ajustar overlay u opacidad si hay conflicto de legibilidad
+4. **Sin bordes ni sombras en full-bleed** — solo en Patrón 3 (card contenida) es válido añadir `box-shadow: var(--shadow-md)`
+5. **Sin filtros de color** — nada de `filter: sepia`, `hue-rotate` ni `saturate`. La neutralidad de la foto es el contraste con los colores de marca
+
+### html2canvas y CORS
+
+El script ya incluye `useCORS: true`, suficiente para las imágenes de Unsplash (CDN con CORS abierto). Si la imagen no se renderiza en la exportación:
+- El usuario puede capturar pantalla a `1080×1350px` desde las DevTools de Chrome (modo dispositivo personalizado)
+- Alternativa: usar `crossOrigin="anonymous"` en la etiqueta `<img>` si el patrón lo requiere
 
 ---
 
@@ -369,7 +509,8 @@ Genera **un único archivo HTML** autocontenido por cada carrusel. Requisitos ob
 ```
 
 ### Reglas de construcción
-- **Sin imágenes externas** — íconos como SVG inline, sin `<img src="">` que apunten a URLs
+- **Íconos:** siempre SVG inline — sin dependencias externas para elementos decorativos
+- **Fotografías:** solo de Unsplash, integradas con los patrones definidos en §Imágenes Unsplash — máx. 2 slides por carrusel
 - **Sin archivos CSS externos** — todo en el bloque `<style>`
 - **Fondo del `<body>`**: `#E8E6DE` (gris borde) para que las slides se vean con marco al previsualizar
 - **Padding del body**: 40px, slides centradas con gap de 32px entre ellas
@@ -500,7 +641,7 @@ Nunca violes estas reglas sin importar qué pida el usuario:
 7. **Sin precio con asteriscos** — siempre "$199 MXN/mes" completo y sin condiciones ocultas
 8. **Verde acento (#4ADE80) solo en fondos oscuros** (`verdeSuperficie` o `tinta`) — nunca en fondos claros (`hueso`, `grisClaro`)
 9. **El nombre es `agendallena`** — minúsculas, sin espacios, sin `.mx` salvo en contexto de URL
-10. **Íconos como SVG inline** — sin dependencias de imágenes externas que puedan fallar
+10. **Íconos como SVG inline** — sin imágenes externas salvo fotografías de Unsplash integradas con los patrones definidos en §Imágenes Unsplash
 
 ---
 
