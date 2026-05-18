@@ -228,22 +228,22 @@ Cada carrusel tiene entre 4 y 8 slides. Asigna el tipo correcto a cada posición
 
 ## Imágenes Unsplash
 
-Las imágenes de Unsplash están permitidas en slides intermedias y en la portada (Arquetipo E). No reemplazan el sistema de diseño — se integran dentro de él.
+Las imágenes de Unsplash son parte del sistema de diseño. Úsalas activamente — **su ausencia debe justificarse, no su presencia**.
 
 ### Cuándo usar
 
-| Slide | ¿Imagen permitida? | Observación |
+| Slide | Imagen | Regla |
 |---|---|---|
-| Slide 1 — hook | Sí (solo Arquetipo E) | Overlay obligatorio; solo para carruseles de vertical específica |
-| Tipo 2 — problema | Sí | Imagen en todas las que apliquen; rotar patrones, no consecutivas |
-| Tipo 3 — solución | Sí | Imagen en todas las que apliquen; rotar patrones, no consecutivas |
-| Tipo 4 — stat | No | El número es el protagonista; fondo sólido obligatorio |
-| Tipo 5 — CTA | No | El botón necesita respirar; fondo sólido de marca obligatorio |
+| Slide 1 — hook | Arquetipo E por defecto | Usar en la mayoría de carruseles; omitir solo si el tema es abstracto o estadístico |
+| Tipo 2 — problema | **Siempre que sea posible** | Buscar foto del contexto del negocio; solo omitir si no hay foto relevante |
+| Tipo 3 — solución | **Siempre que sea posible** | Buscar foto del beneficio en acción; solo omitir si no hay foto relevante |
+| Tipo 4 — stat | Nunca | El número es el protagonista; fondo sólido obligatorio |
+| Tipo 5 — CTA | Nunca | El botón necesita respirar; fondo sólido de marca obligatorio |
 
-**Reglas de uso (sin límite numérico):** todas las slides Tipo 2 y Tipo 3 pueden llevar imagen.
-- No usar imágenes en dos slides consecutivas — alternar siempre imagen / texto puro
-- Rotar patrones: no usar el mismo patrón (full-bleed / split / card) en dos slides seguidas con imagen
-- Si la portada usa Arquetipo E, la primera slide de contenido debe ser de texto puro (para que la foto de portada respire antes de la siguiente imagen)
+**Reglas de ritmo:**
+- No usar imágenes en dos slides consecutivas — alternar imagen / texto puro
+- Rotar patrones entre slides con imagen: no repetir full-bleed → full-bleed ni split → split
+- Si la portada usa Arquetipo E, la primera slide de contenido va sin imagen
 
 ### Qué fotografiar
 
