@@ -47,12 +47,19 @@ Los 6 posts fundacionales ya están publicados. Al sugerir temas sin instrucció
 
 Cuando el usuario pida un carrusel, sigue este orden:
 
-1. **Brief** (5 líneas en texto plano):
+1. **Brief** — puede venir en dos formatos:
+
+   **Formato estándar** (cuando el usuario describe el tema libremente):
    - Tema y ángulo del carrusel
    - Número de slides y tipo de cada una (hook / problema / solución / stat / cta)
    - Hook de la slide 1 (el headline que detiene el scroll)
    - CTA de la última slide
    - Vertical o audiencia objetivo (si aplica)
+
+   **Formato extendido** (cuando el usuario pega un brief del launch plan con tabla de slides):
+   - La tabla de slides es válida — respetarla íntegramente
+   - Si el brief incluye **"Portada:"** con arquetipo y fondo especificados, usar exactamente esos — no aplicar las reglas de rotación automática ni preguntar por el carrusel anterior
+   - Si el brief incluye **"Imagen en slides intermedias:"**, usar el patrón y descripción indicados
 
 2. Si el usuario confirma el brief (o no hace correcciones), genera el **HTML completo**.
 3. Después del HTML, entrega siempre un **caption sugerido** con este formato:
@@ -293,7 +300,7 @@ Personas y espacios de los negocios verticales del producto. Nunca tecnología, 
 Usar siempre el formato CDN con ID específico:
 
 ```
-https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=1080&q=85
+https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=2160&q=90
 ```
 
 - `w=1080` para que la imagen cargue al ancho de la slide
@@ -313,7 +320,7 @@ La imagen cubre toda la slide; un overlay oscuro hace legible el texto.
 .slide-img-bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=1080&q=85');
+  background-image: url('https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=2160&q=90');
   background-size: cover;
   background-position: center;
 }
@@ -347,7 +354,7 @@ La slide se divide en dos mitades. El texto vive en la mitad izquierda sobre fon
   gap: 32px;
 }
 .slide-split-img {
-  background-image: url('https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=540&q=85');
+  background-image: url('https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=1080&q=90');
   background-size: cover;
   background-position: center;
 }
@@ -775,7 +782,7 @@ Cada carrusel debe usar un arquetipo diferente al anterior. Los 4 arquetipos com
 - **Eyebrow:** `verdeAcento` #4ADE80 en ambas variantes
 - **Wordmark y counter:** en `hueso` con `opacity: 0.75`
 - **Sin toques decorativos adicionales** — la foto reemplaza el decorativo; no añadir corner brackets, ghost text ni gradientes encima
-- **URL de imagen:** `https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=1080&q=85`
+- **URL de imagen:** `https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=2160&q=90`
 - **Restricción de contenido:** solo fotografías de espacios o personas del vertical que trata el carrusel — nunca imágenes genéricas de "negocio" o tecnología
 - **Mejor para:** hooks de vertical específica (dentistas, barberías, spas, talleres), hooks de problema con fuerte contexto visual
 
@@ -794,7 +801,7 @@ Overlay: `rgba(36, 92, 50, 0.72)` (verdeSuperficie) — feel marcario, orgánico
 ```css
 /* Arquetipo E — imagen full-bleed como fondo del .slide */
 .slide {
-  background-image: url('https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=1080&q=85');
+  background-image: url('https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=2160&q=90');
   background-size: cover;
   background-position: center;
 }
