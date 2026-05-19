@@ -228,19 +228,19 @@ Cada carrusel tiene entre 4 y 8 slides. Asigna el tipo correcto a cada posición
 
 ## Imágenes Unsplash
 
-Las imágenes de Unsplash están permitidas en slides intermedias y en la portada (Arquetipo E). No reemplazan el sistema de diseño — se integran dentro de él.
+Las imágenes son parte activa del diseño. **Claude decide cuándo y cómo usarlas — el usuario no necesita especificarlo.** Un carrusel sin imágenes se ve plano y mecánico; la fotografía da contexto, credibilidad y variedad visual al feed.
 
-### Cuándo usar
+### Regla general
 
-| Slide | ¿Imagen permitida? | Observación |
-|---|---|---|
-| Slide 1 — hook | Sí (solo Arquetipo E) | Overlay obligatorio; solo para carruseles de vertical específica |
-| Tipo 2 — problema | Sí | Para situar al espectador en el contexto del negocio |
-| Tipo 3 — solución | Sí | Como ilustración de contexto, nunca de producto |
-| Tipo 4 — stat | No | El número es el protagonista |
-| Tipo 5 — CTA | No | Fondo sólido de marca obligatorio |
+Incluir imagen en toda slide que tenga contexto visual posible. La ausencia de imagen debe justificarse, no su presencia.
 
-**Límite:** máximo 3 slides con imagen por carrusel. Si la portada usa Arquetipo E, máximo 1 slide intermedia adicional con imagen. No usar imágenes en dos slides consecutivas.
+- **Portada (Slide 1):** usar Arquetipo E o variante foto de A/C siempre que el tema tenga referente visual concreto (vertical específica, dolor operativo, beneficio en acción)
+- **Tipo 2 — problema:** imagen por defecto — sitúa al espectador en el negocio
+- **Tipo 3 — solución:** imagen por defecto — muestra el contexto del beneficio
+- **Tipo 4 — stat:** nunca — el número es el protagonista absoluto
+- **Tipo 5 — CTA:** nunca — el botón necesita fondo sólido de marca
+
+**Ritmo:** no usar imágenes en dos slides consecutivas — alternar imagen / texto puro para que cada foto tenga impacto. No repetir el mismo patrón de layout (full-bleed / split / card) en slides seguidas con imagen.
 
 ### Qué fotografiar
 
@@ -694,7 +694,8 @@ Cada carrusel debe usar un arquetipo diferente al anterior. Los 4 arquetipos com
 - **Elementos:** eyebrow → headline → subtitle (body) — fluyen de abajo hacia arriba
 - **Headline:** `font-size: 96px; font-weight: 700; line-height: 1.05; letter-spacing: -0.04em`
 - **Sin bloque adicional:** el subtitle es el límite inferior antes del footer
-- **Decoración permitida:** corner brackets o inset frame
+- **Decoración permitida (sin foto):** corner brackets o inset frame
+- **Variante con foto:** imagen Unsplash full-bleed + overlay `rgba(10,10,11,0.65)` o `rgba(36,92,50,0.70)` — mismo layout, texto en `hueso`, eyebrow en `verdeAcento`, sin decorativos adicionales
 - **Mejor para:** hooks de beneficio, temas generales, primera introducción a un tema
 
 ### Arquetipo B — Cifra
@@ -718,7 +719,8 @@ Cada carrusel debe usar un arquetipo diferente al anterior. Los 4 arquetipos com
   - Opcional: 1 línea de teaser (body) después de la pregunta — máx. 8 palabras
   - Sin bloque de subtitle
   - El `?` al final ES el elemento visual — nunca omitirlo
-- **Decoración permitida:** corner bracket inferior-derecho
+- **Decoración permitida (sin foto):** corner bracket inferior-derecho
+- **Variante con foto:** imagen Unsplash full-bleed + overlay `rgba(10,10,11,0.68)` — la pregunta sobre una escena real del negocio crea tensión dramática; eyebrow en `verdeAcento`, texto en `hueso`, sin decorativos adicionales
 - **Mejor para:** hooks de problema, contenido educativo, provocaciones al lector
 
 ### Arquetipo D — Manifiesto
@@ -755,8 +757,6 @@ Overlay: `rgba(36, 92, 50, 0.72)` (verdeSuperficie) — feel marcario, orgánico
 
 **Regla de elección:** alternar entre E1 y E2 entre carruseles — no repetir la misma variante dos carruseles seguidos.
 
-**Límite de uso del arquetipo:** máximo 1 de cada 3 carruseles usa portada fotográfica. No usar en dos carruseles consecutivos.
-
 **CSS base:**
 
 ```css
@@ -779,15 +779,15 @@ Overlay: `rgba(36, 92, 50, 0.72)` (verdeSuperficie) — feel marcario, orgánico
 
 ### Compatibilidad fondo × arquetipo
 
-| Arquetipo | tinta | verdeSuperficie | hueso | grisClaro |
-|---|---|---|---|---|
-| Declaración | ✅ | ✅ | ✅ | ✅ |
-| Cifra | ✅ preferido | ✅ preferido | ✅ | ✅ |
-| Tensión | ✅ | — | ✅ preferido | ✅ preferido |
+| Arquetipo | tinta | verdeSuperficie | hueso | grisClaro | foto |
+|---|---|---|---|---|---|
+| Declaración | ✅ | ✅ | ✅ | ✅ | ✅ overlay tinta o verde |
+| Cifra | ✅ preferido | ✅ preferido | ✅ | ✅ | — |
+| Tensión | ✅ | — | ✅ preferido | ✅ preferido | ✅ overlay tinta preferido |
 | Manifiesto | ✅ preferido | ✅ preferido | ✅ | ✅ |
-| Foto | imagen + overlay tinta (E1) | imagen + overlay verde (E2) | — | — |
+| Foto | imagen + overlay tinta (E1) | imagen + overlay verde (E2) | — | — | — |
 
-Las combinaciones `—` son válidas pero tienen menos tensión dramática — evitar si hay alternativa. El Arquetipo E no usa fondos de color; el "fondo" es la imagen Unsplash.
+Las combinaciones `—` son válidas pero tienen menos tensión dramática — evitar si hay alternativa. Los arquetipos con variante foto usan imagen Unsplash como fondo en lugar del color de fondo.
 
 ---
 
