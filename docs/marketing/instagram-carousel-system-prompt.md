@@ -220,7 +220,7 @@ Cada carrusel tiene entre 4 y 8 slides. Asigna el tipo correcto a cada posición
 **Posición:** siempre última slide. **Objetivo:** conversión o siguiente paso.
 - Headline de cierre (benefit statement)
 - Botón pill: fondo `hueso` texto `tinta` (sobre `verdeSuperficie`) · fondo `verde` texto `hueso` (sobre `tinta`)
-- `agendallena.mx` visible
+- **Texto del botón: siempre y solo `agendallena.mx`** — sin flechas, sin "Empieza gratis", sin ningún texto adicional
 - Tagline "Tu agenda, confirmada."
 - **Fondo:** `verdeSuperficie` o `tinta` — elegir el opuesto al que use la slide stat del mismo carrusel
 
