@@ -274,6 +274,21 @@ Los negocios basados en citas pierden hasta el **30% de sus citas** por inasiste
 
 ---
 
+## Comandos
+
+```bash
+npm run dev      # Dev server en localhost:4321
+npm run build    # Build de producción
+```
+
+Para probar variantes A/B localmente (consola del browser):
+```js
+localStorage.clear(); location.reload();                        // nueva asignación aleatoria
+localStorage.setItem('ag_ab_hero', 'B'); location.reload();    // forzar variante específica
+```
+
+---
+
 ## 6. Stack y estructura
 
 **Stack:** Astro 6 · CSS3 vanilla en `src/styles/global.css` · Plus Jakarta Sans vía Google Fonts CDN · JavaScript vanilla con `is:inline` · Vercel
