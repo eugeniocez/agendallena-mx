@@ -585,7 +585,8 @@ p {
 [data-hero-variant] { display: none; }
 html[data-ab-hero="A"] [data-hero-variant="A"],
 html[data-ab-hero="B"] [data-hero-variant="B"],
-html[data-ab-hero="C"] [data-hero-variant="C"] { display: contents; }
+html[data-ab-hero="C"] [data-hero-variant="C"],
+html[data-ab-hero="D"] [data-hero-variant="D"] { display: contents; }
 html:not([data-ab-hero]) [data-hero-variant="A"] { display: contents; }
 
 .btn-primary-lg.btn-verde {
