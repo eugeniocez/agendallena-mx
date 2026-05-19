@@ -215,7 +215,7 @@ Tres principios que guían cada decisión de producto, marketing y comunicación
 
 agendallena es un sistema de confirmación automática de citas para negocios B2B que viven de su agenda. No es un calendario más, ni un CRM, ni un bot conversacional: convierte cada cita tentativa en una cita confirmada mediante SMS, WhatsApp y llamadas automatizadas.
 
-**Precio:** $199 MXN/mes · 14 días de prueba gratis sin tarjeta · Sin contratos · Sin límites
+**Precio:** $199 MXN/mes · 15 días de prueba gratis sin tarjeta · Sin contratos · Sin límites
 
 ### 5 módulos
 

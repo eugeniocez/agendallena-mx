@@ -37,7 +37,7 @@
         <span class="price-amount" id="price-amount">199</span>
         <span class="price-period" id="price-period">MXN / mes</span>
       </div>
-      <p class="price-sub" id="price-sub">Incluye 14 días de prueba sin tarjeta.</p>
+      <p class="price-sub" id="price-sub">Incluye 15 días de prueba sin tarjeta.</p>
 
       <ul class="pricing-features">
         <li>
@@ -108,13 +108,13 @@
         if (this.dataset.plan === 'annual') {
           amount.textContent = '1,999';
           period.textContent = 'MXN / año';
-          sub.textContent = 'Equivale a $166/mes. 14 días de prueba sin tarjeta.';
+          sub.textContent = 'Equivale a $166/mes. 15 días de prueba sin tarjeta.';
           badge.classList.add('visible');
           badge.removeAttribute('aria-hidden');
         } else {
           amount.textContent = '199';
           period.textContent = 'MXN / mes';
-          sub.textContent = 'Incluye 14 días de prueba sin tarjeta.';
+          sub.textContent = 'Incluye 15 días de prueba sin tarjeta.';
           badge.classList.remove('visible');
           badge.setAttribute('aria-hidden', 'true');
         }
