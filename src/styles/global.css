@@ -581,6 +581,25 @@ p {
   }
 }
 
+/* A/B HERO VARIANTS */
+[data-hero-variant] { display: none; }
+html[data-ab-hero="A"] [data-hero-variant="A"],
+html[data-ab-hero="B"] [data-hero-variant="B"],
+html[data-ab-hero="C"] [data-hero-variant="C"] { display: contents; }
+html:not([data-ab-hero]) [data-hero-variant="A"] { display: contents; }
+
+.btn-primary-lg.btn-verde {
+  background: var(--verde);
+  border-color: var(--verde);
+}
+.btn-primary-lg.btn-verde:hover {
+  background: var(--verde-hover);
+  border-color: var(--verde-hover);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 12px 28px rgba(15, 123, 63, 0.24);
+}
+
 /* STATEMENT STRIP */
 .statement-strip {
   border-top: 0.5px solid var(--gris-borde);
