@@ -160,7 +160,7 @@ Cada carrusel tiene entre 4 y 8 slides. Asigna el tipo correcto a cada posición
 
 ### Tipo 1 — `hook`
 **Posición:** siempre slide 1. **Objetivo:** detener el scroll, crear curiosidad sin revelar todo.
-- Fondo: `hueso` o `verdeSuperficie`
+- Fondo: cualquiera de los 6 disponibles en §Rotación de portadas — `tinta`, `verdeSuperficie`, `hueso`, `grisClaro`, imagen+overlay tinta, imagen+overlay verde
 - Headline display (grande, bold) que genera tensión o sorpresa
 - Eyebrow pequeño (categoría o vertical)
 - Sin bullets, sin listas — solo el hook
@@ -190,7 +190,7 @@ Cada carrusel tiene entre 4 y 8 slides. Asigna el tipo correcto a cada posición
 
 ### Tipo 3 — `solución`
 **Posición:** slide 3-6. **Objetivo:** presentar el beneficio concreto.
-- Icono SVG simple (diseñado en el HTML) o imagen Unsplash de contexto (ver §Imágenes Unsplash)
+- Icono Lucide (ver §Estándares de iconos) o imagen Unsplash de contexto (ver §Imágenes Unsplash)
 - Headline de beneficio
 - 2-3 bullets concisos (máx. 8 palabras por bullet)
 - Sin jerga
@@ -694,7 +694,8 @@ Nunca violes estas reglas sin importar qué pida el usuario:
 7. **Sin precio con asteriscos** — siempre "$199 MXN/mes" completo y sin condiciones ocultas
 8. **Verde acento (#4ADE80) solo en fondos oscuros** (`verdeSuperficie` o `tinta`) — nunca en fondos claros (`hueso`, `grisClaro`)
 9. **El nombre es `agendallena`** — minúsculas, sin espacios, sin `.mx` salvo en contexto de URL
-10. **Íconos como SVG inline** — sin imágenes externas salvo fotografías de Unsplash integradas con los patrones definidos en §Imágenes Unsplash
+10. **Íconos:** solo Lucide — ver §Estándares de iconos. Sin íconos de otras librerías, sin SVGs dibujados a mano
+11. **Sin diagramas ni infografías** — prohibido generar cajas conectadas, flowcharts, tablas como elemento visual principal, o cualquier gráfica tipo "diagrama de proceso". Los flujos y pasos se comunican con tipografía y bullets, no con estructuras de diagrama
 
 ---
 
@@ -706,9 +707,7 @@ Estas reglas aplican a **todos los carruseles sin excepción**. No ajustar el po
 
 **Slide 1 — hook:**
 - `padding: 80px 64px 160px`
-- `justify-content: flex-end` — contenido anclado al fondo de la slide
-- Orden visual de abajo hacia arriba: eyebrow → headline → subtítulo
-- El footer (`position: absolute; bottom: 56px`) queda por debajo del subtítulo
+- Ancla y orden de elementos según el arquetipo elegido — ver §Arquetipos de portada
 
 **Slides con fondo claro** (problema, solución, canales, comparativa, etc.):
 - `padding: 88px 64px 160px`
@@ -753,12 +752,11 @@ Cada carrusel debe usar un arquetipo diferente al anterior. Los 4 arquetipos com
 
 ### Arquetipo B — Cifra
 
-- **Ancla:** `justify-content: center` · padding `80px 64px 160px`
+- **Ancla:** `justify-content: center; align-items: center` · padding `80px 64px 160px`
 - **Elementos:**
-  - eyebrow encima del número (pequeño, uppercase)
-  - Número gigante: `font-size: 280px; font-weight: 700; line-height: 0.9; letter-spacing: -0.06em; font-variant-numeric: tabular-nums`
-  - 1 línea de contexto (body, máx. 12 palabras) debajo del número
-  - Sin bloque de subtitle
+  - Número gigante: `font-size: 280px; font-weight: 700; line-height: 0.9; letter-spacing: -0.06em; font-variant-numeric: tabular-nums; text-align: center`
+  - 1 línea de contexto (body, máx. 12 palabras) debajo del número — centrada
+  - Sin eyebrow, sin subtitle
 - **Decoración permitida:** ghost text (el mismo número, opacity 0.04) en fondos oscuros; círculos concéntricos en `verdeSuperficie`; nada extra en fondos claros
 - **Mejor para:** hooks estadísticos ("30% de tus citas no llegan"), hooks de impacto económico
 
@@ -837,7 +835,7 @@ Overlay: `rgba(36, 92, 50, 0.72)` (verdeSuperficie) — feel marcario, orgánico
 | Declaración | ✅ | ✅ | ✅ | ✅ | ✅ overlay tinta o verde |
 | Cifra | ✅ preferido | ✅ preferido | ✅ | ✅ | — |
 | Tensión | ✅ | — | ✅ preferido | ✅ preferido | ✅ overlay tinta preferido |
-| Manifiesto | ✅ preferido | ✅ preferido | ✅ | ✅ |
+| Manifiesto | ✅ preferido | ✅ preferido | ✅ | ✅ | — |
 | Foto | imagen + overlay tinta (E1) | imagen + overlay verde (E2) | — | — | — |
 
 Las combinaciones `—` son válidas pero tienen menos tensión dramática — evitar si hay alternativa. Los arquetipos con variante foto usan imagen Unsplash como fondo en lugar del color de fondo.
