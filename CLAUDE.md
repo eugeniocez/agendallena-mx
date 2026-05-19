@@ -296,13 +296,12 @@ agendallena-mx/
 │   ├── pages/
 │   │   ├── index.astro                ← landing principal
 │   │   ├── [vertical].astro           ← página dinámica para verticales
-│   │   ├── soporte.astro              ← centro de ayuda
-│   │   ├── landing-b.astro            ← variante B (A/B test, excluida del sitemap)
-│   │   └── landing-c.astro            ← variante C (A/B test, excluida del sitemap)
+│   │   └── soporte.astro              ← centro de ayuda
 │   ├── layouts/
-│   │   └── Base.astro                 ← head, header, footer, scripts
+│   │   └── Base.astro                 ← head, header, footer, scripts + script A/B hero
 │   ├── components/
-│   │   ├── Hero.astro                 ← props: eyebrow, subtitle
+│   │   ├── HeroIndex.astro            ← hero de la landing principal con 4 variantes A/B (A/B/C/D)
+│   │   ├── Hero.astro                 ← hero para páginas de verticales (props: eyebrow, h1, subtitle)
 │   │   ├── StatementStrip.astro
 │   │   ├── SocialProof.astro
 │   │   ├── Problema.astro             ← props: cards
@@ -332,26 +331,35 @@ agendallena-mx/
 
 ### Rutas live
 
-| Ruta                    | Descripción                                         |
-| ----------------------- | --------------------------------------------------- |
-| `/`                     | Landing principal multi-vertical                    |
-| `/dentistas`            | Vertical clínicas dentales                          |
-| `/consultorios-medicos` | Vertical consultorios médicos                       |
-| `/psicologos`           | Vertical psicólogos y terapeutas                    |
-| `/salones-de-belleza`   | Vertical salones de belleza                         |
-| `/barberias`            | Vertical barberías                                  |
-| `/soporte`              | Centro de ayuda                                     |
-| `/terminos`             | Términos de servicio (stub — contenido pendiente)   |
-| `/privacidad`           | Política de privacidad (stub — contenido pendiente) |
-
-**Rutas pendientes (Fase 4):** `/spas` · `/salones-de-unas` · `/entrenadores-personales` · `/despachos-legales` · `/terapistas`
+| Ruta                        | Descripción                                         |
+| --------------------------- | --------------------------------------------------- |
+| `/`                         | Landing principal multi-vertical                    |
+| `/dentistas`                | Vertical clínicas dentales                          |
+| `/consultorios-medicos`     | Vertical consultorios médicos                       |
+| `/psicologos`               | Vertical psicólogos y terapeutas                    |
+| `/terapistas`               | Vertical terapistas                                 |
+| `/quiropracticos`           | Vertical quiroprácticos                             |
+| `/nutriologos`              | Vertical nutriólogos                                |
+| `/veterinarias`             | Vertical veterinarias                               |
+| `/salones-de-belleza`       | Vertical salones de belleza                         |
+| `/barberias`                | Vertical barberías                                  |
+| `/salones-de-unas`          | Vertical salones de uñas                            |
+| `/spas`                     | Vertical spas                                       |
+| `/tatuadores`               | Vertical tatuadores                                 |
+| `/estudios-de-yoga`         | Vertical estudios de yoga                           |
+| `/entrenadores-personales`  | Vertical entrenadores personales                    |
+| `/despachos-legales`        | Vertical despachos legales                          |
+| `/talleres-mecanicos`       | Vertical talleres mecánicos                         |
+| `/soporte`                  | Centro de ayuda                                     |
+| `/terminos`                 | Términos de servicio (stub — contenido pendiente)   |
+| `/privacidad`               | Política de privacidad (stub — contenido pendiente) |
 
 Las landings de verticales usan el mismo template, cambiando solo el copy del hero, las cards del problema, los testimonios y el FAQ. El copy de cada vertical vive en `src/content/verticals/[slug].ts`.
 
 ### Secciones de la landing principal (en orden)
 
 1. Header sticky — wordmark + nav (Producto, Cómo funciona, Precio, FAQ) + CTA "Empezar gratis"
-2. Hero — eyebrow + título + subtítulo + 2 CTAs + meta de garantías
+2. Hero — eyebrow + título + subtítulo + CTA + trust signals (3 items) · variante servida por A/B test (A/B/C/D via `HeroIndex.astro`)
 3. Strip de impacto — eyebrow "El impacto" · 4 outcomes: −70% inasistencias, +1 semana ingresos, 0 min persiguiendo, 24/7
 4. Marquee de industrias — 12 tipos de negocio, animación lenta contemplativa
 5. El problema — 3 cards (WhatsApp, libreta, memoria) + stat banner 30%
@@ -364,7 +372,7 @@ Las landings de verticales usan el mismo template, cambiando solo el copy del he
 12. CTA final — fondo `--verde-superficie` + título + 2 CTAs
 13. Footer — wordmark + 3 columnas de links + bottom bar
 
-**CTAs primarios:** "Empezar gratis" (→ signup) · "Ver demo" (→ video o demo)
+**CTA primario:** "Empezar gratis" (→ signup) — texto puede variar por variante A/B
 
 ---
 
@@ -378,13 +386,22 @@ Las landings de verticales usan el mismo template, cambiando solo el copy del he
 6. Verifica mobile en breakpoints 700px y 800px al hacer cambios visuales.
 7. Copy nuevo: sin emojis, sin jerga técnica, sin mayúsculas, sin asteriscos en precios.
 
+### A/B test del hero — en curso
+
+El hero de la landing principal (`/`) sirve 4 variantes (A/B/C/D) con distribución 25/25/25/25.
+
+- **Asignación:** script inline en `<head>` de `Base.astro` — escribe en `localStorage` y setea `data-ab-hero` en `<html>` antes del primer paint
+- **Componente:** `src/components/HeroIndex.astro` — 4 bloques `[data-hero-variant]`, el video es compartido
+- **CSS:** reglas show/hide en `global.css` — clase `.btn-verde` para botón verde
+- **Tracking:** GTM pushea `ab_hero_assign` al cargar y enriquece cada `cta_click` con parámetro `ab_hero`
+- **Para agregar variantes:** ver formulario en el plan activo. Al agregar variante nueva, actualizar el script de asignación en `Base.astro` y las reglas CSS en `global.css`
+
 ### Fase 4 — en curso
 
 - Reemplazar mockups CSS por capturas reales del producto (PWA en iPhone frame moderno)
 - Blog para SEO orgánico
 - Completar contenido de `/privacidad` y `/terminos` (archivos existentes, contenido pendiente)
-- Verticales: `/spas`, `/salones-de-unas`, `/entrenadores-personales`, `/despachos-legales`, `/terapistas`
 
 ---
 
-**Última actualización:** Mayo 2026 · **Versión:** 4.0
+**Última actualización:** Mayo 2026 · **Versión:** 4.1
