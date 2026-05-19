@@ -260,11 +260,11 @@ Personas y espacios de los negocios verticales del producto. Nunca tecnología, 
 Usar siempre el formato CDN con ID específico:
 
 ```
-https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=1080&q=85
+https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=2160&q=92
 ```
 
-- `w=1080` para que la imagen cargue al ancho de la slide
-- `q=85` para balance calidad / tiempo de carga
+- `w=2160` — resolución 2x para pantallas retina; evita pixelación en preview y exportación
+- `q=92` — calidad alta; no bajar de este valor
 - Nunca usar `source.unsplash.com` (API deprecada)
 - Elegir IDs de fotos que correspondan exactamente al tema — no improvisar con fotos genéricas de "negocios"
 
@@ -280,7 +280,7 @@ La imagen cubre toda la slide; un overlay oscuro hace legible el texto.
 .slide-img-bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=1080&q=85');
+  background-image: url('https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=2160&q=92');
   background-size: cover;
   background-position: center;
 }
@@ -314,7 +314,7 @@ La slide se divide en dos mitades. El texto vive en la mitad izquierda sobre fon
   gap: 32px;
 }
 .slide-split-img {
-  background-image: url('https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=540&q=85');
+  background-image: url('https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=1080&q=92');
   background-size: cover;
   background-position: center;
 }
@@ -743,7 +743,7 @@ Cada carrusel debe usar un arquetipo diferente al anterior. Los 4 arquetipos com
 - **Eyebrow:** `verdeAcento` #4ADE80 en ambas variantes
 - **Wordmark y counter:** en `hueso` con `opacity: 0.75`
 - **Sin toques decorativos adicionales** — la foto reemplaza el decorativo; no añadir corner brackets, ghost text ni gradientes encima
-- **URL de imagen:** `https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=1080&q=85`
+- **URL de imagen:** `https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=2160&q=92`
 - **Restricción de contenido:** solo fotografías de espacios o personas del vertical que trata el carrusel — nunca imágenes genéricas de "negocio" o tecnología
 - **Mejor para:** hooks de vertical específica (dentistas, barberías, spas, talleres), hooks de problema con fuerte contexto visual
 
@@ -762,7 +762,7 @@ Overlay: `rgba(36, 92, 50, 0.72)` (verdeSuperficie) — feel marcario, orgánico
 ```css
 /* Arquetipo E — imagen full-bleed como fondo del .slide */
 .slide {
-  background-image: url('https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=1080&q=85');
+  background-image: url('https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=2160&q=92');
   background-size: cover;
   background-position: center;
 }
