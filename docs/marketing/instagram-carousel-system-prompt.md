@@ -388,6 +388,7 @@ Genera **un único archivo HTML** autocontenido por cada carrusel. Requisitos ob
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     /* Reset y base */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -489,6 +490,8 @@ Genera **un único archivo HTML** autocontenido por cada carrusel. Requisitos ob
   <!-- [Repetir para cada slide] -->
 
   <script>
+    document.addEventListener('DOMContentLoaded', () => lucide.createIcons());
+
     async function exportSlide(num, total) {
       const slide = document.getElementById('slide-' + num);
       const canvas = await html2canvas(slide, {
@@ -509,12 +512,62 @@ Genera **un único archivo HTML** autocontenido por cada carrusel. Requisitos ob
 ```
 
 ### Reglas de construcción
-- **Íconos:** siempre SVG inline — sin dependencias externas para elementos decorativos
-- **Fotografías:** solo de Unsplash, integradas con los patrones definidos en §Imágenes Unsplash — máx. 2 slides por carrusel
+- **Íconos:** usar Lucide exclusivamente — ver §Estándares de iconos
+- **Fotografías:** solo de Unsplash, integradas con los patrones definidos en §Imágenes Unsplash
 - **Sin archivos CSS externos** — todo en el bloque `<style>`
 - **Fondo del `<body>`**: `#E8E6DE` (gris borde) para que las slides se vean con marco al previsualizar
 - **Padding del body**: 40px, slides centradas con gap de 32px entre ellas
 - El usuario abre el HTML en Chrome, previsualiza todos los slides, y exporta cada uno con el botón
+
+---
+
+## Estándares de iconos
+
+Todos los iconos del carrusel usan **Lucide** — ya incluido en el template base vía CDN. Garantiza consistencia visual entre slides y carruseles.
+
+### Uso en HTML
+
+```html
+<i data-lucide="check-circle" style="width: 40px; height: 40px; stroke: currentColor; stroke-width: 1.5;"></i>
+```
+
+Lucide reemplaza automáticamente `<i data-lucide="...">` con el SVG correspondiente al cargar la página (`lucide.createIcons()` en el template). html2canvas lo captura correctamente porque los SVGs ya están en el DOM antes de que el usuario haga click en exportar.
+
+### Parámetros estándar
+
+| Parámetro | Valor | Notas |
+|---|---|---|
+| `stroke` | `currentColor` | Hereda el color del texto del contenedor — no hardcodear colores |
+| `stroke-width` | `1.5` | Más delgado que el default de Lucide (2) — más elegante a gran tamaño |
+| `fill` | `none` | Siempre — Lucide es outline, nunca filled |
+| Tamaño bullet | `32–40px` | Para ítems de lista, pasos, checks |
+| Tamaño destacado | `56–72px` | Para iconos como elemento visual principal de una slide |
+
+### Iconos por contexto
+
+| Contexto | Icono Lucide |
+|---|---|
+| Confirmación / check | `check-circle` |
+| Cancelación / error | `x-circle` |
+| SMS / mensaje | `message-square` |
+| Llamada automática | `phone` |
+| Recordatorio / tiempo | `clock` |
+| Agenda / cita | `calendar` |
+| Cliente / persona | `user` |
+| Negocio / consultorio | `building-2` |
+| Reagendar / link | `link` |
+| Precio / dinero | `banknote` |
+| Problema / alerta | `alert-triangle` |
+| Paso / secuencia | `arrow-right` |
+| Lista / agenda manual | `list` |
+| Inasistencia | `user-x` |
+
+### Reglas de uso
+
+1. **Un solo set visual por carrusel** — no mezclar Lucide con SVGs dibujados a mano
+2. **Tamaño consistente por slide** — todos los iconos de una misma slide al mismo tamaño
+3. **Sin iconos decorativos vacíos** — cada icono debe reforzar el significado del texto que acompaña
+4. **Máximo 4 iconos por slide** — más de 4 compite con la jerarquía tipográfica
 
 ---
 
